@@ -1,0 +1,33 @@
+/* NAOSIQ - brand values and explicit UI derivatives. No font files bundled. */
+:root {
+  --brand-night: #0B0F1A;
+  --brand-primary: #7C3AED;
+  --brand-cyan: #06B6D4;
+  --brand-ice: #E5E7EB;
+  --brand-white: #FFFFFF;
+  --status-success: #16A34A;
+  --status-warning: #D97706;
+  --status-error: #DC2626;
+  --ui-background: #F7F8FC;
+  --ui-surface: #FFFFFF;
+  --ui-text: #0B0F1A;
+  --ui-muted: #526071;
+  --ui-control-border: #7A8495;
+  --ui-border: #E5E7EB;
+  --ui-primary-hover: #6D28D9;
+  --ui-primary-on: #FFFFFF;
+  --ui-focus: #0E7490;
+  --ui-purple-tint: #F2ECFD;
+  --ui-cyan-text: #0E7490;
+  --ui-cyan-tint: #E9FAFD;
+  --ui-success-text: #166534;
+  --ui-success-tint: #F0FDF4;
+  --ui-warning-text: #92400E;
+  --ui-warning-tint: #FFFBEB;
+  --ui-error-text: #991B1B;
+  --ui-error-tint: #FEF2F2;
+  --font-ui: Inter, Arial, sans-serif;
+  --font-brand: Montserrat, Inter, Arial, sans-serif;
+  --control-min-height: 48px;
+}
+:focus-visible { outline: 3px solid var(--ui-focus); outline-offset: 3px; }

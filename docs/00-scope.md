@@ -5,10 +5,11 @@
 Se conserva el contexto disponible de CRM TECHI: plataforma multi-negocio para
 servicios técnicos, CRM maestro, cinco roles, reparaciones, ventas/inventario,
 pagos/abonos, suscripciones, WhatsApp, portal del cliente y dos comprobantes.
-La búsqueda de archivos del proyecto y de biblioteca no devolvió documentos
-indexados en esta ejecución. No se pudo contrastar el manual de marca completo ni
-una especificación exhaustiva anterior. Este repositorio no afirma contener esos
-archivos originales ni todas sus decisiones textuales.
+El repositorio conserva el paquete fuente completo en
+`specifications/NAOSIQ_KIT_V6`. Su `SPEC_INDEX.md` identifica las fuentes vigentes
+de identidad, recorridos, pantallas, acciones, permisos y reglas. La aplicación y
+su matriz de cobertura deben enlazar esas fuentes sin modificar sus IDs ni
+presentar una capacidad parcial como cumplimiento completo.
 
 La marca visual es provisional. El lema disponible se conserva como configurable.
 El producto sigue identificado técnicamente como CRM TECHI; un cambio de marca no

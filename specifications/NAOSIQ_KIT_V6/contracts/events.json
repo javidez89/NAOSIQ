@@ -1,0 +1,114 @@
+{
+  "version": "5.0",
+  "envelope": [
+    "event_id",
+    "event_type",
+    "schema_version",
+    "occurred_at",
+    "organization_id",
+    "actor_id",
+    "aggregate_id",
+    "aggregate_version",
+    "correlation_id",
+    "payload"
+  ],
+  "delivery": "at_least_once; consumers deduplicate event_id",
+  "transaction": "business event and outbox recorded together",
+  "catalog": [
+    {
+      "name": "ORGANIZATION_CREATED",
+      "domain": "organizations",
+      "purpose": "organizational defaults/invitation pending"
+    },
+    {
+      "name": "ORDER_CREATED",
+      "domain": "orders",
+      "purpose": "initial document, no physical custody"
+    },
+    {
+      "name": "ORDER_INTAKE_CONFIRMED",
+      "domain": "orders",
+      "purpose": "intake voucher document"
+    },
+    {
+      "name": "QUOTE_PUBLISHED",
+      "domain": "quotes",
+      "purpose": "customer notice"
+    },
+    {
+      "name": "QUOTE_APPROVED",
+      "domain": "quotes",
+      "purpose": "enable authorized work"
+    },
+    {
+      "name": "QUOTE_REJECTED",
+      "domain": "quotes",
+      "purpose": "followup resolution"
+    },
+    {
+      "name": "ORDER_COMPLETED",
+      "domain": "orders",
+      "purpose": "payment due notice, not delivery"
+    },
+    {
+      "name": "PAYMENT_REPORTED",
+      "domain": "payments",
+      "purpose": "verification task; balance unchanged"
+    },
+    {
+      "name": "PAYMENT_APPROVED",
+      "domain": "payments",
+      "purpose": "allocation, receipt, voucher request"
+    },
+    {
+      "name": "PAYMENT_ADJUSTED",
+      "domain": "payments",
+      "purpose": "linked adjustment and updated balance"
+    },
+    {
+      "name": "ORDER_DELIVERED",
+      "domain": "orders",
+      "purpose": "delivery document"
+    },
+    {
+      "name": "STOCK_MOVEMENT_CONFIRMED",
+      "domain": "inventory",
+      "purpose": "stock projection"
+    },
+    {
+      "name": "SALE_CONFIRMED",
+      "domain": "sales",
+      "purpose": "sale document, stock consumption once"
+    },
+    {
+      "name": "SUBSCRIPTION_SUSPENDED",
+      "domain": "saas",
+      "purpose": "restrict mutations"
+    },
+    {
+      "name": "SUBSCRIPTION_REACTIVATED",
+      "domain": "saas",
+      "purpose": "restore permitted access"
+    },
+    {
+      "name": "DOCUMENT_ISSUED",
+      "domain": "documents",
+      "purpose": "render job"
+    },
+    {
+      "name": "DOCUMENT_RENDER_FAILED",
+      "domain": "documents",
+      "purpose": "retry UI and operations alert"
+    },
+    {
+      "name": "DOCUMENT_PRINT_REQUESTED",
+      "domain": "documents",
+      "purpose": "audit only; not printer success"
+    },
+    {
+      "name": "MESSAGE_ACCEPTED",
+      "domain": "messages",
+      "purpose": "channel adapter and delivery status"
+    }
+  ]
+}

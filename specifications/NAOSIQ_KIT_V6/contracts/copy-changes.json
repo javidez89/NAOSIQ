@@ -1,0 +1,26 @@
+[
+  {
+    "id": "AS07.A3",
+    "old_success": "Abono confirmado por Asesor autorizado.",
+    "new_success": "Abono confirmado por Asesor autorizado.",
+    "old_failure": "No tienes payments.confirm. Envia el reporte a verificación.",
+    "new_failure": "No tienes autorización para confirmar pagos. Envía el reporte a verificación.",
+    "reason": "Lenguaje claro de permiso"
+  },
+  {
+    "id": "VR02.A3",
+    "old_success": "Tu voucher está listo. Puedes descargarlo o consultarlo.",
+    "new_success": "Tu orden está abierta. Puedes consultar su seguimiento.",
+    "old_failure": "Necesitas conexión y acceso vigente al documento. Si sigue en preparación, consulta su estado.",
+    "new_failure": "No pudimos abrir la orden. Revisa tu acceso al comercio e inténtalo de nuevo.",
+    "reason": "Resultado corresponde a navegar, no a generar un voucher."
+  },
+  {
+    "id": "VR04.A3",
+    "old_success": "Tu voucher está listo. Puedes descargarlo o consultarlo.",
+    "new_success": "Tus documentos están disponibles para consultar.",
+    "old_failure": "Necesitas conexión y acceso vigente al documento. Si sigue en preparación, consulta su estado.",
+    "new_failure": "No pudimos abrir tus documentos. Revisa tu acceso e inténtalo de nuevo.",
+    "reason": "Resultado corresponde a navegar, no a generar un voucher."
+  }
+]

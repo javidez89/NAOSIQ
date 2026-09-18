@@ -1,0 +1,378 @@
+{
+  "version": "5.0",
+  "status": "PLANNED_NOT_EXECUTED",
+  "tasks": [
+    {
+      "id": "P00",
+      "title": "Auditoría y plan de arranque",
+      "phase": 0,
+      "depends_on": [],
+      "scope": "Inspeccionar el repositorio real y contrastar esta base sin modificar archivos. Determinar si está vacío o tiene código. Identificar stack, comandos, restricciones y decisiones bloqueantes.",
+      "deliverable": "Informe de hallazgos, mapa real de carpetas y plan de PRs. No simular archivos existentes ni ejecutar cambios.",
+      "verification": "Distinguir documentos de implementación. No instalar dependencias ni crear un proyecto sin aprobación del plan."
+    },
+    {
+      "id": "P01",
+      "title": "Foundation del repositorio",
+      "phase": 1,
+      "depends_on": [
+        "P00"
+      ],
+      "scope": "Crear o adaptar Next.js/TypeScript como monolito modular; tokens, shells por rol, errores base, logging, interfaces para jobs/outbox y CI. Fijar versiones y lockfile tras inspección.",
+      "deliverable": "Proyecto ejecutable con comandos reales de lint, typecheck, test y build; .env.example sin secretos.",
+      "verification": "No crear pantallas que confirmen pagos ficticios. Documentar qué infraestructura sigue simulada."
+    },
+    {
+      "id": "P02",
+      "title": "Modelo multiempresa y permisos",
+      "phase": 2,
+      "depends_on": [
+        "P01"
+      ],
+      "scope": "Implementar organizaciones, usuarios, membresías, cinco roles y delegaciones; guards server-side, restricciones DB y aislamiento de archivos/jobs. Incluir actor real y audit hook desde el inicio.",
+      "deliverable": "Migraciones revisadas, semillas A/B y pruebas de lectura/mutación cross-tenant.",
+      "verification": "Cliente no asigna role/organization por body. Asesor sin caja por defecto; Super Usuario con acceso auditado."
+    },
+    {
+      "id": "P03",
+      "title": "Google y ciclo de sesión",
+      "phase": 2,
+      "depends_on": [
+        "P02"
+      ],
+      "scope": "Configurar adaptador Google elegido; invitación, aceptación y rol como hechos distintos. Contexto, logout, revocación, reautenticación y retorno seguro.",
+      "deliverable": "Flujo de identidad probado en entorno de ensayo y contratos de sesión.",
+      "verification": "Cancelar Google no crea cuenta activa ni rol. Callback tardío se valida. D04 sigue pendiente para política productiva."
+    },
+    {
+      "id": "P04",
+      "title": "CRM Maestro y control total",
+      "phase": 3,
+      "depends_on": [
+        "P03"
+      ],
+      "scope": "Comercios, listado/detalle, alta, configuración y control elevado sobre cualquier negocio. Banda de actor y contexto; eventos auditados.",
+      "deliverable": "SU01-SU20 de acuerdo con capacidades disponibles; acciones no implementadas claramente deshabilitadas.",
+      "verification": "No suplantar actor ni exponer clave privilegiada. Nunca confundir cortesía con ingreso."
+    },
+    {
+      "id": "P05",
+      "title": "URL Manager central",
+      "phase": 3,
+      "depends_on": [
+        "P04"
+      ],
+      "scope": "Gestionar slug/dominio, validación, palabras reservadas, colisiones y redirección segura. Documento por ID estable no por slug reutilizable.",
+      "deliverable": "Asignación central idempotente; reglas de enlace en vouchers.",
+      "verification": "Dos altas al mismo slug: una gana y otra informa conflicto sin perder borrador. Admin del comercio no cambia URL estructural."
+    },
+    {
+      "id": "P06",
+      "title": "Onboarding reanudable",
+      "phase": 4,
+      "depends_on": [
+        "P05"
+      ],
+      "scope": "Wizard comercio-plan-URL-admin-marca-pagos-publicación, conservando IDs por paso y aislando invitación de creación.",
+      "deliverable": "Alta reanudable con snapshot y versión, sin duplicados al reintentar.",
+      "verification": "Correo fallido no crea otra organización. Plan sin precio no cobra por defecto."
+    },
+    {
+      "id": "P07",
+      "title": "Micrositio y catálogo",
+      "phase": 4,
+      "depends_on": [
+        "P06"
+      ],
+      "scope": "Publicación por slug con proyección pública de marca/servicios/productos/contacto, solicitudes y acceso a consulta privada.",
+      "deliverable": "CL01, CL20-CL23, CL26 y editor del comercio conectados.",
+      "verification": "No exponer notas, cuentas privadas o clientes. Cambio de slug mantiene el comercio correcto."
+    },
+    {
+      "id": "P08",
+      "title": "Clientes y equipos",
+      "phase": 5,
+      "depends_on": [
+        "P03"
+      ],
+      "scope": "Clientes del comercio, equipos, búsquedas contextuales y revisión de duplicados. Preparar acceso al cliente autenticado propietario.",
+      "deliverable": "Altas desde staff/portal e historial por equipo.",
+      "verification": "Coincidencia de teléfono o serial no fusiona ni revela datos de otro cliente/comercio."
+    },
+    {
+      "id": "P09",
+      "title": "Órdenes y recepción",
+      "phase": 5,
+      "depends_on": [
+        "P08"
+      ],
+      "scope": "Crear OT, evidencia, recepción física, custodia, asignación y estados separados; operation_id, versión y evento de recepción.",
+      "deliverable": "Recorrido CL03-CL06, AD03-AD05 y AS03 sin confundir solicitud con custodia.",
+      "verification": "Sin recepción confirmada no hay voucher de recepción. Dos clics devuelven mismo evento."
+    },
+    {
+      "id": "P10",
+      "title": "Diagnóstico y cotización",
+      "phase": 5,
+      "depends_on": [
+        "P09"
+      ],
+      "scope": "Diagnóstico, ítems, versión publicada, vigencia, aprobación/rechazo del cliente y seguimiento del Asesor.",
+      "deliverable": "Presupuesto versionado y respuesta autorizada.",
+      "verification": "Cotización expirada/reemplazada no se aprueba; modificar precio crea revisión. Asesor no acepta por cliente."
+    },
+    {
+      "id": "P11",
+      "title": "Reparación y QA",
+      "phase": 5,
+      "depends_on": [
+        "P10"
+      ],
+      "scope": "Subestados, pruebas por equipo, no aplicable con motivo, retorno por fallo y cierre técnico.",
+      "deliverable": "Checklist, evidencia y transiciones permitidas server-side.",
+      "verification": "COMPLETED no significa PAID ni DELIVERED. QA incompleto impide cierre salvo excepción aprobada y trazable."
+    },
+    {
+      "id": "P12",
+      "title": "Motor documental PDF y QR",
+      "phase": 5,
+      "depends_on": [
+        "P09"
+      ],
+      "scope": "Documentos lógicos, snapshots, templates versionados, jobs/render/storage privado y visor. Incluir voucher de recepción y de pago elegible; pago se conecta en P13/P14.",
+      "deliverable": "Servidor produce representación autorizada; copia y nuevo formato no crean hechos.",
+      "verification": "Unicidad por tenant/tipo/evento/versión. PDF fallido no duplica recepción. QR no abre ficha privada pública."
+    },
+    {
+      "id": "P13",
+      "title": "Motor de pagos y abonos",
+      "phase": 6,
+      "depends_on": [
+        "P09"
+      ],
+      "scope": "Obligaciones, movimientos, asignaciones, saldo exacto, reversas y recibos. BREB/NEQUI/TRANSFER/CASH. Libro independiente de SaaS.",
+      "deliverable": "Transacciones y cálculo exacto, locks/versiones e idempotencia.",
+      "verification": "Reporte no reduce saldo. Sobrepago D07 bloqueado. Abonos existen aunque voucher parcial D06 siga sin aprobar."
+    },
+    {
+      "id": "P14",
+      "title": "Reportar, verificar y cobrar",
+      "phase": 6,
+      "depends_on": [
+        "P13"
+      ],
+      "scope": "Cliente reporta; staff autorizado verifica; efectivo recibe/aplica/cambio. Integrar operation_id, conciliación tras timeout y documento elegible.",
+      "deliverable": "UI de pago por rol y resultados verificables.",
+      "verification": "Asesor/Técnico necesitan delegación para dinero. Doble aprobación concurrente no duplica ni sobreasigna."
+    },
+    {
+      "id": "P15",
+      "title": "Inventario transaccional",
+      "phase": 7,
+      "depends_on": [
+        "P09"
+      ],
+      "scope": "Catálogo, movimientos, reserva, consumo por OT, liberación y ajustes trazables.",
+      "deliverable": "Stock derivado y reserva/consumo atómicos.",
+      "verification": "Reintentar consumo no descuenta dos veces; dos operaciones compiten por una unidad sin stock negativo."
+    },
+    {
+      "id": "P16",
+      "title": "Venta y devolución vinculada",
+      "phase": 7,
+      "depends_on": [
+        "P14",
+        "P15"
+      ],
+      "scope": "Venta, ítems, precios, descuentos autorizados, pago reutilizado y movimiento de stock. Cancelación no implica automáticamente devolución bancaria.",
+      "deliverable": "POS y venta asistida con recibo existente imprimible.",
+      "verification": "Inventario se descuenta una vez; original preservado; descuento y reversa dependen de permiso."
+    },
+    {
+      "id": "P17",
+      "title": "WhatsApp básico",
+      "phase": 8,
+      "depends_on": [
+        "P07",
+        "P09"
+      ],
+      "scope": "Enlace por comercio, variables permitidas, plantillas y contexto de OT para todos los planes.",
+      "deliverable": "Acción abrir/copiar mensaje; registro de intención.",
+      "verification": "No mostrar Enviado/Leído por abrir el enlace. No filtrar notas internas en texto."
+    },
+    {
+      "id": "P18",
+      "title": "Eventos, chat y notificaciones",
+      "phase": 8,
+      "depends_on": [
+        "P09"
+      ],
+      "scope": "Outbox/consumers, chat por OT, audiencia pública/interna, IDs estables y reintentos por canal.",
+      "deliverable": "Conversaciones y jobs observables con fallos aislados.",
+      "verification": "Consumer repetido no duplica mensajes. Fallo de WhatsApp/PDF no revierte pago confirmado."
+    },
+    {
+      "id": "P19",
+      "title": "Ciclos de suscripción",
+      "phase": 9,
+      "depends_on": [
+        "P04"
+      ],
+      "scope": "Planes versionados, ciclos, cargos y pagos SaaS separados. Gracia/ancla/pago tardío configurables; no hardcodear precio o fecha sin D02/D03.",
+      "deliverable": "Modelo de calendario y jobs idempotentes en ensayo.",
+      "verification": "Fin de mes y reintento del job no duplican cargo. Pago a comercio no paga mensualidad."
+    },
+    {
+      "id": "P20",
+      "title": "Suspensión y reactivación",
+      "phase": 9,
+      "depends_on": [
+        "P19"
+      ],
+      "scope": "Guard server-side por operación; whitelist pago SaaS/soporte y política D08. Cortesía auditada del Maestro.",
+      "deliverable": "Suspensión real de mutaciones ordinarias y reactivación controlada.",
+      "verification": "No borrar datos ni registrar ingreso por cortesía. Webhook legítimo tardío se concilia como hecho, no se pierde."
+    },
+    {
+      "id": "P21",
+      "title": "Estadísticas y exportaciones",
+      "phase": 10,
+      "depends_on": [
+        "P14",
+        "P16",
+        "P20"
+      ],
+      "scope": "KPIs definidos, separación ventas/cobros/abonos, exportes privados y estados de datos parciales.",
+      "deliverable": "Dashboards por tenant y Maestro con fórmulas documentadas.",
+      "verification": "Sin costos suficientes no inventar utilidad; exporte no mezcla tenants."
+    },
+    {
+      "id": "P22",
+      "title": "Auditoría y trazabilidad integral",
+      "phase": 10,
+      "depends_on": [
+        "P04",
+        "P14",
+        "P20",
+        "P28"
+      ],
+      "scope": "Verificar y completar audit hooks de fases anteriores; actor, motivo, recurso, diff redactado y operación.",
+      "deliverable": "Mapa auditable recepción-pago-voucher-entrega-suscripción.",
+      "verification": "No permitir borrar audit log desde UI ni convertir print requested en impresión física probada."
+    },
+    {
+      "id": "P23",
+      "title": "PWA e instalación segura",
+      "phase": 10,
+      "depends_on": [
+        "P07",
+        "P27"
+      ],
+      "scope": "Manifest, instalabilidad, shell, actualización segura, permisos progresivos y borradores offline solo donde aprobados.",
+      "deliverable": "PWA probada en dispositivos objetivo y fallback web.",
+      "verification": "Cambio de cuenta/tenant limpia contexto. Ningún pago o QA definitivo se confirma offline."
+    },
+    {
+      "id": "P24",
+      "title": "Endurecimiento de seguridad",
+      "phase": 10,
+      "depends_on": [
+        "P22",
+        "P23"
+      ],
+      "scope": "Revisar tenant escape, roles, CSRF/XSS/SSRF, uploads, secretos, firma webhooks si existen y sesiones.",
+      "deliverable": "Hallazgos priorizados y correcciones con pruebas.",
+      "verification": "No dar por aprobado por un scanner sin revisar; reportar capacidades no ensayadas."
+    },
+    {
+      "id": "P25",
+      "title": "Regresión E2E de release",
+      "phase": 10,
+      "depends_on": [
+        "P11",
+        "P16",
+        "P17",
+        "P18",
+        "P20",
+        "P24",
+        "P28",
+        "P29"
+      ],
+      "scope": "Automatizar y ejecutar los recorridos y excepciones del paquete con dos tenants y cinco roles.",
+      "deliverable": "Reporte real de comandos, escenarios, capturas y fallos; build revisado.",
+      "verification": "Incluir vouchers, abonos, cierres/timeout, impresión cancelada, permisos de Asesor y suspensión."
+    },
+    {
+      "id": "P26",
+      "title": "Workspace completo del Asesor",
+      "phase": 5,
+      "depends_on": [
+        "P03",
+        "P09"
+      ],
+      "scope": "AS01-AS12: recepción, derivación, seguimiento, mensajes, agenda, reportes de pago y venta asistida. Componentes compartidos sin elevación de rol.",
+      "deliverable": "Pantallas específicas y trazas de acción; caja delegada desactivada salvo ensayo autorizado.",
+      "verification": "AS07.A3 y AS08.A2 no se habilitan por defecto. No alterar diagnóstico ni aprobar por cliente."
+    },
+    {
+      "id": "P27",
+      "title": "Resiliencia y estados UX",
+      "phase": 2,
+      "depends_on": [
+        "P03"
+      ],
+      "scope": "AU01-AU06; skeleton, vacío, error, sesión, conflicto, operation status y recuperación. Aplicar perfiles por acción.",
+      "deliverable": "Componentes compartidos y pruebas de cierres/reauth/resultado incierto.",
+      "verification": "No prometer recuperar lo no persistido. Probar callback tardío y cambio de identidad."
+    },
+    {
+      "id": "P28",
+      "title": "Vouchers imprimibles integrados",
+      "phase": 6,
+      "depends_on": [
+        "P12",
+        "P14",
+        "P26"
+      ],
+      "scope": "VR01-VR04 y A4 agregadas. Recepción/pago con snapshot, permisos, descarga y print intent; Carta/A4/80mm de referencia D12.",
+      "deliverable": "Voucher final y de recepción conectados; abono como capacidad pendiente D06.",
+      "verification": "afterprint no es exito físico. Reimpresión conserva IDs/saldo; cambio de slug no rompe acceso."
+    },
+    {
+      "id": "P29",
+      "title": "Trazabilidad y pruebas de contratos",
+      "phase": 10,
+      "depends_on": [
+        "P11",
+        "P16",
+        "P20",
+        "P28"
+      ],
+      "scope": "Mapear historias a 118 vistas/363 acciones, comparar API con contratos y formalizar tests críticos.",
+      "deliverable": "Cobertura revisada, contratos actualizados y lista honesta de pruebas faltantes.",
+      "verification": "No confundir la validación documental con ejecución de Gherkin o E2E real."
+    },
+    {
+      "id": "P30",
+      "title": "Integraciones avanzadas opcionales",
+      "phase": 12,
+      "depends_on": [
+        "P25"
+      ],
+      "scope": "Solo con D10 aprobado: investigar capacidades actuales, sandbox, webhooks y credenciales por comercio; separar suscripción y pagos.",
+      "deliverable": "Adaptador escogido, tests de firma/replay/importe y degradación controlada.",
+      "verification": "No prometer recurrencia Wompi/Bold sin verificación específica. No cobrar en producción sin autorización."
+    },
+    {
+      "id": "P31",
+      "title": "Preparación del piloto",
+      "phase": 11,
+      "depends_on": [
+        "P25"
+      ],
+      "scope": "Preparar migración, backup/restore, monitoreo, soporte, políticas aprobadas y pruebas con impresora real.",
+      "deliverable": "Checklist go/no-go, responsables y pendientes documentados; no desplegar sin confirmación.",
+      "verification": "D02/D03/D04/D08/D11/D12/D13 resueltos donde afectan producción. Evidencia física de voucher."
+    }
+  ]
+}

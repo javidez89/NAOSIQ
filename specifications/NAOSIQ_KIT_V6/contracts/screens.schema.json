@@ -1,0 +1,98 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": [
+    "version",
+    "screens",
+    "screen_count",
+    "action_count"
+  ],
+  "properties": {
+    "version": {
+      "const": "5.0"
+    },
+    "screen_count": {
+      "type": "integer"
+    },
+    "action_count": {
+      "type": "integer"
+    },
+    "screens": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "name",
+          "route",
+          "actions"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^(AU|SU|AD|AS|TE|CL|VR)[0-9]{2}$"
+          },
+          "name": {
+            "type": "string",
+            "minLength": 1
+          },
+          "route": {
+            "type": "string",
+            "minLength": 1
+          },
+          "actions": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "type": "object",
+              "required": [
+                "id",
+                "label",
+                "target",
+                "success",
+                "error",
+                "recover",
+                "timeout"
+              ],
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "label": {
+                  "type": "string"
+                },
+                "target": {
+                  "type": "string"
+                },
+                "success": {
+                  "type": "string"
+                },
+                "error": {
+                  "type": "string"
+                },
+                "recover": {
+                  "type": "string"
+                },
+                "timeout": {
+                  "enum": [
+                    "READ",
+                    "WRITE",
+                    "DRAFT",
+                    "AUTH",
+                    "FIN",
+                    "UPLOAD",
+                    "MSG",
+                    "DOC",
+                    "JOB",
+                    "EXTERNAL",
+                    "LOCAL"
+                  ]
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

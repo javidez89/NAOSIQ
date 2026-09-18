@@ -1,7 +1,7 @@
 # Reglas para agentes y colaboradores
 
 Alcance vigente solicitado por el usuario: este mismo CRM debe cumplir el paquete
-`D:/NAOSIQ/NAOSIQ_KIT_V6`, incluidos `pdf/` y `prompts/`, en local. Consultar su
+versionado en `specifications/NAOSIQ_KIT_V6`, incluidos `pdf/` y `prompts/`, en local. Consultar su
 `SPEC_INDEX.md`, `docs/BRAND_MIGRATION.md` y `docs/DECISIONS.md`, y el registro de
 cobertura `docs/naosiq-v6-coverage.json` de esta aplicación. La marca aprobada es
 NAOSIQ; los nombres técnicos existentes no se migran por un reemplazo global.

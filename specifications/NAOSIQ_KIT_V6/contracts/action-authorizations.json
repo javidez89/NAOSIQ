@@ -1,0 +1,5465 @@
+[
+  {
+    "action_id": "AU01.A1",
+    "policy_ref": "public.read",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "published_public_projection",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "AU01.A2",
+    "policy_ref": "public.read",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "published_public_projection",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "AU01.A3",
+    "policy_ref": "public.read",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "published_public_projection",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "AU02.A1",
+    "policy_ref": "session.self",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "authenticated_identity",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "AU02.A2",
+    "policy_ref": "platform.manage",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "platform",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "AU02.A3",
+    "policy_ref": "session.self",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "authenticated_identity",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "AU03.A1",
+    "policy_ref": "session.self",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "authenticated_identity",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "AU03.A2",
+    "policy_ref": "session.self",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "authenticated_identity",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "AU03.A3",
+    "policy_ref": "session.self",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "authenticated_identity",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "AU04.A1",
+    "policy_ref": "public.read",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "published_public_projection",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "AU04.A2",
+    "policy_ref": "public.read",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "published_public_projection",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "AU04.A3",
+    "policy_ref": "messages.send",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "authorized_conversation_audience",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "AU05.A1",
+    "policy_ref": "session.self",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "authenticated_identity",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "AU05.A2",
+    "policy_ref": "session.self",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "authenticated_identity",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "AU05.A3",
+    "policy_ref": "session.self",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "authenticated_identity",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "AU06.A1",
+    "policy_ref": "session.self",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "authenticated_identity",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "AU06.A2",
+    "policy_ref": "session.self",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "authenticated_identity",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "AU06.A3",
+    "policy_ref": "session.self",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "authenticated_identity",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "SU01.A1",
+    "policy_ref": "platform.manage",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "platform",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "SU01.A2",
+    "policy_ref": "platform.manage",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "platform",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "SU01.A3",
+    "policy_ref": "platform.manage",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "platform",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "SU02.A1",
+    "policy_ref": "platform.manage",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "platform",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "SU02.A2",
+    "policy_ref": "platform.manage",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "platform",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "SU02.A3",
+    "policy_ref": "platform.manage",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "platform",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "SU03.A1",
+    "policy_ref": "platform.manage",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "platform",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "SU03.A2",
+    "policy_ref": "platform.manage",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "platform",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "SU03.A3",
+    "policy_ref": "platform.manage",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "platform",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "SU04.A1",
+    "policy_ref": "platform.manage",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "platform",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "SU04.A2",
+    "policy_ref": "platform.manage",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "platform",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "SU04.A3",
+    "policy_ref": "platform.manage",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "platform",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "SU05.A1",
+    "policy_ref": "platform.manage",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "platform",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "SU05.A2",
+    "policy_ref": "platform.manage",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "platform",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "SU05.A3",
+    "policy_ref": "platform.manage",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "platform",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "SU06.A1",
+    "policy_ref": "platform.manage",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "platform",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "SU06.A2",
+    "policy_ref": "platform.manage",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "platform",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "SU06.A3",
+    "policy_ref": "platform.manage",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "platform",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "SU07.A1",
+    "policy_ref": "platform.manage",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "platform",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "SU07.A2",
+    "policy_ref": "platform.manage",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "platform",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "SU07.A3",
+    "policy_ref": "platform.manage",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "platform",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "SU08.A1",
+    "policy_ref": "platform.manage",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "platform",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "SU08.A2",
+    "policy_ref": "platform.manage",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "platform",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "SU08.A3",
+    "policy_ref": "platform.manage",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "platform",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "SU09.A1",
+    "policy_ref": "platform.manage",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "platform",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "SU09.A2",
+    "policy_ref": "platform.manage",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "platform",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "SU09.A3",
+    "policy_ref": "platform.manage",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "platform",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "SU10.A1",
+    "policy_ref": "platform.manage",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "platform",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "SU10.A2",
+    "policy_ref": "platform.manage",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "platform",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "SU10.A3",
+    "policy_ref": "platform.manage",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "platform",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "SU11.A1",
+    "policy_ref": "platform.manage",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "platform",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "SU11.A2",
+    "policy_ref": "platform.manage",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "platform",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "SU11.A3",
+    "policy_ref": "platform.manage",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "platform",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "SU12.A1",
+    "policy_ref": "platform.manage",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "platform",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "SU12.A2",
+    "policy_ref": "platform.manage",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "platform",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "SU12.A3",
+    "policy_ref": "platform.manage",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "platform",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "SU13.A1",
+    "policy_ref": "platform.manage",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "platform",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "SU13.A2",
+    "policy_ref": "platform.manage",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "platform",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "SU13.A3",
+    "policy_ref": "platform.manage",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "platform",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "SU14.A1",
+    "policy_ref": "platform.manage",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "platform",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "SU14.A2",
+    "policy_ref": "messages.send",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "authorized_conversation_audience",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "SU14.A3",
+    "policy_ref": "platform.manage",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "platform",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "SU15.A1",
+    "policy_ref": "platform.manage",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "platform",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "SU15.A2",
+    "policy_ref": "platform.manage",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "platform",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "SU15.A3",
+    "policy_ref": "platform.manage",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "platform",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "SU16.A1",
+    "policy_ref": "platform.manage",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "platform",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "SU16.A2",
+    "policy_ref": "platform.manage",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "platform",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "SU16.A3",
+    "policy_ref": "platform.manage",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "platform",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "SU17.A1",
+    "policy_ref": "platform.manage",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "platform",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "SU17.A2",
+    "policy_ref": "platform.manage",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "platform",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "SU17.A3",
+    "policy_ref": "platform.manage",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "platform",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "SU18.A1",
+    "policy_ref": "platform.manage",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "platform",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "SU18.A2",
+    "policy_ref": "platform.manage",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "platform",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "SU18.A3",
+    "policy_ref": "platform.manage",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "platform",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "SU19.A1",
+    "policy_ref": "platform.manage",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "platform",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "SU19.A2",
+    "policy_ref": "platform.manage",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "platform",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "SU19.A3",
+    "policy_ref": "platform.manage",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "platform",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "SU20.A1",
+    "policy_ref": "platform.manage",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "platform",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "SU20.A2",
+    "policy_ref": "platform.manage",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "platform",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "SU20.A3",
+    "policy_ref": "platform.manage",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "platform",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "AD01.A1",
+    "policy_ref": "organization.manage",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "tenant",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "AD01.A2",
+    "policy_ref": "organization.manage",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "tenant",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "AD01.A3",
+    "policy_ref": "organization.manage",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "tenant",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "AD02.A1",
+    "policy_ref": "organization.manage",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "tenant",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "AD02.A2",
+    "policy_ref": "organization.manage",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "tenant",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "AD02.A3",
+    "policy_ref": "organization.manage",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "tenant",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "AD03.A1",
+    "policy_ref": "organization.manage",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "tenant",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "AD03.A2",
+    "policy_ref": "organization.manage",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "tenant",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "AD03.A3",
+    "policy_ref": "organization.manage",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "tenant",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "AD04.A1",
+    "policy_ref": "organization.manage",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "tenant",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "AD04.A2",
+    "policy_ref": "organization.manage",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "tenant",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "AD04.A3",
+    "policy_ref": "organization.manage",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "tenant",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "AD05.A1",
+    "policy_ref": "organization.manage",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "tenant",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "AD05.A2",
+    "policy_ref": "organization.manage",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "tenant",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "AD05.A3",
+    "policy_ref": "orders.intake.confirm",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "tenant",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "AD05.A4",
+    "policy_ref": "documents.read",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "authorized_tenant_and_owner_or_delegation",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "AD06.A1",
+    "policy_ref": "organization.manage",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "tenant",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "AD06.A2",
+    "policy_ref": "organization.manage",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "tenant",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "AD06.A3",
+    "policy_ref": "organization.manage",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "tenant",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "AD07.A1",
+    "policy_ref": "organization.manage",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "tenant",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "AD07.A2",
+    "policy_ref": "quotes.publish",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "tenant",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "AD07.A3",
+    "policy_ref": "documents.request",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "confirmed_fact_and_authorized_resource",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "AD08.A1",
+    "policy_ref": "organization.manage",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "tenant",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "AD08.A2",
+    "policy_ref": "organization.manage",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "tenant",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "AD08.A3",
+    "policy_ref": "organization.manage",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "tenant",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "AD09.A1",
+    "policy_ref": "organization.manage",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "tenant",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "AD09.A2",
+    "policy_ref": "organization.manage",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "tenant",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "AD09.A3",
+    "policy_ref": "organization.manage",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "tenant",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "AD10.A1",
+    "policy_ref": "organization.manage",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "tenant",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "AD10.A2",
+    "policy_ref": "qa.confirm",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "tenant_or_assigned",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "AD10.A3",
+    "policy_ref": "organization.manage",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "tenant",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "AD11.A1",
+    "policy_ref": "organization.manage",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "tenant",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "AD11.A2",
+    "policy_ref": "payments.cash.confirm",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "tenant",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [
+      "ADVISOR",
+      "TECHNICIAN"
+    ],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "AD11.A3",
+    "policy_ref": "documents.request",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "confirmed_fact_and_authorized_resource",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "AD11.A4",
+    "policy_ref": "documents.read",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "authorized_tenant_and_owner_or_delegation",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "AD12.A1",
+    "policy_ref": "organization.manage",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "tenant",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "AD12.A2",
+    "policy_ref": "organization.manage",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "tenant",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "AD12.A3",
+    "policy_ref": "organization.manage",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "tenant",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "AD13.A1",
+    "policy_ref": "organization.manage",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "tenant",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "AD13.A2",
+    "policy_ref": "organization.manage",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "tenant",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "AD13.A3",
+    "policy_ref": "organization.manage",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "tenant",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "AD14.A1",
+    "policy_ref": "organization.manage",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "tenant",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "AD14.A2",
+    "policy_ref": "organization.manage",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "tenant",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "AD14.A3",
+    "policy_ref": "organization.manage",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "tenant",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "AD15.A1",
+    "policy_ref": "organization.manage",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "tenant",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "AD15.A2",
+    "policy_ref": "organization.manage",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "tenant",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "AD15.A3",
+    "policy_ref": "organization.manage",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "tenant",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "AD16.A1",
+    "policy_ref": "organization.manage",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "tenant",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "AD16.A2",
+    "policy_ref": "organization.manage",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "tenant",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "AD16.A3",
+    "policy_ref": "organization.manage",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "tenant",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "AD17.A1",
+    "policy_ref": "organization.manage",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "tenant",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "AD17.A2",
+    "policy_ref": "organization.manage",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "tenant",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "AD17.A3",
+    "policy_ref": "organization.manage",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "tenant",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "AD18.A1",
+    "policy_ref": "messages.send",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "authorized_conversation_audience",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "AD18.A2",
+    "policy_ref": "organization.manage",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "tenant",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "AD18.A3",
+    "policy_ref": "organization.manage",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "tenant",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "AD19.A1",
+    "policy_ref": "organization.manage",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "tenant",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "AD19.A2",
+    "policy_ref": "organization.manage",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "tenant",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "AD19.A3",
+    "policy_ref": "organization.manage",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "tenant",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "AD20.A1",
+    "policy_ref": "organization.manage",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "tenant",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "AD20.A2",
+    "policy_ref": "organization.manage",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "tenant",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "AD20.A3",
+    "policy_ref": "organization.manage",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "tenant",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "AD21.A1",
+    "policy_ref": "organization.manage",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "tenant",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "AD21.A2",
+    "policy_ref": "organization.manage",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "tenant",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "AD21.A3",
+    "policy_ref": "organization.manage",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "tenant",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "AD22.A1",
+    "policy_ref": "organization.manage",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "tenant",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "AD22.A2",
+    "policy_ref": "organization.manage",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "tenant",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "AD22.A3",
+    "policy_ref": "organization.manage",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "tenant",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "AD23.A1",
+    "policy_ref": "organization.manage",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "tenant",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "AD23.A2",
+    "policy_ref": "organization.manage",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "tenant",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "AD23.A3",
+    "policy_ref": "messages.send",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "authorized_conversation_audience",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "AD24.A1",
+    "policy_ref": "organization.manage",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "tenant",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "AD24.A2",
+    "policy_ref": "organization.manage",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "tenant",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "AD24.A3",
+    "policy_ref": "organization.manage",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "tenant",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "AD25.A1",
+    "policy_ref": "membership.manage",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "tenant",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "AD25.A2",
+    "policy_ref": "membership.manage",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "tenant",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "AD25.A3",
+    "policy_ref": "membership.manage",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "tenant",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "AD26.A1",
+    "policy_ref": "organization.manage",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "tenant",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "AD26.A2",
+    "policy_ref": "organization.manage",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "tenant",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "AD26.A3",
+    "policy_ref": "organization.manage",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "tenant",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "AD27.A1",
+    "policy_ref": "organization.manage",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "tenant",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "AD27.A2",
+    "policy_ref": "organization.manage",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "tenant",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "AD27.A3",
+    "policy_ref": "organization.manage",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "tenant",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "AD28.A1",
+    "policy_ref": "organization.manage",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "tenant",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "AD28.A2",
+    "policy_ref": "inventory.adjust",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "tenant",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "AD28.A3",
+    "policy_ref": "organization.manage",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "tenant",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "AD29.A1",
+    "policy_ref": "organization.manage",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "tenant",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "AD29.A2",
+    "policy_ref": "organization.manage",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "tenant",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "AD29.A3",
+    "policy_ref": "organization.manage",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "tenant",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "AD30.A1",
+    "policy_ref": "documents.request",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "confirmed_fact_and_authorized_resource",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "AD30.A2",
+    "policy_ref": "payments.adjust",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "tenant",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "AD30.A3",
+    "policy_ref": "organization.manage",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "tenant",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "AD31.A1",
+    "policy_ref": "payments.confirm",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "tenant",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [
+      "ADVISOR",
+      "TECHNICIAN"
+    ],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "AD31.A2",
+    "policy_ref": "payments.confirm",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "tenant",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [
+      "ADVISOR",
+      "TECHNICIAN"
+    ],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "AD31.A3",
+    "policy_ref": "organization.manage",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "tenant",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "AD32.A1",
+    "policy_ref": "documents.request",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "confirmed_fact_and_authorized_resource",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "AD32.A2",
+    "policy_ref": "organization.manage",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "tenant",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "AD32.A3",
+    "policy_ref": "organization.manage",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "tenant",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "AD32.A4",
+    "policy_ref": "documents.read",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "authorized_tenant_and_owner_or_delegation",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "AD33.A1",
+    "policy_ref": "organization.manage",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "tenant",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "AD33.A2",
+    "policy_ref": "organization.manage",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "tenant",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "AD33.A3",
+    "policy_ref": "organization.manage",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "tenant",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "AD34.A1",
+    "policy_ref": "organization.manage",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "tenant",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "AD34.A2",
+    "policy_ref": "documents.request",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "confirmed_fact_and_authorized_resource",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "AD34.A3",
+    "policy_ref": "organization.manage",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "tenant",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "AD35.A1",
+    "policy_ref": "organization.manage",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "tenant",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "AD35.A2",
+    "policy_ref": "orders.delivery.confirm",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "tenant",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "AD35.A3",
+    "policy_ref": "documents.request",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "confirmed_fact_and_authorized_resource",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "AD36.A1",
+    "policy_ref": "organization.manage",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "tenant",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "AD36.A2",
+    "policy_ref": "organization.manage",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "tenant",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "AD36.A3",
+    "policy_ref": "organization.manage",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "tenant",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "AS01.A1",
+    "policy_ref": "advisor.workspace",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "tenant_or_assigned",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "AS01.A2",
+    "policy_ref": "advisor.workspace",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "tenant_or_assigned",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "AS01.A3",
+    "policy_ref": "advisor.workspace",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "tenant_or_assigned",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "AS02.A1",
+    "policy_ref": "advisor.workspace",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "tenant_or_assigned",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "AS02.A2",
+    "policy_ref": "advisor.workspace",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "tenant_or_assigned",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "AS02.A3",
+    "policy_ref": "advisor.workspace",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "tenant_or_assigned",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "AS03.A1",
+    "policy_ref": "advisor.workspace",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "tenant_or_assigned",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "AS03.A2",
+    "policy_ref": "advisor.workspace",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "tenant_or_assigned",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "AS03.A3",
+    "policy_ref": "orders.intake.confirm",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "tenant",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "AS03.A4",
+    "policy_ref": "documents.read",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "authorized_tenant_and_owner_or_delegation",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "AS04.A1",
+    "policy_ref": "advisor.workspace",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "tenant_or_assigned",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "AS04.A2",
+    "policy_ref": "advisor.workspace",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "tenant_or_assigned",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "AS04.A3",
+    "policy_ref": "messages.send",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "authorized_conversation_audience",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "AS05.A1",
+    "policy_ref": "advisor.workspace",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "tenant_or_assigned",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "AS05.A2",
+    "policy_ref": "advisor.workspace",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "tenant_or_assigned",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "AS05.A3",
+    "policy_ref": "messages.send",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "authorized_conversation_audience",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "AS06.A1",
+    "policy_ref": "messages.send",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "authorized_conversation_audience",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "AS06.A2",
+    "policy_ref": "messages.send",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "authorized_conversation_audience",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "AS06.A3",
+    "policy_ref": "advisor.workspace",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "tenant_or_assigned",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "AS07.A1",
+    "policy_ref": "documents.request",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "confirmed_fact_and_authorized_resource",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "AS07.A2",
+    "policy_ref": "advisor.workspace",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "tenant_or_assigned",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "AS07.A3",
+    "policy_ref": "payments.confirm",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "tenant",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [
+      "ADVISOR",
+      "TECHNICIAN"
+    ],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "AS08.A1",
+    "policy_ref": "advisor.workspace",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "tenant_or_assigned",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "AS08.A2",
+    "policy_ref": "payments.cash.confirm",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "tenant",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [
+      "ADVISOR",
+      "TECHNICIAN"
+    ],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "AS08.A3",
+    "policy_ref": "advisor.workspace",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "tenant_or_assigned",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "AS08.A4",
+    "policy_ref": "documents.read",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "authorized_tenant_and_owner_or_delegation",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "AS09.A1",
+    "policy_ref": "advisor.workspace",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "tenant_or_assigned",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "AS09.A2",
+    "policy_ref": "orders.delivery.confirm",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "tenant",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "AS09.A3",
+    "policy_ref": "documents.request",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "confirmed_fact_and_authorized_resource",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "AS10.A1",
+    "policy_ref": "advisor.workspace",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "tenant_or_assigned",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "AS10.A2",
+    "policy_ref": "advisor.workspace",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "tenant_or_assigned",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "AS10.A3",
+    "policy_ref": "advisor.workspace",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "tenant_or_assigned",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "AS11.A1",
+    "policy_ref": "advisor.workspace",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "tenant_or_assigned",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "AS11.A2",
+    "policy_ref": "advisor.workspace",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "tenant_or_assigned",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "AS11.A3",
+    "policy_ref": "advisor.workspace",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "tenant_or_assigned",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "AS12.A1",
+    "policy_ref": "advisor.workspace",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "tenant_or_assigned",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "AS12.A2",
+    "policy_ref": "messages.send",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "authorized_conversation_audience",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "AS12.A3",
+    "policy_ref": "advisor.workspace",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "tenant_or_assigned",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "TE01.A1",
+    "policy_ref": "orders.read",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "tenant_or_assigned",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "TE01.A2",
+    "policy_ref": "orders.read",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "tenant_or_assigned",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "TE01.A3",
+    "policy_ref": "orders.read",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "tenant_or_assigned",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "TE02.A1",
+    "policy_ref": "orders.read",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "tenant_or_assigned",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "TE02.A2",
+    "policy_ref": "orders.read",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "tenant_or_assigned",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "TE02.A3",
+    "policy_ref": "orders.read",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "tenant_or_assigned",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "TE03.A1",
+    "policy_ref": "diagnostics.write",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "tenant_or_assigned",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "TE03.A2",
+    "policy_ref": "orders.read",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "tenant_or_assigned",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "TE03.A3",
+    "policy_ref": "diagnostics.write",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "tenant_or_assigned",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "TE04.A1",
+    "policy_ref": "orders.read",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "tenant_or_assigned",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "TE04.A2",
+    "policy_ref": "orders.read",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "tenant_or_assigned",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "TE04.A3",
+    "policy_ref": "orders.read",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "tenant_or_assigned",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "TE05.A1",
+    "policy_ref": "diagnostics.write",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "tenant_or_assigned",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "TE05.A2",
+    "policy_ref": "diagnostics.write",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "tenant_or_assigned",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "TE05.A3",
+    "policy_ref": "diagnostics.write",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "tenant_or_assigned",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "TE06.A1",
+    "policy_ref": "orders.read",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "tenant_or_assigned",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "TE06.A2",
+    "policy_ref": "diagnostics.write",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "tenant_or_assigned",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "TE06.A3",
+    "policy_ref": "inventory.consume",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "tenant_assigned_order",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "TE07.A1",
+    "policy_ref": "diagnostics.write",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "tenant_or_assigned",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "TE07.A2",
+    "policy_ref": "diagnostics.write",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "tenant_or_assigned",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "TE07.A3",
+    "policy_ref": "orders.read",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "tenant_or_assigned",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "TE08.A1",
+    "policy_ref": "diagnostics.write",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "tenant_or_assigned",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "TE08.A2",
+    "policy_ref": "qa.confirm",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "tenant_or_assigned",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "TE08.A3",
+    "policy_ref": "diagnostics.write",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "tenant_or_assigned",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "TE09.A1",
+    "policy_ref": "messages.send",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "authorized_conversation_audience",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "TE09.A2",
+    "policy_ref": "messages.send",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "authorized_conversation_audience",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "TE09.A3",
+    "policy_ref": "orders.read",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "tenant_or_assigned",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "TE10.A1",
+    "policy_ref": "diagnostics.write",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "tenant_or_assigned",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "TE10.A2",
+    "policy_ref": "orders.read",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "tenant_or_assigned",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "TE10.A3",
+    "policy_ref": "diagnostics.write",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "tenant_or_assigned",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "TE11.A1",
+    "policy_ref": "diagnostics.write",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "tenant_or_assigned",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "TE11.A2",
+    "policy_ref": "diagnostics.write",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "tenant_or_assigned",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "TE11.A3",
+    "policy_ref": "orders.intake.confirm",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "tenant",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "TE11.A4",
+    "policy_ref": "documents.read",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "authorized_tenant_and_owner_or_delegation",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "TE12.A1",
+    "policy_ref": "diagnostics.write",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "tenant_or_assigned",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "TE12.A2",
+    "policy_ref": "diagnostics.write",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "tenant_or_assigned",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "TE12.A3",
+    "policy_ref": "orders.read",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "tenant_or_assigned",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "TE13.A1",
+    "policy_ref": "diagnostics.write",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "tenant_or_assigned",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "TE13.A2",
+    "policy_ref": "payments.cash.confirm",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "tenant",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [
+      "ADVISOR",
+      "TECHNICIAN"
+    ],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "TE13.A3",
+    "policy_ref": "messages.send",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "authorized_conversation_audience",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "TE14.A1",
+    "policy_ref": "orders.read",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "tenant_or_assigned",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "TE14.A2",
+    "policy_ref": "documents.request",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "confirmed_fact_and_authorized_resource",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "TE14.A3",
+    "policy_ref": "messages.send",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "authorized_conversation_audience",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "CL01.A1",
+    "policy_ref": "public.read",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "published_public_projection",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "CL01.A2",
+    "policy_ref": "public.read",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "published_public_projection",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "CL01.A3",
+    "policy_ref": "public.read",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "published_public_projection",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "CL02.A1",
+    "policy_ref": "public.read",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "published_public_projection",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "CL02.A2",
+    "policy_ref": "public.read",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "published_public_projection",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "CL02.A3",
+    "policy_ref": "public.read",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "published_public_projection",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "CL03.A1",
+    "policy_ref": "customer.self",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "own_resource_in_tenant",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "CL03.A2",
+    "policy_ref": "customer.self",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "own_resource_in_tenant",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "CL03.A3",
+    "policy_ref": "customer.self",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "own_resource_in_tenant",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "CL04.A1",
+    "policy_ref": "customer.self",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "own_resource_in_tenant",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "CL04.A2",
+    "policy_ref": "customer.self",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "own_resource_in_tenant",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "CL04.A3",
+    "policy_ref": "customer.self",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "own_resource_in_tenant",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "CL05.A1",
+    "policy_ref": "customer.self",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "own_resource_in_tenant",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "CL05.A2",
+    "policy_ref": "customer.self",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "own_resource_in_tenant",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "CL05.A3",
+    "policy_ref": "customer.self",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "own_resource_in_tenant",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "CL06.A1",
+    "policy_ref": "customer.self",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "own_resource_in_tenant",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "CL06.A2",
+    "policy_ref": "documents.request",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "confirmed_fact_and_authorized_resource",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "CL06.A3",
+    "policy_ref": "customer.self",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "own_resource_in_tenant",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "CL07.A1",
+    "policy_ref": "customer.self",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "own_resource_in_tenant",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "CL07.A2",
+    "policy_ref": "customer.self",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "own_resource_in_tenant",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "CL07.A3",
+    "policy_ref": "customer.self",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "own_resource_in_tenant",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "CL08.A1",
+    "policy_ref": "customer.self",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "own_resource_in_tenant",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "CL08.A2",
+    "policy_ref": "customer.self",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "own_resource_in_tenant",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "CL08.A3",
+    "policy_ref": "customer.self",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "own_resource_in_tenant",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "CL09.A1",
+    "policy_ref": "quotes.respond.own",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "own_current_quote",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "CL09.A2",
+    "policy_ref": "quotes.respond.own",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "own_current_quote",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "CL09.A3",
+    "policy_ref": "customer.self",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "own_resource_in_tenant",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "CL10.A1",
+    "policy_ref": "customer.self",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "own_resource_in_tenant",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "CL10.A2",
+    "policy_ref": "customer.self",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "own_resource_in_tenant",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "CL10.A3",
+    "policy_ref": "customer.self",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "own_resource_in_tenant",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "CL11.A1",
+    "policy_ref": "customer.self",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "own_resource_in_tenant",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "CL11.A2",
+    "policy_ref": "payments.report",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "tenant_or_own",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "CL11.A3",
+    "policy_ref": "customer.self",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "own_resource_in_tenant",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "CL12.A1",
+    "policy_ref": "documents.request",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "confirmed_fact_and_authorized_resource",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "CL12.A2",
+    "policy_ref": "customer.self",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "own_resource_in_tenant",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "CL12.A3",
+    "policy_ref": "messages.send",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "authorized_conversation_audience",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "CL12.A4",
+    "policy_ref": "documents.read",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "authorized_tenant_and_owner_or_delegation",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "CL13.A1",
+    "policy_ref": "messages.send",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "authorized_conversation_audience",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "CL13.A2",
+    "policy_ref": "customer.self",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "own_resource_in_tenant",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "CL13.A3",
+    "policy_ref": "customer.self",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "own_resource_in_tenant",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "CL14.A1",
+    "policy_ref": "customer.self",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "own_resource_in_tenant",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "CL14.A2",
+    "policy_ref": "customer.self",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "own_resource_in_tenant",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "CL14.A3",
+    "policy_ref": "customer.self",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "own_resource_in_tenant",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "CL15.A1",
+    "policy_ref": "public.read",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "published_public_projection",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "CL15.A2",
+    "policy_ref": "public.read",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "published_public_projection",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "CL15.A3",
+    "policy_ref": "public.read",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "published_public_projection",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "CL16.A1",
+    "policy_ref": "customer.self",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "own_resource_in_tenant",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "CL16.A2",
+    "policy_ref": "customer.self",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "own_resource_in_tenant",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "CL16.A3",
+    "policy_ref": "customer.self",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "own_resource_in_tenant",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "CL17.A1",
+    "policy_ref": "customer.self",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "own_resource_in_tenant",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "CL17.A2",
+    "policy_ref": "customer.self",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "own_resource_in_tenant",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "CL17.A3",
+    "policy_ref": "customer.self",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "own_resource_in_tenant",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "CL18.A1",
+    "policy_ref": "customer.self",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "own_resource_in_tenant",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "CL18.A2",
+    "policy_ref": "documents.request",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "confirmed_fact_and_authorized_resource",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "CL18.A3",
+    "policy_ref": "customer.self",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "own_resource_in_tenant",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "CL18.A4",
+    "policy_ref": "documents.read",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "authorized_tenant_and_owner_or_delegation",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "CL19.A1",
+    "policy_ref": "documents.request",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "confirmed_fact_and_authorized_resource",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "CL19.A2",
+    "policy_ref": "customer.self",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "own_resource_in_tenant",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "CL19.A3",
+    "policy_ref": "customer.self",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "own_resource_in_tenant",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "CL19.A4",
+    "policy_ref": "documents.read",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "authorized_tenant_and_owner_or_delegation",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "CL20.A1",
+    "policy_ref": "public.read",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "published_public_projection",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "CL20.A2",
+    "policy_ref": "public.read",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "published_public_projection",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "CL20.A3",
+    "policy_ref": "public.read",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "published_public_projection",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "CL21.A1",
+    "policy_ref": "public.read",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "published_public_projection",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "CL21.A2",
+    "policy_ref": "public.read",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "published_public_projection",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "CL21.A3",
+    "policy_ref": "public.read",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "published_public_projection",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "CL22.A1",
+    "policy_ref": "public.read",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "published_public_projection",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "CL22.A2",
+    "policy_ref": "public.read",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "published_public_projection",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "CL22.A3",
+    "policy_ref": "public.read",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "published_public_projection",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "CL23.A1",
+    "policy_ref": "public.read",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "published_public_projection",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "CL23.A2",
+    "policy_ref": "public.read",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "published_public_projection",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "CL23.A3",
+    "policy_ref": "public.read",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "published_public_projection",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "CL24.A1",
+    "policy_ref": "documents.request",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "confirmed_fact_and_authorized_resource",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "CL24.A2",
+    "policy_ref": "messages.send",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "authorized_conversation_audience",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "CL24.A3",
+    "policy_ref": "customer.self",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "own_resource_in_tenant",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "CL25.A1",
+    "policy_ref": "customer.self",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "own_resource_in_tenant",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "CL25.A2",
+    "policy_ref": "customer.self",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "own_resource_in_tenant",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "CL25.A3",
+    "policy_ref": "customer.self",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "own_resource_in_tenant",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "CL26.A1",
+    "policy_ref": "public.read",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "published_public_projection",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "CL26.A2",
+    "policy_ref": "public.read",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "published_public_projection",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "CL26.A3",
+    "policy_ref": "public.read",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "published_public_projection",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "VR01.A1",
+    "policy_ref": "documents.request",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "confirmed_fact_and_authorized_resource",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "VR01.A2",
+    "policy_ref": "documents.request",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "confirmed_fact_and_authorized_resource",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "VR01.A3",
+    "policy_ref": "documents.request",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "confirmed_fact_and_authorized_resource",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "VR02.A1",
+    "policy_ref": "documents.request",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "confirmed_fact_and_authorized_resource",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "VR02.A2",
+    "policy_ref": "documents.request",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "confirmed_fact_and_authorized_resource",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "VR02.A3",
+    "policy_ref": "documents.request",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "confirmed_fact_and_authorized_resource",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "VR03.A1",
+    "policy_ref": "documents.request",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "confirmed_fact_and_authorized_resource",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "VR03.A2",
+    "policy_ref": "documents.request",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "confirmed_fact_and_authorized_resource",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "VR03.A3",
+    "policy_ref": "documents.request",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "confirmed_fact_and_authorized_resource",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "VR04.A1",
+    "policy_ref": "documents.request",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "confirmed_fact_and_authorized_resource",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "VR04.A2",
+    "policy_ref": "documents.request",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "confirmed_fact_and_authorized_resource",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  },
+  {
+    "action_id": "VR04.A3",
+    "policy_ref": "documents.request",
+    "server_enforced": true,
+    "status": "PROPOSED_REVIEW_IN_PHASE",
+    "scope_rule": "confirmed_fact_and_authorized_resource",
+    "guards": [
+      "subscription_by_operation",
+      "resource_ownership",
+      "state_precondition",
+      "expected_version_if_mutation"
+    ],
+    "requires_delegation_if_role": [],
+    "source": "F7/F9; mapeo explicito V5"
+  }
+]

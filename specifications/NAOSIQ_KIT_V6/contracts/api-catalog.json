@@ -1,0 +1,343 @@
+{
+  "version": "5.0",
+  "typed_core": [
+    {
+      "operation_id": "getContext",
+      "method": "GET",
+      "path": "/api/v1/context",
+      "permission": "session.self",
+      "contract": "openapi.yaml",
+      "status": "SPECIFIED_NOT_IMPLEMENTED"
+    },
+    {
+      "operation_id": "createOrganization",
+      "method": "POST",
+      "path": "/api/v1/master/organizations",
+      "permission": "platform.manage",
+      "contract": "openapi.yaml",
+      "status": "SPECIFIED_NOT_IMPLEMENTED"
+    },
+    {
+      "operation_id": "createOrder",
+      "method": "POST",
+      "path": "/api/v1/t/{organization_id}/orders",
+      "permission": "orders.create",
+      "contract": "openapi.yaml",
+      "status": "SPECIFIED_NOT_IMPLEMENTED"
+    },
+    {
+      "operation_id": "getOrder",
+      "method": "GET",
+      "path": "/api/v1/t/{organization_id}/orders/{order_id}",
+      "permission": "orders.read",
+      "contract": "openapi.yaml",
+      "status": "SPECIFIED_NOT_IMPLEMENTED"
+    },
+    {
+      "operation_id": "confirmIntake",
+      "method": "POST",
+      "path": "/api/v1/t/{organization_id}/orders/{order_id}/intake",
+      "permission": "orders.intake.confirm",
+      "contract": "openapi.yaml",
+      "status": "SPECIFIED_NOT_IMPLEMENTED"
+    },
+    {
+      "operation_id": "respondQuote",
+      "method": "POST",
+      "path": "/api/v1/t/{organization_id}/quotes/{quote_id}/response",
+      "permission": "quotes.respond.own",
+      "contract": "openapi.yaml",
+      "status": "SPECIFIED_NOT_IMPLEMENTED"
+    },
+    {
+      "operation_id": "reportPayment",
+      "method": "POST",
+      "path": "/api/v1/t/{organization_id}/payments/reports",
+      "permission": "payments.report",
+      "contract": "openapi.yaml",
+      "status": "SPECIFIED_NOT_IMPLEMENTED"
+    },
+    {
+      "operation_id": "confirmCash",
+      "method": "POST",
+      "path": "/api/v1/t/{organization_id}/payments/cash",
+      "permission": "payments.cash.confirm",
+      "contract": "openapi.yaml",
+      "status": "SPECIFIED_NOT_IMPLEMENTED"
+    },
+    {
+      "operation_id": "getPayment",
+      "method": "GET",
+      "path": "/api/v1/t/{organization_id}/payments/{payment_id}",
+      "permission": "payments.report",
+      "contract": "openapi.yaml",
+      "status": "SPECIFIED_NOT_IMPLEMENTED"
+    },
+    {
+      "operation_id": "approvePayment",
+      "method": "POST",
+      "path": "/api/v1/t/{organization_id}/payments/{payment_id}/approve",
+      "permission": "payments.confirm",
+      "contract": "openapi.yaml",
+      "status": "SPECIFIED_NOT_IMPLEMENTED"
+    },
+    {
+      "operation_id": "rejectPayment",
+      "method": "POST",
+      "path": "/api/v1/t/{organization_id}/payments/{payment_id}/reject",
+      "permission": "payments.confirm",
+      "contract": "openapi.yaml",
+      "status": "SPECIFIED_NOT_IMPLEMENTED"
+    },
+    {
+      "operation_id": "getOperation",
+      "method": "GET",
+      "path": "/api/v1/t/{organization_id}/operations/{operation_id}",
+      "permission": "session.self",
+      "contract": "openapi.yaml",
+      "status": "SPECIFIED_NOT_IMPLEMENTED"
+    },
+    {
+      "operation_id": "requestDocument",
+      "method": "POST",
+      "path": "/api/v1/t/{organization_id}/documents/requests",
+      "permission": "documents.request",
+      "contract": "openapi.yaml",
+      "status": "SPECIFIED_NOT_IMPLEMENTED"
+    },
+    {
+      "operation_id": "getDocument",
+      "method": "GET",
+      "path": "/api/v1/t/{organization_id}/documents/{document_id}",
+      "permission": "documents.read",
+      "contract": "openapi.yaml",
+      "status": "SPECIFIED_NOT_IMPLEMENTED"
+    },
+    {
+      "operation_id": "requestDocumentRender",
+      "method": "POST",
+      "path": "/api/v1/t/{organization_id}/documents/{document_id}/renders",
+      "permission": "documents.request",
+      "contract": "openapi.yaml",
+      "status": "SPECIFIED_NOT_IMPLEMENTED"
+    },
+    {
+      "operation_id": "getDocumentJob",
+      "method": "GET",
+      "path": "/api/v1/t/{organization_id}/document-jobs/{job_id}",
+      "permission": "documents.read",
+      "contract": "openapi.yaml",
+      "status": "SPECIFIED_NOT_IMPLEMENTED"
+    },
+    {
+      "operation_id": "createDocumentLink",
+      "method": "POST",
+      "path": "/api/v1/t/{organization_id}/documents/{document_id}/download-link",
+      "permission": "documents.read",
+      "contract": "openapi.yaml",
+      "status": "SPECIFIED_NOT_IMPLEMENTED"
+    },
+    {
+      "operation_id": "recordPrintIntent",
+      "method": "POST",
+      "path": "/api/v1/t/{organization_id}/documents/{document_id}/print-intents",
+      "permission": "documents.read",
+      "contract": "openapi.yaml",
+      "status": "SPECIFIED_NOT_IMPLEMENTED"
+    },
+    {
+      "operation_id": "listOwnDocuments",
+      "method": "GET",
+      "path": "/api/v1/t/{organization_id}/customer/documents",
+      "permission": "documents.read",
+      "contract": "openapi.yaml",
+      "status": "SPECIFIED_NOT_IMPLEMENTED"
+    },
+    {
+      "operation_id": "confirmDelivery",
+      "method": "POST",
+      "path": "/api/v1/t/{organization_id}/orders/{order_id}/delivery",
+      "permission": "orders.delivery.confirm",
+      "contract": "openapi.yaml",
+      "status": "SPECIFIED_NOT_IMPLEMENTED"
+    },
+    {
+      "operation_id": "controlSubscription",
+      "method": "POST",
+      "path": "/api/v1/master/subscriptions/{subscription_id}/actions",
+      "permission": "platform.manage",
+      "contract": "openapi.yaml",
+      "status": "SPECIFIED_NOT_IMPLEMENTED"
+    },
+    {
+      "operation_id": "approveSaasPayment",
+      "method": "POST",
+      "path": "/api/v1/master/saas-payments/{saas_payment_id}/approve",
+      "permission": "platform.manage",
+      "contract": "openapi.yaml",
+      "status": "SPECIFIED_NOT_IMPLEMENTED"
+    }
+  ],
+  "phase_expansions": [
+    {
+      "domain": "organizations",
+      "use_cases": [
+        "list",
+        "get",
+        "update",
+        "assignUrl",
+        "verifyDomain"
+      ],
+      "status": "CASE_CATALOG_EXPAND_SCHEMA_IN_PHASE"
+    },
+    {
+      "domain": "memberships",
+      "use_cases": [
+        "invite",
+        "changeRole",
+        "revoke",
+        "grantScopedPermission"
+      ],
+      "status": "CASE_CATALOG_EXPAND_SCHEMA_IN_PHASE"
+    },
+    {
+      "domain": "orders",
+      "use_cases": [
+        "list",
+        "assign",
+        "transition",
+        "resolve",
+        "warrantyReentry"
+      ],
+      "status": "CASE_CATALOG_EXPAND_SCHEMA_IN_PHASE"
+    },
+    {
+      "domain": "diagnostics",
+      "use_cases": [
+        "get",
+        "save",
+        "complete"
+      ],
+      "status": "CASE_CATALOG_EXPAND_SCHEMA_IN_PHASE"
+    },
+    {
+      "domain": "quotes",
+      "use_cases": [
+        "create",
+        "publish",
+        "expire",
+        "list"
+      ],
+      "status": "CASE_CATALOG_EXPAND_SCHEMA_IN_PHASE"
+    },
+    {
+      "domain": "qa",
+      "use_cases": [
+        "saveRun",
+        "confirmRun",
+        "rejectRun"
+      ],
+      "status": "CASE_CATALOG_EXPAND_SCHEMA_IN_PHASE"
+    },
+    {
+      "domain": "inventory",
+      "use_cases": [
+        "createProduct",
+        "updateProduct",
+        "reserve",
+        "consume",
+        "release",
+        "adjust",
+        "listMovements"
+      ],
+      "status": "CASE_CATALOG_EXPAND_SCHEMA_IN_PHASE"
+    },
+    {
+      "domain": "sales",
+      "use_cases": [
+        "createDraft",
+        "confirm",
+        "cancel",
+        "list",
+        "get"
+      ],
+      "status": "CASE_CATALOG_EXPAND_SCHEMA_IN_PHASE"
+    },
+    {
+      "domain": "payments",
+      "use_cases": [
+        "list",
+        "requestAdjustment",
+        "recordReversal"
+      ],
+      "status": "CASE_CATALOG_EXPAND_SCHEMA_IN_PHASE"
+    },
+    {
+      "domain": "messages",
+      "use_cases": [
+        "list",
+        "send",
+        "markRead"
+      ],
+      "status": "CASE_CATALOG_EXPAND_SCHEMA_IN_PHASE"
+    },
+    {
+      "domain": "notifications",
+      "use_cases": [
+        "list",
+        "markRead",
+        "channelPreference"
+      ],
+      "status": "CASE_CATALOG_EXPAND_SCHEMA_IN_PHASE"
+    },
+    {
+      "domain": "drafts",
+      "use_cases": [
+        "save",
+        "load",
+        "compare",
+        "discard"
+      ],
+      "status": "CASE_CATALOG_EXPAND_SCHEMA_IN_PHASE"
+    },
+    {
+      "domain": "uploads",
+      "use_cases": [
+        "requestSignedUpload",
+        "finalize",
+        "authorizeDownload"
+      ],
+      "status": "CASE_CATALOG_EXPAND_SCHEMA_IN_PHASE"
+    },
+    {
+      "domain": "saas",
+      "use_cases": [
+        "listPlans",
+        "createCycle",
+        "createCharge",
+        "listCharges",
+        "reportPayment",
+        "cancelAtPeriodEnd"
+      ],
+      "status": "CASE_CATALOG_EXPAND_SCHEMA_IN_PHASE"
+    },
+    {
+      "domain": "reports",
+      "use_cases": [
+        "businessDashboard",
+        "masterDashboard",
+        "requestExport"
+      ],
+      "status": "CASE_CATALOG_EXPAND_SCHEMA_IN_PHASE"
+    },
+    {
+      "domain": "support",
+      "use_cases": [
+        "create",
+        "reply",
+        "close"
+      ],
+      "status": "CASE_CATALOG_EXPAND_SCHEMA_IN_PHASE"
+    }
+  ]
+}

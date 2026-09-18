@@ -1,0 +1,1405 @@
+{
+  "version": "5.0",
+  "stories": [
+    {
+      "id": "HU-001",
+      "title": "Base ejecutable",
+      "task": "P01",
+      "phase": 1,
+      "screen_ids": [
+        "AU04"
+      ],
+      "goal": "Foundation con comandos y errores visibles",
+      "acceptance": [
+        {
+          "id": "HU-001.AC1",
+          "type": "success",
+          "text": "El proyecto de ensayo ejecuta sus verificaciones y muestra un error recuperable en lugar de pagina blanca."
+        },
+        {
+          "id": "HU-001.AC2",
+          "type": "negative_or_exception",
+          "text": "Falta variable obligatoria y el arranque falla con mensaje seguro, sin exponer secretos."
+        }
+      ],
+      "status": "PLANNED",
+      "sources": [
+        "F2",
+        "F7",
+        "F8",
+        "F9"
+      ],
+      "implementation_evidence": null
+    },
+    {
+      "id": "HU-002",
+      "title": "Tenant y membresias",
+      "task": "P02",
+      "phase": 2,
+      "screen_ids": [
+        "AU02",
+        "AD25"
+      ],
+      "goal": "Aislar todos los recursos por comercio",
+      "acceptance": [
+        {
+          "id": "HU-002.AC1",
+          "type": "success",
+          "text": "Usuario de A consulta solo recursos de A con membresia activa."
+        },
+        {
+          "id": "HU-002.AC2",
+          "type": "negative_or_exception",
+          "text": "Solicitar OT/documento de B devuelve denegacion y no revela su contenido."
+        }
+      ],
+      "status": "PLANNED",
+      "sources": [
+        "F2",
+        "F7",
+        "F8",
+        "F9"
+      ],
+      "implementation_evidence": null
+    },
+    {
+      "id": "HU-003",
+      "title": "Google y retorno",
+      "task": "P03",
+      "phase": 2,
+      "screen_ids": [
+        "AU01",
+        "CL02"
+      ],
+      "goal": "Identidad sin autoasignacion de roles",
+      "acceptance": [
+        {
+          "id": "HU-003.AC1",
+          "type": "success",
+          "text": "Login valido retorna al contexto autorizado y conserva el destino seguro."
+        },
+        {
+          "id": "HU-003.AC2",
+          "type": "negative_or_exception",
+          "text": "Callback manipulado o destino externo no crea rol ni redirige a un sitio no permitido."
+        }
+      ],
+      "status": "PLANNED",
+      "sources": [
+        "F2",
+        "F7",
+        "F8",
+        "F9"
+      ],
+      "implementation_evidence": null
+    },
+    {
+      "id": "HU-004",
+      "title": "Revocacion y sesion",
+      "task": "P27",
+      "phase": 2,
+      "screen_ids": [
+        "AU03",
+        "AU05"
+      ],
+      "goal": "Reautenticar sin repetir mutaciones",
+      "acceptance": [
+        {
+          "id": "HU-004.AC1",
+          "type": "success",
+          "text": "Tras reingresar, se recupera el ultimo borrador confirmado de la misma identidad."
+        },
+        {
+          "id": "HU-004.AC2",
+          "type": "negative_or_exception",
+          "text": "Reingreso con otra cuenta no recupera datos ni reproduce un pago de la anterior."
+        }
+      ],
+      "status": "PLANNED",
+      "sources": [
+        "F2",
+        "F7",
+        "F8",
+        "F9"
+      ],
+      "implementation_evidence": null
+    },
+    {
+      "id": "HU-005",
+      "title": "Crear comercio",
+      "task": "P04",
+      "phase": 3,
+      "screen_ids": [
+        "SU02",
+        "SU03",
+        "SU04"
+      ],
+      "goal": "Alta idempotente central",
+      "acceptance": [
+        {
+          "id": "HU-005.AC1",
+          "type": "success",
+          "text": "Dos intentos con la misma clave devuelven la misma organizacion."
+        },
+        {
+          "id": "HU-005.AC2",
+          "type": "negative_or_exception",
+          "text": "Falla de invitacion permite reenviar sin duplicar el negocio."
+        }
+      ],
+      "status": "PLANNED",
+      "sources": [
+        "F2",
+        "F7",
+        "F8",
+        "F9"
+      ],
+      "implementation_evidence": null
+    },
+    {
+      "id": "HU-006",
+      "title": "Control total auditado",
+      "task": "P04",
+      "phase": 3,
+      "screen_ids": [
+        "SU05",
+        "SU19"
+      ],
+      "goal": "Super Usuario opera cualquier comercio",
+      "acceptance": [
+        {
+          "id": "HU-006.AC1",
+          "type": "success",
+          "text": "Entrada muestra negocio, actor real y motivo; cambios tienen evento auditable."
+        },
+        {
+          "id": "HU-006.AC2",
+          "type": "negative_or_exception",
+          "text": "Administrador de comercio no puede abrir control global ni elevarse."
+        }
+      ],
+      "status": "PLANNED",
+      "sources": [
+        "F2",
+        "F7",
+        "F8",
+        "F9"
+      ],
+      "implementation_evidence": null
+    },
+    {
+      "id": "HU-007",
+      "title": "URL central",
+      "task": "P05",
+      "phase": 3,
+      "screen_ids": [
+        "SU09"
+      ],
+      "goal": "Asignar URL sin colisiones",
+      "acceptance": [
+        {
+          "id": "HU-007.AC1",
+          "type": "success",
+          "text": "Cambio de slug conserva vinculos a documentos por ID estable."
+        },
+        {
+          "id": "HU-007.AC2",
+          "type": "negative_or_exception",
+          "text": "Dos comercios intentan mismo slug y solo uno lo confirma."
+        }
+      ],
+      "status": "PLANNED",
+      "sources": [
+        "F2",
+        "F7",
+        "F8",
+        "F9"
+      ],
+      "implementation_evidence": null
+    },
+    {
+      "id": "HU-008",
+      "title": "Onboarding reanudable",
+      "task": "P06",
+      "phase": 4,
+      "screen_ids": [
+        "SU03",
+        "AD24"
+      ],
+      "goal": "No perder el alta incompleta",
+      "acceptance": [
+        {
+          "id": "HU-008.AC1",
+          "type": "success",
+          "text": "Volver al wizard recupera pasos confirmados y muestra lo pendiente."
+        },
+        {
+          "id": "HU-008.AC2",
+          "type": "negative_or_exception",
+          "text": "Precio sin aprobar no genera cargo real ni lo anuncia como tarifa."
+        }
+      ],
+      "status": "PLANNED",
+      "sources": [
+        "F2",
+        "F7",
+        "F8",
+        "F9"
+      ],
+      "implementation_evidence": null
+    },
+    {
+      "id": "HU-009",
+      "title": "Publicacion y pagina",
+      "task": "P07",
+      "phase": 4,
+      "screen_ids": [
+        "CL01",
+        "AD19",
+        "CL20",
+        "CL21",
+        "CL22",
+        "CL23",
+        "CL26"
+      ],
+      "goal": "Micrositio aislado",
+      "acceptance": [
+        {
+          "id": "HU-009.AC1",
+          "type": "success",
+          "text": "Publicar version aprobada muestra solo datos publicables del negocio."
+        },
+        {
+          "id": "HU-009.AC2",
+          "type": "negative_or_exception",
+          "text": "Consulta por OT correlativa sin autenticacion no revela cliente, fotos o saldo."
+        }
+      ],
+      "status": "PLANNED",
+      "sources": [
+        "F2",
+        "F7",
+        "F8",
+        "F9"
+      ],
+      "implementation_evidence": null
+    },
+    {
+      "id": "HU-010",
+      "title": "Clientes y equipos",
+      "task": "P08",
+      "phase": 5,
+      "screen_ids": [
+        "AD12",
+        "AD13",
+        "AD27",
+        "CL17",
+        "AS02"
+      ],
+      "goal": "Relacion contextual",
+      "acceptance": [
+        {
+          "id": "HU-010.AC1",
+          "type": "success",
+          "text": "Crear cliente y equipo conserva historial en el comercio correcto."
+        },
+        {
+          "id": "HU-010.AC2",
+          "type": "negative_or_exception",
+          "text": "Coincidencia de telefono no fusiona automaticamente ni revela otro cliente."
+        }
+      ],
+      "status": "PLANNED",
+      "sources": [
+        "F2",
+        "F7",
+        "F8",
+        "F9"
+      ],
+      "implementation_evidence": null
+    },
+    {
+      "id": "HU-011",
+      "title": "Nueva solicitud",
+      "task": "P09",
+      "phase": 5,
+      "screen_ids": [
+        "CL03",
+        "CL04",
+        "CL05",
+        "CL06",
+        "AD03"
+      ],
+      "goal": "Solicitud no es custodia",
+      "acceptance": [
+        {
+          "id": "HU-011.AC1",
+          "type": "success",
+          "text": "Cliente envia solicitud y obtiene OT inicial con falla y contacto."
+        },
+        {
+          "id": "HU-011.AC2",
+          "type": "negative_or_exception",
+          "text": "Sin recepcion fisica, no se obtiene voucher de custodia."
+        }
+      ],
+      "status": "PLANNED",
+      "sources": [
+        "F2",
+        "F7",
+        "F8",
+        "F9"
+      ],
+      "implementation_evidence": null
+    },
+    {
+      "id": "HU-012",
+      "title": "Recepcion con evidencia",
+      "task": "P09",
+      "phase": 5,
+      "screen_ids": [
+        "AS03",
+        "AD05",
+        "TE11"
+      ],
+      "goal": "Confirmar custodia real",
+      "acceptance": [
+        {
+          "id": "HU-012.AC1",
+          "type": "success",
+          "text": "Personal autorizado confirma estado fisico/accesorios y evento unico."
+        },
+        {
+          "id": "HU-012.AC2",
+          "type": "negative_or_exception",
+          "text": "Usuario sin permiso o version obsoleta no confirma; datos se mantienen para revisar."
+        }
+      ],
+      "status": "PLANNED",
+      "sources": [
+        "F2",
+        "F7",
+        "F8",
+        "F9"
+      ],
+      "implementation_evidence": null
+    },
+    {
+      "id": "HU-013",
+      "title": "Voucher de recepcion",
+      "task": "P28",
+      "phase": 6,
+      "screen_ids": [
+        "VR01",
+        "VR02"
+      ],
+      "goal": "Copia imprimible del equipo recibido",
+      "acceptance": [
+        {
+          "id": "HU-013.AC1",
+          "type": "success",
+          "text": "Cliente obtiene documento con la fecha y actor del evento real."
+        },
+        {
+          "id": "HU-013.AC2",
+          "type": "negative_or_exception",
+          "text": "PDF falla: reintentar render conserva evento, fecha y numero sin nueva recepcion."
+        }
+      ],
+      "status": "PLANNED",
+      "sources": [
+        "F2",
+        "F7",
+        "F8",
+        "F9"
+      ],
+      "implementation_evidence": null
+    },
+    {
+      "id": "HU-014",
+      "title": "Derivacion y asignacion",
+      "task": "P26",
+      "phase": 5,
+      "screen_ids": [
+        "AS04",
+        "AD14",
+        "AD09",
+        "TE01",
+        "TE02"
+      ],
+      "goal": "Pasar contexto al tecnico",
+      "acceptance": [
+        {
+          "id": "HU-014.AC1",
+          "type": "success",
+          "text": "Tecnico asignado recibe falla, fotos y condiciones del equipo."
+        },
+        {
+          "id": "HU-014.AC2",
+          "type": "negative_or_exception",
+          "text": "Asesor no adquiere permisos tecnicos por abrir un componente compartido."
+        }
+      ],
+      "status": "PLANNED",
+      "sources": [
+        "F2",
+        "F7",
+        "F8",
+        "F9"
+      ],
+      "implementation_evidence": null
+    },
+    {
+      "id": "HU-015",
+      "title": "Diagnostico",
+      "task": "P10",
+      "phase": 5,
+      "screen_ids": [
+        "AD06",
+        "TE04",
+        "TE05"
+      ],
+      "goal": "Hallazgos y propuesta",
+      "acceptance": [
+        {
+          "id": "HU-015.AC1",
+          "type": "success",
+          "text": "Tecnico asignado guarda hallazgos y evidencia con version."
+        },
+        {
+          "id": "HU-015.AC2",
+          "type": "negative_or_exception",
+          "text": "Otro miembro sin alcance no altera el diagnostico ni ve notas protegidas."
+        }
+      ],
+      "status": "PLANNED",
+      "sources": [
+        "F2",
+        "F7",
+        "F8",
+        "F9"
+      ],
+      "implementation_evidence": null
+    },
+    {
+      "id": "HU-016",
+      "title": "Cotizacion versionada",
+      "task": "P10",
+      "phase": 5,
+      "screen_ids": [
+        "AD07",
+        "AD08",
+        "AD26",
+        "CL09",
+        "AS05"
+      ],
+      "goal": "Aprobar exactamente lo publicado",
+      "acceptance": [
+        {
+          "id": "HU-016.AC1",
+          "type": "success",
+          "text": "Cliente acepta version vigente y queda evidencia fechada."
+        },
+        {
+          "id": "HU-016.AC2",
+          "type": "negative_or_exception",
+          "text": "Version vencida/reemplazada o cliente ajeno no se puede aprobar."
+        }
+      ],
+      "status": "PLANNED",
+      "sources": [
+        "F2",
+        "F7",
+        "F8",
+        "F9"
+      ],
+      "implementation_evidence": null
+    },
+    {
+      "id": "HU-017",
+      "title": "Proceso tecnico",
+      "task": "P11",
+      "phase": 5,
+      "screen_ids": [
+        "TE07",
+        "TE06",
+        "AD09"
+      ],
+      "goal": "Transiciones permitidas",
+      "acceptance": [
+        {
+          "id": "HU-017.AC1",
+          "type": "success",
+          "text": "Estado/subestado cambia con motivo y actor, conservando historia."
+        },
+        {
+          "id": "HU-017.AC2",
+          "type": "negative_or_exception",
+          "text": "No se salta de recibido a entregado sin controles."
+        }
+      ],
+      "status": "PLANNED",
+      "sources": [
+        "F2",
+        "F7",
+        "F8",
+        "F9"
+      ],
+      "implementation_evidence": null
+    },
+    {
+      "id": "HU-018",
+      "title": "QA y cierre",
+      "task": "P11",
+      "phase": 5,
+      "screen_ids": [
+        "AD10",
+        "TE08"
+      ],
+      "goal": "Prueba antes de completar",
+      "acceptance": [
+        {
+          "id": "HU-018.AC1",
+          "type": "success",
+          "text": "Pruebas obligatorias aprobadas permiten cerrar tecnicamente."
+        },
+        {
+          "id": "HU-018.AC2",
+          "type": "negative_or_exception",
+          "text": "QA fallido no indica completado ni pagado; vuelve a reparacion."
+        }
+      ],
+      "status": "PLANNED",
+      "sources": [
+        "F2",
+        "F7",
+        "F8",
+        "F9"
+      ],
+      "implementation_evidence": null
+    },
+    {
+      "id": "HU-019",
+      "title": "Reportar pago",
+      "task": "P14",
+      "phase": 6,
+      "screen_ids": [
+        "CL10",
+        "CL11",
+        "CL25",
+        "AS07"
+      ],
+      "goal": "Reporte no es ingreso",
+      "acceptance": [
+        {
+          "id": "HU-019.AC1",
+          "type": "success",
+          "text": "Cliente recibe estado reportado y saldo sin cambio."
+        },
+        {
+          "id": "HU-019.AC2",
+          "type": "negative_or_exception",
+          "text": "Adjuntar comprobante no emite voucher de pago ni reduce deuda."
+        }
+      ],
+      "status": "PLANNED",
+      "sources": [
+        "F2",
+        "F7",
+        "F8",
+        "F9"
+      ],
+      "implementation_evidence": null
+    },
+    {
+      "id": "HU-020",
+      "title": "Verificacion financiera",
+      "task": "P14",
+      "phase": 6,
+      "screen_ids": [
+        "AD31",
+        "AD11"
+      ],
+      "goal": "Aplicar dinero una vez",
+      "acceptance": [
+        {
+          "id": "HU-020.AC1",
+          "type": "success",
+          "text": "Admin confirma evidencia y se crea asignacion/recibo/operation unico."
+        },
+        {
+          "id": "HU-020.AC2",
+          "type": "negative_or_exception",
+          "text": "Dos aprobaciones simultaneas del mismo reporte no duplican dinero."
+        }
+      ],
+      "status": "PLANNED",
+      "sources": [
+        "F2",
+        "F7",
+        "F8",
+        "F9"
+      ],
+      "implementation_evidence": null
+    },
+    {
+      "id": "HU-021",
+      "title": "Efectivo y cambio",
+      "task": "P14",
+      "phase": 6,
+      "screen_ids": [
+        "AS08",
+        "TE13"
+      ],
+      "goal": "Caja delegada explicita",
+      "acceptance": [
+        {
+          "id": "HU-021.AC1",
+          "type": "success",
+          "text": "Cajero autorizado aplica importe correcto y calcula cambio sin sumarlo al ingreso."
+        },
+        {
+          "id": "HU-021.AC2",
+          "type": "negative_or_exception",
+          "text": "Asesor sin delegacion no confirma efectivo aunque el boton exista en la maqueta."
+        }
+      ],
+      "status": "PLANNED",
+      "sources": [
+        "F2",
+        "F7",
+        "F8",
+        "F9"
+      ],
+      "implementation_evidence": null
+    },
+    {
+      "id": "HU-022",
+      "title": "Abonos y saldos",
+      "task": "P13",
+      "phase": 6,
+      "screen_ids": [
+        "CL18",
+        "AD11"
+      ],
+      "goal": "Libro de movimientos",
+      "acceptance": [
+        {
+          "id": "HU-022.AC1",
+          "type": "success",
+          "text": "350000 total menos 100000 confirmado da 250000 pendiente; pago final deja cero."
+        },
+        {
+          "id": "HU-022.AC2",
+          "type": "negative_or_exception",
+          "text": "Reporte pendiente o rechazo no modifica el saldo; sobrepago queda bloqueado D07."
+        }
+      ],
+      "status": "PLANNED",
+      "sources": [
+        "F2",
+        "F7",
+        "F8",
+        "F9"
+      ],
+      "implementation_evidence": null
+    },
+    {
+      "id": "HU-023",
+      "title": "Voucher de pago",
+      "task": "P28",
+      "phase": 6,
+      "screen_ids": [
+        "VR03",
+        "CL18",
+        "CL12"
+      ],
+      "goal": "Voucher del recibo existente",
+      "acceptance": [
+        {
+          "id": "HU-023.AC1",
+          "type": "success",
+          "text": "Pago final confirmado permite consultar mismo recibo y saldo al emitir."
+        },
+        {
+          "id": "HU-023.AC2",
+          "type": "negative_or_exception",
+          "text": "Reimprimir o pedir otro formato no crea una asignacion ni ingreso extra."
+        }
+      ],
+      "status": "PLANNED",
+      "sources": [
+        "F2",
+        "F7",
+        "F8",
+        "F9"
+      ],
+      "implementation_evidence": null
+    },
+    {
+      "id": "HU-024",
+      "title": "Vista previa y descarga",
+      "task": "P28",
+      "phase": 6,
+      "screen_ids": [
+        "VR04",
+        "CL19",
+        "AD32"
+      ],
+      "goal": "Archivo autorizado",
+      "acceptance": [
+        {
+          "id": "HU-024.AC1",
+          "type": "success",
+          "text": "Descarga valida obtiene snapshot/version correctos en formato propuesto."
+        },
+        {
+          "id": "HU-024.AC2",
+          "type": "negative_or_exception",
+          "text": "Enlace vencido pide reautorizar; otro cliente o tenant no descarga por cambiar ID."
+        }
+      ],
+      "status": "PLANNED",
+      "sources": [
+        "F2",
+        "F7",
+        "F8",
+        "F9"
+      ],
+      "implementation_evidence": null
+    },
+    {
+      "id": "HU-025",
+      "title": "Cancelacion de impresion",
+      "task": "P28",
+      "phase": 6,
+      "screen_ids": [
+        "VR04"
+      ],
+      "goal": "Dialogo no demuestra salida fisica",
+      "acceptance": [
+        {
+          "id": "HU-025.AC1",
+          "type": "success",
+          "text": "Al cerrar dialogo se conserva voucher y saldo."
+        },
+        {
+          "id": "HU-025.AC2",
+          "type": "negative_or_exception",
+          "text": "afterprint no se registra como papel impreso ni cancela la operacion."
+        }
+      ],
+      "status": "PLANNED",
+      "sources": [
+        "F2",
+        "F7",
+        "F8",
+        "F9"
+      ],
+      "implementation_evidence": null
+    },
+    {
+      "id": "HU-026",
+      "title": "Resultado financiero incierto",
+      "task": "P27",
+      "phase": 2,
+      "screen_ids": [
+        "AD31",
+        "AS08",
+        "CL11"
+      ],
+      "goal": "No duplicar tras timeout",
+      "acceptance": [
+        {
+          "id": "HU-026.AC1",
+          "type": "success",
+          "text": "Consultar misma clave despues del commit devuelve pago confirmado original."
+        },
+        {
+          "id": "HU-026.AC2",
+          "type": "negative_or_exception",
+          "text": "Timeout no crea REJECTED ni solicita pagar de nuevo sin reconciliar."
+        }
+      ],
+      "status": "PLANNED",
+      "sources": [
+        "F2",
+        "F7",
+        "F8",
+        "F9"
+      ],
+      "implementation_evidence": null
+    },
+    {
+      "id": "HU-027",
+      "title": "Inventario y reservas",
+      "task": "P15",
+      "phase": 7,
+      "screen_ids": [
+        "AD15",
+        "AD16",
+        "AD28",
+        "TE06"
+      ],
+      "goal": "Stock transaccional",
+      "acceptance": [
+        {
+          "id": "HU-027.AC1",
+          "type": "success",
+          "text": "Un consumo vinculado a OT descuenta una vez."
+        },
+        {
+          "id": "HU-027.AC2",
+          "type": "negative_or_exception",
+          "text": "Carrera entre venta y reparacion por ultima unidad no genera stock negativo."
+        }
+      ],
+      "status": "PLANNED",
+      "sources": [
+        "F2",
+        "F7",
+        "F8",
+        "F9"
+      ],
+      "implementation_evidence": null
+    },
+    {
+      "id": "HU-028",
+      "title": "Venta asistida",
+      "task": "P16",
+      "phase": 7,
+      "screen_ids": [
+        "AD17",
+        "AD29",
+        "AD30",
+        "AS11"
+      ],
+      "goal": "Reutilizar dinero e inventario",
+      "acceptance": [
+        {
+          "id": "HU-028.AC1",
+          "type": "success",
+          "text": "Venta valida registra items, pago y movimiento vinculado."
+        },
+        {
+          "id": "HU-028.AC2",
+          "type": "negative_or_exception",
+          "text": "Cancelar venta no oculta dinero ni devuelve stock sin evento autorizado."
+        }
+      ],
+      "status": "PLANNED",
+      "sources": [
+        "F2",
+        "F7",
+        "F8",
+        "F9"
+      ],
+      "implementation_evidence": null
+    },
+    {
+      "id": "HU-029",
+      "title": "Entrega del equipo",
+      "task": "P11",
+      "phase": 5,
+      "screen_ids": [
+        "AD35",
+        "AS09",
+        "CL24"
+      ],
+      "goal": "Custodia separada de dinero",
+      "acceptance": [
+        {
+          "id": "HU-029.AC1",
+          "type": "success",
+          "text": "Con habilitacion y receptor verificados se guarda constancia de entrega."
+        },
+        {
+          "id": "HU-029.AC2",
+          "type": "negative_or_exception",
+          "text": "Saldo o QA pendiente bloquean entrega salvo excepcion aprobada; pago no marca entregado solo."
+        }
+      ],
+      "status": "PLANNED",
+      "sources": [
+        "F2",
+        "F7",
+        "F8",
+        "F9"
+      ],
+      "implementation_evidence": null
+    },
+    {
+      "id": "HU-030",
+      "title": "Reingreso y no reparable",
+      "task": "P11",
+      "phase": 5,
+      "screen_ids": [
+        "AD36"
+      ],
+      "goal": "Conservar la historia",
+      "acceptance": [
+        {
+          "id": "HU-030.AC1",
+          "type": "success",
+          "text": "Garantia genera nueva OT vinculada y resolucion conserva la original."
+        },
+        {
+          "id": "HU-030.AC2",
+          "type": "negative_or_exception",
+          "text": "No borrar trabajo/cobros originales para simular devolucion o cancelacion."
+        }
+      ],
+      "status": "PLANNED",
+      "sources": [
+        "F2",
+        "F7",
+        "F8",
+        "F9"
+      ],
+      "implementation_evidence": null
+    },
+    {
+      "id": "HU-031",
+      "title": "Mensajes por audiencia",
+      "task": "P18",
+      "phase": 8,
+      "screen_ids": [
+        "AD18",
+        "AS06",
+        "TE09",
+        "CL13"
+      ],
+      "goal": "Nota interna nunca llega al cliente",
+      "acceptance": [
+        {
+          "id": "HU-031.AC1",
+          "type": "success",
+          "text": "Mensaje con client_message_id llega una vez al destinatario autorizado."
+        },
+        {
+          "id": "HU-031.AC2",
+          "type": "negative_or_exception",
+          "text": "Intento de leer nota interna desde cliente se deniega sin filtrar texto."
+        }
+      ],
+      "status": "PLANNED",
+      "sources": [
+        "F2",
+        "F7",
+        "F8",
+        "F9"
+      ],
+      "implementation_evidence": null
+    },
+    {
+      "id": "HU-032",
+      "title": "WhatsApp para todos",
+      "task": "P17",
+      "phase": 8,
+      "screen_ids": [
+        "SU12",
+        "AD21",
+        "CL23"
+      ],
+      "goal": "Abrir no equivale a enviar",
+      "acceptance": [
+        {
+          "id": "HU-032.AC1",
+          "type": "success",
+          "text": "Basico abre mensaje preconfigurado con datos permitidos."
+        },
+        {
+          "id": "HU-032.AC2",
+          "type": "negative_or_exception",
+          "text": "Volver de WhatsApp no marca entregado/leido sin evidencia del proveedor."
+        }
+      ],
+      "status": "PLANNED",
+      "sources": [
+        "F2",
+        "F7",
+        "F8",
+        "F9"
+      ],
+      "implementation_evidence": null
+    },
+    {
+      "id": "HU-033",
+      "title": "Agenda y perfil Asesor",
+      "task": "P26",
+      "phase": 5,
+      "screen_ids": [
+        "AS01",
+        "AS10",
+        "AS12"
+      ],
+      "goal": "Atencion sin privilegios globales",
+      "acceptance": [
+        {
+          "id": "HU-033.AC1",
+          "type": "success",
+          "text": "Asesor organiza tareas del alcance y solicita permiso sin concederselo."
+        },
+        {
+          "id": "HU-033.AC2",
+          "type": "negative_or_exception",
+          "text": "Cambiar preferencia del perfil no modifica rol ni delegacion."
+        }
+      ],
+      "status": "PLANNED",
+      "sources": [
+        "F2",
+        "F7",
+        "F8",
+        "F9"
+      ],
+      "implementation_evidence": null
+    },
+    {
+      "id": "HU-034",
+      "title": "Documentos y plantillas",
+      "task": "P12",
+      "phase": 5,
+      "screen_ids": [
+        "AD34",
+        "AD32",
+        "SU15"
+      ],
+      "goal": "Snapshot versionado",
+      "acceptance": [
+        {
+          "id": "HU-034.AC1",
+          "type": "success",
+          "text": "Cambio de plantilla afecta nuevas emisiones; copia antigua conserva version."
+        },
+        {
+          "id": "HU-034.AC2",
+          "type": "negative_or_exception",
+          "text": "Nueva descarga no toma importes editados para reescribir un recibo."
+        }
+      ],
+      "status": "PLANNED",
+      "sources": [
+        "F2",
+        "F7",
+        "F8",
+        "F9"
+      ],
+      "implementation_evidence": null
+    },
+    {
+      "id": "HU-035",
+      "title": "Medios de pago negocio",
+      "task": "P14",
+      "phase": 6,
+      "screen_ids": [
+        "AD20"
+      ],
+      "goal": "Cuentas del comercio correcto",
+      "acceptance": [
+        {
+          "id": "HU-035.AC1",
+          "type": "success",
+          "text": "Configurar Bre-B/Nequi/transferencia/efectivo muestra instrucciones propias."
+        },
+        {
+          "id": "HU-035.AC2",
+          "type": "negative_or_exception",
+          "text": "Cuenta receptora de otro comercio o SaaS no aparece en cobro de OT."
+        }
+      ],
+      "status": "PLANNED",
+      "sources": [
+        "F2",
+        "F7",
+        "F8",
+        "F9"
+      ],
+      "implementation_evidence": null
+    },
+    {
+      "id": "HU-036",
+      "title": "Planes y ciclo SaaS",
+      "task": "P19",
+      "phase": 9,
+      "screen_ids": [
+        "SU06",
+        "SU16",
+        "SU07",
+        "SU17",
+        "SU08",
+        "AD23"
+      ],
+      "goal": "Facturar un ciclo una vez",
+      "acceptance": [
+        {
+          "id": "HU-036.AC1",
+          "type": "success",
+          "text": "Job con politica de ensayo crea un solo cargo por periodo."
+        },
+        {
+          "id": "HU-036.AC2",
+          "type": "negative_or_exception",
+          "text": "Reintentar job o pago cliente al negocio no paga ni duplica mensualidad."
+        }
+      ],
+      "status": "PLANNED",
+      "sources": [
+        "F2",
+        "F7",
+        "F8",
+        "F9"
+      ],
+      "implementation_evidence": null
+    },
+    {
+      "id": "HU-037",
+      "title": "Suspension y cortesia",
+      "task": "P20",
+      "phase": 9,
+      "screen_ids": [
+        "SU18",
+        "CL15",
+        "AD23"
+      ],
+      "goal": "Control de acceso por servidor",
+      "acceptance": [
+        {
+          "id": "HU-037.AC1",
+          "type": "success",
+          "text": "Impago tras gracia aprobada restringe operaciones y deja pago/soporte."
+        },
+        {
+          "id": "HU-037.AC2",
+          "type": "negative_or_exception",
+          "text": "Peticion directa no elude suspension; cortesia no se suma a ingresos."
+        }
+      ],
+      "status": "PLANNED",
+      "sources": [
+        "F2",
+        "F7",
+        "F8",
+        "F9"
+      ],
+      "implementation_evidence": null
+    },
+    {
+      "id": "HU-038",
+      "title": "PWA offline y actualizacion",
+      "task": "P23",
+      "phase": 10,
+      "screen_ids": [
+        "TE10",
+        "AU06"
+      ],
+      "goal": "Borrador local no es hecho",
+      "acceptance": [
+        {
+          "id": "HU-038.AC1",
+          "type": "success",
+          "text": "Nota local se identifica pendiente y se revalida al reconectar."
+        },
+        {
+          "id": "HU-038.AC2",
+          "type": "negative_or_exception",
+          "text": "Stock, pago, entrega o aprobacion offline no se confirman definitivamente."
+        }
+      ],
+      "status": "PLANNED",
+      "sources": [
+        "F2",
+        "F7",
+        "F8",
+        "F9"
+      ],
+      "implementation_evidence": null
+    },
+    {
+      "id": "HU-039",
+      "title": "Evidencias y subidas",
+      "task": "P09",
+      "phase": 5,
+      "screen_ids": [
+        "TE12",
+        "CL04",
+        "AD05"
+      ],
+      "goal": "Archivos seguros",
+      "acceptance": [
+        {
+          "id": "HU-039.AC1",
+          "type": "success",
+          "text": "Archivo permitido se valida y asocia al recurso correcto."
+        },
+        {
+          "id": "HU-039.AC2",
+          "type": "negative_or_exception",
+          "text": "MIME/tamano rechazado no pierde archivos ya subidos ni deja acceso publico."
+        }
+      ],
+      "status": "PLANNED",
+      "sources": [
+        "F2",
+        "F7",
+        "F8",
+        "F9"
+      ],
+      "implementation_evidence": null
+    },
+    {
+      "id": "HU-040",
+      "title": "Dashboards y exportes",
+      "task": "P21",
+      "phase": 10,
+      "screen_ids": [
+        "SU01",
+        "SU20",
+        "AD01",
+        "AD22"
+      ],
+      "goal": "Metricas sin doble conteo",
+      "acceptance": [
+        {
+          "id": "HU-040.AC1",
+          "type": "success",
+          "text": "Cobros netos consideran abonos una vez y muestran fecha del dato."
+        },
+        {
+          "id": "HU-040.AC2",
+          "type": "negative_or_exception",
+          "text": "Datos parciales no parecen cero real ni se mezclan en exporte cross-tenant."
+        }
+      ],
+      "status": "PLANNED",
+      "sources": [
+        "F2",
+        "F7",
+        "F8",
+        "F9"
+      ],
+      "implementation_evidence": null
+    },
+    {
+      "id": "HU-041",
+      "title": "Auditoria y soporte",
+      "task": "P22",
+      "phase": 10,
+      "screen_ids": [
+        "SU13",
+        "SU14",
+        "SU11"
+      ],
+      "goal": "Acciones rastreables",
+      "acceptance": [
+        {
+          "id": "HU-041.AC1",
+          "type": "success",
+          "text": "Soporte relaciona evento, operacion y documento con actor real."
+        },
+        {
+          "id": "HU-041.AC2",
+          "type": "negative_or_exception",
+          "text": "Ninguna UI elimina trazas ni muestra secretos completos en logs."
+        }
+      ],
+      "status": "PLANNED",
+      "sources": [
+        "F2",
+        "F7",
+        "F8",
+        "F9"
+      ],
+      "implementation_evidence": null
+    },
+    {
+      "id": "HU-042",
+      "title": "Privacidad y condiciones",
+      "task": "P31",
+      "phase": 11,
+      "screen_ids": [
+        "AD33",
+        "CL14"
+      ],
+      "goal": "Politicas aprobadas",
+      "acceptance": [
+        {
+          "id": "HU-042.AC1",
+          "type": "success",
+          "text": "Piloto muestra condiciones versionadas y preferencias registradas."
+        },
+        {
+          "id": "HU-042.AC2",
+          "type": "negative_or_exception",
+          "text": "No se activa borrado irreversible o plazo de garantia inventado."
+        }
+      ],
+      "status": "PLANNED",
+      "sources": [
+        "F2",
+        "F7",
+        "F8",
+        "F9"
+      ],
+      "implementation_evidence": null
+    },
+    {
+      "id": "HU-043",
+      "title": "Cobertura de controles UX",
+      "task": "P29",
+      "phase": 10,
+      "screen_ids": [],
+      "goal": "Cada accion tiene exito, error y recuperacion",
+      "acceptance": [
+        {
+          "id": "HU-043.AC1",
+          "type": "success",
+          "text": "Las 363 acciones del catalogo conservan IDs y contrato de resultados."
+        },
+        {
+          "id": "HU-043.AC2",
+          "type": "negative_or_exception",
+          "text": "Ningun destino compartido concede otro rol; los pendientes de implementacion son explicitos."
+        }
+      ],
+      "status": "PLANNED",
+      "sources": [
+        "F2",
+        "F7",
+        "F8",
+        "F9"
+      ],
+      "implementation_evidence": null
+    },
+    {
+      "id": "HU-044",
+      "title": "Piloto operativo e impresora",
+      "task": "P31",
+      "phase": 11,
+      "screen_ids": [
+        "VR04"
+      ],
+      "goal": "Validacion en entorno real autorizado",
+      "acceptance": [
+        {
+          "id": "HU-044.AC1",
+          "type": "success",
+          "text": "Se prueba restore y salida fisica Carta/A4/80mm segun decision del piloto."
+        },
+        {
+          "id": "HU-044.AC2",
+          "type": "negative_or_exception",
+          "text": "Sin evidencia de hardware no se declara compatibilidad certificada ni go-live completo."
+        }
+      ],
+      "status": "PLANNED",
+      "sources": [
+        "F2",
+        "F7",
+        "F8",
+        "F9"
+      ],
+      "implementation_evidence": null
+    }
+  ]
+}

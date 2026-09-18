@@ -1,0 +1,437 @@
+[
+  [
+    "Super Usuario",
+    "Login",
+    "AU01"
+  ],
+  [
+    "Super Usuario",
+    "Dashboard SaaS",
+    "SU01"
+  ],
+  [
+    "Super Usuario",
+    "Negocios - listado",
+    "SU02"
+  ],
+  [
+    "Super Usuario",
+    "Negocio - detalle",
+    "SU04"
+  ],
+  [
+    "Super Usuario",
+    "Crear comercio",
+    "SU03"
+  ],
+  [
+    "Super Usuario",
+    "Editar comercio",
+    "SU19"
+  ],
+  [
+    "Super Usuario",
+    "Acceso CRM comercio",
+    "SU05"
+  ],
+  [
+    "Super Usuario",
+    "Usuarios globales",
+    "SU10"
+  ],
+  [
+    "Super Usuario",
+    "Planes - listado",
+    "SU06"
+  ],
+  [
+    "Super Usuario",
+    "Plan - editor",
+    "SU16"
+  ],
+  [
+    "Super Usuario",
+    "Suscripciones",
+    "SU07, SU18"
+  ],
+  [
+    "Super Usuario",
+    "Factura SaaS - detalle",
+    "SU17"
+  ],
+  [
+    "Super Usuario",
+    "Pagos SaaS",
+    "SU08"
+  ],
+  [
+    "Super Usuario",
+    "URLs y dominios",
+    "SU09"
+  ],
+  [
+    "Super Usuario",
+    "Integraciones globales",
+    "SU11"
+  ],
+  [
+    "Super Usuario",
+    "Auditoria global",
+    "SU13"
+  ],
+  [
+    "Super Usuario",
+    "Soporte - casos",
+    "SU14"
+  ],
+  [
+    "Super Usuario",
+    "Configuracion global",
+    "SU15"
+  ],
+  [
+    "Administrador",
+    "Dashboard negocio",
+    "AD01"
+  ],
+  [
+    "Administrador",
+    "Reparaciones - bandeja",
+    "AD02"
+  ],
+  [
+    "Administrador",
+    "OT - detalle",
+    "AD04"
+  ],
+  [
+    "Administrador",
+    "Recepcion de equipo",
+    "AD05"
+  ],
+  [
+    "Administrador",
+    "Clientes - listado",
+    "AD12"
+  ],
+  [
+    "Administrador",
+    "Cliente - detalle",
+    "AD13"
+  ],
+  [
+    "Administrador",
+    "Equipos - listado",
+    "AD27"
+  ],
+  [
+    "Administrador",
+    "Equipo - historial",
+    "AD27"
+  ],
+  [
+    "Administrador",
+    "Tecnicos - listado",
+    "AD14"
+  ],
+  [
+    "Administrador",
+    "Tecnico - permisos",
+    "AD25"
+  ],
+  [
+    "Administrador",
+    "Cotizaciones - listado",
+    "AD26"
+  ],
+  [
+    "Administrador",
+    "Productos - listado",
+    "AD15"
+  ],
+  [
+    "Administrador",
+    "Producto - detalle",
+    "AD16"
+  ],
+  [
+    "Administrador",
+    "Inventario - stock",
+    "AD15"
+  ],
+  [
+    "Administrador",
+    "Movimientos inventario",
+    "AD28"
+  ],
+  [
+    "Administrador",
+    "Ventas - listado",
+    "AD29"
+  ],
+  [
+    "Administrador",
+    "Nueva venta",
+    "AD17"
+  ],
+  [
+    "Administrador",
+    "Venta - detalle",
+    "AD30"
+  ],
+  [
+    "Administrador",
+    "Pagos - listado",
+    "AD11"
+  ],
+  [
+    "Administrador",
+    "Pago - verificacion",
+    "AD31"
+  ],
+  [
+    "Administrador",
+    "Abonos y saldos",
+    "AD11"
+  ],
+  [
+    "Administrador",
+    "Recibos",
+    "AD32"
+  ],
+  [
+    "Administrador",
+    "Mensajes",
+    "AD18"
+  ],
+  [
+    "Administrador",
+    "WhatsApp y plantillas",
+    "AD21"
+  ],
+  [
+    "Administrador",
+    "Estadisticas",
+    "AD22"
+  ],
+  [
+    "Administrador",
+    "Pagina publica - editor",
+    "AD19"
+  ],
+  [
+    "Administrador",
+    "Medios de pago",
+    "AD20"
+  ],
+  [
+    "Administrador",
+    "Garantias y politicas",
+    "AD33"
+  ],
+  [
+    "Administrador",
+    "Numeracion documentos",
+    "AD34"
+  ],
+  [
+    "Administrador",
+    "Usuarios y permisos",
+    "AD25"
+  ],
+  [
+    "Administrador",
+    "Mi suscripcion",
+    "AD23"
+  ],
+  [
+    "Administrador",
+    "Configuracion negocio",
+    "AD24"
+  ],
+  [
+    "Tecnico",
+    "Inicio / Mis trabajos",
+    "TE01, TE02"
+  ],
+  [
+    "Tecnico",
+    "Escanear QR",
+    "TE03"
+  ],
+  [
+    "Tecnico",
+    "OT movil - resumen",
+    "TE04"
+  ],
+  [
+    "Tecnico",
+    "Recepcion movil",
+    "TE11"
+  ],
+  [
+    "Tecnico",
+    "Diagnostico",
+    "TE05"
+  ],
+  [
+    "Tecnico",
+    "Fotos/evidencias",
+    "TE12"
+  ],
+  [
+    "Tecnico",
+    "Repuestos y mano de obra",
+    "TE06"
+  ],
+  [
+    "Tecnico",
+    "Cambio de estado",
+    "TE07"
+  ],
+  [
+    "Tecnico",
+    "Checklist QA",
+    "TE08"
+  ],
+  [
+    "Tecnico",
+    "Mensajes OT",
+    "TE09"
+  ],
+  [
+    "Tecnico",
+    "Registrar efectivo",
+    "TE13"
+  ],
+  [
+    "Tecnico",
+    "Historial OT",
+    "TE14"
+  ],
+  [
+    "Cliente",
+    "Login/registro",
+    "CL02"
+  ],
+  [
+    "Cliente",
+    "Inicio cliente",
+    "CL16"
+  ],
+  [
+    "Cliente",
+    "Mis reparaciones",
+    "CL07"
+  ],
+  [
+    "Cliente",
+    "Nueva solicitud",
+    "CL03-CL05"
+  ],
+  [
+    "Cliente",
+    "Registrar equipo",
+    "CL03"
+  ],
+  [
+    "Cliente",
+    "Cargar fotos",
+    "CL04"
+  ],
+  [
+    "Cliente",
+    "OT - seguimiento",
+    "CL08"
+  ],
+  [
+    "Cliente",
+    "Cotizacion - detalle",
+    "CL09"
+  ],
+  [
+    "Cliente",
+    "Aprobar/Rechazar",
+    "CL09"
+  ],
+  [
+    "Cliente",
+    "Mensajes",
+    "CL13"
+  ],
+  [
+    "Cliente",
+    "Pago - elegir medio",
+    "CL10"
+  ],
+  [
+    "Cliente",
+    "Reportar pago",
+    "CL11"
+  ],
+  [
+    "Cliente",
+    "Adjuntar comprobante",
+    "CL11"
+  ],
+  [
+    "Cliente",
+    "Mis pagos",
+    "CL18"
+  ],
+  [
+    "Cliente",
+    "Recibo PDF",
+    "CL19"
+  ],
+  [
+    "Cliente",
+    "Mis equipos",
+    "CL17"
+  ],
+  [
+    "Cliente",
+    "Mi perfil",
+    "CL14"
+  ],
+  [
+    "Publico",
+    "Inicio publico",
+    "CL01"
+  ],
+  [
+    "Publico",
+    "Servicios",
+    "CL20"
+  ],
+  [
+    "Publico",
+    "Productos",
+    "CL21"
+  ],
+  [
+    "Publico",
+    "Producto publico",
+    "CL22"
+  ],
+  [
+    "Publico",
+    "Solicitar reparacion",
+    "CL02-CL05"
+  ],
+  [
+    "Publico",
+    "Consultar reparacion",
+    "CL26"
+  ],
+  [
+    "Publico",
+    "Contacto/ubicacion",
+    "CL23"
+  ],
+  [
+    "Publico",
+    "Servicio suspendido",
+    "CL15"
+  ]
+]

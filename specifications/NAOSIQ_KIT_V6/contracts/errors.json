@@ -1,0 +1,181 @@
+{
+  "version": "5.0",
+  "note": "Los codigos de atlas identifican acciones; estos codigos identifican causas. HTTP 0 significa estado local, no respuesta del servidor. Mensajes listos para revision editorial.",
+  "items": [
+    {
+      "code": "AUTH_REQUIRED",
+      "http_status": 401,
+      "message": "Tu sesion finalizo. Inicia sesion para continuar.",
+      "recovery": "REAUTHENTICATE",
+      "retry_safe_without_new_business_fact": false
+    },
+    {
+      "code": "ACCESS_DENIED",
+      "http_status": 403,
+      "message": "No tienes acceso a esta accion o documento.",
+      "recovery": "RETURN_SAFE_CONTEXT",
+      "retry_safe_without_new_business_fact": false
+    },
+    {
+      "code": "RESOURCE_NOT_AVAILABLE",
+      "http_status": 404,
+      "message": "Este recurso no esta disponible.",
+      "recovery": "RETURN_TO_LIST",
+      "retry_safe_without_new_business_fact": false
+    },
+    {
+      "code": "SUBSCRIPTION_SUSPENDED",
+      "http_status": 403,
+      "message": "El servicio del comercio esta suspendido. Revisa el plan o contacta al administrador.",
+      "recovery": "OPEN_SUBSCRIPTION_OR_SUPPORT",
+      "retry_safe_without_new_business_fact": false
+    },
+    {
+      "code": "VALIDATION_FAILED",
+      "http_status": 422,
+      "message": "Revisa los campos resaltados antes de continuar.",
+      "recovery": "FIX_FIELDS",
+      "retry_safe_without_new_business_fact": false
+    },
+    {
+      "code": "VERSION_CONFLICT",
+      "http_status": 409,
+      "message": "El registro cambio. Compara la version actual antes de guardar.",
+      "recovery": "COMPARE_VERSIONS",
+      "retry_safe_without_new_business_fact": false
+    },
+    {
+      "code": "IDEMPOTENCY_KEY_REUSED",
+      "http_status": 409,
+      "message": "Esta referencia corresponde a otra solicitud. Revisa la operacion original.",
+      "recovery": "QUERY_ORIGINAL_OPERATION",
+      "retry_safe_without_new_business_fact": false
+    },
+    {
+      "code": "OPERATION_RESULT_UNKNOWN",
+      "http_status": 202,
+      "message": "Estamos verificando el resultado. No repitas la operacion.",
+      "recovery": "POLL_OR_RECONCILE_ORIGINAL",
+      "retry_safe_without_new_business_fact": false
+    },
+    {
+      "code": "PAYMENT_DUPLICATE",
+      "http_status": 409,
+      "message": "Este pago ya fue registrado o requiere revisar una coincidencia.",
+      "recovery": "OPEN_EXISTING_PAYMENT",
+      "retry_safe_without_new_business_fact": false
+    },
+    {
+      "code": "AMOUNT_EXCEEDS_BALANCE",
+      "http_status": 422,
+      "message": "El valor supera el saldo pendiente. Revisa el importe.",
+      "recovery": "REFRESH_BALANCE",
+      "retry_safe_without_new_business_fact": false
+    },
+    {
+      "code": "PAYMENT_NOT_VERIFIED",
+      "http_status": 409,
+      "message": "Tu pago sigue pendiente de verificacion.",
+      "recovery": "OPEN_PAYMENT_STATUS",
+      "retry_safe_without_new_business_fact": false
+    },
+    {
+      "code": "INSUFFICIENT_STOCK",
+      "http_status": 409,
+      "message": "No hay existencias suficientes. Actualiza los productos.",
+      "recovery": "REFRESH_STOCK",
+      "retry_safe_without_new_business_fact": false
+    },
+    {
+      "code": "INVALID_TRANSITION",
+      "http_status": 409,
+      "message": "La orden no puede pasar a ese estado desde su situacion actual.",
+      "recovery": "VIEW_ALLOWED_TRANSITIONS",
+      "retry_safe_without_new_business_fact": false
+    },
+    {
+      "code": "QUOTE_NOT_CURRENT",
+      "http_status": 409,
+      "message": "Esta cotizacion vencio o fue reemplazada. Revisa la version vigente.",
+      "recovery": "OPEN_CURRENT_QUOTE",
+      "retry_safe_without_new_business_fact": false
+    },
+    {
+      "code": "QA_INCOMPLETE",
+      "http_status": 422,
+      "message": "Completa las pruebas obligatorias antes de finalizar.",
+      "recovery": "OPEN_QA",
+      "retry_safe_without_new_business_fact": false
+    },
+    {
+      "code": "SOURCE_FACT_NOT_CONFIRMED",
+      "http_status": 409,
+      "message": "El taller aun no ha confirmado la recepcion o el pago.",
+      "recovery": "OPEN_SOURCE_STATUS",
+      "retry_safe_without_new_business_fact": false
+    },
+    {
+      "code": "DOCUMENT_PENDING",
+      "http_status": 202,
+      "message": "Estamos preparando el voucher. Puedes consultar su estado.",
+      "recovery": "POLL_DOCUMENT_JOB",
+      "retry_safe_without_new_business_fact": true
+    },
+    {
+      "code": "DOCUMENT_RENDER_FAILED",
+      "http_status": 503,
+      "message": "El registro esta confirmado; no pudimos preparar el voucher.",
+      "recovery": "RETRY_RENDER_ONLY",
+      "retry_safe_without_new_business_fact": true
+    },
+    {
+      "code": "DOCUMENT_LINK_EXPIRED",
+      "http_status": 410,
+      "message": "Inicia sesion o solicita un enlace nuevo para el documento.",
+      "recovery": "AUTHORIZE_NEW_LINK",
+      "retry_safe_without_new_business_fact": true
+    },
+    {
+      "code": "DOCUMENT_ADJUSTED",
+      "http_status": 200,
+      "message": "Este documento tiene un ajuste asociado.",
+      "recovery": "OPEN_ADJUSTMENT",
+      "retry_safe_without_new_business_fact": false
+    },
+    {
+      "code": "PRINT_DIALOG_CLOSED",
+      "http_status": 200,
+      "message": "La vista de impresion se cerro. El voucher sigue disponible.",
+      "recovery": "NONE",
+      "retry_safe_without_new_business_fact": false
+    },
+    {
+      "code": "UPLOAD_REJECTED",
+      "http_status": 422,
+      "message": "El archivo no cumple el tipo o tamano permitido.",
+      "recovery": "SELECT_ALLOWED_FILE",
+      "retry_safe_without_new_business_fact": false
+    },
+    {
+      "code": "NETWORK_UNAVAILABLE",
+      "http_status": 0,
+      "message": "Sin conexion. Consulta el ultimo guardado y retoma cuando vuelva la red.",
+      "recovery": "RECONNECT_WITHOUT_REPLAY",
+      "retry_safe_without_new_business_fact": false
+    },
+    {
+      "code": "RATE_LIMITED",
+      "http_status": 429,
+      "message": "Hay demasiadas solicitudes. Espera antes de intentar de nuevo.",
+      "recovery": "WAIT_RETRY_AFTER",
+      "retry_safe_without_new_business_fact": true
+    },
+    {
+      "code": "INTERNAL_ERROR",
+      "http_status": 500,
+      "message": "No pudimos completar la solicitud. Conserva el codigo de soporte.",
+      "recovery": "QUERY_OPERATION_BEFORE_RETRY",
+      "retry_safe_without_new_business_fact": false
+    }
+  ]
+}

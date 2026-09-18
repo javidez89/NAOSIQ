@@ -1,0 +1,46 @@
+{
+  "version": "5.0",
+  "status": "Proposed flags, not runtime configuration",
+  "flags": [
+    {
+      "id": "advisor_cash_delegation",
+      "default": false,
+      "decision": "D01"
+    },
+    {
+      "id": "advisor_transfer_confirmation",
+      "default": false,
+      "decision": "D01"
+    },
+    {
+      "id": "voucher_per_partial_payment",
+      "default": false,
+      "decision": "D06"
+    },
+    {
+      "id": "read_previously_issued_documents_while_suspended",
+      "default": false,
+      "decision": "D08"
+    },
+    {
+      "id": "private_local_drafts",
+      "default": false,
+      "decision": "D05"
+    },
+    {
+      "id": "whatsapp_automation",
+      "default": false,
+      "decision": "D10"
+    },
+    {
+      "id": "payment_gateway",
+      "default": false,
+      "decision": "D10"
+    },
+    {
+      "id": "thermal_80_production",
+      "default": false,
+      "decision": "D12"
+    }
+  ]
+}

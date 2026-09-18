@@ -1,0 +1,9 @@
+# Preserve the received specification package byte-for-byte.
+specifications/NAOSIQ_KIT_V6/** -text
+
+# Treat binary assets as binary in diffs and merges.
+*.pdf binary
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.woff2 binary

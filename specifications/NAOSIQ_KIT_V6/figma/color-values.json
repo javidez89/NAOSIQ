@@ -1,0 +1,112 @@
+{
+  "brand": {
+    "night": {
+      "$type": "color",
+      "$value": "#0B0F1A"
+    },
+    "primary": {
+      "$type": "color",
+      "$value": "#7C3AED"
+    },
+    "cyan": {
+      "$type": "color",
+      "$value": "#06B6D4"
+    },
+    "ice": {
+      "$type": "color",
+      "$value": "#E5E7EB"
+    },
+    "white": {
+      "$type": "color",
+      "$value": "#FFFFFF"
+    }
+  },
+  "semantic": {
+    "success": {
+      "$type": "color",
+      "$value": "#16A34A"
+    },
+    "warning": {
+      "$type": "color",
+      "$value": "#D97706"
+    },
+    "error": {
+      "$type": "color",
+      "$value": "#DC2626"
+    }
+  },
+  "ui": {
+    "background": {
+      "$type": "color",
+      "$value": "#F7F8FC"
+    },
+    "surface": {
+      "$type": "color",
+      "$value": "#FFFFFF"
+    },
+    "text": {
+      "$type": "color",
+      "$value": "#0B0F1A"
+    },
+    "muted": {
+      "$type": "color",
+      "$value": "#526071"
+    },
+    "controlBorder": {
+      "$type": "color",
+      "$value": "#7A8495"
+    },
+    "border": {
+      "$type": "color",
+      "$value": "#E5E7EB"
+    },
+    "primaryHover": {
+      "$type": "color",
+      "$value": "#6D28D9"
+    },
+    "primaryOn": {
+      "$type": "color",
+      "$value": "#FFFFFF"
+    },
+    "focus": {
+      "$type": "color",
+      "$value": "#0E7490"
+    },
+    "purpleTint": {
+      "$type": "color",
+      "$value": "#F2ECFD"
+    },
+    "cyanText": {
+      "$type": "color",
+      "$value": "#0E7490"
+    },
+    "cyanTint": {
+      "$type": "color",
+      "$value": "#E9FAFD"
+    },
+    "successText": {
+      "$type": "color",
+      "$value": "#166534"
+    },
+    "successTint": {
+      "$type": "color",
+      "$value": "#F0FDF4"
+    },
+    "warningText": {
+      "$type": "color",
+      "$value": "#92400E"
+    },
+    "warningTint": {
+      "$type": "color",
+      "$value": "#FFFBEB"
+    },
+    "errorText": {
+      "$type": "color",
+      "$value": "#991B1B"
+    },
+    "errorTint": {
+      "$type": "color",
+      "$value": "#FEF2F2"
+    }
+  }
+}

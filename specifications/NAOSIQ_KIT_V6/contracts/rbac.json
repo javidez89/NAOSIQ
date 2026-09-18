@@ -1,0 +1,326 @@
+{
+  "version": "5.0",
+  "status": "Propuesta de permisos; D01 y delegaciones requieren aprobacion",
+  "roles": [
+    "SUPER_USER",
+    "ADMIN",
+    "ADVISOR",
+    "TECHNICIAN",
+    "CUSTOMER"
+  ],
+  "deny_by_default": true,
+  "super_user_rule": "Control total de cualquier comercio en servidor con actor real y auditoria; no reescribe ledger ni evidencia.",
+  "advisor_financial_default": "DENY",
+  "rules": {
+    "platform.manage": {
+      "scope": "platform",
+      "grants": [
+        "SUPER_USER"
+      ],
+      "audit": true
+    },
+    "organization.manage": {
+      "scope": "tenant",
+      "grants": [
+        "SUPER_USER",
+        "ADMIN"
+      ],
+      "audit": true
+    },
+    "membership.manage": {
+      "scope": "tenant",
+      "grants": [
+        "SUPER_USER",
+        "ADMIN"
+      ],
+      "forbidden": "ADMIN cannot grant SUPER_USER",
+      "audit": true
+    },
+    "orders.read": {
+      "scope": "tenant_or_assigned_or_own_customer",
+      "grants": [
+        "SUPER_USER",
+        "ADMIN",
+        "ADVISOR",
+        "TECHNICIAN",
+        "CUSTOMER"
+      ],
+      "customer_constraint": "Server links authenticated customer to the current organization and to own order; cannot choose another customer_id. Read response excludes internal notes, costs and other customers.",
+      "field_level_authorization_required": true
+    },
+    "orders.create": {
+      "scope": "tenant_or_assigned_or_own_customer",
+      "grants": [
+        "SUPER_USER",
+        "ADMIN",
+        "ADVISOR",
+        "CUSTOMER"
+      ],
+      "delegable_to": [
+        "TECHNICIAN"
+      ],
+      "customer_constraint": "Server links authenticated customer to the current organization and to own order; cannot choose another customer_id. Read response excludes internal notes, costs and other customers.",
+      "field_level_authorization_required": true
+    },
+    "orders.intake.confirm": {
+      "scope": "tenant",
+      "grants": [
+        "SUPER_USER",
+        "ADMIN",
+        "ADVISOR"
+      ],
+      "delegable_to": [
+        "TECHNICIAN"
+      ],
+      "decision": "D01",
+      "default_is_proposal": true,
+      "audit": true
+    },
+    "orders.delivery.confirm": {
+      "scope": "tenant",
+      "grants": [
+        "SUPER_USER",
+        "ADMIN"
+      ],
+      "delegable_to": [
+        "ADVISOR",
+        "TECHNICIAN"
+      ],
+      "audit": true
+    },
+    "diagnostics.write": {
+      "scope": "tenant_or_assigned",
+      "grants": [
+        "SUPER_USER",
+        "ADMIN",
+        "TECHNICIAN"
+      ],
+      "audit": true
+    },
+    "qa.confirm": {
+      "scope": "tenant_or_assigned",
+      "grants": [
+        "SUPER_USER",
+        "ADMIN",
+        "TECHNICIAN"
+      ],
+      "audit": true
+    },
+    "quotes.publish": {
+      "scope": "tenant",
+      "grants": [
+        "SUPER_USER",
+        "ADMIN"
+      ],
+      "delegable_to": [
+        "ADVISOR",
+        "TECHNICIAN"
+      ],
+      "audit": true
+    },
+    "quotes.respond.own": {
+      "scope": "own_current_quote",
+      "grants": [
+        "CUSTOMER"
+      ],
+      "audit": true
+    },
+    "payments.report": {
+      "scope": "tenant_or_own",
+      "grants": [
+        "SUPER_USER",
+        "ADMIN",
+        "ADVISOR",
+        "CUSTOMER"
+      ],
+      "delegable_to": [
+        "TECHNICIAN"
+      ]
+    },
+    "payments.confirm": {
+      "scope": "tenant",
+      "grants": [
+        "SUPER_USER",
+        "ADMIN"
+      ],
+      "delegable_to": [
+        "ADVISOR",
+        "TECHNICIAN"
+      ],
+      "delegation_default": false,
+      "decision": "D01",
+      "audit": true
+    },
+    "payments.cash.confirm": {
+      "scope": "tenant",
+      "grants": [
+        "SUPER_USER",
+        "ADMIN"
+      ],
+      "delegable_to": [
+        "ADVISOR",
+        "TECHNICIAN"
+      ],
+      "delegation_default": false,
+      "decision": "D01",
+      "audit": true
+    },
+    "payments.adjust": {
+      "scope": "tenant",
+      "grants": [
+        "SUPER_USER",
+        "ADMIN"
+      ],
+      "decision": "D07",
+      "audit": true
+    },
+    "inventory.read": {
+      "scope": "tenant",
+      "grants": [
+        "SUPER_USER",
+        "ADMIN",
+        "ADVISOR",
+        "TECHNICIAN"
+      ]
+    },
+    "inventory.consume": {
+      "scope": "tenant_assigned_order",
+      "grants": [
+        "SUPER_USER",
+        "ADMIN"
+      ],
+      "delegable_to": [
+        "TECHNICIAN"
+      ],
+      "audit": true
+    },
+    "inventory.adjust": {
+      "scope": "tenant",
+      "grants": [
+        "SUPER_USER",
+        "ADMIN"
+      ],
+      "audit": true
+    },
+    "sales.write": {
+      "scope": "tenant",
+      "grants": [
+        "SUPER_USER",
+        "ADMIN",
+        "ADVISOR"
+      ],
+      "default_is_proposal": true,
+      "audit": true
+    },
+    "customers.readwrite": {
+      "scope": "tenant",
+      "grants": [
+        "SUPER_USER",
+        "ADMIN",
+        "ADVISOR"
+      ],
+      "audit": true
+    },
+    "messages.send": {
+      "scope": "authorized_conversation_audience",
+      "grants": [
+        "SUPER_USER",
+        "ADMIN",
+        "ADVISOR",
+        "TECHNICIAN",
+        "CUSTOMER"
+      ],
+      "audit": true
+    },
+    "documents.read": {
+      "scope": "authorized_tenant_and_owner_or_delegation",
+      "grants": [
+        "SUPER_USER",
+        "ADMIN",
+        "CUSTOMER"
+      ],
+      "delegable_to": [
+        "ADVISOR",
+        "TECHNICIAN"
+      ]
+    },
+    "documents.request": {
+      "scope": "confirmed_fact_and_authorized_resource",
+      "grants": [
+        "SUPER_USER",
+        "ADMIN",
+        "CUSTOMER"
+      ],
+      "delegable_to": [
+        "ADVISOR",
+        "TECHNICIAN"
+      ],
+      "audit": true
+    },
+    "customer.self": {
+      "scope": "own_resource_in_tenant",
+      "grants": [
+        "CUSTOMER"
+      ]
+    },
+    "session.self": {
+      "scope": "authenticated_identity",
+      "grants": [
+        "SUPER_USER",
+        "ADMIN",
+        "ADVISOR",
+        "TECHNICIAN",
+        "CUSTOMER"
+      ]
+    },
+    "public.read": {
+      "scope": "published_public_projection",
+      "grants": [
+        "SUPER_USER",
+        "ADMIN",
+        "ADVISOR",
+        "TECHNICIAN",
+        "CUSTOMER",
+        "ANONYMOUS"
+      ]
+    },
+    "advisor.workspace": {
+      "scope": "tenant_or_assigned",
+      "grants": [
+        "SUPER_USER",
+        "ADMIN",
+        "ADVISOR"
+      ],
+      "default_is_proposal": true
+    },
+    "audit.read": {
+      "scope": "platform_or_tenant",
+      "grants": [
+        "SUPER_USER",
+        "ADMIN"
+      ]
+    },
+    "subscription.self.readpay": {
+      "scope": "own_tenant_subscription",
+      "grants": [
+        "SUPER_USER",
+        "ADMIN"
+      ],
+      "audit": true
+    }
+  },
+  "mandatory_checks": [
+    "identity",
+    "organization",
+    "active_membership_or_global_super_user",
+    "permission",
+    "resource_owner_or_assignment",
+    "subscription_allowlist",
+    "state_and_version"
+  ],
+  "notes": [
+    "Mismo usuario puede tener membresias diferentes.",
+    "No existe autoasignacion de rol desde el cliente.",
+    "Ver un boton en el atlas no acredita permiso."
+  ]
+}

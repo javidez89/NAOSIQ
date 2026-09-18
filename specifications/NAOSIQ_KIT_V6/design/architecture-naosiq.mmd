@@ -1,0 +1,19 @@
+flowchart TB
+  M[CRM Maestro: Super Usuario] --> B[Comercios y configuracion]
+  B --> A[Administrador y Asesor]
+  B --> T[Tecnico]
+  B --> C[Cliente y pagina publica]
+  M --> API[API: identidad, tenant, permiso, recurso, suscripcion]
+  A --> API
+  T --> API
+  C --> API
+  API --> CORE[OT, cotizaciones, QA, ventas, inventario]
+  API --> PAY[Pagos cliente al comercio]
+  API --> BILL[Suscripcion comercio a NAOSIQ]
+  CORE --> DB[(PostgreSQL y auditoria)]
+  PAY --> DB
+  BILL --> DB
+  DB --> OUT[Outbox y jobs]
+  OUT --> DOC[Documento y snapshot]
+  DOC --> FILE[PDF / Carta / A4 / 80mm]
+  OUT --> MSG[Notificaciones y adaptadores]

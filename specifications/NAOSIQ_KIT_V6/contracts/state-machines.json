@@ -1,0 +1,168 @@
+{
+  "version": "5.0",
+  "status": "Propuesta tecnica basada en separacion F7 p.38",
+  "machines": {
+    "repair": {
+      "initial": "CREATED",
+      "states": [
+        "CREATED",
+        "RECEIVED",
+        "DIAGNOSIS",
+        "WAITING_APPROVAL",
+        "IN_REPAIR",
+        "QA_TESTING",
+        "COMPLETED",
+        "NOT_REPAIRABLE",
+        "CANCELLED"
+      ],
+      "substates": [
+        "WAITING_PART",
+        "BACKUP",
+        "SOFTWARE_INSTALLATION",
+        "WAITING_CUSTOMER"
+      ],
+      "transitions": [
+        [
+          "CREATED",
+          "RECEIVED",
+          "intake.confirmed"
+        ],
+        [
+          "RECEIVED",
+          "DIAGNOSIS",
+          "assigned_and_authorized"
+        ],
+        [
+          "DIAGNOSIS",
+          "WAITING_APPROVAL",
+          "quote.published"
+        ],
+        [
+          "WAITING_APPROVAL",
+          "IN_REPAIR",
+          "current_quote.approved"
+        ],
+        [
+          "IN_REPAIR",
+          "QA_TESTING",
+          "work.recorded"
+        ],
+        [
+          "QA_TESTING",
+          "COMPLETED",
+          "required_qa.passed"
+        ],
+        [
+          "QA_TESTING",
+          "IN_REPAIR",
+          "qa.failed"
+        ],
+        [
+          "DIAGNOSIS",
+          "NOT_REPAIRABLE",
+          "technical_resolution"
+        ],
+        [
+          "WAITING_APPROVAL",
+          "CANCELLED",
+          "rejection_and_resolution"
+        ]
+      ],
+      "note": "Cancelaciones en otras etapas requieren resolucion autorizada, no transicion libre."
+    },
+    "custody": {
+      "initial": "NOT_RECEIVED",
+      "states": [
+        "NOT_RECEIVED",
+        "IN_CUSTODY",
+        "READY_FOR_DELIVERY",
+        "DELIVERED",
+        "RETURNED"
+      ],
+      "guards": [
+        "intake_event_required_for_IN_CUSTODY",
+        "QA_and_balance_policy_for_READY_FOR_DELIVERY",
+        "delivery_event_required_for_DELIVERED",
+        "return_event_required_for_RETURNED"
+      ]
+    },
+    "payment": {
+      "initial": "REPORTED",
+      "states": [
+        "PENDING",
+        "REPORTED",
+        "PROCESSING",
+        "APPROVED",
+        "REJECTED",
+        "CANCELLED",
+        "REFUNDED"
+      ],
+      "notes": [
+        "Efectivo autorizado puede crearse APPROVED en una transaccion.",
+        "REFUNDED requiere movimiento de reversa, no eliminar el ingreso.",
+        "El resultado desconocido se modela en operations; no adivinar REJECTED."
+      ]
+    },
+    "balance": {
+      "derived": true,
+      "states": [
+        "UNPAID",
+        "PARTIALLY_PAID",
+        "PAID"
+      ],
+      "formula": "total_due_minor - net_confirmed_allocations_minor",
+      "no_negative_policy": "overpayment blocked pending D07"
+    },
+    "subscription": {
+      "states": [
+        "TRIAL",
+        "ACTIVE",
+        "PAYMENT_PENDING",
+        "GRACE_PERIOD",
+        "SUSPENDED",
+        "CANCELLED",
+        "INACTIVE"
+      ],
+      "date_policy": "D03 pending",
+      "notes": [
+        "Cortesia se audita; no crea ingreso.",
+        "cancel_at_period_end no suspende antes del tiempo pagado."
+      ]
+    },
+    "document": {
+      "states": [
+        "ISSUED",
+        "ADJUSTED",
+        "VOIDED"
+      ],
+      "notes": [
+        "Estado del hecho/logical document, no del archivo.",
+        "El original se conserva ante ajuste."
+      ]
+    },
+    "document_render": {
+      "states": [
+        "QUEUED",
+        "RENDERING",
+        "READY",
+        "FAILED"
+      ],
+      "notes": [
+        "Reintentar misma version/formato, sin repetir hecho."
+      ]
+    },
+    "operation": {
+      "states": [
+        "ACCEPTED",
+        "PROCESSING",
+        "SUCCEEDED",
+        "FAILED",
+        "RECONCILIATION_REQUIRED"
+      ],
+      "notes": [
+        "Estado UNKNOWN del cliente significa que falta observar resultado.",
+        "FAILED solo con fallo confirmado; cierre de pantalla no lo establece."
+      ]
+    }
+  }
+}

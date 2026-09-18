@@ -1,0 +1,142 @@
+[
+  {
+    "id": "D01",
+    "decision": "Permisos y limites financieros del Asesor y Tecnico",
+    "owner": "Propietario + comercio piloto",
+    "provisional_handling": "Asesor y Tecnico sin conciliacion, caja, reversas ni descuentos por defecto. Disenar escenarios delegados sin activarlos.",
+    "blocks": "P14/P26; confirmar dinero delegado",
+    "status": "PENDIENTE_APROBACION",
+    "approved_by": null,
+    "approved_at": null
+  },
+  {
+    "id": "D02",
+    "decision": "Precios, cupos y numero de usuarios por plan",
+    "owner": "Propietario NAOSIQ",
+    "provisional_handling": "Precios null, no publicar tarifas inventadas. Plan de desarrollo sin cobro real.",
+    "blocks": "P19; alta comercial productiva",
+    "status": "PENDIENTE_APROBACION",
+    "approved_by": null,
+    "approved_at": null
+  },
+  {
+    "id": "D03",
+    "decision": "Dias de gracia, ancla mensual y tratamiento de pago tardio",
+    "owner": "Propietario + operacion SaaS",
+    "provisional_handling": "Configurar reglas como propuestas; no ejecutar suspension real hasta aprobar calendario.",
+    "blocks": "P19/P20; job de cobro real",
+    "status": "PENDIENTE_APROBACION",
+    "approved_by": null,
+    "approved_at": null
+  },
+  {
+    "id": "D04",
+    "decision": "Sesion, elevacion y extension accesible",
+    "owner": "Seguridad + UX",
+    "provisional_handling": "25/30 minutos y 8 horas son hipotesis F7; elevacion 15 min. No presentar como politica aprobada.",
+    "blocks": "P03/P27; paso a produccion",
+    "status": "PENDIENTE_APROBACION",
+    "approved_by": null,
+    "approved_at": null
+  },
+  {
+    "id": "D05",
+    "decision": "Borradores locales, retencion y dispositivos compartidos",
+    "owner": "Seguridad + producto",
+    "provisional_handling": "Desactivar persistencia privada local por defecto; borrador servidor autenticado.",
+    "blocks": "P23/P27; modo offline persistente",
+    "status": "PENDIENTE_APROBACION",
+    "approved_by": null,
+    "approved_at": null
+  },
+  {
+    "id": "D06",
+    "decision": "Voucher por cada abono y nomenclatura del comprobante",
+    "owner": "Propietario + operacion financiera",
+    "provisional_handling": "Ledger admite abonos. Voucher final requerido; voucher parcial como opcion propuesta, pendiente de aprobacion. No presentarlo como factura electronica.",
+    "blocks": "P12/P13/P28; habilitar recibo parcial",
+    "status": "PENDIENTE_APROBACION",
+    "approved_by": null,
+    "approved_at": null
+  },
+  {
+    "id": "D07",
+    "decision": "Sobrepagos, devoluciones, descuentos y entrega excepcional",
+    "owner": "Propietario + negocio",
+    "provisional_handling": "Bloquear sobrepago, no descontar sin permiso, no entregar con saldo salvo excepcion aprobada y auditada.",
+    "blocks": "P13/P16; activar excepciones",
+    "status": "PENDIENTE_APROBACION",
+    "approved_by": null,
+    "approved_at": null
+  },
+  {
+    "id": "D08",
+    "decision": "Lectura del cliente durante suspension del comercio",
+    "owner": "Propietario NAOSIQ",
+    "provisional_handling": "Definir whitelist explicita. Documentos ya emitidos en solo lectura es propuesta, no hecho aprobado.",
+    "blocks": "P20; portal durante suspension",
+    "status": "PENDIENTE_APROBACION",
+    "approved_by": null,
+    "approved_at": null
+  },
+  {
+    "id": "D09",
+    "decision": "Limites de archivos y conservacion de evidencias",
+    "owner": "Arquitectura + privacidad",
+    "provisional_handling": "No aceptar tipos arbitrarios; limites de ensayo etiquetados, sin retencion automatica irreversible.",
+    "blocks": "P09/P23; captura productiva",
+    "status": "PENDIENTE_APROBACION",
+    "approved_by": null,
+    "approved_at": null
+  },
+  {
+    "id": "D10",
+    "decision": "Proveedor de WhatsApp automatico y pasarela avanzada",
+    "owner": "Propietario + desarrollo",
+    "provisional_handling": "WhatsApp por enlace para todos. Wompi/Bold como adaptadores opcionales; sin credenciales ni activacion real.",
+    "blocks": "P30; integraciones externas",
+    "status": "PENDIENTE_APROBACION",
+    "approved_by": null,
+    "approved_at": null
+  },
+  {
+    "id": "D11",
+    "decision": "Garantias, consentimiento, datos y entregas",
+    "owner": "Comercio + revision especializada",
+    "provisional_handling": "Textos de demostracion; no inventar plazos ni exclusiones legales.",
+    "blocks": "P09/P31; piloto con datos reales",
+    "status": "PENDIENTE_APROBACION",
+    "approved_by": null,
+    "approved_at": null
+  },
+  {
+    "id": "D12",
+    "decision": "Plan de vouchers, formatos y hardware",
+    "owner": "Propietario + negocio piloto",
+    "provisional_handling": "Propuesto incluido en Basico; Carta/A4/80 mm de referencia. 58 mm e impresion silenciosa fuera del arranque.",
+    "blocks": "P28/P31; activar impresora en local",
+    "status": "PENDIENTE_APROBACION",
+    "approved_by": null,
+    "approved_at": null
+  },
+  {
+    "id": "D13",
+    "decision": "Stack, repositorio, entornos, region y responsable de operacion",
+    "owner": "Propietario + desarrollo",
+    "provisional_handling": "Next.js/TypeScript/PostgreSQL; Supabase/Vercel candidatos. Inspeccionar repo antes de fijar versiones o contratar.",
+    "blocks": "P01/P31; provisionamiento",
+    "status": "PENDIENTE_APROBACION",
+    "approved_by": null,
+    "approved_at": null
+  },
+  {
+    "id": "D14",
+    "decision": "PWA por plataforma o por comercio y dominio propio",
+    "owner": "Producto + UX + desarrollo",
+    "provisional_handling": "Una PWA de plataforma y micrositios por ruta como propuesta inicial. No prometer instalacion separada por negocio.",
+    "blocks": "P23; identidad de instalacion",
+    "status": "PENDIENTE_APROBACION",
+    "approved_by": null,
+    "approved_at": null
+  }
+]

@@ -1,0 +1,23 @@
+{
+  "version": "6.0",
+  "source_project": "CRM TECHI",
+  "visible_brand": "NAOSIQ",
+  "routes_renamed": false,
+  "business_permissions_changed": false,
+  "native_figma_file_created": false,
+  "logo_reference_provisional": true,
+  "changes": [
+    "Palette and product type system",
+    "118 vector screen redraws",
+    "32 new brand flow maps",
+    "Contextual user microcopy; technical rules moved to reviewer notes",
+    "Voucher co-branding",
+    "2 voucher navigation outcome messages corrected"
+  ],
+  "remaining": [
+    "Official standalone logo master",
+    "Native Figma component/prototype wiring",
+    "Real repository implementation and tests",
+    "Existing pending functional decisions"
+  ]
+}

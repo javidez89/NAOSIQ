@@ -1,0 +1,29 @@
+{
+  "version": "5.0",
+  "change_id": "VCH-01",
+  "source": "F9 pp.2-12",
+  "required": [
+    "intake voucher after confirmed receipt",
+    "payment voucher after confirmed payment",
+    "customer own access and print",
+    "copy does not create new money or custody"
+  ],
+  "pending": [
+    "D06 partial voucher",
+    "D08 documents while suspended",
+    "D12 plan inclusion and formats/hardware"
+  ],
+  "logical_unique": [
+    "organization_id",
+    "document_type",
+    "source_event_id",
+    "version"
+  ],
+  "render_unique": [
+    "document_id",
+    "version",
+    "format"
+  ],
+  "printer_status_known": false,
+  "print_default": "explicit browser dialog and PDF fallback"
+}

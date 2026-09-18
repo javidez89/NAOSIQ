@@ -1,0 +1,248 @@
+{
+  "scope": "Documentos, contratos, SVG y simulador. No pruebas del backend ni de Figma o impresora real.",
+  "checks": {
+    "screen_count": {
+      "passed": true,
+      "detail": 118
+    },
+    "action_count": {
+      "passed": true,
+      "detail": 363
+    },
+    "journey_count": {
+      "passed": true,
+      "detail": 32
+    },
+    "same_screen_ids": {
+      "passed": true,
+      "detail": null
+    },
+    "same_screen_routes": {
+      "passed": true,
+      "detail": null
+    },
+    "same_action_graph": {
+      "passed": true,
+      "detail": null
+    },
+    "same_journey_nodes": {
+      "passed": true,
+      "detail": null
+    },
+    "same_timing_profiles": {
+      "passed": true,
+      "detail": null
+    },
+    "same_role_grants": {
+      "passed": true,
+      "detail": null
+    },
+    "advisor_default_denied": {
+      "passed": true,
+      "detail": null
+    },
+    "valid_svg": {
+      "passed": true,
+      "detail": []
+    },
+    "all_visual_action_controls": {
+      "passed": true,
+      "detail": 363
+    },
+    "no_previous_visual_identity": {
+      "passed": true,
+      "detail": []
+    },
+    "no_font_files": {
+      "passed": true,
+      "detail": null
+    },
+    "text_color_target_4_5": {
+      "passed": true,
+      "detail": [
+        {
+          "use": "Texto base",
+          "foreground": "#0B0F1A",
+          "background": "#FFFFFF",
+          "ratio": 19.13
+        },
+        {
+          "use": "CTA",
+          "foreground": "#FFFFFF",
+          "background": "#7C3AED",
+          "ratio": 5.7
+        },
+        {
+          "use": "Texto secundario",
+          "foreground": "#526071",
+          "background": "#FFFFFF",
+          "ratio": 6.42
+        },
+        {
+          "use": "Cian informativo",
+          "foreground": "#0E7490",
+          "background": "#E9FAFD",
+          "ratio": 4.99
+        },
+        {
+          "use": "Exito",
+          "foreground": "#166534",
+          "background": "#F0FDF4",
+          "ratio": 6.81
+        },
+        {
+          "use": "Advertencia",
+          "foreground": "#92400E",
+          "background": "#FFFBEB",
+          "ratio": 6.84
+        },
+        {
+          "use": "Error",
+          "foreground": "#991B1B",
+          "background": "#FEF2F2",
+          "ratio": 7.6
+        }
+      ]
+    },
+    "control_border_target_3": {
+      "passed": true,
+      "detail": 3.78
+    },
+    "pdf_303_pages": {
+      "passed": true,
+      "detail": 303
+    },
+    "pdf_no_empty_pages": {
+      "passed": true,
+      "detail": []
+    },
+    "pdf_text_in_media_bounds": {
+      "passed": true,
+      "detail": []
+    },
+    "layout_no_overflow": {
+      "passed": true,
+      "detail": null
+    },
+    "browser_scenarios": {
+      "passed": true,
+      "detail": {
+        "runs": 2178,
+        "failures": []
+      }
+    },
+    "browser_no_js_errors": {
+      "passed": true,
+      "detail": []
+    },
+    "advisor_simulated_financial_guard": {
+      "passed": true,
+      "detail": {
+        "defaultAllowed": false,
+        "delegatedAllowed": true,
+        "handoff": {
+          "screen": "AS04",
+          "role": "ADVISOR"
+        }
+      }
+    },
+    "handoff_keeps_sender_role": {
+      "passed": true,
+      "detail": {
+        "screen": "AS04",
+        "role": "ADVISOR"
+      }
+    },
+    "browser_width_390": {
+      "passed": true,
+      "detail": null
+    },
+    "browser_width_430": {
+      "passed": true,
+      "detail": null
+    },
+    "browser_width_1440": {
+      "passed": true,
+      "detail": null
+    },
+    "svg_button_connected": {
+      "passed": true,
+      "detail": null
+    },
+    "cash_no_transfer_report_label": {
+      "passed": true,
+      "detail": " recibido. El comercio verificará el\nmovimiento.\nTu siguiente paso\nVerifica el titular antes de pagar. En efectivo,\ncoordina la atención en el local; no reportes una\ntransferencia.\nVer datos del comercio\nVer horario / avisar al taller\nElegir otro medio\nInicio\nÓrdenes\nMensajes\nPerfil\n\nVista redibujada NAOSIQ v6; contenido y acciones basados en v5 y navegacion v5.1. Los botones dentro de la pantalla y el panel de acciones permiten simular resultados. Los campos son ejemplos, no un formulario real."
+    }
+  },
+  "color_pairs": [
+    {
+      "use": "Texto base",
+      "foreground": "#0B0F1A",
+      "background": "#FFFFFF",
+      "ratio": 19.13
+    },
+    {
+      "use": "CTA",
+      "foreground": "#FFFFFF",
+      "background": "#7C3AED",
+      "ratio": 5.7
+    },
+    {
+      "use": "Texto secundario",
+      "foreground": "#526071",
+      "background": "#FFFFFF",
+      "ratio": 6.42
+    },
+    {
+      "use": "Cian informativo",
+      "foreground": "#0E7490",
+      "background": "#E9FAFD",
+      "ratio": 4.99
+    },
+    {
+      "use": "Exito",
+      "foreground": "#166534",
+      "background": "#F0FDF4",
+      "ratio": 6.81
+    },
+    {
+      "use": "Advertencia",
+      "foreground": "#92400E",
+      "background": "#FFFBEB",
+      "ratio": 6.84
+    },
+    {
+      "use": "Error",
+      "foreground": "#991B1B",
+      "background": "#FEF2F2",
+      "ratio": 7.6
+    }
+  ],
+  "limitations": [
+    "No backend, external integrations, native Figma or physical printer tested.",
+    "SVG text and group geometry reviewed through raster samples and full PDF contact sheets.",
+    "Full compliance audit of accessibility is not claimed; listed color pairs only.",
+    "Logo is a provisional raster reference extracted from the supplied manual."
+  ],
+  "visual_review_status": "Completed: all 303 PDF pages rendered and examined in 16 contact sheets; selected pages and print models inspected at enlarged scale. No human approval or accessibility certification implied.",
+  "visual_review": {
+    "pdf_pages_rendered": 303,
+    "contact_sheets_reviewed": 16,
+    "enlarged_examples": [
+      "cover",
+      "color tokens",
+      "F09 journey",
+      "AS03 intake",
+      "AS07 action outcomes",
+      "AD04 order",
+      "CL08 tracking",
+      "CL25 payment instructions",
+      "VR03 payment voucher",
+      "VR04 print actions",
+      "Carta intake",
+      "80mm payment"
+    ],
+    "layout_issues_found_in_final_pass": [],
+    "scope_limit": "Visual inspection of contact sheets plus enlarged examples, not pixel-by-pixel inspection of every element."
+  }
+}

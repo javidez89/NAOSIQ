@@ -1,0 +1,69 @@
+{
+  "base_screens": 114,
+  "base_actions": 342,
+  "current_screens": 118,
+  "current_actions": 363,
+  "appended_actions": [
+    [
+      "AD05",
+      "AD05.A4",
+      "Añadida sin cambiar A1-A3",
+      "VR01"
+    ],
+    [
+      "AS03",
+      "AS03.A4",
+      "Añadida sin cambiar A1-A3",
+      "VR01"
+    ],
+    [
+      "TE11",
+      "TE11.A4",
+      "Añadida sin cambiar A1-A3",
+      "VR01"
+    ],
+    [
+      "AD11",
+      "AD11.A4",
+      "Añadida sin cambiar A1-A3",
+      "VR03"
+    ],
+    [
+      "AS08",
+      "AS08.A4",
+      "Añadida sin cambiar A1-A3",
+      "VR03"
+    ],
+    [
+      "CL18",
+      "CL18.A4",
+      "Añadida sin cambiar A1-A3",
+      "VR03"
+    ],
+    [
+      "AD32",
+      "AD32.A4",
+      "Añadida sin cambiar A1-A3",
+      "VR04"
+    ],
+    [
+      "CL12",
+      "CL12.A4",
+      "Añadida sin cambiar A1-A3",
+      "VR02"
+    ],
+    [
+      "CL19",
+      "CL19.A4",
+      "Añadida sin cambiar A1-A3",
+      "VR04"
+    ]
+  ],
+  "new_screens": [
+    "VR01",
+    "VR02",
+    "VR03",
+    "VR04"
+  ],
+  "source": "F9 + integracion explicita V5"
+}

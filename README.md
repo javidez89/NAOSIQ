@@ -5,6 +5,16 @@
 Aplicación Next.js con autenticación, PostgreSQL/Supabase local y datos sintéticos
 persistentes. El trabajo parte de la base 0.1.0 guardada en este proyecto.
 
+## Repositorio unificado
+
+La especificación completa que originó la implementación está versionada en
+[`specifications/NAOSIQ_KIT_V6`](specifications/NAOSIQ_KIT_V6). Allí se conservan
+sin modificaciones los prompts `BR00–BR03` y `P00–P31`, los PDF, las 118
+pantallas, los 32 recorridos, los 363 contratos de acciones, los escenarios de
+aceptación y los recursos visuales. Consulte
+[`specifications/README.md`](specifications/README.md) para conocer la separación
+entre especificación, código ejecutable y archivos locales generados.
+
 ## Abrir en este equipo
 
 1. Abra Docker Desktop y espere a que esté listo.
@@ -98,7 +108,8 @@ Documentos de referencia conservados:
 [alcance](docs/00-scope.md), [arquitectura](docs/02-architecture.md),
 [datos y permisos](docs/03-database.md), [UX](docs/09-ux.md),
 [backlog](docs/10-product.md), [producción](docs/12-release.md),
-[informe original 0.1.0](reports/verification.md).
+[informe original 0.1.0](reports/verification.md) y
+[especificación NAOSIQ V6](specifications/NAOSIQ_KIT_V6/SPEC_INDEX.md).
 
 `preview:offline` conserva la maqueta histórica; la herramienta con persistencia
 es la aplicación Next.js que se inicia con `npm run local`.

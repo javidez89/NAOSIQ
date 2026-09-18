@@ -1,0 +1,946 @@
+[
+  {
+    "name": "AU01 - Acceso del personal",
+    "svg": "design/screens/AU01.svg",
+    "group": "AU",
+    "route": "/staff/login",
+    "width": 1440,
+    "height": 1010
+  },
+  {
+    "name": "AU02 - Selección de contexto",
+    "svg": "design/screens/AU02.svg",
+    "group": "AU",
+    "route": "/select-context",
+    "width": 1440,
+    "height": 1010
+  },
+  {
+    "name": "AU03 - Aviso y renovación de sesión",
+    "svg": "design/screens/AU03.svg",
+    "group": "AU",
+    "route": "/session/reauth",
+    "width": 1440,
+    "height": 1010
+  },
+  {
+    "name": "AU04 - Carga fallida y acceso restringido",
+    "svg": "design/screens/AU04.svg",
+    "group": "AU",
+    "route": "/status",
+    "width": 1440,
+    "height": 1010
+  },
+  {
+    "name": "AU05 - Recuperación y conflicto de borrador",
+    "svg": "design/screens/AU05.svg",
+    "group": "AU",
+    "route": "/drafts/recovery",
+    "width": 1440,
+    "height": 1010
+  },
+  {
+    "name": "AU06 - Centro de avisos y ayuda",
+    "svg": "design/screens/AU06.svg",
+    "group": "AU",
+    "route": "/notifications",
+    "width": 1440,
+    "height": 1010
+  },
+  {
+    "name": "SU01 - Dashboard Maestro",
+    "svg": "design/screens/SU01.svg",
+    "group": "SU",
+    "route": "/master",
+    "width": 1440,
+    "height": 1177.6999999999998
+  },
+  {
+    "name": "SU02 - Comercios",
+    "svg": "design/screens/SU02.svg",
+    "group": "SU",
+    "route": "/master/businesses",
+    "width": 1440,
+    "height": 1010
+  },
+  {
+    "name": "SU03 - Crear comercio",
+    "svg": "design/screens/SU03.svg",
+    "group": "SU",
+    "route": "/master/businesses/new",
+    "width": 1440,
+    "height": 1010
+  },
+  {
+    "name": "SU04 - Detalle del comercio",
+    "svg": "design/screens/SU04.svg",
+    "group": "SU",
+    "route": "/master/businesses/:id",
+    "width": 1440,
+    "height": 1010
+  },
+  {
+    "name": "SU05 - Control de un comercio",
+    "svg": "design/screens/SU05.svg",
+    "group": "SU",
+    "route": "/master/businesses/:id/control",
+    "width": 1440,
+    "height": 1010
+  },
+  {
+    "name": "SU06 - Planes",
+    "svg": "design/screens/SU06.svg",
+    "group": "SU",
+    "route": "/master/plans",
+    "width": 1440,
+    "height": 1010
+  },
+  {
+    "name": "SU07 - Suscripciones",
+    "svg": "design/screens/SU07.svg",
+    "group": "SU",
+    "route": "/master/subscriptions",
+    "width": 1440,
+    "height": 1010
+  },
+  {
+    "name": "SU08 - Facturación y pagos SaaS",
+    "svg": "design/screens/SU08.svg",
+    "group": "SU",
+    "route": "/master/billing",
+    "width": 1440,
+    "height": 1010
+  },
+  {
+    "name": "SU09 - URLs y dominios",
+    "svg": "design/screens/SU09.svg",
+    "group": "SU",
+    "route": "/master/domains",
+    "width": 1440,
+    "height": 1010
+  },
+  {
+    "name": "SU10 - Usuarios globales",
+    "svg": "design/screens/SU10.svg",
+    "group": "SU",
+    "route": "/master/users",
+    "width": 1440,
+    "height": 1021.85
+  },
+  {
+    "name": "SU11 - Integraciones globales",
+    "svg": "design/screens/SU11.svg",
+    "group": "SU",
+    "route": "/master/integrations",
+    "width": 1440,
+    "height": 1010
+  },
+  {
+    "name": "SU12 - WhatsApp global",
+    "svg": "design/screens/SU12.svg",
+    "group": "SU",
+    "route": "/master/whatsapp",
+    "width": 1440,
+    "height": 1010
+  },
+  {
+    "name": "SU13 - Auditoría global",
+    "svg": "design/screens/SU13.svg",
+    "group": "SU",
+    "route": "/master/audit",
+    "width": 1440,
+    "height": 1010
+  },
+  {
+    "name": "SU14 - Soporte e incidentes",
+    "svg": "design/screens/SU14.svg",
+    "group": "SU",
+    "route": "/master/support",
+    "width": 1440,
+    "height": 1010
+  },
+  {
+    "name": "SU15 - Configuración global",
+    "svg": "design/screens/SU15.svg",
+    "group": "SU",
+    "route": "/master/settings",
+    "width": 1440,
+    "height": 1010
+  },
+  {
+    "name": "SU16 - Editor de plan",
+    "svg": "design/screens/SU16.svg",
+    "group": "SU",
+    "route": "/master/plans/:id/edit",
+    "width": 1440,
+    "height": 1114.7
+  },
+  {
+    "name": "SU17 - Detalle de cargo SaaS",
+    "svg": "design/screens/SU17.svg",
+    "group": "SU",
+    "route": "/master/billing/:id",
+    "width": 1440,
+    "height": 1010
+  },
+  {
+    "name": "SU18 - Detalle de suscripción",
+    "svg": "design/screens/SU18.svg",
+    "group": "SU",
+    "route": "/master/subscriptions/:id",
+    "width": 1440,
+    "height": 1010
+  },
+  {
+    "name": "SU19 - Editar comercio",
+    "svg": "design/screens/SU19.svg",
+    "group": "SU",
+    "route": "/master/businesses/:id/edit",
+    "width": 1440,
+    "height": 1010
+  },
+  {
+    "name": "SU20 - Analítica y exportaciones SaaS",
+    "svg": "design/screens/SU20.svg",
+    "group": "SU",
+    "route": "/master/analytics",
+    "width": 1440,
+    "height": 1010
+  },
+  {
+    "name": "AD01 - Dashboard del negocio",
+    "svg": "design/screens/AD01.svg",
+    "group": "AD",
+    "route": "/app",
+    "width": 1440,
+    "height": 1177.6999999999998
+  },
+  {
+    "name": "AD02 - Reparaciones",
+    "svg": "design/screens/AD02.svg",
+    "group": "AD",
+    "route": "/app/orders",
+    "width": 1440,
+    "height": 1010
+  },
+  {
+    "name": "AD03 - Nueva orden de trabajo",
+    "svg": "design/screens/AD03.svg",
+    "group": "AD",
+    "route": "/app/orders/new",
+    "width": 1440,
+    "height": 1010
+  },
+  {
+    "name": "AD04 - Detalle de OT",
+    "svg": "design/screens/AD04.svg",
+    "group": "AD",
+    "route": "/app/orders/:id",
+    "width": 1440,
+    "height": 1065.7
+  },
+  {
+    "name": "AD05 - Recepción del equipo",
+    "svg": "design/screens/AD05.svg",
+    "group": "AD",
+    "route": "/app/orders/:id/intake",
+    "width": 1440,
+    "height": 1010
+  },
+  {
+    "name": "AD06 - Diagnóstico",
+    "svg": "design/screens/AD06.svg",
+    "group": "AD",
+    "route": "/app/orders/:id/diagnostic",
+    "width": 1440,
+    "height": 1010
+  },
+  {
+    "name": "AD07 - Cotización",
+    "svg": "design/screens/AD07.svg",
+    "group": "AD",
+    "route": "/app/orders/:id/quote",
+    "width": 1440,
+    "height": 1010
+  },
+  {
+    "name": "AD08 - Aprobación del cliente",
+    "svg": "design/screens/AD08.svg",
+    "group": "AD",
+    "route": "/app/orders/:id/approval",
+    "width": 1440,
+    "height": 1010
+  },
+  {
+    "name": "AD09 - Proceso de reparación",
+    "svg": "design/screens/AD09.svg",
+    "group": "AD",
+    "route": "/app/orders/:id/repair",
+    "width": 1440,
+    "height": 1010
+  },
+  {
+    "name": "AD10 - QA de reparación",
+    "svg": "design/screens/AD10.svg",
+    "group": "AD",
+    "route": "/app/orders/:id/qa",
+    "width": 1440,
+    "height": 1010
+  },
+  {
+    "name": "AD11 - Pagos y abonos de la OT",
+    "svg": "design/screens/AD11.svg",
+    "group": "AD",
+    "route": "/app/orders/:id/payments",
+    "width": 1440,
+    "height": 1010
+  },
+  {
+    "name": "AD12 - Clientes",
+    "svg": "design/screens/AD12.svg",
+    "group": "AD",
+    "route": "/app/customers",
+    "width": 1440,
+    "height": 1010
+  },
+  {
+    "name": "AD13 - Detalle del cliente",
+    "svg": "design/screens/AD13.svg",
+    "group": "AD",
+    "route": "/app/customers/:id",
+    "width": 1440,
+    "height": 1010
+  },
+  {
+    "name": "AD14 - Técnicos y asignaciones",
+    "svg": "design/screens/AD14.svg",
+    "group": "AD",
+    "route": "/app/technicians",
+    "width": 1440,
+    "height": 1010
+  },
+  {
+    "name": "AD15 - Inventario",
+    "svg": "design/screens/AD15.svg",
+    "group": "AD",
+    "route": "/app/inventory",
+    "width": 1440,
+    "height": 1010
+  },
+  {
+    "name": "AD16 - Detalle de producto",
+    "svg": "design/screens/AD16.svg",
+    "group": "AD",
+    "route": "/app/inventory/:id",
+    "width": 1440,
+    "height": 1010
+  },
+  {
+    "name": "AD17 - Venta / punto de venta",
+    "svg": "design/screens/AD17.svg",
+    "group": "AD",
+    "route": "/app/sales/new",
+    "width": 1440,
+    "height": 1010
+  },
+  {
+    "name": "AD18 - Mensajes del negocio",
+    "svg": "design/screens/AD18.svg",
+    "group": "AD",
+    "route": "/app/messages",
+    "width": 1440,
+    "height": 1010
+  },
+  {
+    "name": "AD19 - Editor de página pública",
+    "svg": "design/screens/AD19.svg",
+    "group": "AD",
+    "route": "/app/site",
+    "width": 1440,
+    "height": 1010
+  },
+  {
+    "name": "AD20 - Medios de pago",
+    "svg": "design/screens/AD20.svg",
+    "group": "AD",
+    "route": "/app/settings/payments",
+    "width": 1440,
+    "height": 1018.15
+  },
+  {
+    "name": "AD21 - WhatsApp del negocio",
+    "svg": "design/screens/AD21.svg",
+    "group": "AD",
+    "route": "/app/settings/whatsapp",
+    "width": 1440,
+    "height": 1010
+  },
+  {
+    "name": "AD22 - Estadísticas del negocio",
+    "svg": "design/screens/AD22.svg",
+    "group": "AD",
+    "route": "/app/analytics",
+    "width": 1440,
+    "height": 1010
+  },
+  {
+    "name": "AD23 - Mi suscripción",
+    "svg": "design/screens/AD23.svg",
+    "group": "AD",
+    "route": "/app/subscription",
+    "width": 1440,
+    "height": 1010
+  },
+  {
+    "name": "AD24 - Configuración del negocio",
+    "svg": "design/screens/AD24.svg",
+    "group": "AD",
+    "route": "/app/settings",
+    "width": 1440,
+    "height": 1010
+  },
+  {
+    "name": "AD25 - Usuarios y permisos",
+    "svg": "design/screens/AD25.svg",
+    "group": "AD",
+    "route": "/app/settings/users",
+    "width": 1440,
+    "height": 1021.85
+  },
+  {
+    "name": "AD26 - Bandeja de cotizaciones",
+    "svg": "design/screens/AD26.svg",
+    "group": "AD",
+    "route": "/app/quotes",
+    "width": 1440,
+    "height": 1010
+  },
+  {
+    "name": "AD27 - Equipos e historial",
+    "svg": "design/screens/AD27.svg",
+    "group": "AD",
+    "route": "/app/devices",
+    "width": 1440,
+    "height": 1010
+  },
+  {
+    "name": "AD28 - Movimientos de inventario",
+    "svg": "design/screens/AD28.svg",
+    "group": "AD",
+    "route": "/app/inventory/movements",
+    "width": 1440,
+    "height": 1010
+  },
+  {
+    "name": "AD29 - Listado de ventas",
+    "svg": "design/screens/AD29.svg",
+    "group": "AD",
+    "route": "/app/sales",
+    "width": 1440,
+    "height": 1010
+  },
+  {
+    "name": "AD30 - Detalle de venta",
+    "svg": "design/screens/AD30.svg",
+    "group": "AD",
+    "route": "/app/sales/:id",
+    "width": 1440,
+    "height": 1010
+  },
+  {
+    "name": "AD31 - Verificación de pago",
+    "svg": "design/screens/AD31.svg",
+    "group": "AD",
+    "route": "/app/payments/:id/review",
+    "width": 1440,
+    "height": 1010
+  },
+  {
+    "name": "AD32 - Documentos y recibos",
+    "svg": "design/screens/AD32.svg",
+    "group": "AD",
+    "route": "/app/documents",
+    "width": 1440,
+    "height": 1010
+  },
+  {
+    "name": "AD33 - Garantías y políticas",
+    "svg": "design/screens/AD33.svg",
+    "group": "AD",
+    "route": "/app/settings/policies",
+    "width": 1440,
+    "height": 1010
+  },
+  {
+    "name": "AD34 - Numeración y plantillas",
+    "svg": "design/screens/AD34.svg",
+    "group": "AD",
+    "route": "/app/settings/documents",
+    "width": 1440,
+    "height": 1010
+  },
+  {
+    "name": "AD35 - Entrega del equipo",
+    "svg": "design/screens/AD35.svg",
+    "group": "AD",
+    "route": "/app/orders/:id/delivery",
+    "width": 1440,
+    "height": 1010
+  },
+  {
+    "name": "AD36 - Reingreso, cancelación y garantía",
+    "svg": "design/screens/AD36.svg",
+    "group": "AD",
+    "route": "/app/orders/:id/resolution",
+    "width": 1440,
+    "height": 1010
+  },
+  {
+    "name": "AS01 - Inicio del Asesor",
+    "svg": "design/screens/AS01.svg",
+    "group": "AS",
+    "route": "/advisor",
+    "width": 1440,
+    "height": 1177.6999999999998
+  },
+  {
+    "name": "AS02 - Cliente y contacto rápido",
+    "svg": "design/screens/AS02.svg",
+    "group": "AS",
+    "route": "/advisor/customers",
+    "width": 1440,
+    "height": 1010
+  },
+  {
+    "name": "AS03 - Recepción asistida",
+    "svg": "design/screens/AS03.svg",
+    "group": "AS",
+    "route": "/advisor/intake",
+    "width": 1440,
+    "height": 1010
+  },
+  {
+    "name": "AS04 - Derivar al area técnica",
+    "svg": "design/screens/AS04.svg",
+    "group": "AS",
+    "route": "/advisor/orders/:id/handoff",
+    "width": 1440,
+    "height": 1010
+  },
+  {
+    "name": "AS05 - Seguimiento de cotizaciones",
+    "svg": "design/screens/AS05.svg",
+    "group": "AS",
+    "route": "/advisor/quotes",
+    "width": 1440,
+    "height": 1010
+  },
+  {
+    "name": "AS06 - Atención y mensajes",
+    "svg": "design/screens/AS06.svg",
+    "group": "AS",
+    "route": "/advisor/messages",
+    "width": 1440,
+    "height": 1010
+  },
+  {
+    "name": "AS07 - Pagos reportados del cliente",
+    "svg": "design/screens/AS07.svg",
+    "group": "AS",
+    "route": "/advisor/payment-reports",
+    "width": 1440,
+    "height": 1010
+  },
+  {
+    "name": "AS08 - Registrar efectivo",
+    "svg": "design/screens/AS08.svg",
+    "group": "AS",
+    "route": "/advisor/cash",
+    "width": 1440,
+    "height": 1010
+  },
+  {
+    "name": "AS09 - Entrega en mostrador",
+    "svg": "design/screens/AS09.svg",
+    "group": "AS",
+    "route": "/advisor/deliveries/:id",
+    "width": 1440,
+    "height": 1010
+  },
+  {
+    "name": "AS10 - Agenda y tareas",
+    "svg": "design/screens/AS10.svg",
+    "group": "AS",
+    "route": "/advisor/tasks",
+    "width": 1440,
+    "height": 1010
+  },
+  {
+    "name": "AS11 - Venta asistida",
+    "svg": "design/screens/AS11.svg",
+    "group": "AS",
+    "route": "/advisor/sales/new",
+    "width": 1440,
+    "height": 1010
+  },
+  {
+    "name": "AS12 - Mi perfil y acceso",
+    "svg": "design/screens/AS12.svg",
+    "group": "AS",
+    "route": "/advisor/profile",
+    "width": 1440,
+    "height": 1010
+  },
+  {
+    "name": "TE01 - Inicio técnico",
+    "svg": "design/screens/TE01.svg",
+    "group": "TE",
+    "route": "/tech",
+    "width": 430,
+    "height": 1125.1
+  },
+  {
+    "name": "TE02 - Mis trabajos",
+    "svg": "design/screens/TE02.svg",
+    "group": "TE",
+    "route": "/tech/orders",
+    "width": 430,
+    "height": 974.1
+  },
+  {
+    "name": "TE03 - Escanear QR",
+    "svg": "design/screens/TE03.svg",
+    "group": "TE",
+    "route": "/tech/scan",
+    "width": 430,
+    "height": 1015.95
+  },
+  {
+    "name": "TE04 - OT móvil",
+    "svg": "design/screens/TE04.svg",
+    "group": "TE",
+    "route": "/tech/orders/:id",
+    "width": 430,
+    "height": 1114.5
+  },
+  {
+    "name": "TE05 - Diagnóstico móvil",
+    "svg": "design/screens/TE05.svg",
+    "group": "TE",
+    "route": "/tech/orders/:id/diagnostic",
+    "width": 430,
+    "height": 1012.5
+  },
+  {
+    "name": "TE06 - Repuestos y mano de obra",
+    "svg": "design/screens/TE06.svg",
+    "group": "TE",
+    "route": "/tech/orders/:id/parts",
+    "width": 430,
+    "height": 955.95
+  },
+  {
+    "name": "TE07 - Cambiar estado",
+    "svg": "design/screens/TE07.svg",
+    "group": "TE",
+    "route": "/tech/orders/:id/status",
+    "width": 430,
+    "height": 1191.65
+  },
+  {
+    "name": "TE08 - Checklist QA móvil",
+    "svg": "design/screens/TE08.svg",
+    "group": "TE",
+    "route": "/tech/orders/:id/qa",
+    "width": 430,
+    "height": 980.1
+  },
+  {
+    "name": "TE09 - Mensajes del técnico",
+    "svg": "design/screens/TE09.svg",
+    "group": "TE",
+    "route": "/tech/messages",
+    "width": 430,
+    "height": 1044.1
+  },
+  {
+    "name": "TE10 - Offline y sincronización",
+    "svg": "design/screens/TE10.svg",
+    "group": "TE",
+    "route": "/tech/sync",
+    "width": 430,
+    "height": 974.1
+  },
+  {
+    "name": "TE11 - Recepción móvil",
+    "svg": "design/screens/TE11.svg",
+    "group": "TE",
+    "route": "/tech/orders/:id/intake",
+    "width": 430,
+    "height": 1072.5
+  },
+  {
+    "name": "TE12 - Fotos y evidencias",
+    "svg": "design/screens/TE12.svg",
+    "group": "TE",
+    "route": "/tech/orders/:id/evidence",
+    "width": 430,
+    "height": 1044.1
+  },
+  {
+    "name": "TE13 - Efectivo autorizado",
+    "svg": "design/screens/TE13.svg",
+    "group": "TE",
+    "route": "/tech/orders/:id/cash",
+    "width": 430,
+    "height": 1012.5
+  },
+  {
+    "name": "TE14 - Historial de la OT",
+    "svg": "design/screens/TE14.svg",
+    "group": "TE",
+    "route": "/tech/orders/:id/history",
+    "width": 430,
+    "height": 940
+  },
+  {
+    "name": "CL01 - Página pública del negocio",
+    "svg": "design/screens/CL01.svg",
+    "group": "CL",
+    "route": "/:slug",
+    "width": 430,
+    "height": 1246.4
+  },
+  {
+    "name": "CL02 - Acceso del cliente con Google",
+    "svg": "design/screens/CL02.svg",
+    "group": "CL",
+    "route": "/login",
+    "width": 430,
+    "height": 970.8
+  },
+  {
+    "name": "CL03 - Solicitud / equipo",
+    "svg": "design/screens/CL03.svg",
+    "group": "CL",
+    "route": "/:slug/repair/new",
+    "width": 430,
+    "height": 1156.35
+  },
+  {
+    "name": "CL04 - Solicitud / falla y fotos",
+    "svg": "design/screens/CL04.svg",
+    "group": "CL",
+    "route": "/:slug/repair/new?step=2",
+    "width": 430,
+    "height": 1234.65
+  },
+  {
+    "name": "CL05 - Solicitud / contacto y revisión",
+    "svg": "design/screens/CL05.svg",
+    "group": "CL",
+    "route": "/:slug/repair/new?step=3",
+    "width": 430,
+    "height": 1263.5
+  },
+  {
+    "name": "CL06 - Orden creada",
+    "svg": "design/screens/CL06.svg",
+    "group": "CL",
+    "route": "/customer/orders/:id/created",
+    "width": 430,
+    "height": 940
+  },
+  {
+    "name": "CL07 - Mis reparaciones",
+    "svg": "design/screens/CL07.svg",
+    "group": "CL",
+    "route": "/customer/orders",
+    "width": 430,
+    "height": 940
+  },
+  {
+    "name": "CL08 - Seguimiento de reparación",
+    "svg": "design/screens/CL08.svg",
+    "group": "CL",
+    "route": "/customer/orders/:id",
+    "width": 430,
+    "height": 1102.1
+  },
+  {
+    "name": "CL09 - Revisar cotización",
+    "svg": "design/screens/CL09.svg",
+    "group": "CL",
+    "route": "/customer/orders/:id/quote",
+    "width": 430,
+    "height": 974.8000000000001
+  },
+  {
+    "name": "CL10 - Elegir medio de pago",
+    "svg": "design/screens/CL10.svg",
+    "group": "CL",
+    "route": "/customer/orders/:id/pay",
+    "width": 430,
+    "height": 1196.1
+  },
+  {
+    "name": "CL11 - Reportar un pago",
+    "svg": "design/screens/CL11.svg",
+    "group": "CL",
+    "route": "/customer/orders/:id/payment-report",
+    "width": 430,
+    "height": 1177.35
+  },
+  {
+    "name": "CL12 - Mis documentos, recibos y vouchers",
+    "svg": "design/screens/CL12.svg",
+    "group": "CL",
+    "route": "/customer/receipts",
+    "width": 430,
+    "height": 1070.35
+  },
+  {
+    "name": "CL13 - Mensajes del cliente",
+    "svg": "design/screens/CL13.svg",
+    "group": "CL",
+    "route": "/customer/messages",
+    "width": 430,
+    "height": 1044.1
+  },
+  {
+    "name": "CL14 - Mi perfil",
+    "svg": "design/screens/CL14.svg",
+    "group": "CL",
+    "route": "/customer/profile",
+    "width": 430,
+    "height": 1012.5
+  },
+  {
+    "name": "CL15 - Negocio no disponible",
+    "svg": "design/screens/CL15.svg",
+    "group": "CL",
+    "route": "/:slug/unavailable",
+    "width": 430,
+    "height": 940
+  },
+  {
+    "name": "CL16 - Inicio del cliente",
+    "svg": "design/screens/CL16.svg",
+    "group": "CL",
+    "route": "/customer",
+    "width": 430,
+    "height": 940
+  },
+  {
+    "name": "CL17 - Mis equipos",
+    "svg": "design/screens/CL17.svg",
+    "group": "CL",
+    "route": "/customer/devices",
+    "width": 430,
+    "height": 940
+  },
+  {
+    "name": "CL18 - Mis pagos y saldos",
+    "svg": "design/screens/CL18.svg",
+    "group": "CL",
+    "route": "/customer/payments",
+    "width": 430,
+    "height": 1015.95
+  },
+  {
+    "name": "CL19 - Visor de documento PDF",
+    "svg": "design/screens/CL19.svg",
+    "group": "CL",
+    "route": "/customer/documents/:id",
+    "width": 430,
+    "height": 1211.1
+  },
+  {
+    "name": "CL20 - Servicios del comercio",
+    "svg": "design/screens/CL20.svg",
+    "group": "CL",
+    "route": "/:slug/services",
+    "width": 430,
+    "height": 993.1
+  },
+  {
+    "name": "CL21 - Productos del comercio",
+    "svg": "design/screens/CL21.svg",
+    "group": "CL",
+    "route": "/:slug/products",
+    "width": 430,
+    "height": 993.1
+  },
+  {
+    "name": "CL22 - Detalle de producto público",
+    "svg": "design/screens/CL22.svg",
+    "group": "CL",
+    "route": "/:slug/products/:id",
+    "width": 430,
+    "height": 1012.5
+  },
+  {
+    "name": "CL23 - Contacto y ubicación",
+    "svg": "design/screens/CL23.svg",
+    "group": "CL",
+    "route": "/:slug/contact",
+    "width": 430,
+    "height": 1105.35
+  },
+  {
+    "name": "CL24 - Entrega y cierre para el cliente",
+    "svg": "design/screens/CL24.svg",
+    "group": "CL",
+    "route": "/customer/orders/:id/delivery",
+    "width": 430,
+    "height": 1061.5
+  },
+  {
+    "name": "CL25 - Instrucciones del medio elegido",
+    "svg": "design/screens/CL25.svg",
+    "group": "CL",
+    "route": "/customer/orders/:id/pay/:method",
+    "width": 430,
+    "height": 1257.65
+  },
+  {
+    "name": "CL26 - Consulta segura de orden",
+    "svg": "design/screens/CL26.svg",
+    "group": "CL",
+    "route": "/:slug/orders/lookup",
+    "width": 430,
+    "height": 940
+  },
+  {
+    "name": "VR01 - Voucher de recepción",
+    "svg": "design/screens/VR01.svg",
+    "group": "VR",
+    "route": "/app/orders/:id/intake/voucher",
+    "width": 1440,
+    "height": 1018.15
+  },
+  {
+    "name": "VR02 - Documentos del cliente",
+    "svg": "design/screens/VR02.svg",
+    "group": "VR",
+    "route": "/customer/documents",
+    "width": 430,
+    "height": 940
+  },
+  {
+    "name": "VR03 - Voucher de pago confirmado",
+    "svg": "design/screens/VR03.svg",
+    "group": "VR",
+    "route": "/app/payments/:id/voucher",
+    "width": 1440,
+    "height": 1018.15
+  },
+  {
+    "name": "VR04 - Vista previa e impresión",
+    "svg": "design/screens/VR04.svg",
+    "group": "VR",
+    "route": "/documents/:id/print",
+    "width": 1440,
+    "height": 1018.15
+  }
+]

@@ -1,0 +1,2258 @@
+openapi: 3.1.0
+info:
+  title: NAOSIQ - Core journey contract
+  version: 5.0.0
+  description: Contrato propuesto para desarrollo. Solo endpoints nucleares tipados;
+    api-catalog.json documenta ampliaciones por fase. Sin backend publicado.
+servers:
+- url: http://localhost:3000
+  description: Destino de desarrollo propuesto, no servicio en ejecucion
+paths:
+  /api/v1/context:
+    get:
+      operationId: getContext
+      summary: Contextos autorizados de la identidad
+      security:
+      - sessionCookie: []
+      parameters: []
+      x-permission: session.self
+      x-status: PROPOSED_NOT_IMPLEMENTED
+      responses:
+        '200':
+          description: Resultado contractual. Consultar operation/job para acciones
+            aceptadas.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Context'
+        '401':
+          description: Consultar codigo, correlation_id y recuperacion. No asumir
+            rollback tras fallo de red.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '403':
+          description: Consultar codigo, correlation_id y recuperacion. No asumir
+            rollback tras fallo de red.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '404':
+          description: Consultar codigo, correlation_id y recuperacion. No asumir
+            rollback tras fallo de red.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '409':
+          description: Consultar codigo, correlation_id y recuperacion. No asumir
+            rollback tras fallo de red.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '422':
+          description: Consultar codigo, correlation_id y recuperacion. No asumir
+            rollback tras fallo de red.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '429':
+          description: Consultar codigo, correlation_id y recuperacion. No asumir
+            rollback tras fallo de red.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '500':
+          description: Consultar codigo, correlation_id y recuperacion. No asumir
+            rollback tras fallo de red.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+  /api/v1/master/organizations:
+    post:
+      operationId: createOrganization
+      summary: Crear comercio idempotente
+      security:
+      - sessionCookie: []
+      parameters:
+      - $ref: '#/components/parameters/Idempotency'
+      x-permission: platform.manage
+      x-status: PROPOSED_NOT_IMPLEMENTED
+      responses:
+        '202':
+          description: Resultado contractual. Consultar operation/job para acciones
+            aceptadas.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Operation'
+        '401':
+          description: Consultar codigo, correlation_id y recuperacion. No asumir
+            rollback tras fallo de red.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '403':
+          description: Consultar codigo, correlation_id y recuperacion. No asumir
+            rollback tras fallo de red.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '404':
+          description: Consultar codigo, correlation_id y recuperacion. No asumir
+            rollback tras fallo de red.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '409':
+          description: Consultar codigo, correlation_id y recuperacion. No asumir
+            rollback tras fallo de red.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '422':
+          description: Consultar codigo, correlation_id y recuperacion. No asumir
+            rollback tras fallo de red.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '429':
+          description: Consultar codigo, correlation_id y recuperacion. No asumir
+            rollback tras fallo de red.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '500':
+          description: Consultar codigo, correlation_id y recuperacion. No asumir
+            rollback tras fallo de red.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/OrganizationCreate'
+  /api/v1/t/{organization_id}/orders:
+    post:
+      operationId: createOrder
+      summary: Crear OT sin confirmar custodia
+      security:
+      - sessionCookie: []
+      parameters:
+      - $ref: '#/components/parameters/Tenant'
+      - $ref: '#/components/parameters/Idempotency'
+      x-permission: orders.create
+      x-status: PROPOSED_NOT_IMPLEMENTED
+      responses:
+        '202':
+          description: Resultado contractual. Consultar operation/job para acciones
+            aceptadas.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Operation'
+        '401':
+          description: Consultar codigo, correlation_id y recuperacion. No asumir
+            rollback tras fallo de red.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '403':
+          description: Consultar codigo, correlation_id y recuperacion. No asumir
+            rollback tras fallo de red.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '404':
+          description: Consultar codigo, correlation_id y recuperacion. No asumir
+            rollback tras fallo de red.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '409':
+          description: Consultar codigo, correlation_id y recuperacion. No asumir
+            rollback tras fallo de red.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '422':
+          description: Consultar codigo, correlation_id y recuperacion. No asumir
+            rollback tras fallo de red.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '429':
+          description: Consultar codigo, correlation_id y recuperacion. No asumir
+            rollback tras fallo de red.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '500':
+          description: Consultar codigo, correlation_id y recuperacion. No asumir
+            rollback tras fallo de red.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/OrderCreate'
+  /api/v1/t/{organization_id}/orders/{order_id}:
+    get:
+      operationId: getOrder
+      summary: Detalle autorizado de OT
+      security:
+      - sessionCookie: []
+      parameters:
+      - $ref: '#/components/parameters/Tenant'
+      - name: order_id
+        in: path
+        required: true
+        schema:
+          type: string
+          minLength: 1
+      x-permission: orders.read
+      x-status: PROPOSED_NOT_IMPLEMENTED
+      responses:
+        '200':
+          description: Resultado contractual. Consultar operation/job para acciones
+            aceptadas.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Order'
+        '401':
+          description: Consultar codigo, correlation_id y recuperacion. No asumir
+            rollback tras fallo de red.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '403':
+          description: Consultar codigo, correlation_id y recuperacion. No asumir
+            rollback tras fallo de red.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '404':
+          description: Consultar codigo, correlation_id y recuperacion. No asumir
+            rollback tras fallo de red.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '409':
+          description: Consultar codigo, correlation_id y recuperacion. No asumir
+            rollback tras fallo de red.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '422':
+          description: Consultar codigo, correlation_id y recuperacion. No asumir
+            rollback tras fallo de red.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '429':
+          description: Consultar codigo, correlation_id y recuperacion. No asumir
+            rollback tras fallo de red.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '500':
+          description: Consultar codigo, correlation_id y recuperacion. No asumir
+            rollback tras fallo de red.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+  /api/v1/t/{organization_id}/orders/{order_id}/intake:
+    post:
+      operationId: confirmIntake
+      summary: Confirmar recepcion fisica y solicitar voucher
+      security:
+      - sessionCookie: []
+      parameters:
+      - $ref: '#/components/parameters/Tenant'
+      - name: order_id
+        in: path
+        required: true
+        schema:
+          type: string
+          minLength: 1
+      - $ref: '#/components/parameters/Idempotency'
+      x-permission: orders.intake.confirm
+      x-status: PROPOSED_NOT_IMPLEMENTED
+      responses:
+        '202':
+          description: Resultado contractual. Consultar operation/job para acciones
+            aceptadas.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Operation'
+        '401':
+          description: Consultar codigo, correlation_id y recuperacion. No asumir
+            rollback tras fallo de red.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '403':
+          description: Consultar codigo, correlation_id y recuperacion. No asumir
+            rollback tras fallo de red.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '404':
+          description: Consultar codigo, correlation_id y recuperacion. No asumir
+            rollback tras fallo de red.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '409':
+          description: Consultar codigo, correlation_id y recuperacion. No asumir
+            rollback tras fallo de red.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '422':
+          description: Consultar codigo, correlation_id y recuperacion. No asumir
+            rollback tras fallo de red.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '429':
+          description: Consultar codigo, correlation_id y recuperacion. No asumir
+            rollback tras fallo de red.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '500':
+          description: Consultar codigo, correlation_id y recuperacion. No asumir
+            rollback tras fallo de red.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/IntakeConfirm'
+  /api/v1/t/{organization_id}/quotes/{quote_id}/response:
+    post:
+      operationId: respondQuote
+      summary: Responder version vigente del cliente
+      security:
+      - sessionCookie: []
+      parameters:
+      - $ref: '#/components/parameters/Tenant'
+      - name: quote_id
+        in: path
+        required: true
+        schema:
+          type: string
+          minLength: 1
+      - $ref: '#/components/parameters/Idempotency'
+      x-permission: quotes.respond.own
+      x-status: PROPOSED_NOT_IMPLEMENTED
+      responses:
+        '200':
+          description: Resultado contractual. Consultar operation/job para acciones
+            aceptadas.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Operation'
+        '401':
+          description: Consultar codigo, correlation_id y recuperacion. No asumir
+            rollback tras fallo de red.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '403':
+          description: Consultar codigo, correlation_id y recuperacion. No asumir
+            rollback tras fallo de red.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '404':
+          description: Consultar codigo, correlation_id y recuperacion. No asumir
+            rollback tras fallo de red.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '409':
+          description: Consultar codigo, correlation_id y recuperacion. No asumir
+            rollback tras fallo de red.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '422':
+          description: Consultar codigo, correlation_id y recuperacion. No asumir
+            rollback tras fallo de red.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '429':
+          description: Consultar codigo, correlation_id y recuperacion. No asumir
+            rollback tras fallo de red.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '500':
+          description: Consultar codigo, correlation_id y recuperacion. No asumir
+            rollback tras fallo de red.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/QuoteResponse'
+  /api/v1/t/{organization_id}/payments/reports:
+    post:
+      operationId: reportPayment
+      summary: Reportar sin confirmar dinero
+      security:
+      - sessionCookie: []
+      parameters:
+      - $ref: '#/components/parameters/Tenant'
+      - $ref: '#/components/parameters/Idempotency'
+      x-permission: payments.report
+      x-status: PROPOSED_NOT_IMPLEMENTED
+      responses:
+        '202':
+          description: Resultado contractual. Consultar operation/job para acciones
+            aceptadas.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Operation'
+        '401':
+          description: Consultar codigo, correlation_id y recuperacion. No asumir
+            rollback tras fallo de red.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '403':
+          description: Consultar codigo, correlation_id y recuperacion. No asumir
+            rollback tras fallo de red.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '404':
+          description: Consultar codigo, correlation_id y recuperacion. No asumir
+            rollback tras fallo de red.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '409':
+          description: Consultar codigo, correlation_id y recuperacion. No asumir
+            rollback tras fallo de red.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '422':
+          description: Consultar codigo, correlation_id y recuperacion. No asumir
+            rollback tras fallo de red.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '429':
+          description: Consultar codigo, correlation_id y recuperacion. No asumir
+            rollback tras fallo de red.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '500':
+          description: Consultar codigo, correlation_id y recuperacion. No asumir
+            rollback tras fallo de red.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PaymentReport'
+  /api/v1/t/{organization_id}/payments/cash:
+    post:
+      operationId: confirmCash
+      summary: Registrar efectivo autorizado
+      security:
+      - sessionCookie: []
+      parameters:
+      - $ref: '#/components/parameters/Tenant'
+      - $ref: '#/components/parameters/Idempotency'
+      x-permission: payments.cash.confirm
+      x-status: PROPOSED_NOT_IMPLEMENTED
+      responses:
+        '202':
+          description: Resultado contractual. Consultar operation/job para acciones
+            aceptadas.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Operation'
+        '401':
+          description: Consultar codigo, correlation_id y recuperacion. No asumir
+            rollback tras fallo de red.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '403':
+          description: Consultar codigo, correlation_id y recuperacion. No asumir
+            rollback tras fallo de red.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '404':
+          description: Consultar codigo, correlation_id y recuperacion. No asumir
+            rollback tras fallo de red.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '409':
+          description: Consultar codigo, correlation_id y recuperacion. No asumir
+            rollback tras fallo de red.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '422':
+          description: Consultar codigo, correlation_id y recuperacion. No asumir
+            rollback tras fallo de red.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '429':
+          description: Consultar codigo, correlation_id y recuperacion. No asumir
+            rollback tras fallo de red.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '500':
+          description: Consultar codigo, correlation_id y recuperacion. No asumir
+            rollback tras fallo de red.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CashPayment'
+  /api/v1/t/{organization_id}/payments/{payment_id}:
+    get:
+      operationId: getPayment
+      summary: Consultar estado financiero real
+      security:
+      - sessionCookie: []
+      parameters:
+      - $ref: '#/components/parameters/Tenant'
+      - name: payment_id
+        in: path
+        required: true
+        schema:
+          type: string
+          minLength: 1
+      x-permission: payments.report
+      x-status: PROPOSED_NOT_IMPLEMENTED
+      responses:
+        '200':
+          description: Resultado contractual. Consultar operation/job para acciones
+            aceptadas.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Payment'
+        '401':
+          description: Consultar codigo, correlation_id y recuperacion. No asumir
+            rollback tras fallo de red.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '403':
+          description: Consultar codigo, correlation_id y recuperacion. No asumir
+            rollback tras fallo de red.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '404':
+          description: Consultar codigo, correlation_id y recuperacion. No asumir
+            rollback tras fallo de red.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '409':
+          description: Consultar codigo, correlation_id y recuperacion. No asumir
+            rollback tras fallo de red.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '422':
+          description: Consultar codigo, correlation_id y recuperacion. No asumir
+            rollback tras fallo de red.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '429':
+          description: Consultar codigo, correlation_id y recuperacion. No asumir
+            rollback tras fallo de red.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '500':
+          description: Consultar codigo, correlation_id y recuperacion. No asumir
+            rollback tras fallo de red.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+  /api/v1/t/{organization_id}/payments/{payment_id}/approve:
+    post:
+      operationId: approvePayment
+      summary: Verificar y aplicar ingreso una vez
+      security:
+      - sessionCookie: []
+      parameters:
+      - $ref: '#/components/parameters/Tenant'
+      - name: payment_id
+        in: path
+        required: true
+        schema:
+          type: string
+          minLength: 1
+      - $ref: '#/components/parameters/Idempotency'
+      x-permission: payments.confirm
+      x-status: PROPOSED_NOT_IMPLEMENTED
+      responses:
+        '202':
+          description: Resultado contractual. Consultar operation/job para acciones
+            aceptadas.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Operation'
+        '401':
+          description: Consultar codigo, correlation_id y recuperacion. No asumir
+            rollback tras fallo de red.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '403':
+          description: Consultar codigo, correlation_id y recuperacion. No asumir
+            rollback tras fallo de red.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '404':
+          description: Consultar codigo, correlation_id y recuperacion. No asumir
+            rollback tras fallo de red.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '409':
+          description: Consultar codigo, correlation_id y recuperacion. No asumir
+            rollback tras fallo de red.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '422':
+          description: Consultar codigo, correlation_id y recuperacion. No asumir
+            rollback tras fallo de red.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '429':
+          description: Consultar codigo, correlation_id y recuperacion. No asumir
+            rollback tras fallo de red.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '500':
+          description: Consultar codigo, correlation_id y recuperacion. No asumir
+            rollback tras fallo de red.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PaymentReview'
+  /api/v1/t/{organization_id}/payments/{payment_id}/reject:
+    post:
+      operationId: rejectPayment
+      summary: Rechazar reporte con motivo
+      security:
+      - sessionCookie: []
+      parameters:
+      - $ref: '#/components/parameters/Tenant'
+      - name: payment_id
+        in: path
+        required: true
+        schema:
+          type: string
+          minLength: 1
+      - $ref: '#/components/parameters/Idempotency'
+      x-permission: payments.confirm
+      x-status: PROPOSED_NOT_IMPLEMENTED
+      responses:
+        '200':
+          description: Resultado contractual. Consultar operation/job para acciones
+            aceptadas.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Operation'
+        '401':
+          description: Consultar codigo, correlation_id y recuperacion. No asumir
+            rollback tras fallo de red.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '403':
+          description: Consultar codigo, correlation_id y recuperacion. No asumir
+            rollback tras fallo de red.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '404':
+          description: Consultar codigo, correlation_id y recuperacion. No asumir
+            rollback tras fallo de red.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '409':
+          description: Consultar codigo, correlation_id y recuperacion. No asumir
+            rollback tras fallo de red.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '422':
+          description: Consultar codigo, correlation_id y recuperacion. No asumir
+            rollback tras fallo de red.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '429':
+          description: Consultar codigo, correlation_id y recuperacion. No asumir
+            rollback tras fallo de red.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '500':
+          description: Consultar codigo, correlation_id y recuperacion. No asumir
+            rollback tras fallo de red.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Reject'
+  /api/v1/t/{organization_id}/operations/{operation_id}:
+    get:
+      operationId: getOperation
+      summary: Recuperar resultado original autorizado
+      security:
+      - sessionCookie: []
+      parameters:
+      - $ref: '#/components/parameters/Tenant'
+      - name: operation_id
+        in: path
+        required: true
+        schema:
+          type: string
+          minLength: 1
+      x-permission: session.self
+      x-status: PROPOSED_NOT_IMPLEMENTED
+      responses:
+        '200':
+          description: Resultado contractual. Consultar operation/job para acciones
+            aceptadas.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Operation'
+        '401':
+          description: Consultar codigo, correlation_id y recuperacion. No asumir
+            rollback tras fallo de red.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '403':
+          description: Consultar codigo, correlation_id y recuperacion. No asumir
+            rollback tras fallo de red.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '404':
+          description: Consultar codigo, correlation_id y recuperacion. No asumir
+            rollback tras fallo de red.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '409':
+          description: Consultar codigo, correlation_id y recuperacion. No asumir
+            rollback tras fallo de red.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '422':
+          description: Consultar codigo, correlation_id y recuperacion. No asumir
+            rollback tras fallo de red.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '429':
+          description: Consultar codigo, correlation_id y recuperacion. No asumir
+            rollback tras fallo de red.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '500':
+          description: Consultar codigo, correlation_id y recuperacion. No asumir
+            rollback tras fallo de red.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+  /api/v1/t/{organization_id}/documents/requests:
+    post:
+      operationId: requestDocument
+      summary: Obtener documento de hecho confirmado
+      security:
+      - sessionCookie: []
+      parameters:
+      - $ref: '#/components/parameters/Tenant'
+      - $ref: '#/components/parameters/Idempotency'
+      x-permission: documents.request
+      x-status: PROPOSED_NOT_IMPLEMENTED
+      responses:
+        '202':
+          description: Resultado contractual. Consultar operation/job para acciones
+            aceptadas.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Document'
+        '401':
+          description: Consultar codigo, correlation_id y recuperacion. No asumir
+            rollback tras fallo de red.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '403':
+          description: Consultar codigo, correlation_id y recuperacion. No asumir
+            rollback tras fallo de red.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '404':
+          description: Consultar codigo, correlation_id y recuperacion. No asumir
+            rollback tras fallo de red.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '409':
+          description: Consultar codigo, correlation_id y recuperacion. No asumir
+            rollback tras fallo de red.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '422':
+          description: Consultar codigo, correlation_id y recuperacion. No asumir
+            rollback tras fallo de red.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '429':
+          description: Consultar codigo, correlation_id y recuperacion. No asumir
+            rollback tras fallo de red.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '500':
+          description: Consultar codigo, correlation_id y recuperacion. No asumir
+            rollback tras fallo de red.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/DocumentRequest'
+  /api/v1/t/{organization_id}/documents/{document_id}:
+    get:
+      operationId: getDocument
+      summary: Leer metadatos de documento autorizado
+      security:
+      - sessionCookie: []
+      parameters:
+      - $ref: '#/components/parameters/Tenant'
+      - name: document_id
+        in: path
+        required: true
+        schema:
+          type: string
+          minLength: 1
+      x-permission: documents.read
+      x-status: PROPOSED_NOT_IMPLEMENTED
+      responses:
+        '200':
+          description: Resultado contractual. Consultar operation/job para acciones
+            aceptadas.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Document'
+        '401':
+          description: Consultar codigo, correlation_id y recuperacion. No asumir
+            rollback tras fallo de red.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '403':
+          description: Consultar codigo, correlation_id y recuperacion. No asumir
+            rollback tras fallo de red.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '404':
+          description: Consultar codigo, correlation_id y recuperacion. No asumir
+            rollback tras fallo de red.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '409':
+          description: Consultar codigo, correlation_id y recuperacion. No asumir
+            rollback tras fallo de red.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '422':
+          description: Consultar codigo, correlation_id y recuperacion. No asumir
+            rollback tras fallo de red.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '429':
+          description: Consultar codigo, correlation_id y recuperacion. No asumir
+            rollback tras fallo de red.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '500':
+          description: Consultar codigo, correlation_id y recuperacion. No asumir
+            rollback tras fallo de red.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+  /api/v1/t/{organization_id}/documents/{document_id}/renders:
+    post:
+      operationId: requestDocumentRender
+      summary: Solicitar formato sin repetir hecho
+      security:
+      - sessionCookie: []
+      parameters:
+      - $ref: '#/components/parameters/Tenant'
+      - name: document_id
+        in: path
+        required: true
+        schema:
+          type: string
+          minLength: 1
+      - $ref: '#/components/parameters/Idempotency'
+      x-permission: documents.request
+      x-status: PROPOSED_NOT_IMPLEMENTED
+      responses:
+        '202':
+          description: Resultado contractual. Consultar operation/job para acciones
+            aceptadas.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Job'
+        '401':
+          description: Consultar codigo, correlation_id y recuperacion. No asumir
+            rollback tras fallo de red.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '403':
+          description: Consultar codigo, correlation_id y recuperacion. No asumir
+            rollback tras fallo de red.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '404':
+          description: Consultar codigo, correlation_id y recuperacion. No asumir
+            rollback tras fallo de red.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '409':
+          description: Consultar codigo, correlation_id y recuperacion. No asumir
+            rollback tras fallo de red.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '422':
+          description: Consultar codigo, correlation_id y recuperacion. No asumir
+            rollback tras fallo de red.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '429':
+          description: Consultar codigo, correlation_id y recuperacion. No asumir
+            rollback tras fallo de red.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '500':
+          description: Consultar codigo, correlation_id y recuperacion. No asumir
+            rollback tras fallo de red.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/RenderRequest'
+  /api/v1/t/{organization_id}/document-jobs/{job_id}:
+    get:
+      operationId: getDocumentJob
+      summary: Consultar generacion de archivo
+      security:
+      - sessionCookie: []
+      parameters:
+      - $ref: '#/components/parameters/Tenant'
+      - name: job_id
+        in: path
+        required: true
+        schema:
+          type: string
+          minLength: 1
+      x-permission: documents.read
+      x-status: PROPOSED_NOT_IMPLEMENTED
+      responses:
+        '200':
+          description: Resultado contractual. Consultar operation/job para acciones
+            aceptadas.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Job'
+        '401':
+          description: Consultar codigo, correlation_id y recuperacion. No asumir
+            rollback tras fallo de red.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '403':
+          description: Consultar codigo, correlation_id y recuperacion. No asumir
+            rollback tras fallo de red.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '404':
+          description: Consultar codigo, correlation_id y recuperacion. No asumir
+            rollback tras fallo de red.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '409':
+          description: Consultar codigo, correlation_id y recuperacion. No asumir
+            rollback tras fallo de red.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '422':
+          description: Consultar codigo, correlation_id y recuperacion. No asumir
+            rollback tras fallo de red.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '429':
+          description: Consultar codigo, correlation_id y recuperacion. No asumir
+            rollback tras fallo de red.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '500':
+          description: Consultar codigo, correlation_id y recuperacion. No asumir
+            rollback tras fallo de red.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+  /api/v1/t/{organization_id}/documents/{document_id}/download-link:
+    post:
+      operationId: createDocumentLink
+      summary: Autorizar enlace temporal del formato listo
+      security:
+      - sessionCookie: []
+      parameters:
+      - $ref: '#/components/parameters/Tenant'
+      - name: document_id
+        in: path
+        required: true
+        schema:
+          type: string
+          minLength: 1
+      - $ref: '#/components/parameters/Idempotency'
+      x-permission: documents.read
+      x-status: PROPOSED_NOT_IMPLEMENTED
+      responses:
+        '200':
+          description: Resultado contractual. Consultar operation/job para acciones
+            aceptadas.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DownloadLink'
+        '401':
+          description: Consultar codigo, correlation_id y recuperacion. No asumir
+            rollback tras fallo de red.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '403':
+          description: Consultar codigo, correlation_id y recuperacion. No asumir
+            rollback tras fallo de red.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '404':
+          description: Consultar codigo, correlation_id y recuperacion. No asumir
+            rollback tras fallo de red.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '409':
+          description: Consultar codigo, correlation_id y recuperacion. No asumir
+            rollback tras fallo de red.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '422':
+          description: Consultar codigo, correlation_id y recuperacion. No asumir
+            rollback tras fallo de red.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '429':
+          description: Consultar codigo, correlation_id y recuperacion. No asumir
+            rollback tras fallo de red.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '500':
+          description: Consultar codigo, correlation_id y recuperacion. No asumir
+            rollback tras fallo de red.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/RenderRequest'
+  /api/v1/t/{organization_id}/documents/{document_id}/print-intents:
+    post:
+      operationId: recordPrintIntent
+      summary: Registrar solicitud, no exito fisico
+      security:
+      - sessionCookie: []
+      parameters:
+      - $ref: '#/components/parameters/Tenant'
+      - name: document_id
+        in: path
+        required: true
+        schema:
+          type: string
+          minLength: 1
+      - $ref: '#/components/parameters/Idempotency'
+      x-permission: documents.read
+      x-status: PROPOSED_NOT_IMPLEMENTED
+      responses:
+        '202':
+          description: Resultado contractual. Consultar operation/job para acciones
+            aceptadas.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Operation'
+        '401':
+          description: Consultar codigo, correlation_id y recuperacion. No asumir
+            rollback tras fallo de red.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '403':
+          description: Consultar codigo, correlation_id y recuperacion. No asumir
+            rollback tras fallo de red.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '404':
+          description: Consultar codigo, correlation_id y recuperacion. No asumir
+            rollback tras fallo de red.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '409':
+          description: Consultar codigo, correlation_id y recuperacion. No asumir
+            rollback tras fallo de red.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '422':
+          description: Consultar codigo, correlation_id y recuperacion. No asumir
+            rollback tras fallo de red.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '429':
+          description: Consultar codigo, correlation_id y recuperacion. No asumir
+            rollback tras fallo de red.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '500':
+          description: Consultar codigo, correlation_id y recuperacion. No asumir
+            rollback tras fallo de red.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PrintIntent'
+  /api/v1/t/{organization_id}/customer/documents:
+    get:
+      operationId: listOwnDocuments
+      summary: Documentos del cliente dentro del comercio
+      security:
+      - sessionCookie: []
+      parameters:
+      - $ref: '#/components/parameters/Tenant'
+      x-permission: documents.read
+      x-status: PROPOSED_NOT_IMPLEMENTED
+      responses:
+        '200':
+          description: Resultado contractual. Consultar operation/job para acciones
+            aceptadas.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DocumentList'
+        '401':
+          description: Consultar codigo, correlation_id y recuperacion. No asumir
+            rollback tras fallo de red.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '403':
+          description: Consultar codigo, correlation_id y recuperacion. No asumir
+            rollback tras fallo de red.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '404':
+          description: Consultar codigo, correlation_id y recuperacion. No asumir
+            rollback tras fallo de red.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '409':
+          description: Consultar codigo, correlation_id y recuperacion. No asumir
+            rollback tras fallo de red.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '422':
+          description: Consultar codigo, correlation_id y recuperacion. No asumir
+            rollback tras fallo de red.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '429':
+          description: Consultar codigo, correlation_id y recuperacion. No asumir
+            rollback tras fallo de red.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '500':
+          description: Consultar codigo, correlation_id y recuperacion. No asumir
+            rollback tras fallo de red.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+  /api/v1/t/{organization_id}/orders/{order_id}/delivery:
+    post:
+      operationId: confirmDelivery
+      summary: Confirmar entrega, no deducirla del pago
+      security:
+      - sessionCookie: []
+      parameters:
+      - $ref: '#/components/parameters/Tenant'
+      - name: order_id
+        in: path
+        required: true
+        schema:
+          type: string
+          minLength: 1
+      - $ref: '#/components/parameters/Idempotency'
+      x-permission: orders.delivery.confirm
+      x-status: PROPOSED_NOT_IMPLEMENTED
+      responses:
+        '202':
+          description: Resultado contractual. Consultar operation/job para acciones
+            aceptadas.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Operation'
+        '401':
+          description: Consultar codigo, correlation_id y recuperacion. No asumir
+            rollback tras fallo de red.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '403':
+          description: Consultar codigo, correlation_id y recuperacion. No asumir
+            rollback tras fallo de red.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '404':
+          description: Consultar codigo, correlation_id y recuperacion. No asumir
+            rollback tras fallo de red.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '409':
+          description: Consultar codigo, correlation_id y recuperacion. No asumir
+            rollback tras fallo de red.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '422':
+          description: Consultar codigo, correlation_id y recuperacion. No asumir
+            rollback tras fallo de red.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '429':
+          description: Consultar codigo, correlation_id y recuperacion. No asumir
+            rollback tras fallo de red.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '500':
+          description: Consultar codigo, correlation_id y recuperacion. No asumir
+            rollback tras fallo de red.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/DeliveryConfirm'
+  /api/v1/master/subscriptions/{subscription_id}/actions:
+    post:
+      operationId: controlSubscription
+      summary: Suspender o reactivar por cortesia auditada
+      security:
+      - sessionCookie: []
+      parameters:
+      - name: subscription_id
+        in: path
+        required: true
+        schema:
+          type: string
+          minLength: 1
+      - $ref: '#/components/parameters/Idempotency'
+      x-permission: platform.manage
+      x-status: PROPOSED_NOT_IMPLEMENTED
+      responses:
+        '202':
+          description: Resultado contractual. Consultar operation/job para acciones
+            aceptadas.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Operation'
+        '401':
+          description: Consultar codigo, correlation_id y recuperacion. No asumir
+            rollback tras fallo de red.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '403':
+          description: Consultar codigo, correlation_id y recuperacion. No asumir
+            rollback tras fallo de red.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '404':
+          description: Consultar codigo, correlation_id y recuperacion. No asumir
+            rollback tras fallo de red.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '409':
+          description: Consultar codigo, correlation_id y recuperacion. No asumir
+            rollback tras fallo de red.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '422':
+          description: Consultar codigo, correlation_id y recuperacion. No asumir
+            rollback tras fallo de red.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '429':
+          description: Consultar codigo, correlation_id y recuperacion. No asumir
+            rollback tras fallo de red.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '500':
+          description: Consultar codigo, correlation_id y recuperacion. No asumir
+            rollback tras fallo de red.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SubscriptionAction'
+  /api/v1/master/saas-payments/{saas_payment_id}/approve:
+    post:
+      operationId: approveSaasPayment
+      summary: Confirmar pago del comercio a la plataforma
+      security:
+      - sessionCookie: []
+      parameters:
+      - name: saas_payment_id
+        in: path
+        required: true
+        schema:
+          type: string
+          minLength: 1
+      - $ref: '#/components/parameters/Idempotency'
+      x-permission: platform.manage
+      x-status: PROPOSED_NOT_IMPLEMENTED
+      responses:
+        '202':
+          description: Resultado contractual. Consultar operation/job para acciones
+            aceptadas.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Operation'
+        '401':
+          description: Consultar codigo, correlation_id y recuperacion. No asumir
+            rollback tras fallo de red.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '403':
+          description: Consultar codigo, correlation_id y recuperacion. No asumir
+            rollback tras fallo de red.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '404':
+          description: Consultar codigo, correlation_id y recuperacion. No asumir
+            rollback tras fallo de red.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '409':
+          description: Consultar codigo, correlation_id y recuperacion. No asumir
+            rollback tras fallo de red.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '422':
+          description: Consultar codigo, correlation_id y recuperacion. No asumir
+            rollback tras fallo de red.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '429':
+          description: Consultar codigo, correlation_id y recuperacion. No asumir
+            rollback tras fallo de red.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '500':
+          description: Consultar codigo, correlation_id y recuperacion. No asumir
+            rollback tras fallo de red.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PaymentReview'
+components:
+  securitySchemes:
+    sessionCookie:
+      type: apiKey
+      in: cookie
+      name: session
+      description: Nombre ilustrativo; P03 alinea con proveedor. Validar CSRF/origen
+        si cookies autorizan mutaciones.
+  parameters:
+    Tenant:
+      name: organization_id
+      in: path
+      required: true
+      schema:
+        type: string
+        minLength: 1
+      description: Servidor verifica pertenencia; el path no concede acceso.
+    Idempotency:
+      name: Idempotency-Key
+      in: header
+      required: true
+      schema:
+        type: string
+        minLength: 1
+      description: Misma clave/carga obtiene mismo resultado; diferente carga es 409.
+  schemas:
+    Error:
+      type: object
+      additionalProperties: false
+      properties:
+        code:
+          type: string
+          minLength: 1
+        message:
+          type: string
+          minLength: 1
+        correlation_id:
+          type: string
+          minLength: 1
+        operation_id:
+          type:
+          - string
+          - 'null'
+        recovery:
+          type: string
+          minLength: 1
+        field_errors:
+          type: array
+          items:
+            type: object
+            required:
+            - field
+            - message
+            properties:
+              field:
+                type: string
+                minLength: 1
+              message:
+                type: string
+                minLength: 1
+            additionalProperties: false
+      required:
+      - code
+      - message
+      - correlation_id
+      - recovery
+    Operation:
+      type: object
+      additionalProperties: false
+      properties:
+        operation_id:
+          type: string
+          minLength: 1
+        status:
+          type: string
+          enum:
+          - ACCEPTED
+          - PROCESSING
+          - SUCCEEDED
+          - FAILED
+          - RECONCILIATION_REQUIRED
+        resource_id:
+          type:
+          - string
+          - 'null'
+        resource_version:
+          type:
+          - integer
+          - 'null'
+          minimum: 1
+        correlation_id:
+          type: string
+          minLength: 1
+      required:
+      - operation_id
+      - status
+      - correlation_id
+    OrderCreate:
+      type: object
+      additionalProperties: false
+      properties:
+        customer_id:
+          type: string
+          minLength: 1
+        device_id:
+          type: string
+          minLength: 1
+        reported_fault:
+          type: string
+          minLength: 1
+        attachment_ids:
+          type: array
+          items:
+            type: string
+            minLength: 1
+        contact_reference:
+          type: string
+          minLength: 1
+      required:
+      - customer_id
+      - device_id
+      - reported_fault
+    Order:
+      type: object
+      additionalProperties: false
+      properties:
+        id:
+          type: string
+          minLength: 1
+        organization_id:
+          type: string
+          minLength: 1
+        number:
+          type: string
+          minLength: 1
+        repair_status:
+          type: string
+          minLength: 1
+        custody_status:
+          type: string
+          minLength: 1
+        balance_status:
+          type: string
+          enum:
+          - UNPAID
+          - PARTIALLY_PAID
+          - PAID
+        version:
+          type: integer
+          minimum: 1
+      required:
+      - id
+      - organization_id
+      - number
+      - repair_status
+      - custody_status
+      - balance_status
+      - version
+    IntakeConfirm:
+      type: object
+      additionalProperties: false
+      properties:
+        expected_version:
+          type: integer
+          minimum: 1
+        condition:
+          type: string
+          minLength: 1
+        accessories:
+          type: array
+          items:
+            type: string
+        attachment_ids:
+          type: array
+          items:
+            type: string
+            minLength: 1
+        consent_reference:
+          type: string
+          minLength: 1
+      required:
+      - expected_version
+      - condition
+      - accessories
+    QuoteResponse:
+      type: object
+      additionalProperties: false
+      properties:
+        expected_version:
+          type: integer
+          minimum: 1
+        response:
+          type: string
+          enum:
+          - APPROVE
+          - REJECT
+        comment:
+          type: string
+          maxLength: 2000
+      required:
+      - expected_version
+      - response
+    PaymentReport:
+      type: object
+      additionalProperties: false
+      properties:
+        obligation_id:
+          type: string
+          minLength: 1
+        method:
+          type: string
+          enum:
+          - BREB
+          - NEQUI
+          - TRANSFER
+        amount_minor: &id001
+          type: string
+          pattern: ^[0-9]+$
+          description: COP minor units, scale 2; COP 100000 = 10000000
+        currency:
+          const: COP
+        reference:
+          type: string
+        attachment_ids:
+          type: array
+          items:
+            type: string
+            minLength: 1
+      required:
+      - obligation_id
+      - method
+      - amount_minor
+      - currency
+    CashPayment:
+      type: object
+      additionalProperties: false
+      properties:
+        obligation_id:
+          type: string
+          minLength: 1
+        expected_obligation_version:
+          type: integer
+          minimum: 1
+        amount_minor: *id001
+        tendered_minor: *id001
+        currency:
+          const: COP
+        cash_session_reference:
+          type: string
+          minLength: 1
+      required:
+      - obligation_id
+      - expected_obligation_version
+      - amount_minor
+      - tendered_minor
+      - currency
+    PaymentReview:
+      type: object
+      additionalProperties: false
+      properties:
+        expected_version:
+          type: integer
+          minimum: 1
+        verification_reference:
+          type: string
+          minLength: 1
+        reason:
+          type: string
+          minLength: 1
+      required:
+      - expected_version
+      - verification_reference
+    Reject:
+      type: object
+      additionalProperties: false
+      properties:
+        expected_version:
+          type: integer
+          minimum: 1
+        reason:
+          type: string
+          minLength: 1
+      required:
+      - expected_version
+      - reason
+    Payment:
+      type: object
+      additionalProperties: false
+      properties:
+        id:
+          type: string
+          minLength: 1
+        organization_id:
+          type: string
+          minLength: 1
+        obligation_id:
+          type: string
+          minLength: 1
+        state:
+          type: string
+          enum:
+          - PENDING
+          - REPORTED
+          - PROCESSING
+          - APPROVED
+          - REJECTED
+          - CANCELLED
+          - REFUNDED
+        method:
+          type: string
+          enum:
+          - BREB
+          - NEQUI
+          - TRANSFER
+          - CASH
+        amount_minor: *id001
+        currency:
+          const: COP
+        version:
+          type: integer
+          minimum: 1
+      required:
+      - id
+      - organization_id
+      - obligation_id
+      - state
+      - method
+      - amount_minor
+      - currency
+      - version
+    DocumentRequest:
+      type: object
+      additionalProperties: false
+      properties:
+        source_event_id:
+          type: string
+          minLength: 1
+        document_type:
+          type: string
+          enum:
+          - INTAKE_VOUCHER
+          - PAYMENT_VOUCHER
+        format:
+          type: string
+          enum:
+          - LETTER
+          - A4
+          - THERMAL_80
+      required:
+      - source_event_id
+      - document_type
+      - format
+    Document:
+      type: object
+      additionalProperties: false
+      properties:
+        document_id:
+          type: string
+          minLength: 1
+        document_type:
+          type: string
+          minLength: 1
+        version:
+          type: integer
+          minimum: 1
+        source_event_id:
+          type: string
+          minLength: 1
+        status:
+          type: string
+          enum:
+          - ISSUED
+          - ADJUSTED
+          - VOIDED
+        render_status:
+          type: string
+          enum:
+          - QUEUED
+          - RENDERING
+          - READY
+          - FAILED
+        job_id:
+          type:
+          - string
+          - 'null'
+      required:
+      - document_id
+      - document_type
+      - version
+      - source_event_id
+      - status
+      - render_status
+      - job_id
+    DocumentList:
+      type: object
+      additionalProperties: false
+      properties:
+        items:
+          type: array
+          items:
+            $ref: '#/components/schemas/Document'
+        next_cursor:
+          type:
+          - string
+          - 'null'
+      required:
+      - items
+    RenderRequest:
+      type: object
+      additionalProperties: false
+      properties:
+        document_version:
+          type: integer
+          minimum: 1
+        format:
+          type: string
+          enum:
+          - LETTER
+          - A4
+          - THERMAL_80
+      required:
+      - document_version
+      - format
+    Job:
+      type: object
+      additionalProperties: false
+      properties:
+        job_id:
+          type: string
+          minLength: 1
+        document_id:
+          type: string
+          minLength: 1
+        status:
+          type: string
+          enum:
+          - QUEUED
+          - RENDERING
+          - READY
+          - FAILED
+        error_code:
+          type:
+          - string
+          - 'null'
+      required:
+      - job_id
+      - document_id
+      - status
+    DownloadLink:
+      type: object
+      additionalProperties: false
+      properties:
+        url:
+          type: string
+          format: uri
+        expires_at:
+          type: string
+          format: date-time
+        document_id:
+          type: string
+          minLength: 1
+        version:
+          type: integer
+          minimum: 1
+      required:
+      - url
+      - expires_at
+      - document_id
+      - version
+    PrintIntent:
+      type: object
+      additionalProperties: false
+      properties:
+        document_version:
+          type: integer
+          minimum: 1
+        format:
+          type: string
+          enum:
+          - LETTER
+          - A4
+          - THERMAL_80
+      required:
+      - document_version
+      - format
+    DeliveryConfirm:
+      type: object
+      additionalProperties: false
+      properties:
+        expected_version:
+          type: integer
+          minimum: 1
+        receiver_name:
+          type: string
+          minLength: 1
+        receiver_verification:
+          type: string
+          minLength: 1
+        acceptance_reference:
+          type: string
+          minLength: 1
+      required:
+      - expected_version
+      - receiver_name
+      - receiver_verification
+    OrganizationCreate:
+      type: object
+      additionalProperties: false
+      properties:
+        name:
+          type: string
+          minLength: 1
+        slug:
+          type: string
+          pattern: ^[a-z0-9]+(?:-[a-z0-9]+)*$
+        admin_email:
+          type: string
+          format: email
+        plan_version_id:
+          type: string
+          minLength: 1
+      required:
+      - name
+      - slug
+      - admin_email
+      - plan_version_id
+    Context:
+      type: object
+      additionalProperties: false
+      properties:
+        user_id:
+          type: string
+          minLength: 1
+        memberships:
+          type: array
+          items:
+            type: object
+            properties:
+              organization_id:
+                type: string
+                minLength: 1
+              role:
+                type: string
+                enum:
+                - SUPER_USER
+                - ADMIN
+                - ADVISOR
+                - TECHNICIAN
+                - CUSTOMER
+            required:
+            - organization_id
+            - role
+            additionalProperties: false
+        is_super_user:
+          type: boolean
+      required:
+      - user_id
+      - memberships
+      - is_super_user
+    SubscriptionAction:
+      type: object
+      additionalProperties: false
+      properties:
+        expected_version:
+          type: integer
+          minimum: 1
+        action:
+          type: string
+          enum:
+          - SUSPEND
+          - REACTIVATE_COURTESY
+        reason:
+          type: string
+          minLength: 1
+        courtesy_until:
+          type:
+          - string
+          - 'null'
+          format: date-time
+      required:
+      - expected_version
+      - action
+      - reason

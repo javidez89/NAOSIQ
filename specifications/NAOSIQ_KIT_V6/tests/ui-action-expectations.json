@@ -1,0 +1,2906 @@
+[
+  {
+    "action_id": "AU01.A1",
+    "screen_id": "AU01",
+    "success_expected": "Identidad verificada. Elige un contexto autorizado.",
+    "negative_expected": "Google no confirmo el acceso. No se inicio una sesión nueva.",
+    "recovery_expected": "Mantener contexto y mostrar confirmación verificable.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "AU01.A2",
+    "screen_id": "AU01",
+    "success_expected": "Nuevo intento de acceso preparado.",
+    "negative_expected": "El intento anterior sigue activo. Cierralo o espera antes de repetir.",
+    "recovery_expected": "Mantener contexto y mostrar confirmación verificable.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "AU01.A3",
+    "screen_id": "AU01",
+    "success_expected": "Ayuda de acceso abierta.",
+    "negative_expected": "No se pudo cargar ayuda; conserva el código de incidencia.",
+    "recovery_expected": "Reintentar la lectura sin mutar recursos.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "AU02.A1",
+    "screen_id": "AU02",
+    "success_expected": "Entraste en Tecno Cell con tu rol autorizado.",
+    "negative_expected": "Tu membresia fue revocada. Selecciona otro contexto autorizado.",
+    "recovery_expected": "Reintentar la lectura sin mutar recursos.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "AU02.A2",
+    "screen_id": "AU02",
+    "success_expected": "CRM Maestro abierto para el Super Usuario verificado.",
+    "negative_expected": "Tu identidad no tiene rol global Super Usuario.",
+    "recovery_expected": "Reintentar la lectura sin mutar recursos.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "AU02.A3",
+    "screen_id": "AU02",
+    "success_expected": "Sesión anterior cerrada; puedes elegir otra cuenta.",
+    "negative_expected": "Hay tareas pendientes de guardar; decide antes de cambiar la cuenta.",
+    "recovery_expected": "Mantener contexto y mostrar confirmación verificable.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "AU03.A1",
+    "screen_id": "AU03",
+    "success_expected": "Sesión extendida si el servidor lo permite; regresas al mismo punto.",
+    "negative_expected": "La sesión ya vencio. Inicia sesión para recuperar el borrador disponible.",
+    "recovery_expected": "Mantener contexto y mostrar confirmación verificable.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "AU03.A2",
+    "screen_id": "AU03",
+    "success_expected": "Reautenticacion correcta; permisos revalidados.",
+    "negative_expected": "La identidad no corresponde al borrador o al comercio original.",
+    "recovery_expected": "Mantener contexto y mostrar confirmación verificable.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "AU03.A3",
+    "screen_id": "AU03",
+    "success_expected": "Sesión cerrada de forma explícita.",
+    "negative_expected": "Hay trabajo no confirmado. Revisa el último guardado antes de salir.",
+    "recovery_expected": "Mantener contexto y mostrar confirmación verificable.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "AU04.A1",
+    "screen_id": "AU04",
+    "success_expected": "Lectura completada; vuelve la pantalla solicitada.",
+    "negative_expected": "El servicio sigue indisponible. No se repitio ninguna operación de negocio.",
+    "recovery_expected": "Reintentar la lectura sin mutar recursos.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "AU04.A2",
+    "screen_id": "AU04",
+    "success_expected": "Contextos autorizados disponibles.",
+    "negative_expected": "La sesión vencio. Inicia sesión antes de entrar al CRM.",
+    "recovery_expected": "Reintentar la lectura sin mutar recursos.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "AU04.A3",
+    "screen_id": "AU04",
+    "success_expected": "Referencia de error preparada para soporte.",
+    "negative_expected": "No pudimos abrir soporte; copia el código visible.",
+    "recovery_expected": "Mantener contexto y mostrar confirmación verificable.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "AU05.A1",
+    "screen_id": "AU05",
+    "success_expected": "Borrador recuperado; revisa los campos antes de enviar.",
+    "negative_expected": "La copia pertenece a otra sesión o ya vencio. No se mostraran sus datos.",
+    "recovery_expected": "Reintentar la lectura sin mutar recursos.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "AU05.A2",
+    "screen_id": "AU05",
+    "success_expected": "Versión local y del servidor visibles sin sobrescritura automatica.",
+    "negative_expected": "No pudimos consultar el servidor. Conserva la copia local autorizada.",
+    "recovery_expected": "Reintentar la lectura sin mutar recursos.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "AU05.A3",
+    "screen_id": "AU05",
+    "success_expected": "Copia descartada tras confirmación. No se borro ningun registro confirmado.",
+    "negative_expected": "Hay una operación en curso; revisa su resultado antes de descartar.",
+    "recovery_expected": "Mantener contexto y mostrar confirmación verificable.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "AU06.A1",
+    "screen_id": "AU06",
+    "success_expected": "Documento listo abierto de forma autorizada.",
+    "negative_expected": "La notificación apunta a un recurso ya no disponible.",
+    "recovery_expected": "Reintentar la lectura sin mutar recursos.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "AU06.A2",
+    "screen_id": "AU06",
+    "success_expected": "Preferencia guardada; permiso del navegador verificado.",
+    "negative_expected": "El navegador bloqueo notificaciones. El centro interno sigue funcionando.",
+    "recovery_expected": "Mantener contexto y mostrar confirmación verificable.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "AU06.A3",
+    "screen_id": "AU06",
+    "success_expected": "Nueva versión lista; se recarga después de resolver cambios pendientes.",
+    "negative_expected": "Hay un formulario sin confirmar. Guarda o descarta antes de actualizar.",
+    "recovery_expected": "Mantener contexto y mostrar confirmación verificable.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "SU01.A1",
+    "screen_id": "SU01",
+    "success_expected": "Listado abierto con el filtro Activos.",
+    "negative_expected": "No pudimos consultar los comercios. Conservamos el período seleccionado.",
+    "recovery_expected": "Reintentar la lectura sin mutar recursos.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "SU01.A2",
+    "screen_id": "SU01",
+    "success_expected": "Se muestran las renovaciones pendientes.",
+    "negative_expected": "Los cobros están demorados. No inferimos pagos a partir del dashboard.",
+    "recovery_expected": "Reintentar la lectura sin mutar recursos.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "SU01.A3",
+    "screen_id": "SU01",
+    "success_expected": "Incidente INC-0042 abierto.",
+    "negative_expected": "El incidente ya fue cerrado; puedes revisar su historial.",
+    "recovery_expected": "Reintentar la lectura sin mutar recursos.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "SU02.A1",
+    "screen_id": "SU02",
+    "success_expected": "Formulario de alta listo.",
+    "negative_expected": "No fue posible iniciar el alta. El listado sigue disponible.",
+    "recovery_expected": "Reintentar la lectura sin mutar recursos.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "SU02.A2",
+    "screen_id": "SU02",
+    "success_expected": "Ficha de Tecno Cell abierta.",
+    "negative_expected": "Este comercio no esta disponible para tu sesión.",
+    "recovery_expected": "Reintentar la lectura sin mutar recursos.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "SU02.A3",
+    "screen_id": "SU02",
+    "success_expected": "La exportacion quedo en preparacion.",
+    "negative_expected": "No pudimos generar el archivo. Conservamos los filtros.",
+    "recovery_expected": "Mantener contexto y mostrar confirmación verificable.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "SU03.A1",
+    "screen_id": "SU03",
+    "success_expected": "/tecnocell-centro esta disponible.",
+    "negative_expected": "Esa URL esta ocupada. Prueba tecnocell-centro-2.",
+    "recovery_expected": "Reintentar la lectura sin mutar recursos.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "SU03.A2",
+    "screen_id": "SU03",
+    "success_expected": "Borrador de alta guardado en el servidor.",
+    "negative_expected": "No se guardo el borrador. No cierres esta página.",
+    "recovery_expected": "Comprobar último guardado; no confirmar persistencia sin acuse.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "SU03.A3",
+    "screen_id": "SU03",
+    "success_expected": "Comercio creado. Invitacion del administrador en preparacion.",
+    "negative_expected": "No pudimos confirmar el alta. Consulta el resultado antes de repetir.",
+    "recovery_expected": "Consultar resultado con la misma clave; nunca repetir cobro a ciegas.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "SU04.A1",
+    "screen_id": "SU04",
+    "success_expected": "Contexto seleccionado: Tecno Cell.",
+    "negative_expected": "No pudimos abrir el contexto de control. Tus permisos no cambiaron.",
+    "recovery_expected": "Reintentar la lectura sin mutar recursos.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "SU04.A2",
+    "screen_id": "SU04",
+    "success_expected": "Datos listos para editar.",
+    "negative_expected": "La ficha fue actualizada. Carga la versión vigente antes de modificar.",
+    "recovery_expected": "Reintentar la lectura sin mutar recursos.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "SU04.A3",
+    "screen_id": "SU04",
+    "success_expected": "Suscripción de Tecno Cell abierta.",
+    "negative_expected": "El estado de la suscripción no pudo consultarse.",
+    "recovery_expected": "Reintentar la lectura sin mutar recursos.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "SU05.A1",
+    "screen_id": "SU05",
+    "success_expected": "Identidad confirmada para la acción sensible.",
+    "negative_expected": "No pudimos verificar tu identidad. No se habilito el control.",
+    "recovery_expected": "Mantener contexto y mostrar confirmación verificable.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "SU05.A2",
+    "screen_id": "SU05",
+    "success_expected": "Control iniciado sobre Tecno Cell; todas las acciones quedan auditadas.",
+    "negative_expected": "La autorización de control vencio. Vuelve a confirmar tu identidad.",
+    "recovery_expected": "Consultar resultado con la misma clave; nunca repetir cobro a ciegas.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "SU05.A3",
+    "screen_id": "SU05",
+    "success_expected": "Volviste al CRM Maestro. El contexto del comercio fue cerrado.",
+    "negative_expected": "Hay cambios sin guardar. Guarda o descarta antes de salir.",
+    "recovery_expected": "Mantener contexto y mostrar confirmación verificable.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "SU06.A1",
+    "screen_id": "SU06",
+    "success_expected": "Editor de nuevo plan abierto.",
+    "negative_expected": "No pudimos abrir el editor. Reintenta desde Planes.",
+    "recovery_expected": "Reintentar la lectura sin mutar recursos.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "SU06.A2",
+    "screen_id": "SU06",
+    "success_expected": "Se edita una nueva versión del plan Básico.",
+    "negative_expected": "El plan cambio. Actualiza antes de continuar.",
+    "recovery_expected": "Reintentar la lectura sin mutar recursos.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "SU06.A3",
+    "screen_id": "SU06",
+    "success_expected": "Plan retirado de nuevas contrataciones.",
+    "negative_expected": "No se puede eliminar un plan con suscripciones activas.",
+    "recovery_expected": "Consultar resultado con la misma clave; nunca repetir cobro a ciegas.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "SU07.A1",
+    "screen_id": "SU07",
+    "success_expected": "Detalle del ciclo abierto.",
+    "negative_expected": "No se pudo cargar el ciclo vigente.",
+    "recovery_expected": "Reintentar la lectura sin mutar recursos.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "SU07.A2",
+    "screen_id": "SU07",
+    "success_expected": "Filtro Vencidas aplicado.",
+    "negative_expected": "No pudimos actualizar resultados. Conservamos el filtro.",
+    "recovery_expected": "Reintentar la lectura sin mutar recursos.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "SU07.A3",
+    "screen_id": "SU07",
+    "success_expected": "Reporte SaaS en preparacion.",
+    "negative_expected": "Fallo la preparacion del reporte. No se modifico ninguna suscripción.",
+    "recovery_expected": "Mantener contexto y mostrar confirmación verificable.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "SU08.A1",
+    "screen_id": "SU08",
+    "success_expected": "Cargo SaaS abierto con su período y movimientos.",
+    "negative_expected": "El cargo no esta disponible. No se altero el saldo.",
+    "recovery_expected": "Reintentar la lectura sin mutar recursos.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "SU08.A2",
+    "screen_id": "SU08",
+    "success_expected": "Pago SaaS conciliado contra el cargo seleccionado.",
+    "negative_expected": "Ese movimiento ya fue aplicado. Revisa el historial antes de repetir.",
+    "recovery_expected": "Consultar resultado con la misma clave; nunca repetir cobro a ciegas.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "SU08.A3",
+    "screen_id": "SU08",
+    "success_expected": "Cortesía registrada como ajuste autorizado, no como pago bancario.",
+    "negative_expected": "Indica motivo y vigencia para registrar la cortesía.",
+    "recovery_expected": "Consultar resultado con la misma clave; nunca repetir cobro a ciegas.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "SU09.A1",
+    "screen_id": "SU09",
+    "success_expected": "La ruta solicitada esta disponible.",
+    "negative_expected": "La ruta esta reservada o asignada a otro comercio.",
+    "recovery_expected": "Reintentar la lectura sin mutar recursos.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "SU09.A2",
+    "screen_id": "SU09",
+    "success_expected": "Nueva URL asignada. La ruta anterior queda como redireccion si aplica.",
+    "negative_expected": "La URL fue tomada por otro proceso. Selecciona otra ruta.",
+    "recovery_expected": "Consultar resultado con la misma clave; nunca repetir cobro a ciegas.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "SU09.A3",
+    "screen_id": "SU09",
+    "success_expected": "Verificación solicitada; consulta el estado del dominio.",
+    "negative_expected": "No encontramos la verificación requerida. Revisa los datos DNS.",
+    "recovery_expected": "Mantener contexto y mostrar confirmación verificable.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "SU10.A1",
+    "screen_id": "SU10",
+    "success_expected": "Invitacion creada; envío pendiente de confirmación.",
+    "negative_expected": "El correo es inválido o ya tiene una invitacion vigente.",
+    "recovery_expected": "Consultar resultado con la misma clave; nunca repetir cobro a ciegas.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "SU10.A2",
+    "screen_id": "SU10",
+    "success_expected": "Membresias actualizadas. Se registraron actor y motivo.",
+    "negative_expected": "No puedes retirar al último Super Usuario activo.",
+    "recovery_expected": "Consultar resultado con la misma clave; nunca repetir cobro a ciegas.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "SU10.A3",
+    "screen_id": "SU10",
+    "success_expected": "Se solicito el cierre de las sesiones seleccionadas.",
+    "negative_expected": "No se pudo confirmar la revocacion. Revisa el estado antes de repetir.",
+    "recovery_expected": "Consultar resultado con la misma clave; nunca repetir cobro a ciegas.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "SU11.A1",
+    "screen_id": "SU11",
+    "success_expected": "Conexión verificada en el entorno elegido.",
+    "negative_expected": "El proveedor no respondio. La operación del taller sigue disponible.",
+    "recovery_expected": "Reintentar la lectura sin mutar recursos.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "SU11.A2",
+    "screen_id": "SU11",
+    "success_expected": "Credencial actualizada; el valor permanece oculto.",
+    "negative_expected": "La credencial no fue validada. Conservamos la configuración anterior.",
+    "recovery_expected": "Consultar resultado con la misma clave; nunca repetir cobro a ciegas.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "SU11.A3",
+    "screen_id": "SU11",
+    "success_expected": "Integración desactivada. Se mantiene la alternativa disponible.",
+    "negative_expected": "Hay tareas en proceso. Revisa el impacto antes de desactivar.",
+    "recovery_expected": "Consultar resultado con la misma clave; nunca repetir cobro a ciegas.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "SU12.A1",
+    "screen_id": "SU12",
+    "success_expected": "Vista previa lista con datos de demostracion.",
+    "negative_expected": "La plantilla contiene una variable no permitida.",
+    "recovery_expected": "Reintentar la lectura sin mutar recursos.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "SU12.A2",
+    "screen_id": "SU12",
+    "success_expected": "Nueva versión de la plantilla publicada.",
+    "negative_expected": "Completa texto y variables antes de publicar.",
+    "recovery_expected": "Consultar resultado con la misma clave; nunca repetir cobro a ciegas.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "SU12.A3",
+    "screen_id": "SU12",
+    "success_expected": "WhatsApp abierto con el texto preparado. El envío no esta confirmado.",
+    "negative_expected": "No pudimos abrir WhatsApp. Copia el texto y vuelve a intentarlo.",
+    "recovery_expected": "No confirmar envío fuera del portal.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "SU13.A1",
+    "screen_id": "SU13",
+    "success_expected": "Evento abierto con actor, motivo y cambios.",
+    "negative_expected": "No se pudo cargar el evento. No se muestran datos parciales sensibles.",
+    "recovery_expected": "Reintentar la lectura sin mutar recursos.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "SU13.A2",
+    "screen_id": "SU13",
+    "success_expected": "Filtro Tecno Cell aplicado.",
+    "negative_expected": "No pudimos completar la consulta de auditoría.",
+    "recovery_expected": "Reintentar la lectura sin mutar recursos.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "SU13.A3",
+    "screen_id": "SU13",
+    "success_expected": "Exportacion auditada en preparacion.",
+    "negative_expected": "No fue posible preparar la evidencia. Reintenta sin cambiar filtros.",
+    "recovery_expected": "Mantener contexto y mostrar confirmación verificable.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "SU14.A1",
+    "screen_id": "SU14",
+    "success_expected": "Caso INC-0042 abierto.",
+    "negative_expected": "El caso fue archivado; puedes consultar su historial.",
+    "recovery_expected": "Reintentar la lectura sin mutar recursos.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "SU14.A2",
+    "screen_id": "SU14",
+    "success_expected": "Respuesta guardada en el caso.",
+    "negative_expected": "No se envío la respuesta. Conservamos el texto mientras esta página siga abierta.",
+    "recovery_expected": "Mantener contexto y mostrar confirmación verificable.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "SU14.A3",
+    "screen_id": "SU14",
+    "success_expected": "Caso cerrado con resolucion.",
+    "negative_expected": "Describe la solución antes de cerrar el caso.",
+    "recovery_expected": "Consultar resultado con la misma clave; nunca repetir cobro a ciegas.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "SU15.A1",
+    "screen_id": "SU15",
+    "success_expected": "Nueva versión de la política guardada.",
+    "negative_expected": "La duracion de aviso debe ser menor que la de expiración.",
+    "recovery_expected": "Consultar resultado con la misma clave; nunca repetir cobro a ciegas.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "SU15.A2",
+    "screen_id": "SU15",
+    "success_expected": "Vista de impacto preparada; aún no se aplicaron cambios.",
+    "negative_expected": "No pudimos calcular el impacto. No publiques la política todavia.",
+    "recovery_expected": "Reintentar la lectura sin mutar recursos.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "SU15.A3",
+    "screen_id": "SU15",
+    "success_expected": "Versión anterior restaurada mediante un nuevo evento.",
+    "negative_expected": "Esa versión contiene campos incompatibles. Revisa las diferencias.",
+    "recovery_expected": "Consultar resultado con la misma clave; nunca repetir cobro a ciegas.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "SU16.A1",
+    "screen_id": "SU16",
+    "success_expected": "Borrador del plan guardado.",
+    "negative_expected": "Completa el nombre y período para guardar.",
+    "recovery_expected": "Comprobar último guardado; no confirmar persistencia sin acuse.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "SU16.A2",
+    "screen_id": "SU16",
+    "success_expected": "Versión publicada para nuevas altas.",
+    "negative_expected": "Selecciona una política de migracion de contratos existentes.",
+    "recovery_expected": "Consultar resultado con la misma clave; nunca repetir cobro a ciegas.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "SU16.A3",
+    "screen_id": "SU16",
+    "success_expected": "Volviste al listado sin publicar cambios.",
+    "negative_expected": "Hay un borrador no guardado. Confirma como salir.",
+    "recovery_expected": "Mantener contexto y mostrar confirmación verificable.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "SU17.A1",
+    "screen_id": "SU17",
+    "success_expected": "Pago SaaS confirmado. Reactivacion en evaluacion.",
+    "negative_expected": "El cargo ya esta conciliado o el monto no coincide.",
+    "recovery_expected": "Consultar resultado con la misma clave; nunca repetir cobro a ciegas.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "SU17.A2",
+    "screen_id": "SU17",
+    "success_expected": "Reporte rechazado con motivo; el cargo sigue pendiente.",
+    "negative_expected": "Indica el motivo y no solicites un segundo pago sin revisar el primero.",
+    "recovery_expected": "Consultar resultado con la misma clave; nunca repetir cobro a ciegas.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "SU17.A3",
+    "screen_id": "SU17",
+    "success_expected": "Historial de pagos SaaS abierto.",
+    "negative_expected": "No se pudo consultar el historial del cargo.",
+    "recovery_expected": "Reintentar la lectura sin mutar recursos.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "SU18.A1",
+    "screen_id": "SU18",
+    "success_expected": "Servicio suspendido; siguen disponibles pago SaaS y soporte.",
+    "negative_expected": "No se pudo confirmar la suspension. Revisa el estado real.",
+    "recovery_expected": "Consultar resultado con la misma clave; nunca repetir cobro a ciegas.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "SU18.A2",
+    "screen_id": "SU18",
+    "success_expected": "Cortesía registrada y acceso reactivado hasta la fecha autorizada.",
+    "negative_expected": "Faltan motivo o vencimiento de la cortesía.",
+    "recovery_expected": "Consultar resultado con la misma clave; nunca repetir cobro a ciegas.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "SU18.A3",
+    "screen_id": "SU18",
+    "success_expected": "Cargo del ciclo abierto.",
+    "negative_expected": "No encontramos un cargo asociado a este período.",
+    "recovery_expected": "Reintentar la lectura sin mutar recursos.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "SU19.A1",
+    "screen_id": "SU19",
+    "success_expected": "Datos del comercio actualizados.",
+    "negative_expected": "Hay una versión más reciente. Compara antes de guardar.",
+    "recovery_expected": "Consultar resultado con la misma clave; nunca repetir cobro a ciegas.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "SU19.A2",
+    "screen_id": "SU19",
+    "success_expected": "Se abrio el gestor central de URLs.",
+    "negative_expected": "No pudimos abrir la configuración de dominio.",
+    "recovery_expected": "Reintentar la lectura sin mutar recursos.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "SU19.A3",
+    "screen_id": "SU19",
+    "success_expected": "Edicion cerrada sin publicar cambios.",
+    "negative_expected": "Hay campos sin guardar. Confirma como salir.",
+    "recovery_expected": "Mantener contexto y mostrar confirmación verificable.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "SU20.A1",
+    "screen_id": "SU20",
+    "success_expected": "Indicadores actualizados para el rango elegido.",
+    "negative_expected": "No pudimos actualizar el período. Se muestran datos anteriores con su fecha.",
+    "recovery_expected": "Reintentar la lectura sin mutar recursos.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "SU20.A2",
+    "screen_id": "SU20",
+    "success_expected": "Exportacion en preparacion; se mostrara aqui al finalizar.",
+    "negative_expected": "No pudimos iniciar el trabajo de exportacion.",
+    "recovery_expected": "Mantener contexto y mostrar confirmación verificable.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "SU20.A3",
+    "screen_id": "SU20",
+    "success_expected": "Descarga del resultado disponible iniciada.",
+    "negative_expected": "El enlace vencio. Genera un nuevo enlace autorizado.",
+    "recovery_expected": "Reintentar la lectura sin mutar recursos.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "AD01.A1",
+    "screen_id": "AD01",
+    "success_expected": "Bandeja abierta con pendientes del día.",
+    "negative_expected": "No se pudo actualizar la cola; se conserva la última consulta.",
+    "recovery_expected": "Reintentar la lectura sin mutar recursos.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "AD01.A2",
+    "screen_id": "AD01",
+    "success_expected": "Formulario de orden abierto.",
+    "negative_expected": "La suscripción no permite nuevas operaciones. Ve a Mi suscripción.",
+    "recovery_expected": "Reintentar la lectura sin mutar recursos.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "AD01.A3",
+    "screen_id": "AD01",
+    "success_expected": "Punto de venta listo.",
+    "negative_expected": "No tienes permiso para registrar ventas.",
+    "recovery_expected": "Reintentar la lectura sin mutar recursos.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "AD02.A1",
+    "screen_id": "AD02",
+    "success_expected": "Expediente abierto.",
+    "negative_expected": "La orden no esta disponible para este comercio.",
+    "recovery_expected": "Reintentar la lectura sin mutar recursos.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "AD02.A2",
+    "screen_id": "AD02",
+    "success_expected": "Nueva orden lista para completar.",
+    "negative_expected": "Se alcanzo un limite del plan. Consulta al administrador.",
+    "recovery_expected": "Reintentar la lectura sin mutar recursos.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "AD02.A3",
+    "screen_id": "AD02",
+    "success_expected": "Exportacion de la bandeja solicitada.",
+    "negative_expected": "No pudimos preparar el archivo de órdenes.",
+    "recovery_expected": "Mantener contexto y mostrar confirmación verificable.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "AD03.A1",
+    "screen_id": "AD03",
+    "success_expected": "Cliente seleccionado para esta orden.",
+    "negative_expected": "No encontramos coincidencias. Puedes crear el cliente sin fusionar registros.",
+    "recovery_expected": "Reintentar la lectura sin mutar recursos.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "AD03.A2",
+    "screen_id": "AD03",
+    "success_expected": "Borrador guardado en el servidor.",
+    "negative_expected": "No se guardo el borrador. Conserva abierta la página.",
+    "recovery_expected": "Comprobar último guardado; no confirmar persistencia sin acuse.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "AD03.A3",
+    "screen_id": "AD03",
+    "success_expected": "OT-000154 creada. El PDF se esta preparando.",
+    "negative_expected": "No pudimos confirmar si la orden se creo. Consulta el resultado antes de reenviar.",
+    "recovery_expected": "Consultar resultado con la misma clave; nunca repetir cobro a ciegas.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "AD04.A1",
+    "screen_id": "AD04",
+    "success_expected": "Diagnóstico abierto sin modificar la cotización aprobada.",
+    "negative_expected": "La orden esta cerrada. Abre una revisión autorizada.",
+    "recovery_expected": "Reintentar la lectura sin mutar recursos.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "AD04.A2",
+    "screen_id": "AD04",
+    "success_expected": "Se muestra el saldo vigente de COP 250.000.",
+    "negative_expected": "No fue posible verificar el saldo. No registres el pago todavia.",
+    "recovery_expected": "Reintentar la lectura sin mutar recursos.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "AD04.A3",
+    "screen_id": "AD04",
+    "success_expected": "Revisión previa de entrega abierta.",
+    "negative_expected": "Aun falta QA o resolver el saldo. Revisa los bloqueos.",
+    "recovery_expected": "Reintentar la lectura sin mutar recursos.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "AD05.A1",
+    "screen_id": "AD05",
+    "success_expected": "Evidencia adjuntada a la recepción.",
+    "negative_expected": "El archivo no pudo validarse. La recepción aún no esta confirmada.",
+    "recovery_expected": "Mantener contexto y mostrar confirmación verificable.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "AD05.A2",
+    "screen_id": "AD05",
+    "success_expected": "Borrador de recepción guardado.",
+    "negative_expected": "No pudimos guardar los datos de recepción.",
+    "recovery_expected": "Comprobar último guardado; no confirmar persistencia sin acuse.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "AD05.A3",
+    "screen_id": "AD05",
+    "success_expected": "Equipo recibido. Se genero el hito de custodia.",
+    "negative_expected": "Confirma estado físico y accesorios antes de recibir el equipo.",
+    "recovery_expected": "Consultar resultado con la misma clave; nunca repetir cobro a ciegas.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "AD05.A4",
+    "screen_id": "AD05",
+    "success_expected": "Documento confirmado disponible para vista previa, descarga o solicitud de impresión.",
+    "negative_expected": "El hecho aún no está confirmado o el archivo sigue en preparación.",
+    "recovery_expected": "Consultar documento/job existente; no repetir recepción ni pago.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "AD06.A1",
+    "screen_id": "AD06",
+    "success_expected": "Diagnóstico guardado como versión 2.",
+    "negative_expected": "Describe hallazgo y prueba realizada antes de finalizar.",
+    "recovery_expected": "Comprobar último guardado; no confirmar persistencia sin acuse.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "AD06.A2",
+    "screen_id": "AD06",
+    "success_expected": "La propuesta se copio a una cotización en borrador.",
+    "negative_expected": "Completa la solución propuesta antes de cotizar.",
+    "recovery_expected": "Reintentar la lectura sin mutar recursos.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "AD06.A3",
+    "screen_id": "AD06",
+    "success_expected": "Se registro la conclusion técnica para coordinar devolucion.",
+    "negative_expected": "Indica evidencia y motivo antes de declarar no reparable.",
+    "recovery_expected": "Consultar resultado con la misma clave; nunca repetir cobro a ciegas.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "AD07.A1",
+    "screen_id": "AD07",
+    "success_expected": "Cotización guardada como borrador v2.",
+    "negative_expected": "Revisa cantidades y valores de los items.",
+    "recovery_expected": "Comprobar último guardado; no confirmar persistencia sin acuse.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "AD07.A2",
+    "screen_id": "AD07",
+    "success_expected": "Cotización v2 publicada en el portal del cliente.",
+    "negative_expected": "La cotización no tiene vigencia o items válidos.",
+    "recovery_expected": "Consultar resultado con la misma clave; nunca repetir cobro a ciegas.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "AD07.A3",
+    "screen_id": "AD07",
+    "success_expected": "Vista previa preparada; aún no se envío al cliente.",
+    "negative_expected": "No pudimos generar la vista previa. La cotización sigue guardada.",
+    "recovery_expected": "Reintentar la lectura sin mutar recursos.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "AD08.A1",
+    "screen_id": "AD08",
+    "success_expected": "WhatsApp abierto con el enlace seguro. El envío no esta confirmado.",
+    "negative_expected": "No pudimos abrir WhatsApp; copia el enlace de la cotización.",
+    "recovery_expected": "No confirmar envío fuera del portal.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "AD08.A2",
+    "screen_id": "AD08",
+    "success_expected": "Se muestra actor, fecha y versión de la respuesta.",
+    "negative_expected": "No existe una aprobación registrada para esta versión.",
+    "recovery_expected": "Reintentar la lectura sin mutar recursos.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "AD08.A3",
+    "screen_id": "AD08",
+    "success_expected": "Se inicia una revisión, no se sobrescribe la aprobación anterior.",
+    "negative_expected": "No puedes modificar una versión aprobada directamente.",
+    "recovery_expected": "Reintentar la lectura sin mutar recursos.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "AD09.A1",
+    "screen_id": "AD09",
+    "success_expected": "Asignacion actualizada y auditada.",
+    "negative_expected": "El técnico seleccionado esta inactivo o fuera de la sucursal.",
+    "recovery_expected": "Consultar resultado con la misma clave; nunca repetir cobro a ciegas.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "AD09.A2",
+    "screen_id": "AD09",
+    "success_expected": "Avance agregado a la bitacora.",
+    "negative_expected": "El estado de la orden cambio; revisa antes de guardar.",
+    "recovery_expected": "Consultar resultado con la misma clave; nunca repetir cobro a ciegas.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "AD09.A3",
+    "screen_id": "AD09",
+    "success_expected": "Trabajo enviado a pruebas de calidad.",
+    "negative_expected": "Hay tareas obligatorias sin completar.",
+    "recovery_expected": "Consultar resultado con la misma clave; nunca repetir cobro a ciegas.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "AD10.A1",
+    "screen_id": "AD10",
+    "success_expected": "Resultados de pruebas guardados.",
+    "negative_expected": "Marca resultado o No aplica con motivo en cada prueba requerida.",
+    "recovery_expected": "Comprobar último guardado; no confirmar persistencia sin acuse.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "AD10.A2",
+    "screen_id": "AD10",
+    "success_expected": "QA aprobado. La reparación puede cerrarse tecnicamente.",
+    "negative_expected": "Carga de energia tiene resultado Fallo. No se puede aprobar QA.",
+    "recovery_expected": "Consultar resultado con la misma clave; nunca repetir cobro a ciegas.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "AD10.A3",
+    "screen_id": "AD10",
+    "success_expected": "Orden devuelta al técnico con los fallos detectados.",
+    "negative_expected": "Explica que prueba fallo antes de devolver.",
+    "recovery_expected": "Consultar resultado con la misma clave; nunca repetir cobro a ciegas.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "AD11.A1",
+    "screen_id": "AD11",
+    "success_expected": "Reporte PAY-201 abierto con saldo vigente.",
+    "negative_expected": "El reporte ya fue procesado por otro usuario. Revisa el historial.",
+    "recovery_expected": "Reintentar la lectura sin mutar recursos.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "AD11.A2",
+    "screen_id": "AD11",
+    "success_expected": "Registro de caja abierto por COP 250.000.",
+    "negative_expected": "No tienes permiso vigente para registrar efectivo.",
+    "recovery_expected": "Reintentar la lectura sin mutar recursos.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "AD11.A3",
+    "screen_id": "AD11",
+    "success_expected": "Recibos disponibles de la orden.",
+    "negative_expected": "El PDF sigue en preparacion; no repitas el pago.",
+    "recovery_expected": "Reintentar la lectura sin mutar recursos.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "AD11.A4",
+    "screen_id": "AD11",
+    "success_expected": "Documento confirmado disponible para vista previa, descarga o solicitud de impresión.",
+    "negative_expected": "El hecho aún no está confirmado o el archivo sigue en preparación.",
+    "recovery_expected": "Consultar documento/job existente; no repetir recepción ni pago.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "AD12.A1",
+    "screen_id": "AD12",
+    "success_expected": "Ficha de Valentina abierta.",
+    "negative_expected": "El cliente no pertenece a este comercio.",
+    "recovery_expected": "Reintentar la lectura sin mutar recursos.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "AD12.A2",
+    "screen_id": "AD12",
+    "success_expected": "Formulario de contacto listo.",
+    "negative_expected": "Ese correo ya esta asociado. Revisa coincidencias antes de crear.",
+    "recovery_expected": "Reintentar la lectura sin mutar recursos.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "AD12.A3",
+    "screen_id": "AD12",
+    "success_expected": "Cliente seleccionado en la nueva orden.",
+    "negative_expected": "El contacto esta incompleto. Completa un medio de contacto.",
+    "recovery_expected": "Reintentar la lectura sin mutar recursos.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "AD13.A1",
+    "screen_id": "AD13",
+    "success_expected": "Nueva orden iniciada para Valentina.",
+    "negative_expected": "No se pudo iniciar la solicitud. La ficha sigue disponible.",
+    "recovery_expected": "Reintentar la lectura sin mutar recursos.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "AD13.A2",
+    "screen_id": "AD13",
+    "success_expected": "Contacto actualizado con auditoría.",
+    "negative_expected": "No cambies el correo verificado sin completar la validación requerida.",
+    "recovery_expected": "Consultar resultado con la misma clave; nunca repetir cobro a ciegas.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "AD13.A3",
+    "screen_id": "AD13",
+    "success_expected": "Conversacion del cliente abierta.",
+    "negative_expected": "Este cliente no tiene un canal de contacto habilitado.",
+    "recovery_expected": "Reintentar la lectura sin mutar recursos.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "AD14.A1",
+    "screen_id": "AD14",
+    "success_expected": "Invitacion preparada. El usuario debe aceptarla.",
+    "negative_expected": "La invitacion ya existe para esta membresia.",
+    "recovery_expected": "Reintentar la lectura sin mutar recursos.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "AD14.A2",
+    "screen_id": "AD14",
+    "success_expected": "OT asignada al técnico seleccionado.",
+    "negative_expected": "No puede asignarse a un técnico desactivado.",
+    "recovery_expected": "Consultar resultado con la misma clave; nunca repetir cobro a ciegas.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "AD14.A3",
+    "screen_id": "AD14",
+    "success_expected": "Acceso desactivado con reasignacion registrada.",
+    "negative_expected": "Hay trabajos activos. Reasigna antes de desactivar.",
+    "recovery_expected": "Consultar resultado con la misma clave; nunca repetir cobro a ciegas.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "AD15.A1",
+    "screen_id": "AD15",
+    "success_expected": "Ficha de nuevo producto abierta.",
+    "negative_expected": "No tienes permiso para editar el catálogo.",
+    "recovery_expected": "Reintentar la lectura sin mutar recursos.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "AD15.A2",
+    "screen_id": "AD15",
+    "success_expected": "Detalle de Módulo USB-C abierto.",
+    "negative_expected": "El producto fue archivado. Consulta sus movimientos.",
+    "recovery_expected": "Reintentar la lectura sin mutar recursos.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "AD15.A3",
+    "screen_id": "AD15",
+    "success_expected": "Movimientos filtrados por producto.",
+    "negative_expected": "No pudimos cargar el historial de inventario.",
+    "recovery_expected": "Reintentar la lectura sin mutar recursos.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "AD16.A1",
+    "screen_id": "AD16",
+    "success_expected": "Ficha del producto actualizada.",
+    "negative_expected": "El SKU ya existe en este comercio.",
+    "recovery_expected": "Consultar resultado con la misma clave; nunca repetir cobro a ciegas.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "AD16.A2",
+    "screen_id": "AD16",
+    "success_expected": "Movimiento listo para revisar.",
+    "negative_expected": "La cantidad excede el stock disponible.",
+    "recovery_expected": "Reintentar la lectura sin mutar recursos.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "AD16.A3",
+    "screen_id": "AD16",
+    "success_expected": "Vista pública del producto abierta.",
+    "negative_expected": "El producto aún no esta publicado. Usa la vista previa interna.",
+    "recovery_expected": "Reintentar la lectura sin mutar recursos.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "AD17.A1",
+    "screen_id": "AD17",
+    "success_expected": "Venta guardada como borrador; stock aún no consumido.",
+    "negative_expected": "Agrega al menos un producto válido.",
+    "recovery_expected": "Comprobar último guardado; no confirmar persistencia sin acuse.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "AD17.A2",
+    "screen_id": "AD17",
+    "success_expected": "Total y medio de pago listos para confirmar.",
+    "negative_expected": "El stock cambio. Revisa la cantidad antes de cobrar.",
+    "recovery_expected": "Reintentar la lectura sin mutar recursos.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "AD17.A3",
+    "screen_id": "AD17",
+    "success_expected": "Venta VTA-00201 confirmada con su movimiento y pago.",
+    "negative_expected": "No sabemos aún si se confirmo. Consulta el resultado antes de repetir.",
+    "recovery_expected": "Consultar resultado con la misma clave; nunca repetir cobro a ciegas.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "AD18.A1",
+    "screen_id": "AD18",
+    "success_expected": "Mensaje confirmado en el chat del cliente.",
+    "negative_expected": "No se envío. Conservamos el borrador en esta sesión.",
+    "recovery_expected": "Mantener contexto y mostrar confirmación verificable.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "AD18.A2",
+    "screen_id": "AD18",
+    "success_expected": "Nota interna guardada; el cliente no la ve.",
+    "negative_expected": "No se pudo guardar la nota interna.",
+    "recovery_expected": "Comprobar último guardado; no confirmar persistencia sin acuse.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "AD18.A3",
+    "screen_id": "AD18",
+    "success_expected": "WhatsApp abierto. El envío queda fuera del control del enlace básico.",
+    "negative_expected": "No pudimos abrir la aplicación; puedes copiar el texto.",
+    "recovery_expected": "No confirmar envío fuera del portal.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "AD19.A1",
+    "screen_id": "AD19",
+    "success_expected": "Contenido guardado sin publicarlo.",
+    "negative_expected": "No pudimos guardar el borrador del sitio.",
+    "recovery_expected": "Comprobar último guardado; no confirmar persistencia sin acuse.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "AD19.A2",
+    "screen_id": "AD19",
+    "success_expected": "Vista previa abierta con marca Borrador.",
+    "negative_expected": "Hay una imagen que no termino de cargarse.",
+    "recovery_expected": "Reintentar la lectura sin mutar recursos.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "AD19.A3",
+    "screen_id": "AD19",
+    "success_expected": "Página publicada como nueva versión.",
+    "negative_expected": "El color elegido no permite leer los textos. Corrige el contraste.",
+    "recovery_expected": "Consultar resultado con la misma clave; nunca repetir cobro a ciegas.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "AD20.A1",
+    "screen_id": "AD20",
+    "success_expected": "Datos de pago actualizados con auditoría.",
+    "negative_expected": "Completa titular y dato de destino del medio activado.",
+    "recovery_expected": "Consultar resultado con la misma clave; nunca repetir cobro a ciegas.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "AD20.A2",
+    "screen_id": "AD20",
+    "success_expected": "Vista previa de medios habilitados.",
+    "negative_expected": "No hay medios activos; el cliente debera contactar al comercio.",
+    "recovery_expected": "Reintentar la lectura sin mutar recursos.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "AD20.A3",
+    "screen_id": "AD20",
+    "success_expected": "Medio desactivado para nuevos reportes.",
+    "negative_expected": "Hay instrucciones abiertas; confirma impacto y vigencia del cambio.",
+    "recovery_expected": "Consultar resultado con la misma clave; nunca repetir cobro a ciegas.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "AD21.A1",
+    "screen_id": "AD21",
+    "success_expected": "Número y plantillas guardados.",
+    "negative_expected": "Revisa el número con código de pais.",
+    "recovery_expected": "Consultar resultado con la misma clave; nunca repetir cobro a ciegas.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "AD21.A2",
+    "screen_id": "AD21",
+    "success_expected": "WhatsApp abierto con el mensaje preparado.",
+    "negative_expected": "No se pudo abrir el enlace. Copia el mensaje.",
+    "recovery_expected": "No confirmar envío fuera del portal.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "AD21.A3",
+    "screen_id": "AD21",
+    "success_expected": "Texto copiado para pegar en WhatsApp.",
+    "negative_expected": "El navegador no permitio copiar. Selecciona el texto manualmente.",
+    "recovery_expected": "Mantener contexto y mostrar confirmación verificable.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "AD22.A1",
+    "screen_id": "AD22",
+    "success_expected": "Período actualizado.",
+    "negative_expected": "No se actualizo el informe; revisa la fecha de los datos visibles.",
+    "recovery_expected": "Reintentar la lectura sin mutar recursos.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "AD22.A2",
+    "screen_id": "AD22",
+    "success_expected": "Bandeja abierta con el mismo filtro del informe.",
+    "negative_expected": "No pudimos trasladar el filtro; la bandeja sigue accesible.",
+    "recovery_expected": "Reintentar la lectura sin mutar recursos.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "AD22.A3",
+    "screen_id": "AD22",
+    "success_expected": "Reporte en preparacion.",
+    "negative_expected": "El reporte no pudo generarse; no cambio la información operativa.",
+    "recovery_expected": "Mantener contexto y mostrar confirmación verificable.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "AD23.A1",
+    "screen_id": "AD23",
+    "success_expected": "Se abre el flujo de pago SaaS del comercio, no el de una OT.",
+    "negative_expected": "Aun no se confirmo el pago previo. Consulta su resultado antes de pagar otra vez.",
+    "recovery_expected": "Consultar resultado con la misma clave; nunca repetir cobro a ciegas.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "AD23.A2",
+    "screen_id": "AD23",
+    "success_expected": "Solicitud de cambio preparada con impacto visible.",
+    "negative_expected": "Excedes los límites del plan elegido; revisa el ajuste antes de confirmar.",
+    "recovery_expected": "Consultar resultado con la misma clave; nunca repetir cobro a ciegas.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "AD23.A3",
+    "screen_id": "AD23",
+    "success_expected": "Caso de soporte del comercio iniciado.",
+    "negative_expected": "No se pudo abrir el caso. Conserva el código de referencia.",
+    "recovery_expected": "Mantener contexto y mostrar confirmación verificable.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "AD24.A1",
+    "screen_id": "AD24",
+    "success_expected": "Configuración del negocio guardada.",
+    "negative_expected": "Hay campos inválidos. Revisa contacto y horario.",
+    "recovery_expected": "Consultar resultado con la misma clave; nunca repetir cobro a ciegas.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "AD24.A2",
+    "screen_id": "AD24",
+    "success_expected": "Usuarios y permisos del negocio abiertos.",
+    "negative_expected": "No tienes permiso para administrar personal.",
+    "recovery_expected": "Reintentar la lectura sin mutar recursos.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "AD24.A3",
+    "screen_id": "AD24",
+    "success_expected": "Numeración y plantillas abiertas.",
+    "negative_expected": "No se pudo abrir la configuración documental.",
+    "recovery_expected": "Reintentar la lectura sin mutar recursos.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "AD25.A1",
+    "screen_id": "AD25",
+    "success_expected": "Invitacion enviada a la cola de correo. Rol propuesto: Asesor.",
+    "negative_expected": "El correo ya tiene una membresia activa en este negocio.",
+    "recovery_expected": "Consultar resultado con la misma clave; nunca repetir cobro a ciegas.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "AD25.A2",
+    "screen_id": "AD25",
+    "success_expected": "Permisos versionados y sesiones sensibles revalidadas.",
+    "negative_expected": "No puedes quitar el acceso del último administrador.",
+    "recovery_expected": "Consultar resultado con la misma clave; nunca repetir cobro a ciegas.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "AD25.A3",
+    "screen_id": "AD25",
+    "success_expected": "Miembro desactivado y responsabilidades reasignadas.",
+    "negative_expected": "Reasigna sus tareas activas antes de desactivar.",
+    "recovery_expected": "Consultar resultado con la misma clave; nunca repetir cobro a ciegas.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "AD26.A1",
+    "screen_id": "AD26",
+    "success_expected": "COT-00154 abierta con versión vigente.",
+    "negative_expected": "La cotización fue reemplazada. Revisa la última versión.",
+    "recovery_expected": "Reintentar la lectura sin mutar recursos.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "AD26.A2",
+    "screen_id": "AD26",
+    "success_expected": "Mensaje preparado; falta el envío por WhatsApp.",
+    "negative_expected": "No existe un contacto habilitado para el recordatorio.",
+    "recovery_expected": "No confirmar envío fuera del portal.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "AD26.A3",
+    "screen_id": "AD26",
+    "success_expected": "Nueva versión en borrador.",
+    "negative_expected": "No puedes sobrescribir la versión ya aprobada.",
+    "recovery_expected": "Consultar resultado con la misma clave; nunca repetir cobro a ciegas.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "AD27.A1",
+    "screen_id": "AD27",
+    "success_expected": "Historial del equipo cargado.",
+    "negative_expected": "No pudimos cargar órdenes vinculadas a este equipo.",
+    "recovery_expected": "Reintentar la lectura sin mutar recursos.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "AD27.A2",
+    "screen_id": "AD27",
+    "success_expected": "Equipo seleccionado para una nueva solicitud.",
+    "negative_expected": "Hay una orden abierta; revisa si corresponde crear otra o un reingreso.",
+    "recovery_expected": "Reintentar la lectura sin mutar recursos.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "AD27.A3",
+    "screen_id": "AD27",
+    "success_expected": "Correccion auditada sin fusion automatica.",
+    "negative_expected": "El serial coincide con otro equipo. Requiere revisión manual.",
+    "recovery_expected": "Consultar resultado con la misma clave; nunca repetir cobro a ciegas.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "AD28.A1",
+    "screen_id": "AD28",
+    "success_expected": "Movimiento validado contra el stock vigente.",
+    "negative_expected": "La salida deja stock negativo. Revisa cantidad o bodega.",
+    "recovery_expected": "Reintentar la lectura sin mutar recursos.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "AD28.A2",
+    "screen_id": "AD28",
+    "success_expected": "Movimiento registrado una sola vez.",
+    "negative_expected": "La reserva cambio; actualiza disponibilidad antes de confirmar.",
+    "recovery_expected": "Consultar resultado con la misma clave; nunca repetir cobro a ciegas.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "AD28.A3",
+    "screen_id": "AD28",
+    "success_expected": "Volviste al inventario sin aplicar el borrador.",
+    "negative_expected": "Hay un envío pendiente; consulta su estado antes de descartar.",
+    "recovery_expected": "Mantener contexto y mostrar confirmación verificable.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "AD29.A1",
+    "screen_id": "AD29",
+    "success_expected": "VTA-00201 abierta.",
+    "negative_expected": "La venta no esta disponible para este comercio.",
+    "recovery_expected": "Reintentar la lectura sin mutar recursos.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "AD29.A2",
+    "screen_id": "AD29",
+    "success_expected": "Punto de venta abierto.",
+    "negative_expected": "No pudimos cargar el catálogo actualizado.",
+    "recovery_expected": "Reintentar la lectura sin mutar recursos.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "AD29.A3",
+    "screen_id": "AD29",
+    "success_expected": "Exportacion de ventas en preparacion.",
+    "negative_expected": "No pudimos preparar el archivo. Conservamos los filtros.",
+    "recovery_expected": "Mantener contexto y mostrar confirmación verificable.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "AD30.A1",
+    "screen_id": "AD30",
+    "success_expected": "Recibo abierto con el monto confirmado.",
+    "negative_expected": "El PDF sigue pendiente. La venta no debe repetirse.",
+    "recovery_expected": "Reintentar la lectura sin mutar recursos.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "AD30.A2",
+    "screen_id": "AD30",
+    "success_expected": "Anulacion registrada con reversos separados y motivo.",
+    "negative_expected": "Existe una devolucion pendiente. Resuelvela antes de anular.",
+    "recovery_expected": "Consultar resultado con la misma clave; nunca repetir cobro a ciegas.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "AD30.A3",
+    "screen_id": "AD30",
+    "success_expected": "Listado restaurado con los filtros anteriores.",
+    "negative_expected": "La consulta no se actualizo; puedes reintentar.",
+    "recovery_expected": "Reintentar la lectura sin mutar recursos.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "AD31.A1",
+    "screen_id": "AD31",
+    "success_expected": "COP 250.000 confirmados; saldo de la orden actualizado.",
+    "negative_expected": "El saldo o el estado cambio. Consulta el historial antes de confirmar.",
+    "recovery_expected": "Consultar resultado con la misma clave; nunca repetir cobro a ciegas.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "AD31.A2",
+    "screen_id": "AD31",
+    "success_expected": "Reporte rechazado con motivo visible para el cliente.",
+    "negative_expected": "Selecciona motivo y explica la correccion requerida.",
+    "recovery_expected": "Consultar resultado con la misma clave; nunca repetir cobro a ciegas.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "AD31.A3",
+    "screen_id": "AD31",
+    "success_expected": "Historial de pagos consultado.",
+    "negative_expected": "No pudimos verificar movimientos previos. No confirmes todavia.",
+    "recovery_expected": "Reintentar la lectura sin mutar recursos.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "AD32.A1",
+    "screen_id": "AD32",
+    "success_expected": "Documento abierto con su número y versión.",
+    "negative_expected": "El enlace vencio; solicita uno nuevo autorizado.",
+    "recovery_expected": "Reintentar la lectura sin mutar recursos.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "AD32.A2",
+    "screen_id": "AD32",
+    "success_expected": "Generacion reintentada para el mismo documento.",
+    "negative_expected": "El generador sigue indisponible; la orden y el pago permanecen guardados.",
+    "recovery_expected": "Mantener contexto y mostrar confirmación verificable.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "AD32.A3",
+    "screen_id": "AD32",
+    "success_expected": "Enlace autorizado preparado para compartir.",
+    "negative_expected": "El destinatario no tiene acceso al documento seleccionado.",
+    "recovery_expected": "Reintentar la lectura sin mutar recursos.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "AD32.A4",
+    "screen_id": "AD32",
+    "success_expected": "Documento confirmado disponible para vista previa, descarga o solicitud de impresión.",
+    "negative_expected": "El hecho aún no está confirmado o el archivo sigue en preparación.",
+    "recovery_expected": "Consultar documento/job existente; no repetir recepción ni pago.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "AD33.A1",
+    "screen_id": "AD33",
+    "success_expected": "Condiciones guardadas como borrador.",
+    "negative_expected": "Completa alcance y fecha de entrada en vigor.",
+    "recovery_expected": "Comprobar último guardado; no confirmar persistencia sin acuse.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "AD33.A2",
+    "screen_id": "AD33",
+    "success_expected": "Nueva versión publicada para operaciones futuras.",
+    "negative_expected": "No cambies condiciones retroactivamente en una orden aceptada.",
+    "recovery_expected": "Consultar resultado con la misma clave; nunca repetir cobro a ciegas.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "AD33.A3",
+    "screen_id": "AD33",
+    "success_expected": "Vista del texto público abierta.",
+    "negative_expected": "No existe una versión publicada para este servicio.",
+    "recovery_expected": "Reintentar la lectura sin mutar recursos.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "AD34.A1",
+    "screen_id": "AD34",
+    "success_expected": "Prefijos guardados para documentos futuros.",
+    "negative_expected": "Ese prefijo entra en conflicto con una secuencia existente.",
+    "recovery_expected": "Consultar resultado con la misma clave; nunca repetir cobro a ciegas.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "AD34.A2",
+    "screen_id": "AD34",
+    "success_expected": "Vista previa generada con datos de demostracion.",
+    "negative_expected": "No se pudo generar la muestra; no cambio la numeración.",
+    "recovery_expected": "Reintentar la lectura sin mutar recursos.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "AD34.A3",
+    "screen_id": "AD34",
+    "success_expected": "Historial de secuencias abierto.",
+    "negative_expected": "No se puede retroceder un consecutivo ya utilizado.",
+    "recovery_expected": "Reintentar la lectura sin mutar recursos.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "AD35.A1",
+    "screen_id": "AD35",
+    "success_expected": "QA y saldo verificados. Puedes confirmar la entrega.",
+    "negative_expected": "Hay saldo pendiente o QA incompleto. Resuelve el bloqueo.",
+    "recovery_expected": "Reintentar la lectura sin mutar recursos.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "AD35.A2",
+    "screen_id": "AD35",
+    "success_expected": "Equipo entregado; receptor y fecha quedaron registrados.",
+    "negative_expected": "No se pudo confirmar la entrega. Consulta el resultado antes de repetir.",
+    "recovery_expected": "Consultar resultado con la misma clave; nunca repetir cobro a ciegas.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "AD35.A3",
+    "screen_id": "AD35",
+    "success_expected": "Comprobante de entrega disponible.",
+    "negative_expected": "El comprobante sigue en preparacion; no registres otra entrega.",
+    "recovery_expected": "Reintentar la lectura sin mutar recursos.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "AD36.A1",
+    "screen_id": "AD36",
+    "success_expected": "Nueva orden vinculada al caso original.",
+    "negative_expected": "Existe un reingreso abierto; revisa antes de crear otro.",
+    "recovery_expected": "Consultar resultado con la misma clave; nunca repetir cobro a ciegas.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "AD36.A2",
+    "screen_id": "AD36",
+    "success_expected": "Cancelación registrada; se revisaran cobros y devolucion del equipo.",
+    "negative_expected": "Hay costos o abonos pendientes de conciliar. No se borrara la orden.",
+    "recovery_expected": "Consultar resultado con la misma clave; nunca repetir cobro a ciegas.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "AD36.A3",
+    "screen_id": "AD36",
+    "success_expected": "Revisión de entrega sin reparación iniciada.",
+    "negative_expected": "Falta acordar saldo, reembolso o custodia antes de devolver.",
+    "recovery_expected": "Reintentar la lectura sin mutar recursos.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "AS01.A1",
+    "screen_id": "AS01",
+    "success_expected": "Recepción abierta para registrar el equipo.",
+    "negative_expected": "El negocio no permite operar en este momento. Contacta al administrador.",
+    "recovery_expected": "Reintentar la lectura sin mutar recursos.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "AS01.A2",
+    "screen_id": "AS01",
+    "success_expected": "Busqueda de cliente abierta.",
+    "negative_expected": "No se pudo consultar el directorio del negocio.",
+    "recovery_expected": "Reintentar la lectura sin mutar recursos.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "AS01.A3",
+    "screen_id": "AS01",
+    "success_expected": "Tareas del día cargadas.",
+    "negative_expected": "No pudimos actualizar las tareas. Conservamos la última lista.",
+    "recovery_expected": "Reintentar la lectura sin mutar recursos.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "AS02.A1",
+    "screen_id": "AS02",
+    "success_expected": "Coincidencias del mismo comercio disponibles.",
+    "negative_expected": "No hubo coincidencias. Crea contacto nuevo solo tras revisar.",
+    "recovery_expected": "Reintentar la lectura sin mutar recursos.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "AS02.A2",
+    "screen_id": "AS02",
+    "success_expected": "Contacto guardado y seleccionado para la recepción.",
+    "negative_expected": "El correo coincide con otro cliente; no fusionaremos automáticamente.",
+    "recovery_expected": "Consultar resultado con la misma clave; nunca repetir cobro a ciegas.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "AS02.A3",
+    "screen_id": "AS02",
+    "success_expected": "Historial permitido del cliente abierto.",
+    "negative_expected": "No tienes permiso para ver ese historial.",
+    "recovery_expected": "Reintentar la lectura sin mutar recursos.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "AS03.A1",
+    "screen_id": "AS03",
+    "success_expected": "Fotos agregadas al borrador de recepción.",
+    "negative_expected": "Una foto no se subio; revisa la cola antes de confirmar.",
+    "recovery_expected": "Mantener contexto y mostrar confirmación verificable.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "AS03.A2",
+    "screen_id": "AS03",
+    "success_expected": "Borrador guardado con hora visible.",
+    "negative_expected": "No pudimos guardar el borrador. No cierres la página.",
+    "recovery_expected": "Comprobar último guardado; no confirmar persistencia sin acuse.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "AS03.A3",
+    "screen_id": "AS03",
+    "success_expected": "OT creada o vinculada y equipo recibido.",
+    "negative_expected": "Revisa si ya existe una orden para este equipo antes de continuar.",
+    "recovery_expected": "Consultar resultado con la misma clave; nunca repetir cobro a ciegas.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "AS03.A4",
+    "screen_id": "AS03",
+    "success_expected": "Documento confirmado disponible para vista previa, descarga o solicitud de impresión.",
+    "negative_expected": "El hecho aún no está confirmado o el archivo sigue en preparación.",
+    "recovery_expected": "Consultar documento/job existente; no repetir recepción ni pago.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "AS04.A1",
+    "screen_id": "AS04",
+    "success_expected": "Resumen de recepción abierto.",
+    "negative_expected": "Faltan datos de custodia; vuelve al registro de recepción.",
+    "recovery_expected": "Reintentar la lectura sin mutar recursos.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "AS04.A2",
+    "screen_id": "AS04",
+    "success_expected": "Orden agregada a la cola del negocio.",
+    "negative_expected": "La orden ya fue derivada. Revisa el técnico responsable.",
+    "recovery_expected": "Consultar resultado con la misma clave; nunca repetir cobro a ciegas.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "AS04.A3",
+    "screen_id": "AS04",
+    "success_expected": "Solicitud de asignacion enviada al administrador.",
+    "negative_expected": "No pudimos registrar la solicitud de asignacion.",
+    "recovery_expected": "Mantener contexto y mostrar confirmación verificable.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "AS05.A1",
+    "screen_id": "AS05",
+    "success_expected": "Se muestra versión y respuesta del cliente.",
+    "negative_expected": "La cotización fue reemplazada. Consulta la nueva versión.",
+    "recovery_expected": "Reintentar la lectura sin mutar recursos.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "AS05.A2",
+    "screen_id": "AS05",
+    "success_expected": "Mensaje preparado con enlace seguro de la cotización.",
+    "negative_expected": "El canal no esta habilitado. Usa otro contacto autorizado.",
+    "recovery_expected": "No confirmar envío fuera del portal.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "AS05.A3",
+    "screen_id": "AS05",
+    "success_expected": "Solicitud de revisión enviada al responsable.",
+    "negative_expected": "No tienes permiso para editar precios; la solicitud no se envío.",
+    "recovery_expected": "Mantener contexto y mostrar confirmación verificable.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "AS06.A1",
+    "screen_id": "AS06",
+    "success_expected": "Mensaje confirmado en el chat de la orden.",
+    "negative_expected": "No se envío. Revisa conexión y conserva el texto.",
+    "recovery_expected": "Mantener contexto y mostrar confirmación verificable.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "AS06.A2",
+    "screen_id": "AS06",
+    "success_expected": "Nota interna enviada al técnico.",
+    "negative_expected": "El técnico no esta disponible; se guardo como pendiente si el servidor lo confirmo.",
+    "recovery_expected": "Mantener contexto y mostrar confirmación verificable.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "AS06.A3",
+    "screen_id": "AS06",
+    "success_expected": "Enlace abierto con texto preparado.",
+    "negative_expected": "No pudimos abrir WhatsApp. Copia el texto para enviarlo.",
+    "recovery_expected": "No confirmar envío fuera del portal.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "AS07.A1",
+    "screen_id": "AS07",
+    "success_expected": "Comprobante abierto; no implica pago confirmado.",
+    "negative_expected": "No se pudo abrir el archivo. Solicita un comprobante legible.",
+    "recovery_expected": "Reintentar la lectura sin mutar recursos.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "AS07.A2",
+    "screen_id": "AS07",
+    "success_expected": "Reporte remitido al usuario autorizado para conciliar.",
+    "negative_expected": "El reporte ya esta en revisión; no crearemos otro.",
+    "recovery_expected": "Consultar resultado con la misma clave; nunca repetir cobro a ciegas.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "AS07.A3",
+    "screen_id": "AS07",
+    "success_expected": "Abono confirmado por Asesor autorizado.",
+    "negative_expected": "No tienes payments.confirm. Envia el reporte a verificación.",
+    "recovery_expected": "Consultar resultado con la misma clave; nunca repetir cobro a ciegas.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "AS08.A1",
+    "screen_id": "AS08",
+    "success_expected": "Cambio calculado: COP 50.000.",
+    "negative_expected": "El efectivo recibido es menor al valor que intentas cobrar.",
+    "recovery_expected": "Mantener contexto y mostrar confirmación verificable.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "AS08.A2",
+    "screen_id": "AS08",
+    "success_expected": "COP 250.000 registrados en caja; cambio COP 50.000.",
+    "negative_expected": "No se pudo confirmar el registro. Consulta el resultado antes de cobrar de nuevo.",
+    "recovery_expected": "Consultar resultado con la misma clave; nunca repetir cobro a ciegas.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "AS08.A3",
+    "screen_id": "AS08",
+    "success_expected": "Registro cancelado sin crear un movimiento.",
+    "negative_expected": "El envío ya esta en proceso; espera la consulta de resultado.",
+    "recovery_expected": "Mantener contexto y mostrar confirmación verificable.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "AS08.A4",
+    "screen_id": "AS08",
+    "success_expected": "Documento confirmado disponible para vista previa, descarga o solicitud de impresión.",
+    "negative_expected": "El hecho aún no está confirmado o el archivo sigue en preparación.",
+    "recovery_expected": "Consultar documento/job existente; no repetir recepción ni pago.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "AS09.A1",
+    "screen_id": "AS09",
+    "success_expected": "Orden lista: QA aprobado y saldo resuelto.",
+    "negative_expected": "La entrega esta bloqueada por saldo o QA. Consulta al administrador.",
+    "recovery_expected": "Reintentar la lectura sin mutar recursos.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "AS09.A2",
+    "screen_id": "AS09",
+    "success_expected": "Equipo entregado con receptor y fecha registrados.",
+    "negative_expected": "El receptor no esta autorizado; no entregues el equipo.",
+    "recovery_expected": "Consultar resultado con la misma clave; nunca repetir cobro a ciegas.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "AS09.A3",
+    "screen_id": "AS09",
+    "success_expected": "Comprobante disponible para compartir de forma autorizada.",
+    "negative_expected": "El PDF esta pendiente. La entrega ya registrada no debe repetirse.",
+    "recovery_expected": "Reintentar la lectura sin mutar recursos.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "AS10.A1",
+    "screen_id": "AS10",
+    "success_expected": "Tarea creada y vinculada a la orden.",
+    "negative_expected": "Indica responsable y fecha válida.",
+    "recovery_expected": "Consultar resultado con la misma clave; nunca repetir cobro a ciegas.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "AS10.A2",
+    "screen_id": "AS10",
+    "success_expected": "Tarea completada con su resultado.",
+    "negative_expected": "La tarea fue reasignada; revisa el responsable.",
+    "recovery_expected": "Consultar resultado con la misma clave; nunca repetir cobro a ciegas.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "AS10.A3",
+    "screen_id": "AS10",
+    "success_expected": "Tarea reprogramada con motivo.",
+    "negative_expected": "La nueva fecha no puede quedar en el pasado.",
+    "recovery_expected": "Consultar resultado con la misma clave; nunca repetir cobro a ciegas.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "AS11.A1",
+    "screen_id": "AS11",
+    "success_expected": "Venta pendiente guardada sin cobro.",
+    "negative_expected": "Agrega al menos un articulo con cantidad válida.",
+    "recovery_expected": "Comprobar último guardado; no confirmar persistencia sin acuse.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "AS11.A2",
+    "screen_id": "AS11",
+    "success_expected": "Solicitud de cobro enviada a caja.",
+    "negative_expected": "No se encontro una caja habilitada; contacta al administrador.",
+    "recovery_expected": "Reintentar la lectura sin mutar recursos.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "AS11.A3",
+    "screen_id": "AS11",
+    "success_expected": "Venta confirmada según tus permisos de venta y caja.",
+    "negative_expected": "Falta permiso para confirmar el cobro o el stock cambio.",
+    "recovery_expected": "Consultar resultado con la misma clave; nunca repetir cobro a ciegas.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "AS12.A1",
+    "screen_id": "AS12",
+    "success_expected": "Preferencias actualizadas.",
+    "negative_expected": "No se pudieron guardar las preferencias.",
+    "recovery_expected": "Consultar resultado con la misma clave; nunca repetir cobro a ciegas.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "AS12.A2",
+    "screen_id": "AS12",
+    "success_expected": "Solicitud enviada al administrador del negocio.",
+    "negative_expected": "No se pudo registrar la solicitud; tu acceso no cambio.",
+    "recovery_expected": "Mantener contexto y mostrar confirmación verificable.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "AS12.A3",
+    "screen_id": "AS12",
+    "success_expected": "Sesión cerrada y datos privados retirados del dispositivo según política.",
+    "negative_expected": "Hay trabajo sin confirmar; resuelve el guardado o descarta de forma explícita.",
+    "recovery_expected": "Mantener contexto y mostrar confirmación verificable.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "TE01.A1",
+    "screen_id": "TE01",
+    "success_expected": "Cola actualizada con tus órdenes.",
+    "negative_expected": "No pudimos actualizar; se indica fecha de la información visible.",
+    "recovery_expected": "Reintentar la lectura sin mutar recursos.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "TE01.A2",
+    "screen_id": "TE01",
+    "success_expected": "Lector listo para usar la camara.",
+    "negative_expected": "No hay permiso de camara. Usa ingreso manual.",
+    "recovery_expected": "Reintentar la lectura sin mutar recursos.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "TE01.A3",
+    "screen_id": "TE01",
+    "success_expected": "Pendientes locales consultados.",
+    "negative_expected": "No hay almacenamiento local disponible en este dispositivo.",
+    "recovery_expected": "Reintentar la lectura sin mutar recursos.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "TE02.A1",
+    "screen_id": "TE02",
+    "success_expected": "Orden abierta con tu asignacion vigente.",
+    "negative_expected": "La orden fue reasignada; ya no puedes modificarla.",
+    "recovery_expected": "Reintentar la lectura sin mutar recursos.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "TE02.A2",
+    "screen_id": "TE02",
+    "success_expected": "Filtro QA aplicado.",
+    "negative_expected": "No hay resultados para este filtro. Puedes limpiarlo.",
+    "recovery_expected": "Reintentar la lectura sin mutar recursos.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "TE02.A3",
+    "screen_id": "TE02",
+    "success_expected": "Cola sincronizada con el servidor.",
+    "negative_expected": "Sin conexión; no confirmamos nuevas asignaciones.",
+    "recovery_expected": "Reintentar la lectura sin mutar recursos.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "TE03.A1",
+    "screen_id": "TE03",
+    "success_expected": "Camara lista para leer un código.",
+    "negative_expected": "El navegador bloqueo la camara. Revisa permisos o escribe la orden.",
+    "recovery_expected": "Mantener contexto y mostrar confirmación verificable.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "TE03.A2",
+    "screen_id": "TE03",
+    "success_expected": "Código resuelto a una orden autorizada.",
+    "negative_expected": "Código inválido o recurso no disponible para esta sesión.",
+    "recovery_expected": "Reintentar la lectura sin mutar recursos.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "TE03.A3",
+    "screen_id": "TE03",
+    "success_expected": "Campo de número de orden habilitado.",
+    "negative_expected": "Escribe un número de orden válido.",
+    "recovery_expected": "Mantener contexto y mostrar confirmación verificable.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "TE04.A1",
+    "screen_id": "TE04",
+    "success_expected": "Diagnóstico listo para editar.",
+    "negative_expected": "La orden se cerro; solicita una revisión autorizada.",
+    "recovery_expected": "Reintentar la lectura sin mutar recursos.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "TE04.A2",
+    "screen_id": "TE04",
+    "success_expected": "Transiciones permitidas cargadas.",
+    "negative_expected": "La orden fue modificada; actualiza el estado vigente.",
+    "recovery_expected": "Reintentar la lectura sin mutar recursos.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "TE04.A3",
+    "screen_id": "TE04",
+    "success_expected": "Checklist cargado para este equipo.",
+    "negative_expected": "No se ha completado la tarea técnica requerida.",
+    "recovery_expected": "Reintentar la lectura sin mutar recursos.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "TE05.A1",
+    "screen_id": "TE05",
+    "success_expected": "Borrador guardado según la ubicación indicada: servidor o dispositivo autorizado.",
+    "negative_expected": "No se guardo; el almacenamiento esta lleno o no disponible.",
+    "recovery_expected": "Comprobar último guardado; no confirmar persistencia sin acuse.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "TE05.A2",
+    "screen_id": "TE05",
+    "success_expected": "Evidencia agregada al borrador.",
+    "negative_expected": "Archivo incompatible o mayor a 10 MB.",
+    "recovery_expected": "Mantener contexto y mostrar confirmación verificable.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "TE05.A3",
+    "screen_id": "TE05",
+    "success_expected": "Diagnóstico confirmado en el servidor.",
+    "negative_expected": "Faltan pruebas o hallazgo; revisa campos antes de enviar.",
+    "recovery_expected": "Consultar resultado con la misma clave; nunca repetir cobro a ciegas.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "TE06.A1",
+    "screen_id": "TE06",
+    "success_expected": "Se muestran existencias consultadas.",
+    "negative_expected": "No pudimos consultar stock; no consumas repuesto sin validar.",
+    "recovery_expected": "Reintentar la lectura sin mutar recursos.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "TE06.A2",
+    "screen_id": "TE06",
+    "success_expected": "Solicitud vinculada a la orden.",
+    "negative_expected": "Ya hay una solicitud equivalente pendiente.",
+    "recovery_expected": "Consultar resultado con la misma clave; nunca repetir cobro a ciegas.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "TE06.A3",
+    "screen_id": "TE06",
+    "success_expected": "Consumo registrado una vez contra la orden.",
+    "negative_expected": "Stock insuficiente o reserva de otro trabajo.",
+    "recovery_expected": "Consultar resultado con la misma clave; nunca repetir cobro a ciegas.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "TE07.A1",
+    "screen_id": "TE07",
+    "success_expected": "Nota guardada sin cambiar el estado.",
+    "negative_expected": "No fue posible guardar la nota.",
+    "recovery_expected": "Comprobar último guardado; no confirmar persistencia sin acuse.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "TE07.A2",
+    "screen_id": "TE07",
+    "success_expected": "Estado actualizado y agregado a la linea de tiempo.",
+    "negative_expected": "La transicion ya no es válida porque otro usuario actualizo la orden.",
+    "recovery_expected": "Consultar resultado con la misma clave; nunca repetir cobro a ciegas.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "TE07.A3",
+    "screen_id": "TE07",
+    "success_expected": "Regresaste sin cambiar el estado.",
+    "negative_expected": "La solicitud ya se envío; consulta su resultado antes de salir.",
+    "recovery_expected": "Mantener contexto y mostrar confirmación verificable.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "TE08.A1",
+    "screen_id": "TE08",
+    "success_expected": "Resultados guardados; quedan pruebas pendientes.",
+    "negative_expected": "No pudimos guardar los resultados nuevos.",
+    "recovery_expected": "Comprobar último guardado; no confirmar persistencia sin acuse.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "TE08.A2",
+    "screen_id": "TE08",
+    "success_expected": "QA aprobado tras validar todos los puntos requeridos.",
+    "negative_expected": "Transferencia USB sigue sin resultado. Completa la prueba.",
+    "recovery_expected": "Consultar resultado con la misma clave; nunca repetir cobro a ciegas.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "TE08.A3",
+    "screen_id": "TE08",
+    "success_expected": "Fallo registrado y trabajo devuelto a reparación.",
+    "negative_expected": "Describe el fallo y su evidencia antes de enviar.",
+    "recovery_expected": "Consultar resultado con la misma clave; nunca repetir cobro a ciegas.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "TE09.A1",
+    "screen_id": "TE09",
+    "success_expected": "Nota interna confirmada en la orden.",
+    "negative_expected": "No se envío; conserva el borrador y reintenta cuando haya conexión.",
+    "recovery_expected": "Mantener contexto y mostrar confirmación verificable.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "TE09.A2",
+    "screen_id": "TE09",
+    "success_expected": "Respuesta confirmada en el chat del cliente.",
+    "negative_expected": "No tienes permiso de contacto directo. Envia la consulta al Asesor.",
+    "recovery_expected": "Mantener contexto y mostrar confirmación verificable.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "TE09.A3",
+    "screen_id": "TE09",
+    "success_expected": "Historial de conversacion autorizado abierto.",
+    "negative_expected": "No se pudo recuperar el historial.",
+    "recovery_expected": "Reintentar la lectura sin mutar recursos.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "TE10.A1",
+    "screen_id": "TE10",
+    "success_expected": "Borradores enviados para validación; revisa su estado final.",
+    "negative_expected": "Cambio de permisos o de versión. Revisa el conflicto antes de continuar.",
+    "recovery_expected": "Consultar resultado con la misma clave; nunca repetir cobro a ciegas.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "TE10.A2",
+    "screen_id": "TE10",
+    "success_expected": "Comparacion abierta sin sobrescribir la versión del servidor.",
+    "negative_expected": "La copia del servidor no pudo consultarse. Conserva el borrador.",
+    "recovery_expected": "Reintentar la lectura sin mutar recursos.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "TE10.A3",
+    "screen_id": "TE10",
+    "success_expected": "Copia local eliminada tras confirmación; el servidor no se borro.",
+    "negative_expected": "No hay permisos o la copia esta en envío. Espera su estado final.",
+    "recovery_expected": "Mantener contexto y mostrar confirmación verificable.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "TE11.A1",
+    "screen_id": "TE11",
+    "success_expected": "Datos de recepción guardados.",
+    "negative_expected": "Falta registrar los accesorios entregados.",
+    "recovery_expected": "Comprobar último guardado; no confirmar persistencia sin acuse.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "TE11.A2",
+    "screen_id": "TE11",
+    "success_expected": "Foto agregada con su estado de subida.",
+    "negative_expected": "La camara no esta disponible; puedes elegir un archivo.",
+    "recovery_expected": "Mantener contexto y mostrar confirmación verificable.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "TE11.A3",
+    "screen_id": "TE11",
+    "success_expected": "Custodia del equipo confirmada.",
+    "negative_expected": "No tienes permiso de recepción o la orden ya fue recibida.",
+    "recovery_expected": "Consultar resultado con la misma clave; nunca repetir cobro a ciegas.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "TE11.A4",
+    "screen_id": "TE11",
+    "success_expected": "Documento confirmado disponible para vista previa, descarga o solicitud de impresión.",
+    "negative_expected": "El hecho aún no está confirmado o el archivo sigue en preparación.",
+    "recovery_expected": "Consultar documento/job existente; no repetir recepción ni pago.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "TE12.A1",
+    "screen_id": "TE12",
+    "success_expected": "Foto capturada; falta confirmar su subida.",
+    "negative_expected": "Permiso de camara denegado. Elige un archivo.",
+    "recovery_expected": "Mantener contexto y mostrar confirmación verificable.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "TE12.A2",
+    "screen_id": "TE12",
+    "success_expected": "Archivos validados y guardados en almacenamiento privado.",
+    "negative_expected": "Una foto supera 10 MB o el tipo no esta permitido.",
+    "recovery_expected": "Mantener contexto y mostrar confirmación verificable.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "TE12.A3",
+    "screen_id": "TE12",
+    "success_expected": "Volviste con evidencias confirmadas.",
+    "negative_expected": "Hay archivos solo locales. Decide si esperar o salir perdiendo esos archivos.",
+    "recovery_expected": "Mantener contexto y mostrar confirmación verificable.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "TE13.A1",
+    "screen_id": "TE13",
+    "success_expected": "Cambio calculado según el saldo vigente.",
+    "negative_expected": "Efectivo recibido insuficiente. Revisa el importe.",
+    "recovery_expected": "Mantener contexto y mostrar confirmación verificable.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "TE13.A2",
+    "screen_id": "TE13",
+    "success_expected": "Dinero recibido y registrado; el recibo se esta generando.",
+    "negative_expected": "Permiso de caja no concedido o saldo cambiado.",
+    "recovery_expected": "Consultar resultado con la misma clave; nunca repetir cobro a ciegas.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "TE13.A3",
+    "screen_id": "TE13",
+    "success_expected": "Se envío la referencia a caja sin registrar un pago.",
+    "negative_expected": "No se pudo contactar a caja. El saldo permanece igual.",
+    "recovery_expected": "Mantener contexto y mostrar confirmación verificable.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "TE14.A1",
+    "screen_id": "TE14",
+    "success_expected": "Se muestran cambios de estado de la orden.",
+    "negative_expected": "No hay eventos de ese tipo; elimina el filtro.",
+    "recovery_expected": "Reintentar la lectura sin mutar recursos.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "TE14.A2",
+    "screen_id": "TE14",
+    "success_expected": "Evidencia autorizada abierta.",
+    "negative_expected": "El enlace vencio o la evidencia no esta disponible.",
+    "recovery_expected": "Reintentar la lectura sin mutar recursos.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "TE14.A3",
+    "screen_id": "TE14",
+    "success_expected": "Solicitud registrada como evento nuevo.",
+    "negative_expected": "No se pudo enviar la solicitud; no se modifico el evento original.",
+    "recovery_expected": "Mantener contexto y mostrar confirmación verificable.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "CL01.A1",
+    "screen_id": "CL01",
+    "success_expected": "Te llevaremos al registro del equipo después de iniciar sesión.",
+    "negative_expected": "El comercio no recibe nuevas solicitudes en este momento.",
+    "recovery_expected": "Reintentar la lectura sin mutar recursos.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "CL01.A2",
+    "screen_id": "CL01",
+    "success_expected": "Consulta segura abierta.",
+    "negative_expected": "No se pudo abrir la consulta. Intenta desde el portal del cliente.",
+    "recovery_expected": "Reintentar la lectura sin mutar recursos.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "CL01.A3",
+    "screen_id": "CL01",
+    "success_expected": "Catálogo de servicios del comercio abierto.",
+    "negative_expected": "No pudimos cargar servicios; usa el contacto del negocio.",
+    "recovery_expected": "Reintentar la lectura sin mutar recursos.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "CL02.A1",
+    "screen_id": "CL02",
+    "success_expected": "Sesión verificada. Regresas a tu solicitud o a tus reparaciones.",
+    "negative_expected": "No pudimos completar el acceso. No se creo una solicitud.",
+    "recovery_expected": "Mantener contexto y mostrar confirmación verificable.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "CL02.A2",
+    "screen_id": "CL02",
+    "success_expected": "Volviste a la página pública sin iniciar sesión.",
+    "negative_expected": "Hay una solicitud en borrador no guardada. Revisa antes de salir.",
+    "recovery_expected": "Mantener contexto y mostrar confirmación verificable.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "CL02.A3",
+    "screen_id": "CL02",
+    "success_expected": "Ayuda abierta con contacto del negocio.",
+    "negative_expected": "No se pudo cargar la ayuda; reintenta sin compartir contrasenas.",
+    "recovery_expected": "Reintentar la lectura sin mutar recursos.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "CL03.A1",
+    "screen_id": "CL03",
+    "success_expected": "Equipo registrado en el borrador de solicitud.",
+    "negative_expected": "Selecciona tipo de equipo y completa marca o modelo.",
+    "recovery_expected": "Comprobar último guardado; no confirmar persistencia sin acuse.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "CL03.A2",
+    "screen_id": "CL03",
+    "success_expected": "Se cargaron los datos del equipo elegido.",
+    "negative_expected": "No encontramos ese equipo en tu cuenta de este comercio.",
+    "recovery_expected": "Reintentar la lectura sin mutar recursos.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "CL03.A3",
+    "screen_id": "CL03",
+    "success_expected": "Borrador guardado; puedes retomarlo desde tu inicio.",
+    "negative_expected": "No pudimos guardar. No afirmamos que el borrador este disponible al cerrar.",
+    "recovery_expected": "Comprobar último guardado; no confirmar persistencia sin acuse.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "CL04.A1",
+    "screen_id": "CL04",
+    "success_expected": "Fotos seleccionadas; revisa el estado de subida.",
+    "negative_expected": "Una foto no tiene formato permitido o supera 10 MB.",
+    "recovery_expected": "Mantener contexto y mostrar confirmación verificable.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "CL04.A2",
+    "screen_id": "CL04",
+    "success_expected": "Falla guardada y fotos confirmadas vinculadas al borrador.",
+    "negative_expected": "Describe la falla y espera las fotos obligatorias antes de continuar.",
+    "recovery_expected": "Comprobar último guardado; no confirmar persistencia sin acuse.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "CL04.A3",
+    "screen_id": "CL04",
+    "success_expected": "Volviste al paso anterior conservando el borrador disponible.",
+    "negative_expected": "Hay archivos locales pendientes que podrian perderse al salir.",
+    "recovery_expected": "Mantener contexto y mostrar confirmación verificable.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "CL05.A1",
+    "screen_id": "CL05",
+    "success_expected": "Paso de equipo abierto para correccion.",
+    "negative_expected": "El borrador no se pudo recuperar. No se envío la solicitud.",
+    "recovery_expected": "Reintentar la lectura sin mutar recursos.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "CL05.A2",
+    "screen_id": "CL05",
+    "success_expected": "Solicitud creada. La recepción física aún esta pendiente.",
+    "negative_expected": "No conocemos aún el resultado. Consulta si la orden se creo antes de reenviar.",
+    "recovery_expected": "Consultar resultado con la misma clave; nunca repetir cobro a ciegas.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "CL05.A3",
+    "screen_id": "CL05",
+    "success_expected": "Borrador confirmado en tu cuenta.",
+    "negative_expected": "No pudimos guardar el borrador en el servidor.",
+    "recovery_expected": "Comprobar último guardado; no confirmar persistencia sin acuse.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "CL06.A1",
+    "screen_id": "CL06",
+    "success_expected": "Seguimiento de OT-000154 abierto.",
+    "negative_expected": "No pudimos consultar la orden; conserva el número para soporte.",
+    "recovery_expected": "Reintentar la lectura sin mutar recursos.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "CL06.A2",
+    "screen_id": "CL06",
+    "success_expected": "Documento de solicitud disponible.",
+    "negative_expected": "La orden esta guardada; el PDF aún se esta preparando.",
+    "recovery_expected": "Reintentar la lectura sin mutar recursos.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "CL06.A3",
+    "screen_id": "CL06",
+    "success_expected": "Conversacion abierta sobre OT-000154.",
+    "negative_expected": "El canal de mensajes no esta disponible temporalmente.",
+    "recovery_expected": "Reintentar la lectura sin mutar recursos.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "CL07.A1",
+    "screen_id": "CL07",
+    "success_expected": "Seguimiento de Samsung Galaxy S24 abierto.",
+    "negative_expected": "La orden no esta disponible para tu cuenta.",
+    "recovery_expected": "Reintentar la lectura sin mutar recursos.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "CL07.A2",
+    "screen_id": "CL07",
+    "success_expected": "Nueva solicitud iniciada.",
+    "negative_expected": "El comercio no permite nuevas solicitudes por ahora.",
+    "recovery_expected": "Reintentar la lectura sin mutar recursos.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "CL07.A3",
+    "screen_id": "CL07",
+    "success_expected": "Se muestran las órdenes entregadas.",
+    "negative_expected": "No tienes órdenes en ese estado.",
+    "recovery_expected": "Reintentar la lectura sin mutar recursos.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "CL08.A1",
+    "screen_id": "CL08",
+    "success_expected": "Cotización vigente lista para revisar.",
+    "negative_expected": "Aun no hay una cotización publicada. El taller te avisara.",
+    "recovery_expected": "Reintentar la lectura sin mutar recursos.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "CL08.A2",
+    "screen_id": "CL08",
+    "success_expected": "Saldo y medios de pago disponibles.",
+    "negative_expected": "El cobro final aún no esta habilitado; un anticipo requiere política autorizada.",
+    "recovery_expected": "Reintentar la lectura sin mutar recursos.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "CL08.A3",
+    "screen_id": "CL08",
+    "success_expected": "Chat abierto con el contexto del equipo.",
+    "negative_expected": "No pudimos abrir el chat. Usa el contacto del comercio.",
+    "recovery_expected": "Reintentar la lectura sin mutar recursos.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "CL09.A1",
+    "screen_id": "CL09",
+    "success_expected": "Cotización v2 aprobada por COP 350.000.",
+    "negative_expected": "La cotización vencio o cambio de versión. Revisa la actual antes de aprobar.",
+    "recovery_expected": "Consultar resultado con la misma clave; nunca repetir cobro a ciegas.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "CL09.A2",
+    "screen_id": "CL09",
+    "success_expected": "Respuesta registrada. El taller coordinara los siguientes pasos.",
+    "negative_expected": "Indica si deseas aclaracion o rechazo; no se pudo registrar la respuesta.",
+    "recovery_expected": "Consultar resultado con la misma clave; nunca repetir cobro a ciegas.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "CL09.A3",
+    "screen_id": "CL09",
+    "success_expected": "Conversacion abierta sin aprobar la cotización.",
+    "negative_expected": "No se pudo abrir la conversacion. La cotización sigue pendiente.",
+    "recovery_expected": "Reintentar la lectura sin mutar recursos.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "CL10.A1",
+    "screen_id": "CL10",
+    "success_expected": "Instrucciones del medio seleccionado abiertas.",
+    "negative_expected": "El comercio desactivo ese medio. Elige otro vigente.",
+    "recovery_expected": "Reintentar la lectura sin mutar recursos.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "CL10.A2",
+    "screen_id": "CL10",
+    "success_expected": "Formulario de reporte abierto; aún no reduce el saldo.",
+    "negative_expected": "Ya hay un reporte equivalente en revisión. Consulta su estado.",
+    "recovery_expected": "Reintentar la lectura sin mutar recursos.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "CL10.A3",
+    "screen_id": "CL10",
+    "success_expected": "Historial de abonos abierto.",
+    "negative_expected": "No se pudo consultar el historial; no repitas un pago sin revisar.",
+    "recovery_expected": "Reintentar la lectura sin mutar recursos.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "CL11.A1",
+    "screen_id": "CL11",
+    "success_expected": "Comprobante adjuntado; pendiente de revisión.",
+    "negative_expected": "Archivo no permitido o mayor a 10 MB.",
+    "recovery_expected": "Mantener contexto y mostrar confirmación verificable.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "CL11.A2",
+    "screen_id": "CL11",
+    "success_expected": "Reporte recibido. El taller verificara el abono.",
+    "negative_expected": "Monto superior al saldo o posible duplicado. Revisa antes de enviar.",
+    "recovery_expected": "Consultar resultado con la misma clave; nunca repetir cobro a ciegas.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "CL11.A3",
+    "screen_id": "CL11",
+    "success_expected": "Regresaste a los medios sin registrar otro reporte.",
+    "negative_expected": "El reporte ya se envío. Consulta su estado antes de repetirlo.",
+    "recovery_expected": "Mantener contexto y mostrar confirmación verificable.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "CL12.A1",
+    "screen_id": "CL12",
+    "success_expected": "Recibo REC-00200 disponible.",
+    "negative_expected": "Ese documento no esta listo o el enlace vencio.",
+    "recovery_expected": "Reintentar la lectura sin mutar recursos.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "CL12.A2",
+    "screen_id": "CL12",
+    "success_expected": "Historial de pagos abierto.",
+    "negative_expected": "No pudimos consultar los movimientos.",
+    "recovery_expected": "Reintentar la lectura sin mutar recursos.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "CL12.A3",
+    "screen_id": "CL12",
+    "success_expected": "Solicitud de documento enviada al negocio.",
+    "negative_expected": "No se pudo enviar la solicitud. El pago no se repitio.",
+    "recovery_expected": "Mantener contexto y mostrar confirmación verificable.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "CL12.A4",
+    "screen_id": "CL12",
+    "success_expected": "Documento confirmado disponible para vista previa, descarga o solicitud de impresión.",
+    "negative_expected": "El hecho aún no está confirmado o el archivo sigue en preparación.",
+    "recovery_expected": "Consultar documento/job existente; no repetir recepción ni pago.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "CL13.A1",
+    "screen_id": "CL13",
+    "success_expected": "Mensaje enviado al chat del taller.",
+    "negative_expected": "No se envío. Reintenta con el mismo mensaje cuando tengas conexión.",
+    "recovery_expected": "Mantener contexto y mostrar confirmación verificable.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "CL13.A2",
+    "screen_id": "CL13",
+    "success_expected": "Imagen adjuntada de forma privada.",
+    "negative_expected": "La imagen excede el limite o no es compatible.",
+    "recovery_expected": "Mantener contexto y mostrar confirmación verificable.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "CL13.A3",
+    "screen_id": "CL13",
+    "success_expected": "Regresaste al seguimiento.",
+    "negative_expected": "Tienes texto sin enviar. Guardalo o descarta antes de salir.",
+    "recovery_expected": "Mantener contexto y mostrar confirmación verificable.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "CL14.A1",
+    "screen_id": "CL14",
+    "success_expected": "Perfil actualizado.",
+    "negative_expected": "Escribe un teléfono válido y revisa el contacto preferido.",
+    "recovery_expected": "Consultar resultado con la misma clave; nunca repetir cobro a ciegas.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "CL14.A2",
+    "screen_id": "CL14",
+    "success_expected": "Preferencias de avisos abiertas.",
+    "negative_expected": "No pudimos consultar las preferencias.",
+    "recovery_expected": "Reintentar la lectura sin mutar recursos.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "CL14.A3",
+    "screen_id": "CL14",
+    "success_expected": "Sesión cerrada. Tu información privada ya no se muestra en esta sesión.",
+    "negative_expected": "Hay cambios sin guardar. Decide si guardarlos antes de salir.",
+    "recovery_expected": "Mantener contexto y mostrar confirmación verificable.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "CL15.A1",
+    "screen_id": "CL15",
+    "success_expected": "El sitio vuelve a estar disponible.",
+    "negative_expected": "El servicio sigue temporalmente no disponible.",
+    "recovery_expected": "Reintentar la lectura sin mutar recursos.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "CL15.A2",
+    "screen_id": "CL15",
+    "success_expected": "Contacto del comercio disponible.",
+    "negative_expected": "No existe un contacto publicado; vuelve a consultar más tarde.",
+    "recovery_expected": "Reintentar la lectura sin mutar recursos.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "CL15.A3",
+    "screen_id": "CL15",
+    "success_expected": "Acceso a documentos permitido según política publicada.",
+    "negative_expected": "El acceso limitado no esta habilitado; contacta al comercio.",
+    "recovery_expected": "Reintentar la lectura sin mutar recursos.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "CL16.A1",
+    "screen_id": "CL16",
+    "success_expected": "Seguimiento del equipo abierto.",
+    "negative_expected": "No pudimos actualizar el avance; revisa la fecha del último dato.",
+    "recovery_expected": "Reintentar la lectura sin mutar recursos.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "CL16.A2",
+    "screen_id": "CL16",
+    "success_expected": "Formulario de equipo listo.",
+    "negative_expected": "El taller no recibe nuevas solicitudes por ahora.",
+    "recovery_expected": "Reintentar la lectura sin mutar recursos.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "CL16.A3",
+    "screen_id": "CL16",
+    "success_expected": "Borrador encontrado; revisa los datos antes de continuar.",
+    "negative_expected": "No hay una copia recuperable. No se enviara una solicitud incompleta.",
+    "recovery_expected": "Reintentar la lectura sin mutar recursos.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "CL17.A1",
+    "screen_id": "CL17",
+    "success_expected": "Samsung Galaxy S24 seleccionado.",
+    "negative_expected": "El equipo tiene una solicitud activa; revisala antes de crear otra.",
+    "recovery_expected": "Reintentar la lectura sin mutar recursos.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "CL17.A2",
+    "screen_id": "CL17",
+    "success_expected": "Formulario para registrar otro equipo.",
+    "negative_expected": "No pudimos iniciar el formulario de equipo.",
+    "recovery_expected": "Reintentar la lectura sin mutar recursos.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "CL17.A3",
+    "screen_id": "CL17",
+    "success_expected": "Reparaciones filtradas por equipo.",
+    "negative_expected": "Aun no hay reparaciones para ese equipo.",
+    "recovery_expected": "Reintentar la lectura sin mutar recursos.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "CL18.A1",
+    "screen_id": "CL18",
+    "success_expected": "Se muestran estado y motivo de revisión del reporte.",
+    "negative_expected": "El reporte no esta disponible para tu cuenta.",
+    "recovery_expected": "Reintentar la lectura sin mutar recursos.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "CL18.A2",
+    "screen_id": "CL18",
+    "success_expected": "Recibo del abono confirmado abierto.",
+    "negative_expected": "No se emite recibo de dinero que sigue en verificación.",
+    "recovery_expected": "Reintentar la lectura sin mutar recursos.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "CL18.A3",
+    "screen_id": "CL18",
+    "success_expected": "Formulario abierto con saldo actualizado.",
+    "negative_expected": "Hay un reporte equivalente en revisión. Evita duplicarlo.",
+    "recovery_expected": "Reintentar la lectura sin mutar recursos.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "CL18.A4",
+    "screen_id": "CL18",
+    "success_expected": "Documento confirmado disponible para vista previa, descarga o solicitud de impresión.",
+    "negative_expected": "El hecho aún no está confirmado o el archivo sigue en preparación.",
+    "recovery_expected": "Consultar documento/job existente; no repetir recepción ni pago.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "CL19.A1",
+    "screen_id": "CL19",
+    "success_expected": "Descarga del documento iniciada.",
+    "negative_expected": "El enlace vencio. Solicita uno nuevo con tu sesión vigente.",
+    "recovery_expected": "Reintentar la lectura sin mutar recursos.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "CL19.A2",
+    "screen_id": "CL19",
+    "success_expected": "Opciones de compartir disponibles en este dispositivo.",
+    "negative_expected": "El navegador no permite compartir; usa la descarga.",
+    "recovery_expected": "Mantener contexto y mostrar confirmación verificable.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "CL19.A3",
+    "screen_id": "CL19",
+    "success_expected": "Regresaste al listado de documentos.",
+    "negative_expected": "No pudimos actualizar el listado; el documento actual sigue abierto.",
+    "recovery_expected": "Reintentar la lectura sin mutar recursos.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "CL19.A4",
+    "screen_id": "CL19",
+    "success_expected": "Documento confirmado disponible para vista previa, descarga o solicitud de impresión.",
+    "negative_expected": "El hecho aún no está confirmado o el archivo sigue en preparación.",
+    "recovery_expected": "Consultar documento/job existente; no repetir recepción ni pago.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "CL20.A1",
+    "screen_id": "CL20",
+    "success_expected": "Servicio elegido; continua con tu equipo.",
+    "negative_expected": "El servicio esta temporalmente inactivo.",
+    "recovery_expected": "Reintentar la lectura sin mutar recursos.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "CL20.A2",
+    "screen_id": "CL20",
+    "success_expected": "Contacto preparado para consultar el servicio.",
+    "negative_expected": "No pudimos abrir WhatsApp; usa el contacto disponible.",
+    "recovery_expected": "No confirmar envío fuera del portal.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "CL20.A3",
+    "screen_id": "CL20",
+    "success_expected": "Inicio del negocio abierto.",
+    "negative_expected": "No se pudo cargar la portada completa.",
+    "recovery_expected": "Reintentar la lectura sin mutar recursos.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "CL21.A1",
+    "screen_id": "CL21",
+    "success_expected": "Detalle del producto abierto.",
+    "negative_expected": "Ese producto fue retirado de la vitrina.",
+    "recovery_expected": "Reintentar la lectura sin mutar recursos.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "CL21.A2",
+    "screen_id": "CL21",
+    "success_expected": "Consulta preparada para el negocio.",
+    "negative_expected": "No podemos confirmar stock en este momento.",
+    "recovery_expected": "No confirmar envío fuera del portal.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "CL21.A3",
+    "screen_id": "CL21",
+    "success_expected": "Filtro Accesorios aplicado.",
+    "negative_expected": "No hay productos con ese filtro.",
+    "recovery_expected": "Reintentar la lectura sin mutar recursos.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "CL22.A1",
+    "screen_id": "CL22",
+    "success_expected": "Mensaje de consulta preparado con el producto.",
+    "negative_expected": "No pudimos abrir el contacto; copia la referencia del producto.",
+    "recovery_expected": "No confirmar envío fuera del portal.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "CL22.A2",
+    "screen_id": "CL22",
+    "success_expected": "Información de compatibilidad visible.",
+    "negative_expected": "El negocio no público compatibilidad. Consulta antes de comprar.",
+    "recovery_expected": "Reintentar la lectura sin mutar recursos.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "CL22.A3",
+    "screen_id": "CL22",
+    "success_expected": "Catálogo restaurado con el filtro anterior.",
+    "negative_expected": "No se pudo actualizar la vitrina.",
+    "recovery_expected": "Reintentar la lectura sin mutar recursos.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "CL23.A1",
+    "screen_id": "CL23",
+    "success_expected": "Se abrio el contacto del negocio.",
+    "negative_expected": "No se pudo abrir la aplicación; usa el número publicado.",
+    "recovery_expected": "No confirmar envío fuera del portal.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "CL23.A2",
+    "screen_id": "CL23",
+    "success_expected": "Mapa o enlace de ubicación abierto.",
+    "negative_expected": "El mapa no cargo. La dirección y el horario siguen disponibles.",
+    "recovery_expected": "No confirmar envío fuera del portal.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "CL23.A3",
+    "screen_id": "CL23",
+    "success_expected": "Condiciones vigentes abiertas.",
+    "negative_expected": "El negocio aún no público esta información. Solicitala directamente.",
+    "recovery_expected": "Reintentar la lectura sin mutar recursos.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "CL24.A1",
+    "screen_id": "CL24",
+    "success_expected": "Documento de entrega abierto.",
+    "negative_expected": "El comprobante esta en preparacion. Contacta al negocio si necesitas evidencia.",
+    "recovery_expected": "Reintentar la lectura sin mutar recursos.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "CL24.A2",
+    "screen_id": "CL24",
+    "success_expected": "Consulta vinculada a la orden original.",
+    "negative_expected": "No se pudo enviar la solicitud. Conserva la referencia de la orden.",
+    "recovery_expected": "Mantener contexto y mostrar confirmación verificable.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "CL24.A3",
+    "screen_id": "CL24",
+    "success_expected": "Gracias. Tu valoracion fue registrada.",
+    "negative_expected": "No se pudo guardar tu valoracion. Puedes intentarlo luego.",
+    "recovery_expected": "Consultar resultado con la misma clave; nunca repetir cobro a ciegas.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "CL25.A1",
+    "screen_id": "CL25",
+    "success_expected": "Dato copiado. Verifica titular y valor en tu aplicación financiera.",
+    "negative_expected": "No pudimos copiar. Selecciona el dato de destino manualmente.",
+    "recovery_expected": "Mantener contexto y mostrar confirmación verificable.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "CL25.A2",
+    "screen_id": "CL25",
+    "success_expected": "Se abre el reporte del pago. Aun no esta confirmado.",
+    "negative_expected": "Existe un reporte pendiente por ese valor. Consulta su estado.",
+    "recovery_expected": "Reintentar la lectura sin mutar recursos.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "CL25.A3",
+    "screen_id": "CL25",
+    "success_expected": "Volviste a los medios habilitados.",
+    "negative_expected": "El saldo cambio; revisa el nuevo valor antes de pagar.",
+    "recovery_expected": "Reintentar la lectura sin mutar recursos.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "CL26.A1",
+    "screen_id": "CL26",
+    "success_expected": "Acceso a Google preparado; volveras a esta consulta.",
+    "negative_expected": "No se pudo iniciar el acceso. El número de orden no se perdio.",
+    "recovery_expected": "Mantener contexto y mostrar confirmación verificable.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "CL26.A2",
+    "screen_id": "CL26",
+    "success_expected": "Orden encontrada dentro de tu cuenta.",
+    "negative_expected": "Orden no disponible para esta sesión. No revelamos si existe para otra persona.",
+    "recovery_expected": "Reintentar la lectura sin mutar recursos.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "CL26.A3",
+    "screen_id": "CL26",
+    "success_expected": "Contacto del comercio abierto.",
+    "negative_expected": "No pudimos abrir el contacto. Vuelve al inicio del negocio.",
+    "recovery_expected": "Reintentar la lectura sin mutar recursos.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "VR01.A1",
+    "screen_id": "VR01",
+    "success_expected": "Tu voucher está listo. Puedes descargarlo o consultarlo.",
+    "negative_expected": "Necesitas conexión y acceso vigente al documento. Si sigue en preparación, consulta su estado.",
+    "recovery_expected": "Reabrir la misma versión. No crear dinero ni eventos de custodia.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "VR01.A2",
+    "screen_id": "VR01",
+    "success_expected": "La vista de impresión se cerró. El voucher sigue disponible.",
+    "negative_expected": "Necesitas conexión y acceso vigente al documento. Si sigue en preparación, consulta su estado.",
+    "recovery_expected": "Reabrir la misma versión. No crear dinero ni eventos de custodia.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "VR01.A3",
+    "screen_id": "VR01",
+    "success_expected": "Tu voucher está listo. Puedes descargarlo o consultarlo.",
+    "negative_expected": "Necesitas conexión y acceso vigente al documento. Si sigue en preparación, consulta su estado.",
+    "recovery_expected": "Reabrir la misma versión. No crear dinero ni eventos de custodia.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "VR02.A1",
+    "screen_id": "VR02",
+    "success_expected": "Tu voucher está listo. Puedes descargarlo o consultarlo.",
+    "negative_expected": "Necesitas conexión y acceso vigente al documento. Si sigue en preparación, consulta su estado.",
+    "recovery_expected": "Reabrir la misma versión. No crear dinero ni eventos de custodia.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "VR02.A2",
+    "screen_id": "VR02",
+    "success_expected": "Tu voucher está listo. Puedes descargarlo o consultarlo.",
+    "negative_expected": "Necesitas conexión y acceso vigente al documento. Si sigue en preparación, consulta su estado.",
+    "recovery_expected": "Reabrir la misma versión. No crear dinero ni eventos de custodia.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "VR02.A3",
+    "screen_id": "VR02",
+    "success_expected": "Tu voucher está listo. Puedes descargarlo o consultarlo.",
+    "negative_expected": "Necesitas conexión y acceso vigente al documento. Si sigue en preparación, consulta su estado.",
+    "recovery_expected": "Reabrir la misma versión. No crear dinero ni eventos de custodia.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "VR03.A1",
+    "screen_id": "VR03",
+    "success_expected": "La vista de impresión se cerró. El voucher sigue disponible.",
+    "negative_expected": "Necesitas conexión y acceso vigente al documento. Si sigue en preparación, consulta su estado.",
+    "recovery_expected": "Reabrir la misma versión. No crear dinero ni eventos de custodia.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "VR03.A2",
+    "screen_id": "VR03",
+    "success_expected": "Tu voucher está listo. Puedes descargarlo o consultarlo.",
+    "negative_expected": "Necesitas conexión y acceso vigente al documento. Si sigue en preparación, consulta su estado.",
+    "recovery_expected": "Reabrir la misma versión. No crear dinero ni eventos de custodia.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "VR03.A3",
+    "screen_id": "VR03",
+    "success_expected": "Tu voucher está listo. Puedes descargarlo o consultarlo.",
+    "negative_expected": "Necesitas conexión y acceso vigente al documento. Si sigue en preparación, consulta su estado.",
+    "recovery_expected": "Reabrir la misma versión. No crear dinero ni eventos de custodia.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "VR04.A1",
+    "screen_id": "VR04",
+    "success_expected": "La vista de impresión se cerró. El voucher sigue disponible.",
+    "negative_expected": "Necesitas conexión y acceso vigente al documento. Si sigue en preparación, consulta su estado.",
+    "recovery_expected": "Reabrir la misma versión. No crear dinero ni eventos de custodia.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "VR04.A2",
+    "screen_id": "VR04",
+    "success_expected": "Tu voucher está listo. Puedes descargarlo o consultarlo.",
+    "negative_expected": "Necesitas conexión y acceso vigente al documento. Si sigue en preparación, consulta su estado.",
+    "recovery_expected": "Reabrir la misma versión. No crear dinero ni eventos de custodia.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  },
+  {
+    "action_id": "VR04.A3",
+    "screen_id": "VR04",
+    "success_expected": "Tu voucher está listo. Puedes descargarlo o consultarlo.",
+    "negative_expected": "Necesitas conexión y acceso vigente al documento. Si sigue en preparación, consulta su estado.",
+    "recovery_expected": "Reabrir la misma versión. No crear dinero ni eventos de custodia.",
+    "status": "SPECIFIED_NOT_EXECUTED"
+  }
+]

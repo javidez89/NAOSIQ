@@ -1,0 +1,133 @@
+{
+  "version": "5.0",
+  "sources": [
+    "F2 p.9",
+    "F7 pp.47-48",
+    "F9 p.11"
+  ],
+  "phases": [
+    {
+      "number": 0,
+      "title": "Revisión y decisiones",
+      "tasks": [
+        "P00"
+      ],
+      "exit_gate": "Base trazable y plan de arranque aprobado."
+    },
+    {
+      "number": 1,
+      "title": "Foundation técnica y visual",
+      "tasks": [
+        "P01"
+      ],
+      "exit_gate": "Shell, tokens, CI, logging y comandos reales."
+    },
+    {
+      "number": 2,
+      "title": "Identidad, tenant y resiliencia",
+      "tasks": [
+        "P02",
+        "P03",
+        "P27"
+      ],
+      "exit_gate": "Cinco roles, sesión, guardas y aislamiento probados."
+    },
+    {
+      "number": 3,
+      "title": "CRM Maestro y URLs",
+      "tasks": [
+        "P04",
+        "P05"
+      ],
+      "exit_gate": "Control total auditado y alta central."
+    },
+    {
+      "number": 4,
+      "title": "Onboarding y página pública",
+      "tasks": [
+        "P06",
+        "P07"
+      ],
+      "exit_gate": "Comercio publicable sin filtrar datos privados."
+    },
+    {
+      "number": 5,
+      "title": "Reparaciones, Asesor y documentos",
+      "tasks": [
+        "P08",
+        "P09",
+        "P10",
+        "P11",
+        "P12",
+        "P26"
+      ],
+      "exit_gate": "Custodia, diagnóstico, aprobación, QA y voucher de recepción."
+    },
+    {
+      "number": 6,
+      "title": "Pagos, caja y vouchers",
+      "tasks": [
+        "P13",
+        "P14",
+        "P28"
+      ],
+      "exit_gate": "Ingreso confirmado, saldo correcto, voucher y reimpresión segura."
+    },
+    {
+      "number": 7,
+      "title": "Inventario y ventas",
+      "tasks": [
+        "P15",
+        "P16"
+      ],
+      "exit_gate": "Movimientos trazables y cobro/stock sin duplicados."
+    },
+    {
+      "number": 8,
+      "title": "WhatsApp, mensajes y eventos",
+      "tasks": [
+        "P17",
+        "P18"
+      ],
+      "exit_gate": "Canales aislados y afirmaciones de entrega verificables."
+    },
+    {
+      "number": 9,
+      "title": "Suscripciones SaaS",
+      "tasks": [
+        "P19",
+        "P20"
+      ],
+      "exit_gate": "Ciclo aprobado, suspensión y reactivación."
+    },
+    {
+      "number": 10,
+      "title": "Métricas, calidad y endurecimiento",
+      "tasks": [
+        "P21",
+        "P22",
+        "P23",
+        "P24",
+        "P25",
+        "P29"
+      ],
+      "exit_gate": "Evidencia de pruebas y candidato a release."
+    },
+    {
+      "number": 11,
+      "title": "Piloto y lanzamiento controlado",
+      "tasks": [
+        "P31"
+      ],
+      "exit_gate": "Go/no-go humano, restore y hardware probados."
+    },
+    {
+      "number": 12,
+      "title": "Evolución opcional",
+      "tasks": [
+        "P30"
+      ],
+      "exit_gate": "Proveedor/escala según decisiones y necesidad real."
+    }
+  ]
+}

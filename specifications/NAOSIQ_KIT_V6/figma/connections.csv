@@ -1,0 +1,364 @@
+action_id,origin,label,mode,target,receiver,timeout_profile,return_after_error,session_resume
+AU01.A1,AU01,Continuar con Google,navigate,AU02,,AUTH,AU01,AU01
+AU01.A2,AU01,Reintentar acceso,stay,AU01,,AUTH,AU01,AU01
+AU01.A3,AU01,Ver ayuda,navigate,AU06,,READ,AU01,AU01
+AU02.A1,AU02,Entrar al comercio,role-home,AD01,,READ,AU02,AU02
+AU02.A2,AU02,Abrir CRM Maestro,navigate,SU01,,READ,AU02,AU02
+AU02.A3,AU02,Cambiar cuenta,navigate,AU01,,AUTH,AU02,AU02
+AU03.A1,AU03,Continuar sesión,resume,AU03,,AUTH,AU03,AU03
+AU03.A2,AU03,Verificar identidad,resume,AU03,,AUTH,AU03,AU03
+AU03.A3,AU03,Cerrar sesión,navigate,AU01,,AUTH,AU03,AU03
+AU04.A1,AU04,Reintentar lectura,resume,AU04,,READ,AU04,AU04
+AU04.A2,AU04,Volver al inicio,safe-home,AU02,,READ,AU04,AU04
+AU04.A3,AU04,Contactar soporte,navigate,AU06,,MSG,AU04,AU04
+AU05.A1,AU05,Recuperar borrador,resume,AU05,,READ,AU05,AU05
+AU05.A2,AU05,Comparar versiones,stay,AU05,,READ,AU05,AU05
+AU05.A3,AU05,Descartar copia,safe-home,AU02,,LOCAL,AU05,AU05
+AU06.A1,AU06,Abrir notificación,notification,CL19,,READ,AU06,AU06
+AU06.A2,AU06,Activar avisos,stay,AU06,,LOCAL,AU06,AU06
+AU06.A3,AU06,Actualizar aplicación,stay,AU06,,LOCAL,AU06,AU06
+SU01.A1,SU01,Abrir comercios,navigate,SU02,,READ,SU01,SU01
+SU01.A2,SU01,Revisar renovaciones,navigate,SU07,,READ,SU01,SU01
+SU01.A3,SU01,Ver incidente,navigate,SU14,,READ,SU01,SU01
+SU02.A1,SU02,Crear comercio,navigate,SU03,,READ,SU02,SU02
+SU02.A2,SU02,Abrir Tecno Cell,navigate,SU04,,READ,SU02,SU02
+SU02.A3,SU02,Exportar listado,navigate,SU20,,DOC,SU02,SU02
+SU03.A1,SU03,Validar URL,stay,SU03,,READ,SU03,SU03
+SU03.A2,SU03,Guardar borrador,stay,SU03,,WRITE,SU03,SU03
+SU03.A3,SU03,Crear comercio,navigate,SU04,,WRITE,SU03,SU03
+SU04.A1,SU04,Entrar al CRM,navigate,SU05,,READ,SU04,SU04
+SU04.A2,SU04,Editar comercio,navigate,SU19,,READ,SU04,SU04
+SU04.A3,SU04,Gestionar suscripción,navigate,SU18,,READ,SU04,SU04
+SU05.A1,SU05,Confirmar identidad,navigate,AU03,,AUTH,SU05,SU05
+SU05.A2,SU05,Entrar con control total,control,AD01,,WRITE,SU05,SU05
+SU05.A3,SU05,Salir del comercio,exit-control,SU04,,LOCAL,SU05,SU05
+SU06.A1,SU06,Crear plan,navigate,SU16,,READ,SU06,SU06
+SU06.A2,SU06,Editar Básico,navigate,SU16,,READ,SU06,SU06
+SU06.A3,SU06,Archivar plan,stay,SU06,,WRITE,SU06,SU06
+SU07.A1,SU07,Abrir suscripción,navigate,SU18,,READ,SU07,SU07
+SU07.A2,SU07,Filtrar vencidas,stay,SU07,,READ,SU07,SU07
+SU07.A3,SU07,Exportar cartera SaaS,navigate,SU20,,DOC,SU07,SU07
+SU08.A1,SU08,Abrir cargo SaaS,navigate,SU17,,READ,SU08,SU08
+SU08.A2,SU08,Conciliar pago,navigate,SU17,,FIN,SU08,SU08
+SU08.A3,SU08,Registrar cortesía,navigate,SU18,,WRITE,SU08,SU08
+SU09.A1,SU09,Comprobar disponibilidad,stay,SU09,,READ,SU09,SU09
+SU09.A2,SU09,Guardar URL,navigate,SU04,,WRITE,SU09,SU09
+SU09.A3,SU09,Verificar dominio,job,SU09,,DOC,SU09,SU09
+SU10.A1,SU10,Invitar usuario,stay,SU10,,WRITE,SU10,SU10
+SU10.A2,SU10,Guardar roles,stay,SU10,,WRITE,SU10,SU10
+SU10.A3,SU10,Revocar sesiones,stay,SU10,,WRITE,SU10,SU10
+SU11.A1,SU11,Probar conexión,stay,SU11,,READ,SU11,SU11
+SU11.A2,SU11,Actualizar secreto,stay,SU11,,WRITE,SU11,SU11
+SU11.A3,SU11,Desactivar integración,stay,SU11,,WRITE,SU11,SU11
+SU12.A1,SU12,Previsualizar,stay,SU12,,READ,SU12,SU12
+SU12.A2,SU12,Publicar plantilla,stay,SU12,,WRITE,SU12,SU12
+SU12.A3,SU12,Abrir prueba en WhatsApp,external,SU12,,LOCAL,SU12,SU12
+SU13.A1,SU13,Ver evento,stay,SU13,,READ,SU13,SU13
+SU13.A2,SU13,Filtrar por comercio,stay,SU13,,READ,SU13,SU13
+SU13.A3,SU13,Exportar evidencia,navigate,SU20,,DOC,SU13,SU13
+SU14.A1,SU14,Abrir caso,stay,SU14,,READ,SU14,SU14
+SU14.A2,SU14,Enviar respuesta,stay,SU14,,MSG,SU14,SU14
+SU14.A3,SU14,Cerrar caso,stay,SU14,,WRITE,SU14,SU14
+SU15.A1,SU15,Guardar política,stay,SU15,,WRITE,SU15,SU15
+SU15.A2,SU15,Ver impacto,stay,SU15,,READ,SU15,SU15
+SU15.A3,SU15,Restaurar versión,stay,SU15,,WRITE,SU15,SU15
+SU16.A1,SU16,Guardar borrador,stay,SU16,,WRITE,SU16,SU16
+SU16.A2,SU16,Publicar versión,navigate,SU06,,WRITE,SU16,SU16
+SU16.A3,SU16,Cancelar cambios,navigate,SU06,,LOCAL,SU16,SU16
+SU17.A1,SU17,Confirmar conciliacion,navigate,SU18,,FIN,SU17,SU17
+SU17.A2,SU17,Rechazar reporte,stay,SU17,,FIN,SU17,SU17
+SU17.A3,SU17,Ver movimientos,navigate,SU08,,READ,SU17,SU17
+SU18.A1,SU18,Suspender servicio,stay,SU18,,WRITE,SU18,SU18
+SU18.A2,SU18,Reactivar por cortesía,stay,SU18,,WRITE,SU18,SU18
+SU18.A3,SU18,Abrir pago SaaS,navigate,SU17,,READ,SU18,SU18
+SU19.A1,SU19,Guardar comercio,navigate,SU04,,WRITE,SU19,SU19
+SU19.A2,SU19,Gestionar URL,navigate,SU09,,READ,SU19,SU19
+SU19.A3,SU19,Cancelar edicion,navigate,SU04,,LOCAL,SU19,SU19
+SU20.A1,SU20,Aplicar período,stay,SU20,,READ,SU20,SU20
+SU20.A2,SU20,Solicitar exportacion,job,SU20,,DOC,SU20,SU20
+SU20.A3,SU20,Descargar resultado,document-local,SU20,,DOC,SU20,SU20
+AD01.A1,AD01,Abrir pendientes,navigate,AD02,,READ,AD01,AD01
+AD01.A2,AD01,Crear orden,navigate,AD03,,READ,AD01,AD01
+AD01.A3,AD01,Nueva venta,navigate,AD17,,READ,AD01,AD01
+AD02.A1,AD02,Abrir OT-000154,navigate,AD04,,READ,AD02,AD02
+AD02.A2,AD02,Crear orden,navigate,AD03,,READ,AD02,AD02
+AD02.A3,AD02,Exportar bandeja,navigate,AD22,,DOC,AD02,AD02
+AD03.A1,AD03,Buscar cliente,navigate,AD12,,READ,AD03,AD03
+AD03.A2,AD03,Guardar borrador,stay,AD03,,WRITE,AD03,AD03
+AD03.A3,AD03,Crear orden,navigate,AD04,,WRITE,AD03,AD03
+AD04.A1,AD04,Editar diagnóstico,navigate,AD06,,READ,AD04,AD04
+AD04.A2,AD04,Registrar pago,navigate,AD11,,READ,AD04,AD04
+AD04.A3,AD04,Preparar entrega,navigate,AD35,,READ,AD04,AD04
+AD05.A1,AD05,Cargar evidencia,shared,TE12,,UPLOAD,AD05,AD05
+AD05.A2,AD05,Guardar borrador,stay,AD05,,WRITE,AD05,AD05
+AD05.A3,AD05,Confirmar recepción,navigate,AD04,,WRITE,AD05,AD05
+AD05.A4,AD05,Ver voucher de recepción,shared,VR01,,DOC,AD05,AD05
+AD06.A1,AD06,Guardar diagnóstico,stay,AD06,,WRITE,AD06,AD06
+AD06.A2,AD06,Preparar cotización,navigate,AD07,,READ,AD06,AD06
+AD06.A3,AD06,Marcar no reparable,navigate,AD36,,WRITE,AD06,AD06
+AD07.A1,AD07,Guardar cotización,stay,AD07,,WRITE,AD07,AD07
+AD07.A2,AD07,Enviar al cliente,navigate,AD08,,WRITE,AD07,AD07
+AD07.A3,AD07,Previsualizar PDF,navigate,AD32,,DOC,AD07,AD07
+AD08.A1,AD08,Abrir recordatorio,external,AD08,,LOCAL,AD08,AD08
+AD08.A2,AD08,Ver evidencia,stay,AD08,,READ,AD08,AD08
+AD08.A3,AD08,Revisar cotización,navigate,AD07,,READ,AD08,AD08
+AD09.A1,AD09,Asignar técnico,navigate,AD14,,WRITE,AD09,AD09
+AD09.A2,AD09,Registrar avance,stay,AD09,,WRITE,AD09,AD09
+AD09.A3,AD09,Enviar a QA,navigate,AD10,,WRITE,AD09,AD09
+AD10.A1,AD10,Guardar pruebas,stay,AD10,,WRITE,AD10,AD10
+AD10.A2,AD10,Aprobar QA,navigate,AD04,,WRITE,AD10,AD10
+AD10.A3,AD10,Devolver a reparación,navigate,AD09,,WRITE,AD10,AD10
+AD11.A1,AD11,Revisar reporte,navigate,AD31,,READ,AD11,AD11
+AD11.A2,AD11,Registrar efectivo,shared,AS08,,READ,AD11,AD11
+AD11.A3,AD11,Ver recibos,navigate,AD32,,DOC,AD11,AD11
+AD11.A4,AD11,Ver voucher de pago,shared,VR03,,DOC,AD11,AD11
+AD12.A1,AD12,Abrir cliente,navigate,AD13,,READ,AD12,AD12
+AD12.A2,AD12,Crear cliente,shared,AS02,,READ,AD12,AD12
+AD12.A3,AD12,Crear OT,navigate,AD03,,READ,AD12,AD12
+AD13.A1,AD13,Nueva orden,navigate,AD03,,READ,AD13,AD13
+AD13.A2,AD13,Actualizar contacto,stay,AD13,,WRITE,AD13,AD13
+AD13.A3,AD13,Enviar mensaje,navigate,AD18,,READ,AD13,AD13
+AD14.A1,AD14,Invitar técnico,navigate,AD25,,READ,AD14,AD14
+AD14.A2,AD14,Asignar OT,navigate,AD09,,WRITE,AD14,AD14
+AD14.A3,AD14,Desactivar técnico,navigate,AD25,,WRITE,AD14,AD14
+AD15.A1,AD15,Crear producto,navigate,AD16,,READ,AD15,AD15
+AD15.A2,AD15,Abrir producto,navigate,AD16,,READ,AD15,AD15
+AD15.A3,AD15,Ver movimientos,navigate,AD28,,READ,AD15,AD15
+AD16.A1,AD16,Guardar producto,stay,AD16,,WRITE,AD16,AD16
+AD16.A2,AD16,Registrar movimiento,navigate,AD28,,READ,AD16,AD16
+AD16.A3,AD16,Ver vitrina,navigate,CL22,,READ,AD16,AD16
+AD17.A1,AD17,Guardar venta,stay,AD17,,WRITE,AD17,AD17
+AD17.A2,AD17,Revisar cobro,shared,AS08,,READ,AD17,AD17
+AD17.A3,AD17,Finalizar venta,navigate,AD30,,FIN,AD17,AD17
+AD18.A1,AD18,Enviar al cliente,stay,AD18,,MSG,AD18,AD18
+AD18.A2,AD18,Guardar nota interna,stay,AD18,,WRITE,AD18,AD18
+AD18.A3,AD18,Abrir WhatsApp,external,AD18,,LOCAL,AD18,AD18
+AD19.A1,AD19,Guardar borrador,stay,AD19,,WRITE,AD19,AD19
+AD19.A2,AD19,Ver vista previa,navigate,CL01,,READ,AD19,AD19
+AD19.A3,AD19,Publicar cambios,navigate,CL01,,WRITE,AD19,AD19
+AD20.A1,AD20,Guardar medios,stay,AD20,,WRITE,AD20,AD20
+AD20.A2,AD20,Ver como cliente,navigate,CL10,,READ,AD20,AD20
+AD20.A3,AD20,Desactivar medio,stay,AD20,,WRITE,AD20,AD20
+AD21.A1,AD21,Guardar configuración,stay,AD21,,WRITE,AD21,AD21
+AD21.A2,AD21,Abrir mensaje,external,AD21,,LOCAL,AD21,AD21
+AD21.A3,AD21,Copiar texto,stay,AD21,,LOCAL,AD21,AD21
+AD22.A1,AD22,Aplicar filtros,stay,AD22,,READ,AD22,AD22
+AD22.A2,AD22,Ver órdenes,navigate,AD02,,READ,AD22,AD22
+AD22.A3,AD22,Exportar reporte,job,AD22,,DOC,AD22,AD22
+AD23.A1,AD23,Pagar mensualidad,context,AD23,,FIN,AD23,AD23
+AD23.A2,AD23,Cambiar plan,stay,AD23,,WRITE,AD23,AD23
+AD23.A3,AD23,Contactar soporte,context,AD23,,MSG,AD23,AD23
+AD24.A1,AD24,Guardar datos,stay,AD24,,WRITE,AD24,AD24
+AD24.A2,AD24,Gestionar usuarios,navigate,AD25,,READ,AD24,AD24
+AD24.A3,AD24,Configurar documentos,navigate,AD34,,READ,AD24,AD24
+AD25.A1,AD25,Invitar Asesor,stay,AD25,,WRITE,AD25,AD25
+AD25.A2,AD25,Guardar permisos,stay,AD25,,WRITE,AD25,AD25
+AD25.A3,AD25,Desactivar miembro,stay,AD25,,WRITE,AD25,AD25
+AD26.A1,AD26,Abrir cotización,navigate,AD07,,READ,AD26,AD26
+AD26.A2,AD26,Enviar recordatorio,external,AD26,,LOCAL,AD26,AD26
+AD26.A3,AD26,Crear nueva versión,navigate,AD07,,WRITE,AD26,AD26
+AD27.A1,AD27,Abrir historial,stay,AD27,,READ,AD27,AD27
+AD27.A2,AD27,Nueva OT del equipo,navigate,AD03,,READ,AD27,AD27
+AD27.A3,AD27,Corregir identificador,stay,AD27,,WRITE,AD27,AD27
+AD28.A1,AD28,Validar movimiento,stay,AD28,,READ,AD28,AD28
+AD28.A2,AD28,Confirmar movimiento,navigate,AD16,,WRITE,AD28,AD28
+AD28.A3,AD28,Cancelar movimiento,navigate,AD15,,LOCAL,AD28,AD28
+AD29.A1,AD29,Abrir venta,navigate,AD30,,READ,AD29,AD29
+AD29.A2,AD29,Nueva venta,navigate,AD17,,READ,AD29,AD29
+AD29.A3,AD29,Exportar ventas,navigate,AD22,,DOC,AD29,AD29
+AD30.A1,AD30,Descargar recibo,shared,CL19,,DOC,AD30,AD30
+AD30.A2,AD30,Anular venta,stay,AD30,,FIN,AD30,AD30
+AD30.A3,AD30,Volver a ventas,navigate,AD29,,READ,AD30,AD30
+AD31.A1,AD31,Confirmar abono,navigate,AD11,,FIN,AD31,AD31
+AD31.A2,AD31,Rechazar reporte,stay,AD31,,FIN,AD31,AD31
+AD31.A3,AD31,Abrir historial,navigate,AD11,,READ,AD31,AD31
+AD32.A1,AD32,Abrir documento,shared,CL19,,DOC,AD32,AD32
+AD32.A2,AD32,Reintentar PDF,job,AD32,,DOC,AD32,AD32
+AD32.A3,AD32,Compartir enlace,navigate,AD18,,READ,AD32,AD32
+AD32.A4,AD32,Imprimir voucher,shared,VR04,,DOC,AD32,AD32
+AD33.A1,AD33,Guardar borrador,stay,AD33,,WRITE,AD33,AD33
+AD33.A2,AD33,Publicar condiciones,stay,AD33,,WRITE,AD33,AD33
+AD33.A3,AD33,Ver texto público,navigate,CL23,,READ,AD33,AD33
+AD34.A1,AD34,Guardar configuración,stay,AD34,,WRITE,AD34,AD34
+AD34.A2,AD34,Previsualizar orden,shared,CL19,,DOC,AD34,AD34
+AD34.A3,AD34,Ver secuencias,stay,AD34,,READ,AD34,AD34
+AD35.A1,AD35,Validar entrega,stay,AD35,,READ,AD35,AD35
+AD35.A2,AD35,Confirmar entrega,navigate,AD04,,WRITE,AD35,AD35
+AD35.A3,AD35,Ver comprobante,shared,CL19,,DOC,AD35,AD35
+AD36.A1,AD36,Crear reingreso,navigate,AD03,,WRITE,AD36,AD36
+AD36.A2,AD36,Cancelar servicio,stay,AD36,,WRITE,AD36,AD36
+AD36.A3,AD36,Preparar devolucion,navigate,AD35,,READ,AD36,AD36
+AS01.A1,AS01,Nueva recepción,navigate,AS03,,READ,AS01,AS01
+AS01.A2,AS01,Buscar cliente,navigate,AS02,,READ,AS01,AS01
+AS01.A3,AS01,Abrir seguimientos,navigate,AS10,,READ,AS01,AS01
+AS02.A1,AS02,Buscar coincidencias,stay,AS02,,READ,AS02,AS02
+AS02.A2,AS02,Guardar contacto,navigate,AS03,,WRITE,AS02,AS02
+AS02.A3,AS02,Abrir historial,context,AS02,,READ,AS02,AS02
+AS03.A1,AS03,Agregar fotos,shared,TE12,,UPLOAD,AS03,AS03
+AS03.A2,AS03,Guardar borrador,stay,AS03,,WRITE,AS03,AS03
+AS03.A3,AS03,Confirmar recepción,navigate,AS04,,WRITE,AS03,AS03
+AS03.A4,AS03,Ver voucher de recepción,shared,VR01,,DOC,AS03,AS03
+AS04.A1,AS04,Revisar recepción,context,AS03,,READ,AS04,AS04
+AS04.A2,AS04,Enviar a cola técnica,handoff,AS04,TE02,WRITE,AS04,AS04
+AS04.A3,AS04,Solicitar asignacion,handoff,AS04,AD14,MSG,AS04,AS04
+AS05.A1,AS05,Abrir cotización,context,AS05,,READ,AS05,AS05
+AS05.A2,AS05,Preparar recordatorio,external,AS05,,LOCAL,AS05,AS05
+AS05.A3,AS05,Solicitar revisión,handoff,AS05,AD07,MSG,AS05,AS05
+AS06.A1,AS06,Enviar respuesta,stay,AS06,,MSG,AS06,AS06
+AS06.A2,AS06,Consultar al técnico,handoff,AS06,TE09,MSG,AS06,AS06
+AS06.A3,AS06,Abrir WhatsApp,external,AS06,,LOCAL,AS06,AS06
+AS07.A1,AS07,Abrir comprobante,document-local,AS07,,DOC,AS07,AS07
+AS07.A2,AS07,Enviar a verificación,handoff,AS07,AD31,WRITE,AS07,AS07
+AS07.A3,AS07,Confirmar abono,context,AS07,,FIN,AS07,AS07
+AS08.A1,AS08,Calcular cambio,stay,AS08,,LOCAL,AS08,AS08
+AS08.A2,AS08,Confirmar efectivo,context,AS08,,FIN,AS08,AS08
+AS08.A3,AS08,Cancelar cobro,navigate,AS07,,LOCAL,AS08,AS08
+AS08.A4,AS08,Ver voucher de pago,shared,VR03,,DOC,AS08,AS08
+AS09.A1,AS09,Revisar habilitacion,stay,AS09,,READ,AS09,AS09
+AS09.A2,AS09,Confirmar entrega,context,AS09,,WRITE,AS09,AS09
+AS09.A3,AS09,Compartir documento,shared,CL19,,DOC,AS09,AS09
+AS10.A1,AS10,Crear tarea,stay,AS10,,WRITE,AS10,AS10
+AS10.A2,AS10,Marcar completada,stay,AS10,,WRITE,AS10,AS10
+AS10.A3,AS10,Reprogramar,stay,AS10,,WRITE,AS10,AS10
+AS11.A1,AS11,Guardar borrador,stay,AS11,,WRITE,AS11,AS11
+AS11.A2,AS11,Solicitar cobro,navigate,AS08,,READ,AS11,AS11
+AS11.A3,AS11,Confirmar venta,context,AS11,,FIN,AS11,AS11
+AS12.A1,AS12,Guardar preferencias,stay,AS12,,WRITE,AS12,AS12
+AS12.A2,AS12,Solicitar permiso,handoff,AS12,AD25,MSG,AS12,AS12
+AS12.A3,AS12,Cerrar sesión,navigate,AU01,,AUTH,AS12,AS12
+TE01.A1,TE01,Abrir mis trabajos,navigate,TE02,,READ,TE01,TE01
+TE01.A2,TE01,Escanear QR,navigate,TE03,,READ,TE01,TE01
+TE01.A3,TE01,Ver sincronización,navigate,TE10,,READ,TE01,TE01
+TE02.A1,TE02,Abrir OT-000154,navigate,TE04,,READ,TE02,TE02
+TE02.A2,TE02,Filtrar trabajos,stay,TE02,,READ,TE02,TE02
+TE02.A3,TE02,Actualizar cola,stay,TE02,,READ,TE02,TE02
+TE03.A1,TE03,Activar camara,stay,TE03,,LOCAL,TE03,TE03
+TE03.A2,TE03,Buscar código,navigate,TE04,,READ,TE03,TE03
+TE03.A3,TE03,Ingresar manual,stay,TE03,,LOCAL,TE03,TE03
+TE04.A1,TE04,Editar diagnóstico,navigate,TE05,,READ,TE04,TE04
+TE04.A2,TE04,Cambiar estado,navigate,TE07,,READ,TE04,TE04
+TE04.A3,TE04,Abrir QA,navigate,TE08,,READ,TE04,TE04
+TE05.A1,TE05,Guardar borrador,stay,TE05,,WRITE,TE05,TE05
+TE05.A2,TE05,Adjuntar evidencia,navigate,TE12,,UPLOAD,TE05,TE05
+TE05.A3,TE05,Enviar diagnóstico,handoff,TE05,AD06,WRITE,TE05,TE05
+TE06.A1,TE06,Buscar repuesto,stay,TE06,,READ,TE06,TE06
+TE06.A2,TE06,Solicitar repuesto,handoff,TE06,AD15,WRITE,TE06,TE06
+TE06.A3,TE06,Registrar consumo,context,TE06,,WRITE,TE06,TE06
+TE07.A1,TE07,Guardar nota,stay,TE07,,WRITE,TE07,TE07
+TE07.A2,TE07,Confirmar estado,navigate,TE04,,WRITE,TE07,TE07
+TE07.A3,TE07,Cancelar cambio,navigate,TE04,,LOCAL,TE07,TE07
+TE08.A1,TE08,Guardar resultados,stay,TE08,,WRITE,TE08,TE08
+TE08.A2,TE08,Aprobar QA,navigate,TE04,,WRITE,TE08,TE08
+TE08.A3,TE08,Reportar fallo,navigate,TE07,,WRITE,TE08,TE08
+TE09.A1,TE09,Enviar nota interna,stay,TE09,,MSG,TE09,TE09
+TE09.A2,TE09,Responder al cliente,stay,TE09,,MSG,TE09,TE09
+TE09.A3,TE09,Ver historial,navigate,TE14,,READ,TE09,TE09
+TE10.A1,TE10,Sincronizar borradores,stay,TE10,,WRITE,TE10,TE10
+TE10.A2,TE10,Resolver conflicto,navigate,AU05,,READ,TE10,TE10
+TE10.A3,TE10,Descartar copia local,stay,TE10,,LOCAL,TE10,TE10
+TE11.A1,TE11,Guardar datos,stay,TE11,,WRITE,TE11,TE11
+TE11.A2,TE11,Tomar evidencia,navigate,TE12,,UPLOAD,TE11,TE11
+TE11.A3,TE11,Confirmar recepción,navigate,TE04,,WRITE,TE11,TE11
+TE11.A4,TE11,Ver voucher de recepción,shared,VR01,,DOC,TE11,TE11
+TE12.A1,TE12,Tomar foto,stay,TE12,,LOCAL,TE12,TE12
+TE12.A2,TE12,Subir archivos,stay,TE12,,UPLOAD,TE12,TE12
+TE12.A3,TE12,Volver a la orden,return,TE04,,LOCAL,TE12,TE12
+TE13.A1,TE13,Calcular cambio,stay,TE13,,LOCAL,TE13,TE13
+TE13.A2,TE13,Registrar efectivo,context,TE04,,FIN,TE13,TE13
+TE13.A3,TE13,Derivar a caja,handoff,TE13,AS08,MSG,TE13,TE13
+TE14.A1,TE14,Filtrar eventos,stay,TE14,,READ,TE14,TE14
+TE14.A2,TE14,Abrir evidencia,navigate,TE12,,DOC,TE14,TE14
+TE14.A3,TE14,Solicitar correccion,handoff,TE14,AS06,MSG,TE14,TE14
+CL01.A1,CL01,Solicitar reparación,navigate,CL02,,READ,CL01,CL01
+CL01.A2,CL01,Consultar mi orden,navigate,CL26,,READ,CL01,CL01
+CL01.A3,CL01,Ver servicios,navigate,CL20,,READ,CL01,CL01
+CL02.A1,CL02,Continuar con Google,resume-client,CL16,,AUTH,CL02,CL02
+CL02.A2,CL02,Volver al negocio,navigate,CL01,,LOCAL,CL02,CL02
+CL02.A3,CL02,Ver ayuda de acceso,navigate,CL23,,READ,CL02,CL02
+CL03.A1,CL03,Continuar a la falla,navigate,CL04,,WRITE,CL03,CL03
+CL03.A2,CL03,Usar equipo guardado,navigate,CL17,,READ,CL03,CL03
+CL03.A3,CL03,Guardar y salir,navigate,CL16,,WRITE,CL03,CL03
+CL04.A1,CL04,Agregar fotos,stay,CL04,,UPLOAD,CL04,CL04
+CL04.A2,CL04,Continuar a contacto,navigate,CL05,,WRITE,CL04,CL04
+CL04.A3,CL04,Volver al equipo,navigate,CL03,,LOCAL,CL04,CL04
+CL05.A1,CL05,Revisar equipo,navigate,CL03,,READ,CL05,CL05
+CL05.A2,CL05,Crear solicitud,navigate,CL06,,WRITE,CL05,CL05
+CL05.A3,CL05,Guardar borrador,navigate,CL16,,WRITE,CL05,CL05
+CL06.A1,CL06,Ver seguimiento,navigate,CL08,,READ,CL06,CL06
+CL06.A2,CL06,Descargar orden,navigate,CL19,,DOC,CL06,CL06
+CL06.A3,CL06,Contactar al taller,navigate,CL13,,READ,CL06,CL06
+CL07.A1,CL07,Abrir reparación,navigate,CL08,,READ,CL07,CL07
+CL07.A2,CL07,Nueva solicitud,navigate,CL03,,READ,CL07,CL07
+CL07.A3,CL07,Filtrar historial,stay,CL07,,READ,CL07,CL07
+CL08.A1,CL08,Ver cotización,navigate,CL09,,READ,CL08,CL08
+CL08.A2,CL08,Ver pagos,navigate,CL10,,READ,CL08,CL08
+CL08.A3,CL08,Enviar consulta,navigate,CL13,,READ,CL08,CL08
+CL09.A1,CL09,Aprobar cotización,navigate,CL08,,WRITE,CL09,CL09
+CL09.A2,CL09,Rechazar cotización,navigate,CL08,,WRITE,CL09,CL09
+CL09.A3,CL09,Hacer una pregunta,navigate,CL13,,READ,CL09,CL09
+CL10.A1,CL10,Ver instrucciones,navigate,CL25,,READ,CL10,CL10
+CL10.A2,CL10,Reportar pago,navigate,CL11,,READ,CL10,CL10
+CL10.A3,CL10,Ver pagos anteriores,navigate,CL18,,READ,CL10,CL10
+CL11.A1,CL11,Adjuntar comprobante,stay,CL11,,UPLOAD,CL11,CL11
+CL11.A2,CL11,Enviar reporte,navigate,CL18,,FIN,CL11,CL11
+CL11.A3,CL11,Cancelar reporte,navigate,CL10,,LOCAL,CL11,CL11
+CL12.A1,CL12,Abrir recibo,navigate,CL19,,DOC,CL12,CL12
+CL12.A2,CL12,Ver abonos,navigate,CL18,,READ,CL12,CL12
+CL12.A3,CL12,Solicitar documento,navigate,CL13,,MSG,CL12,CL12
+CL12.A4,CL12,Ver documentos de recepción,navigate,VR02,,DOC,CL12,CL12
+CL13.A1,CL13,Enviar mensaje,stay,CL13,,MSG,CL13,CL13
+CL13.A2,CL13,Adjuntar imagen,stay,CL13,,UPLOAD,CL13,CL13
+CL13.A3,CL13,Volver a mi orden,navigate,CL08,,LOCAL,CL13,CL13
+CL14.A1,CL14,Guardar perfil,stay,CL14,,WRITE,CL14,CL14
+CL14.A2,CL14,Gestionar notificaciones,navigate,AU06,,READ,CL14,CL14
+CL14.A3,CL14,Cerrar sesión,navigate,CL02,,AUTH,CL14,CL14
+CL15.A1,CL15,Reintentar consulta,navigate,CL01,,READ,CL15,CL15
+CL15.A2,CL15,Contactar al negocio,navigate,CL23,,READ,CL15,CL15
+CL15.A3,CL15,Entrar a mis documentos,navigate,CL12,,READ,CL15,CL15
+CL16.A1,CL16,Ver mi reparación,navigate,CL08,,READ,CL16,CL16
+CL16.A2,CL16,Nueva solicitud,navigate,CL03,,READ,CL16,CL16
+CL16.A3,CL16,Retomar borrador,navigate,AU05,,READ,CL16,CL16
+CL17.A1,CL17,Usar este equipo,navigate,CL03,,READ,CL17,CL17
+CL17.A2,CL17,Agregar equipo,navigate,CL03,,READ,CL17,CL17
+CL17.A3,CL17,Ver historial,navigate,CL07,,READ,CL17,CL17
+CL18.A1,CL18,Ver reporte,stay,CL18,,READ,CL18,CL18
+CL18.A2,CL18,Abrir recibo,navigate,CL19,,DOC,CL18,CL18
+CL18.A3,CL18,Reportar otro abono,navigate,CL11,,READ,CL18,CL18
+CL18.A4,CL18,Ver voucher de pago,shared,VR03,,DOC,CL18,CL18
+CL19.A1,CL19,Descargar PDF,document-local,CL19,,DOC,CL19,CL19
+CL19.A2,CL19,Compartir documento,stay,CL19,,LOCAL,CL19,CL19
+CL19.A3,CL19,Volver a documentos,return,CL12,,READ,CL19,CL19
+CL19.A4,CL19,Imprimir voucher,shared,VR04,,DOC,CL19,CL19
+CL20.A1,CL20,Solicitar servicio,navigate,CL02,,READ,CL20,CL20
+CL20.A2,CL20,Consultar por WhatsApp,external,CL20,,LOCAL,CL20,CL20
+CL20.A3,CL20,Volver al inicio,navigate,CL01,,READ,CL20,CL20
+CL21.A1,CL21,Ver cargador,navigate,CL22,,READ,CL21,CL21
+CL21.A2,CL21,Consultar disponibilidad,external,CL21,,LOCAL,CL21,CL21
+CL21.A3,CL21,Filtrar catálogo,stay,CL21,,READ,CL21,CL21
+CL22.A1,CL22,Consultar compra,external,CL22,,LOCAL,CL22,CL22
+CL22.A2,CL22,Ver compatibilidad,stay,CL22,,READ,CL22,CL22
+CL22.A3,CL22,Volver a productos,navigate,CL21,,READ,CL22,CL22
+CL23.A1,CL23,Abrir WhatsApp,external,CL23,,LOCAL,CL23,CL23
+CL23.A2,CL23,Ver ubicación,external,CL23,,LOCAL,CL23,CL23
+CL23.A3,CL23,Leer condiciones,stay,CL23,,READ,CL23,CL23
+CL24.A1,CL24,Ver comprobante,navigate,CL19,,DOC,CL24,CL24
+CL24.A2,CL24,Solicitar revisión,navigate,CL13,,MSG,CL24,CL24
+CL24.A3,CL24,Valorar servicio,stay,CL24,,WRITE,CL24,CL24
+CL25.A1,CL25,Copiar dato de pago,stay,CL25,,LOCAL,CL25,CL25
+CL25.A2,CL25,Ya realice el pago,payment-method,CL11,,READ,CL25,CL25
+CL25.A3,CL25,Elegir otro medio,navigate,CL10,,READ,CL25,CL25
+CL26.A1,CL26,Iniciar sesión,navigate,CL02,,AUTH,CL26,CL26
+CL26.A2,CL26,Consultar orden,navigate,CL08,,READ,CL26,CL26
+CL26.A3,CL26,Pedir ayuda,navigate,CL23,,READ,CL26,CL26
+VR01.A1,VR01,Obtener voucher,navigate,VR04,,DOC,VR01,VR01
+VR01.A2,VR01,Imprimir voucher,navigate,VR04,,DOC,VR01,VR01
+VR01.A3,VR01,Descargar PDF,document-local,VR01,,DOC,VR01,VR01
+VR02.A1,VR02,Obtener voucher,navigate,VR04,,DOC,VR02,VR02
+VR02.A2,VR02,Ver versión,navigate,VR04,,DOC,VR02,VR02
+VR02.A3,VR02,Volver a mi orden,navigate,CL08,,DOC,VR02,VR02
+VR03.A1,VR03,Imprimir voucher,navigate,VR04,,DOC,VR03,VR03
+VR03.A2,VR03,Descargar PDF,document-local,VR03,,DOC,VR03,VR03
+VR03.A3,VR03,Ver movimientos,return,CL18,,DOC,VR03,VR03
+VR04.A1,VR04,Abrir impresión,print,VR04,,DOC,VR04,VR04
+VR04.A2,VR04,Descargar PDF,document-local,VR04,,DOC,VR04,VR04
+VR04.A3,VR04,Volver a documentos,return,VR02,,DOC,VR04,VR04

@@ -1,0 +1,87 @@
+{
+  "project": "NAOSIQ",
+  "baseline": "5.0",
+  "date": "2026-09-08",
+  "sources": [
+    {
+      "id": "F1",
+      "filename": "CRM_TECHI_00_Master_Documentacion_Completa.pdf",
+      "path": "references/history/CRM_TECHI_00_Master_Documentacion_Completa.pdf",
+      "pages": 74,
+      "sha256": "9ce01906b43c75b18dfa56d0b5bfc72c846d93063eab2b65b6a1d23776934f67",
+      "authority": "historical_not_current_spec"
+    },
+    {
+      "id": "F2",
+      "filename": "CRM_TECHI_01_Blueprint_End_to_End_Codex.pdf",
+      "path": "references/history/CRM_TECHI_01_Blueprint_End_to_End_Codex.pdf",
+      "pages": 15,
+      "sha256": "e94da0d37c6123ac801b08e6addf136a7b712e90e317af1bc6b93dbd72d79dfa",
+      "authority": "historical_not_current_spec"
+    },
+    {
+      "id": "F3",
+      "filename": "CRM_TECHI_02_UX_UI_End_to_End.pdf",
+      "path": "references/history/CRM_TECHI_02_UX_UI_End_to_End.pdf",
+      "pages": 51,
+      "sha256": "213dca3f0836586f2c98f4c2928790bcb7a5265d8a1d8fbba2e83397ae13fc7d",
+      "authority": "historical_not_current_spec"
+    },
+    {
+      "id": "F4",
+      "filename": "CRM_TECHI_03_Arquitectura_Tecnica_E2E.pdf",
+      "path": "references/history/CRM_TECHI_03_Arquitectura_Tecnica_E2E.pdf",
+      "pages": 8,
+      "sha256": "1b6a9663f17fba9f9780898dd69d0e99f4a27693f5aa6527a72cc28c1c805127",
+      "authority": "historical_not_current_spec"
+    },
+    {
+      "id": "F5",
+      "filename": "CRM_TECHI_UX_UI_Flujo_Completo_Errores_Excepciones.pdf",
+      "path": "references/history/CRM_TECHI_UX_UI_Flujo_Completo_Errores_Excepciones.pdf",
+      "pages": 102,
+      "sha256": "678c5c37e5145321680ba0c5da7f7e2a8104185fb2fb0963b115d3d1055b5dac",
+      "authority": "historical_not_current_spec"
+    },
+    {
+      "id": "F6",
+      "filename": "CRM_TECHI_UX_UI_V3_Asesor_Flujo_Completo.pdf",
+      "path": "references/history/CRM_TECHI_UX_UI_V3_Asesor_Flujo_Completo.pdf",
+      "pages": 56,
+      "sha256": "0fd313b8e34d35b6a8c285974981b90be179fad42a583096dce63053ca587144",
+      "authority": "historical_not_current_spec"
+    },
+    {
+      "id": "F7",
+      "filename": "CRM_TECHI_01_GUIA_MAESTRA_V4.pdf",
+      "path": "references/history/CRM_TECHI_01_GUIA_MAESTRA_V4.pdf",
+      "pages": 61,
+      "sha256": "6f3b11f020bf1711d96458d1528efea21534937c35ebaf8cadb6213dbda7b4c0",
+      "authority": "historical_not_current_spec"
+    },
+    {
+      "id": "F8",
+      "filename": "CRM_TECHI_02_ATLAS_UX_UI_V4.pdf",
+      "path": "references/visual/CRM_TECHI_02_ATLAS_UX_UI_V4.pdf",
+      "pages": 233,
+      "sha256": "cf54d6a2b028bf6a9b20c03fcc556f76250f620923cfd161d4640ea2920093b1",
+      "authority": "reference_visual"
+    },
+    {
+      "id": "F9",
+      "filename": "CRM_TECHI_V4_1_ANEXO_VOUCHERS.pdf",
+      "path": "references/visual/CRM_TECHI_V4_1_ANEXO_VOUCHERS.pdf",
+      "pages": 12,
+      "sha256": "f797d5352e37b409dac988d7986550a39c8d39dda27165a28253857533fd3e49",
+      "authority": "reference_visual"
+    }
+  ],
+  "conversation_changes": [
+    "U01: CRM Maestro y Super Usuario con control total de cualquier comercio.",
+    "U02: Cinco roles, incluido Asesor.",
+    "U03: WhatsApp en todos los planes; Bre-B, Nequi, transferencia y efectivo en Básico.",
+    "U04: Suscripción mensual con interrupción por impago; URL desde CRM Maestro.",
+    "U05: Cliente obtiene e imprime voucher de recepción y voucher de pago.",
+    "U06: Consolidar documentación para iniciar Codex."
+  ]
+}

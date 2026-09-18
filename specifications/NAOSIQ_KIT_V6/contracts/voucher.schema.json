@@ -1,0 +1,165 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "NAOSIQ Document Snapshot V5",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "document_id",
+    "organization_id",
+    "document_type",
+    "source_event_id",
+    "version",
+    "issued_at",
+    "order_id",
+    "business_name",
+    "customer_name",
+    "snapshot"
+  ],
+  "properties": {
+    "document_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "organization_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "document_type": {
+      "enum": [
+        "INTAKE_VOUCHER",
+        "PAYMENT_VOUCHER"
+      ]
+    },
+    "source_event_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "version": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "issued_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "order_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "business_name": {
+      "type": "string"
+    },
+    "customer_name": {
+      "type": "string"
+    },
+    "snapshot": {
+      "type": "object",
+      "required": [
+        "device",
+        "statement"
+      ],
+      "properties": {
+        "device": {
+          "type": "string"
+        },
+        "statement": {
+          "type": "string"
+        },
+        "received_at": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "condition": {
+          "type": "string"
+        },
+        "accessories": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "receiver": {
+          "type": "string"
+        },
+        "currency": {
+          "const": "COP"
+        },
+        "total_minor": {
+          "type": "string",
+          "pattern": "^[0-9]+$"
+        },
+        "previous_paid_minor": {
+          "type": "string",
+          "pattern": "^[0-9]+$"
+        },
+        "this_payment_minor": {
+          "type": "string",
+          "pattern": "^[0-9]+$"
+        },
+        "balance_at_issue_minor": {
+          "type": "string",
+          "pattern": "^[0-9]+$"
+        },
+        "method": {
+          "enum": [
+            "BREB",
+            "NEQUI",
+            "TRANSFER",
+            "CASH"
+          ]
+        },
+        "payment_id": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "document_type": {
+            "const": "INTAKE_VOUCHER"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "snapshot": {
+            "required": [
+              "received_at",
+              "condition",
+              "accessories",
+              "receiver"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "document_type": {
+            "const": "PAYMENT_VOUCHER"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "snapshot": {
+            "required": [
+              "payment_id",
+              "currency",
+              "total_minor",
+              "previous_paid_minor",
+              "this_payment_minor",
+              "balance_at_issue_minor",
+              "method"
+            ]
+          }
+        }
+      }
+    }
+  ]
+}

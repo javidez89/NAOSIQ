@@ -1,0 +1,2742 @@
+[
+  {
+    "id": "F01",
+    "title": "Entrar como personal y elegir contexto",
+    "goal": "Entrar al espacio correcto sin convertir la cuenta de Google en un permiso de negocio.",
+    "steps": [
+      {
+        "screen": "AU01",
+        "via": "Inicio del recorrido",
+        "mode": "entry",
+        "action_id": "",
+        "name": "Acceso del personal",
+        "role": "Todos los roles internos"
+      },
+      {
+        "screen": "AU02",
+        "via": "Continuar con Google",
+        "mode": "action",
+        "action_id": "AU01.A1",
+        "name": "Selección de contexto",
+        "role": "Todos los roles internos"
+      },
+      {
+        "screen": "AD01",
+        "via": "Entrar como Administrador",
+        "mode": "decision",
+        "action_id": "AU02.A1",
+        "name": "Dashboard del negocio",
+        "role": "Administrador"
+      },
+      {
+        "screen": "AS01",
+        "via": "Alternativa: rol Asesor",
+        "mode": "decision",
+        "action_id": "AU02.A1",
+        "name": "Inicio del Asesor",
+        "role": "Asesor"
+      },
+      {
+        "screen": "TE01",
+        "via": "Alternativa: rol Técnico",
+        "mode": "decision",
+        "action_id": "AU02.A1",
+        "name": "Inicio técnico",
+        "role": "Técnico"
+      },
+      {
+        "screen": "SU01",
+        "via": "Alternativa: abrir CRM Maestro",
+        "mode": "decision",
+        "action_id": "AU02.A2",
+        "name": "Dashboard Maestro",
+        "role": "Super Usuario"
+      }
+    ],
+    "branches": [
+      {
+        "question": "Google confirma identidad y membresía?",
+        "yes": "Mostrar solo contextos autorizados.",
+        "no": "Cancelar vuelve al acceso sin crear sesión.",
+        "return_screen": "AU01"
+      },
+      {
+        "question": "Rol corresponde al destino?",
+        "yes": "Resolver inicio AD01, AS01, TE01 o SU01.",
+        "no": "AU04 explica el bloqueo; no mostrar datos de otro rol.",
+        "return_screen": "AU04"
+      }
+    ],
+    "checks": [
+      "Las tarjetas AD01/AS01/TE01/SU01 son ramas alternativas, no pasos de elevación.",
+      "El retorno conserva comercio y recurso solo si siguen autorizados."
+    ],
+    "decision_refs": [
+      "D01",
+      "D04"
+    ],
+    "status": "PROPUESTA_UX_V5_1",
+    "source": "Pantallas, reglas y acciones de V5; secuencia y conexiones de navegacion propuestas V5.1"
+  },
+  {
+    "id": "F02",
+    "title": "Acceso del cliente y consulta segura",
+    "goal": "Volver al objetivo original después de iniciar sesión.",
+    "steps": [
+      {
+        "screen": "CL01",
+        "via": "Inicio del recorrido",
+        "mode": "entry",
+        "action_id": "",
+        "name": "Página pública del negocio",
+        "role": "Público"
+      },
+      {
+        "screen": "CL26",
+        "via": "Consultar mi orden",
+        "mode": "action",
+        "action_id": "CL01.A2",
+        "name": "Consulta segura de orden",
+        "role": "Cliente"
+      },
+      {
+        "screen": "CL02",
+        "via": "Iniciar sesión",
+        "mode": "action",
+        "action_id": "CL26.A1",
+        "name": "Acceso del cliente con Google",
+        "role": "Cliente"
+      },
+      {
+        "screen": "CL26",
+        "via": "Retomar consulta autorizada",
+        "mode": "return",
+        "action_id": "CL02.A1",
+        "name": "Consulta segura de orden",
+        "role": "Cliente"
+      },
+      {
+        "screen": "CL08",
+        "via": "Consultar orden propia",
+        "mode": "action",
+        "action_id": "CL26.A2",
+        "name": "Seguimiento de reparación",
+        "role": "Cliente"
+      }
+    ],
+    "branches": [
+      {
+        "question": "Hay sesión válida?",
+        "yes": "Omitir login y validar propiedad de la orden.",
+        "no": "Guardar destino seguro y abrir CL02.",
+        "return_screen": "CL02"
+      },
+      {
+        "question": "La orden es del cliente en este comercio?",
+        "yes": "Abrir seguimiento.",
+        "no": "Recurso no disponible; ayuda sin revelar otra orden.",
+        "return_screen": "CL26"
+      }
+    ],
+    "checks": [
+      "Una solicitud iniciada desde CL01 vuelve a CL03; una consulta vuelve a CL26.",
+      "Sin destino previo: CL02 termina en CL16 como propone V5."
+    ],
+    "decision_refs": [],
+    "status": "PROPUESTA_UX_V5_1",
+    "source": "Pantallas, reglas y acciones de V5; secuencia y conexiones de navegacion propuestas V5.1"
+  },
+  {
+    "id": "F03",
+    "title": "Crear comercio y asignar URL",
+    "goal": "Preparar un comercio administrable desde el CRM Maestro.",
+    "steps": [
+      {
+        "screen": "SU01",
+        "via": "Inicio del recorrido",
+        "mode": "entry",
+        "action_id": "",
+        "name": "Dashboard Maestro",
+        "role": "Super Usuario"
+      },
+      {
+        "screen": "SU02",
+        "via": "Abrir comercios",
+        "mode": "action",
+        "action_id": "SU01.A1",
+        "name": "Comercios",
+        "role": "Super Usuario"
+      },
+      {
+        "screen": "SU03",
+        "via": "Crear comercio",
+        "mode": "action",
+        "action_id": "SU02.A1",
+        "name": "Crear comercio",
+        "role": "Super Usuario"
+      },
+      {
+        "screen": "SU04",
+        "via": "Crear: confirmación del servidor",
+        "mode": "action",
+        "action_id": "SU03.A3",
+        "name": "Detalle del comercio",
+        "role": "Super Usuario"
+      },
+      {
+        "screen": "SU19",
+        "via": "Editar comercio",
+        "mode": "action",
+        "action_id": "SU04.A2",
+        "name": "Editar comercio",
+        "role": "Super Usuario"
+      },
+      {
+        "screen": "SU09",
+        "via": "Gestionar URL",
+        "mode": "action",
+        "action_id": "SU19.A2",
+        "name": "URLs y dominios",
+        "role": "Super Usuario"
+      },
+      {
+        "screen": "SU04",
+        "via": "Guardar URL",
+        "mode": "action",
+        "action_id": "SU09.A2",
+        "name": "Detalle del comercio",
+        "role": "Super Usuario"
+      }
+    ],
+    "branches": [
+      {
+        "question": "URL disponible y formulario válido?",
+        "yes": "Confirmar alta una sola vez.",
+        "no": "Marcar campo; conservar borrador y permitir otra URL.",
+        "return_screen": "SU03"
+      },
+      {
+        "question": "Alta con resultado incierto?",
+        "yes": "Consultar operación y abrir comercio existente.",
+        "no": "No crear de nuevo hasta verificar el intento original.",
+        "return_screen": "SU03"
+      }
+    ],
+    "checks": [
+      "El Super Usuario controla la URL estructural.",
+      "No asumir que un borrador equivale a un comercio publicado."
+    ],
+    "decision_refs": [
+      "D02",
+      "D13"
+    ],
+    "status": "PROPUESTA_UX_V5_1",
+    "source": "Pantallas, reglas y acciones de V5; secuencia y conexiones de navegacion propuestas V5.1"
+  },
+  {
+    "id": "F04",
+    "title": "Preparar el negocio para operar",
+    "goal": "Configurar personal, pagos, comunicación y documentos sin publicar datos incompletos.",
+    "steps": [
+      {
+        "screen": "AD24",
+        "via": "Inicio del recorrido",
+        "mode": "entry",
+        "action_id": "",
+        "name": "Configuración del negocio",
+        "role": "Administrador"
+      },
+      {
+        "screen": "AD25",
+        "via": "Gestionar usuarios",
+        "mode": "action",
+        "action_id": "AD24.A2",
+        "name": "Usuarios y permisos",
+        "role": "Administrador"
+      },
+      {
+        "screen": "AD20",
+        "via": "Menú: medios de pago",
+        "mode": "menu",
+        "action_id": "",
+        "name": "Medios de pago",
+        "role": "Administrador"
+      },
+      {
+        "screen": "AD21",
+        "via": "Menú: WhatsApp",
+        "mode": "menu",
+        "action_id": "",
+        "name": "WhatsApp del negocio",
+        "role": "Administrador"
+      },
+      {
+        "screen": "AD33",
+        "via": "Menú: condiciones",
+        "mode": "menu",
+        "action_id": "",
+        "name": "Garantías y políticas",
+        "role": "Administrador"
+      },
+      {
+        "screen": "AD34",
+        "via": "Menú: documentos",
+        "mode": "menu",
+        "action_id": "",
+        "name": "Numeración y plantillas",
+        "role": "Administrador"
+      },
+      {
+        "screen": "AD19",
+        "via": "Menú: página pública",
+        "mode": "menu",
+        "action_id": "",
+        "name": "Editor de página pública",
+        "role": "Administrador"
+      },
+      {
+        "screen": "CL01",
+        "via": "Publicar y abrir vista pública",
+        "mode": "preview",
+        "action_id": "AD19.A3",
+        "name": "Página pública del negocio",
+        "role": "Público"
+      }
+    ],
+    "branches": [
+      {
+        "question": "Configuración completa y autorizada?",
+        "yes": "Publicar versión del negocio.",
+        "no": "Mantener borrador y mostrar requisitos faltantes.",
+        "return_screen": "AD19"
+      },
+      {
+        "question": "Desea cambiar la URL?",
+        "yes": "Solicitar al CRM Maestro, no editarla como contenido.",
+        "no": "Volver al editor sin cambiar rutas.",
+        "return_screen": "AD19"
+      }
+    ],
+    "checks": [
+      "Básico: Bre-B, Nequi, transferencia y efectivo; WhatsApp por enlace.",
+      "La vista previa no cambia la sesión del Administrador a Cliente."
+    ],
+    "decision_refs": [
+      "D01",
+      "D11",
+      "D12"
+    ],
+    "status": "PROPUESTA_UX_V5_1",
+    "source": "Pantallas, reglas y acciones de V5; secuencia y conexiones de navegacion propuestas V5.1"
+  },
+  {
+    "id": "F05",
+    "title": "Control total del Super Usuario",
+    "goal": "Intervenir un comercio con identidad real, contexto visible y salida al Maestro.",
+    "steps": [
+      {
+        "screen": "SU02",
+        "via": "Inicio del recorrido",
+        "mode": "entry",
+        "action_id": "",
+        "name": "Comercios",
+        "role": "Super Usuario"
+      },
+      {
+        "screen": "SU04",
+        "via": "Abrir comercio",
+        "mode": "action",
+        "action_id": "SU02.A2",
+        "name": "Detalle del comercio",
+        "role": "Super Usuario"
+      },
+      {
+        "screen": "SU05",
+        "via": "Entrar al CRM",
+        "mode": "action",
+        "action_id": "SU04.A1",
+        "name": "Control de un comercio",
+        "role": "Super Usuario"
+      },
+      {
+        "screen": "AU03",
+        "via": "Confirmar identidad si se requiere",
+        "mode": "auth",
+        "action_id": "SU05.A1",
+        "name": "Aviso y renovación de sesión",
+        "role": "Todos"
+      },
+      {
+        "screen": "SU05",
+        "via": "Volver al control autorizado",
+        "mode": "return",
+        "action_id": "",
+        "name": "Control de un comercio",
+        "role": "Super Usuario"
+      },
+      {
+        "screen": "AD01",
+        "via": "Entrar con control total",
+        "mode": "control",
+        "action_id": "SU05.A2",
+        "name": "Dashboard del negocio",
+        "role": "Administrador"
+      },
+      {
+        "screen": "SU04",
+        "via": "Salir del comercio",
+        "mode": "return",
+        "action_id": "SU05.A3",
+        "name": "Detalle del comercio",
+        "role": "Super Usuario"
+      },
+      {
+        "screen": "SU13",
+        "via": "Menú: revisar auditoría",
+        "mode": "menu",
+        "action_id": "",
+        "name": "Auditoría global",
+        "role": "Super Usuario"
+      }
+    ],
+    "branches": [
+      {
+        "question": "Elevación vigente?",
+        "yes": "Mostrar banda CONTROL TOTAL y actor real.",
+        "no": "Solicitar verificación antes de modificar.",
+        "return_screen": "AU03"
+      },
+      {
+        "question": "Cambio de dinero o inventario?",
+        "yes": "Registrar ajuste trazable autorizado.",
+        "no": "No borrar evidencia ni inventar aprobación bancaria.",
+        "return_screen": "SU05"
+      }
+    ],
+    "checks": [
+      "La vista AD01 se abre bajo Super Usuario, no por suplantación silenciosa.",
+      "Suspensión del comercio no elimina su auditoría."
+    ],
+    "decision_refs": [
+      "D04"
+    ],
+    "status": "PROPUESTA_UX_V5_1",
+    "source": "Pantallas, reglas y acciones de V5; secuencia y conexiones de navegacion propuestas V5.1"
+  },
+  {
+    "id": "F06",
+    "title": "Publicar planes y revisar suscripciones",
+    "goal": "Separar la definición comercial de los pagos realizados por los comercios.",
+    "steps": [
+      {
+        "screen": "SU06",
+        "via": "Inicio del recorrido",
+        "mode": "entry",
+        "action_id": "",
+        "name": "Planes",
+        "role": "Super Usuario"
+      },
+      {
+        "screen": "SU16",
+        "via": "Crear o editar plan",
+        "mode": "action",
+        "action_id": "SU06.A1",
+        "name": "Editor de plan",
+        "role": "Super Usuario"
+      },
+      {
+        "screen": "SU06",
+        "via": "Publicar versión",
+        "mode": "action",
+        "action_id": "SU16.A2",
+        "name": "Planes",
+        "role": "Super Usuario"
+      },
+      {
+        "screen": "SU07",
+        "via": "Menú: suscripciones",
+        "mode": "menu",
+        "action_id": "",
+        "name": "Suscripciones",
+        "role": "Super Usuario"
+      },
+      {
+        "screen": "SU18",
+        "via": "Abrir suscripción",
+        "mode": "action",
+        "action_id": "SU07.A1",
+        "name": "Detalle de suscripción",
+        "role": "Super Usuario"
+      },
+      {
+        "screen": "SU17",
+        "via": "Abrir pago SaaS",
+        "mode": "action",
+        "action_id": "SU18.A3",
+        "name": "Detalle de cargo SaaS",
+        "role": "Super Usuario"
+      },
+      {
+        "screen": "SU08",
+        "via": "Ver movimientos",
+        "mode": "action",
+        "action_id": "SU17.A3",
+        "name": "Facturación y pagos SaaS",
+        "role": "Super Usuario"
+      }
+    ],
+    "branches": [
+      {
+        "question": "Plan tiene suscripciones activas?",
+        "yes": "Versionar y revisar impacto.",
+        "no": "Archivar solo según regla validada.",
+        "return_screen": "SU16"
+      },
+      {
+        "question": "Cargo verificado?",
+        "yes": "Conciliar y recalcular vigencia.",
+        "no": "Mantener pendiente o rechazar reporte con motivo.",
+        "return_screen": "SU17"
+      }
+    ],
+    "checks": [
+      "Precios y límites no se fijan con cifras de demostración.",
+      "Cortesía no crea ingreso."
+    ],
+    "decision_refs": [
+      "D02",
+      "D03"
+    ],
+    "status": "PROPUESTA_UX_V5_1",
+    "source": "Pantallas, reglas y acciones de V5; secuencia y conexiones de navegacion propuestas V5.1"
+  },
+  {
+    "id": "F07",
+    "title": "Mensualidad, mora y reactivación",
+    "goal": "Mantener una salida clara cuando el comercio no puede operar.",
+    "steps": [
+      {
+        "screen": "AD23",
+        "via": "Inicio del recorrido",
+        "mode": "entry",
+        "action_id": "",
+        "name": "Mi suscripción",
+        "role": "Administrador"
+      },
+      {
+        "screen": "SU17",
+        "via": "Pago de mi mensualidad: componente restringido",
+        "mode": "context",
+        "action_id": "AD23.A1",
+        "name": "Detalle de cargo SaaS",
+        "role": "Super Usuario"
+      },
+      {
+        "screen": "AD23",
+        "via": "Volver a mi plan; pago por verificar",
+        "mode": "return",
+        "action_id": "",
+        "name": "Mi suscripción",
+        "role": "Administrador"
+      },
+      {
+        "screen": "SU18",
+        "via": "Otro actor: revisión SaaS en Maestro",
+        "mode": "handoff",
+        "action_id": "",
+        "name": "Detalle de suscripción",
+        "role": "Super Usuario"
+      },
+      {
+        "screen": "AD23",
+        "via": "Evento: vigencia recalculada",
+        "mode": "event",
+        "action_id": "",
+        "name": "Mi suscripción",
+        "role": "Administrador"
+      },
+      {
+        "screen": "AD01",
+        "via": "Volver a operar si ACTIVE",
+        "mode": "decision",
+        "action_id": "",
+        "name": "Dashboard del negocio",
+        "role": "Administrador"
+      }
+    ],
+    "branches": [
+      {
+        "question": "Mensualidad confirmada o cortesía autorizada?",
+        "yes": "Reactivar según política de ciclo.",
+        "no": "Pendiente, gracia o suspendido: conservar pago y soporte.",
+        "return_screen": "AD23"
+      },
+      {
+        "question": "Comercio suspendido?",
+        "yes": "Bloquear operaciones de negocio, no la salida para pagar.",
+        "no": "Si activo, continuar operación normal.",
+        "return_screen": "AD23"
+      }
+    ],
+    "checks": [
+      "SU17 es una referencia visual; el Administrador nunca abre /master/billing.",
+      "La lectura de documentos del cliente en suspensión sigue pendiente D08."
+    ],
+    "decision_refs": [
+      "D03",
+      "D08"
+    ],
+    "status": "PROPUESTA_UX_V5_1",
+    "source": "Pantallas, reglas y acciones de V5; secuencia y conexiones de navegacion propuestas V5.1"
+  },
+  {
+    "id": "F08",
+    "title": "Cliente: solicitud de reparación",
+    "goal": "Crear una solicitud y entender que el equipo aún no fue recibido.",
+    "steps": [
+      {
+        "screen": "CL16",
+        "via": "Inicio del recorrido",
+        "mode": "entry",
+        "action_id": "",
+        "name": "Inicio del cliente",
+        "role": "Cliente"
+      },
+      {
+        "screen": "CL03",
+        "via": "Nueva solicitud",
+        "mode": "action",
+        "action_id": "CL16.A2",
+        "name": "Solicitud / equipo",
+        "role": "Cliente"
+      },
+      {
+        "screen": "CL17",
+        "via": "Usar equipo guardado: opcional",
+        "mode": "action",
+        "action_id": "CL03.A2",
+        "name": "Mis equipos",
+        "role": "Cliente"
+      },
+      {
+        "screen": "CL03",
+        "via": "Usar este equipo",
+        "mode": "action",
+        "action_id": "CL17.A1",
+        "name": "Solicitud / equipo",
+        "role": "Cliente"
+      },
+      {
+        "screen": "CL04",
+        "via": "Continuar a la falla",
+        "mode": "action",
+        "action_id": "CL03.A1",
+        "name": "Solicitud / falla y fotos",
+        "role": "Cliente"
+      },
+      {
+        "screen": "CL05",
+        "via": "Continuar a contacto",
+        "mode": "action",
+        "action_id": "CL04.A2",
+        "name": "Solicitud / contacto y revisión",
+        "role": "Cliente"
+      },
+      {
+        "screen": "CL06",
+        "via": "Crear solicitud",
+        "mode": "action",
+        "action_id": "CL05.A2",
+        "name": "Orden creada",
+        "role": "Cliente"
+      },
+      {
+        "screen": "CL08",
+        "via": "Ver seguimiento",
+        "mode": "action",
+        "action_id": "CL06.A1",
+        "name": "Seguimiento de reparación",
+        "role": "Cliente"
+      }
+    ],
+    "branches": [
+      {
+        "question": "Campos y evidencias requeridos válidos?",
+        "yes": "Registrar solicitud con su número.",
+        "no": "Corregir sin perder campos confirmados; reintentar archivos pendientes.",
+        "return_screen": "CL04"
+      },
+      {
+        "question": "El usuario sale antes de enviar?",
+        "yes": "Guardar borrador si hay confirmación real.",
+        "no": "Mostrar qué no quedó guardado.",
+        "return_screen": "AU05"
+      }
+    ],
+    "checks": [
+      "CL06 permite documento de solicitud, no voucher de recepción.",
+      "Crear otra vez tras timeout puede duplicar: consultar resultado original."
+    ],
+    "decision_refs": [
+      "D09",
+      "D11"
+    ],
+    "status": "PROPUESTA_UX_V5_1",
+    "source": "Pantallas, reglas y acciones de V5; secuencia y conexiones de navegacion propuestas V5.1"
+  },
+  {
+    "id": "F09",
+    "title": "Asesor: recepción y derivación",
+    "goal": "Registrar custodia física, obtener voucher y entregar el trabajo al área técnica.",
+    "steps": [
+      {
+        "screen": "AS01",
+        "via": "Inicio del recorrido",
+        "mode": "entry",
+        "action_id": "",
+        "name": "Inicio del Asesor",
+        "role": "Asesor"
+      },
+      {
+        "screen": "AS02",
+        "via": "Buscar cliente",
+        "mode": "action",
+        "action_id": "AS01.A2",
+        "name": "Cliente y contacto rápido",
+        "role": "Asesor"
+      },
+      {
+        "screen": "AS03",
+        "via": "Guardar contacto y abrir recepción",
+        "mode": "action",
+        "action_id": "AS02.A2",
+        "name": "Recepción asistida",
+        "role": "Asesor"
+      },
+      {
+        "screen": "AS04",
+        "via": "Confirmar recepción",
+        "mode": "action",
+        "action_id": "AS03.A3",
+        "name": "Derivar al area técnica",
+        "role": "Asesor"
+      },
+      {
+        "screen": "VR01",
+        "via": "Volver a recepción: obtener voucher",
+        "mode": "document",
+        "action_id": "AS03.A4",
+        "name": "Voucher de recepción",
+        "role": "Personal autorizado"
+      },
+      {
+        "screen": "VR04",
+        "via": "Imprimir copia",
+        "mode": "document",
+        "action_id": "VR01.A2",
+        "name": "Vista previa e impresión",
+        "role": "Todos con autorización documental"
+      },
+      {
+        "screen": "AS04",
+        "via": "Volver a derivación",
+        "mode": "return",
+        "action_id": "",
+        "name": "Derivar al area técnica",
+        "role": "Asesor"
+      },
+      {
+        "screen": "TE02",
+        "via": "Otro rol: cola técnica actualizada",
+        "mode": "handoff",
+        "action_id": "AS04.A2",
+        "name": "Mis trabajos",
+        "role": "Técnico"
+      }
+    ],
+    "branches": [
+      {
+        "question": "Equipo y accesorios recibidos y registrados?",
+        "yes": "Confirmar custodia; emitir documento único.",
+        "no": "No emitir voucher de recepción desde un borrador.",
+        "return_screen": "AS03"
+      },
+      {
+        "question": "PDF falló tras recibir?",
+        "yes": "Reintentar solo el archivo.",
+        "no": "La recepción sigue confirmada; no repetirla.",
+        "return_screen": "VR01"
+      }
+    ],
+    "checks": [
+      "AS04.A2 permanece en Asesor: envía trabajo, no abre el panel Técnico.",
+      "Validar permisos de recepción y documentos antes de ejecutar."
+    ],
+    "decision_refs": [
+      "D01",
+      "D12"
+    ],
+    "status": "PROPUESTA_UX_V5_1",
+    "source": "Pantallas, reglas y acciones de V5; secuencia y conexiones de navegacion propuestas V5.1"
+  },
+  {
+    "id": "F10",
+    "title": "Recepción desde Administrador o Técnico",
+    "goal": "Reutilizar captura y documentos conservando el rol autorizado.",
+    "steps": [
+      {
+        "screen": "AD02",
+        "via": "Inicio del recorrido",
+        "mode": "entry",
+        "action_id": "",
+        "name": "Reparaciones",
+        "role": "Administrador"
+      },
+      {
+        "screen": "AD03",
+        "via": "Crear orden presencial",
+        "mode": "action",
+        "action_id": "AD02.A2",
+        "name": "Nueva orden de trabajo",
+        "role": "Administrador"
+      },
+      {
+        "screen": "AD04",
+        "via": "Crear orden",
+        "mode": "action",
+        "action_id": "AD03.A3",
+        "name": "Detalle de OT",
+        "role": "Administrador"
+      },
+      {
+        "screen": "AD05",
+        "via": "Pestaña: recepción",
+        "mode": "tab",
+        "action_id": "",
+        "name": "Recepción del equipo",
+        "role": "Administrador"
+      },
+      {
+        "screen": "TE12",
+        "via": "Cargar evidencia en componente compartido",
+        "mode": "context",
+        "action_id": "AD05.A1",
+        "name": "Fotos y evidencias",
+        "role": "Técnico"
+      },
+      {
+        "screen": "AD05",
+        "via": "Volver al formulario de origen",
+        "mode": "return",
+        "action_id": "",
+        "name": "Recepción del equipo",
+        "role": "Administrador"
+      },
+      {
+        "screen": "VR01",
+        "via": "Voucher tras confirmar recepción",
+        "mode": "document",
+        "action_id": "AD05.A4",
+        "name": "Voucher de recepción",
+        "role": "Personal autorizado"
+      },
+      {
+        "screen": "TE11",
+        "via": "Alternativa: recepción móvil autorizada",
+        "mode": "decision",
+        "action_id": "",
+        "name": "Recepción móvil",
+        "role": "Técnico"
+      }
+    ],
+    "branches": [
+      {
+        "question": "El Técnico tiene delegación de recepción?",
+        "yes": "Usar TE11 y confirmar online.",
+        "no": "Preparar borrador y derivar a personal autorizado.",
+        "return_screen": "TE11"
+      },
+      {
+        "question": "Archivo ya subió?",
+        "yes": "Conservar la evidencia confirmada.",
+        "no": "Reintentar solo el archivo fallido.",
+        "return_screen": "TE12"
+      }
+    ],
+    "checks": [
+      "Las etapas AD05 y TE11 son alternativas según actor, no dos recepciones.",
+      "TE12 vuelve al invocador AD05, AS03, TE05 o TE11."
+    ],
+    "decision_refs": [
+      "D01",
+      "D09"
+    ],
+    "status": "PROPUESTA_UX_V5_1",
+    "source": "Pantallas, reglas y acciones de V5; secuencia y conexiones de navegacion propuestas V5.1"
+  },
+  {
+    "id": "F11",
+    "title": "Asignación, QR y diagnóstico",
+    "goal": "Pasar de cola asignada al diagnóstico visible por el negocio.",
+    "steps": [
+      {
+        "screen": "AD14",
+        "via": "Inicio del recorrido",
+        "mode": "entry",
+        "action_id": "",
+        "name": "Técnicos y asignaciones",
+        "role": "Administrador"
+      },
+      {
+        "screen": "AD09",
+        "via": "Asignar OT",
+        "mode": "action",
+        "action_id": "AD14.A2",
+        "name": "Proceso de reparación",
+        "role": "Administrador"
+      },
+      {
+        "screen": "TE01",
+        "via": "Otro rol: inicio Técnico",
+        "mode": "handoff",
+        "action_id": "",
+        "name": "Inicio técnico",
+        "role": "Técnico"
+      },
+      {
+        "screen": "TE02",
+        "via": "Abrir mis trabajos",
+        "mode": "action",
+        "action_id": "TE01.A1",
+        "name": "Mis trabajos",
+        "role": "Técnico"
+      },
+      {
+        "screen": "TE03",
+        "via": "Alternativa: escanear QR",
+        "mode": "decision",
+        "action_id": "TE01.A2",
+        "name": "Escanear QR",
+        "role": "Técnico"
+      },
+      {
+        "screen": "TE04",
+        "via": "Buscar código / abrir OT",
+        "mode": "action",
+        "action_id": "TE03.A2",
+        "name": "OT móvil",
+        "role": "Técnico"
+      },
+      {
+        "screen": "TE05",
+        "via": "Editar diagnóstico",
+        "mode": "action",
+        "action_id": "TE04.A1",
+        "name": "Diagnóstico móvil",
+        "role": "Técnico"
+      },
+      {
+        "screen": "AD06",
+        "via": "Otro rol: diagnóstico disponible",
+        "mode": "handoff",
+        "action_id": "TE05.A3",
+        "name": "Diagnóstico",
+        "role": "Administrador"
+      }
+    ],
+    "branches": [
+      {
+        "question": "QR pertenece a una OT autorizada?",
+        "yes": "Abrir detalle del equipo.",
+        "no": "Ingreso manual o recurso no disponible.",
+        "return_screen": "TE03"
+      },
+      {
+        "question": "Diagnóstico confirmado?",
+        "yes": "Avisar al negocio y seguir en Técnico.",
+        "no": "Mantener borrador; no publicar texto no guardado.",
+        "return_screen": "TE05"
+      }
+    ],
+    "checks": [
+      "TE05.A3 envía diagnóstico; no eleva al Técnico a Administrador.",
+      "Sin acceso a cámara, la entrada manual mantiene el flujo."
+    ],
+    "decision_refs": [],
+    "status": "PROPUESTA_UX_V5_1",
+    "source": "Pantallas, reglas y acciones de V5; secuencia y conexiones de navegacion propuestas V5.1"
+  },
+  {
+    "id": "F12",
+    "title": "Cotización, respuesta y seguimiento",
+    "goal": "Vincular la versión aprobada con el trabajo autorizado.",
+    "steps": [
+      {
+        "screen": "AD26",
+        "via": "Inicio del recorrido",
+        "mode": "entry",
+        "action_id": "",
+        "name": "Bandeja de cotizaciones",
+        "role": "Administrador"
+      },
+      {
+        "screen": "AD07",
+        "via": "Abrir cotización",
+        "mode": "action",
+        "action_id": "AD26.A1",
+        "name": "Cotización",
+        "role": "Administrador"
+      },
+      {
+        "screen": "AD08",
+        "via": "Enviar al cliente",
+        "mode": "action",
+        "action_id": "AD07.A2",
+        "name": "Aprobación del cliente",
+        "role": "Administrador"
+      },
+      {
+        "screen": "AS05",
+        "via": "Otro rol: seguimiento de respuesta",
+        "mode": "handoff",
+        "action_id": "",
+        "name": "Seguimiento de cotizaciones",
+        "role": "Asesor"
+      },
+      {
+        "screen": "CL09",
+        "via": "Otro rol: cotización del cliente",
+        "mode": "handoff",
+        "action_id": "",
+        "name": "Revisar cotización",
+        "role": "Cliente"
+      },
+      {
+        "screen": "CL08",
+        "via": "Aprobar / rechazar versión vigente",
+        "mode": "action",
+        "action_id": "CL09.A1",
+        "name": "Seguimiento de reparación",
+        "role": "Cliente"
+      },
+      {
+        "screen": "TE07",
+        "via": "Evento: trabajo autorizado tras aprobación",
+        "mode": "event",
+        "action_id": "",
+        "name": "Cambiar estado",
+        "role": "Técnico"
+      }
+    ],
+    "branches": [
+      {
+        "question": "Cotización vigente y cliente aprueba?",
+        "yes": "Registrar respuesta; habilitar reparación.",
+        "no": "Si vencida o reemplazada, mostrar versión actual.",
+        "return_screen": "CL09"
+      },
+      {
+        "question": "Cliente rechaza?",
+        "yes": "Resolver servicio / nueva propuesta autorizada.",
+        "no": "No comenzar reparación con rechazo vigente.",
+        "return_screen": "AD36"
+      }
+    ],
+    "checks": [
+      "El Asesor hace seguimiento; no aprueba en nombre del cliente por defecto.",
+      "Cambio de precio exige nueva versión y aprobación."
+    ],
+    "decision_refs": [
+      "D01"
+    ],
+    "status": "PROPUESTA_UX_V5_1",
+    "source": "Pantallas, reglas y acciones de V5; secuencia y conexiones de navegacion propuestas V5.1"
+  },
+  {
+    "id": "F13",
+    "title": "Reparación, repuestos y estados",
+    "goal": "Gestionar espera de repuesto, backup y software sin mezclar estado técnico y financiero.",
+    "steps": [
+      {
+        "screen": "TE04",
+        "via": "Inicio del recorrido",
+        "mode": "entry",
+        "action_id": "",
+        "name": "OT móvil",
+        "role": "Técnico"
+      },
+      {
+        "screen": "TE06",
+        "via": "Pestaña: repuestos y mano de obra",
+        "mode": "tab",
+        "action_id": "",
+        "name": "Repuestos y mano de obra",
+        "role": "Técnico"
+      },
+      {
+        "screen": "AD15",
+        "via": "Otro rol: solicitud de repuesto",
+        "mode": "handoff",
+        "action_id": "TE06.A2",
+        "name": "Inventario",
+        "role": "Administrador"
+      },
+      {
+        "screen": "AD28",
+        "via": "Ver movimientos de inventario",
+        "mode": "action",
+        "action_id": "AD15.A3",
+        "name": "Movimientos de inventario",
+        "role": "Administrador"
+      },
+      {
+        "screen": "TE06",
+        "via": "Evento: disponibilidad / consumo",
+        "mode": "event",
+        "action_id": "",
+        "name": "Repuestos y mano de obra",
+        "role": "Técnico"
+      },
+      {
+        "screen": "TE07",
+        "via": "Cambiar estado de la orden",
+        "mode": "tab",
+        "action_id": "TE04.A2",
+        "name": "Cambiar estado",
+        "role": "Técnico"
+      },
+      {
+        "screen": "TE04",
+        "via": "Confirmar estado permitido",
+        "mode": "action",
+        "action_id": "TE07.A2",
+        "name": "OT móvil",
+        "role": "Técnico"
+      }
+    ],
+    "branches": [
+      {
+        "question": "Hay repuesto y permiso de consumo?",
+        "yes": "Registrar movimiento y continuar.",
+        "no": "Pendiente de repuesto; no producir stock negativo.",
+        "return_screen": "TE06"
+      },
+      {
+        "question": "Cotización y transición permiten el paso?",
+        "yes": "En reparación / backup / software según trabajo.",
+        "no": "Mostrar pasos permitidos y motivo del bloqueo.",
+        "return_screen": "TE07"
+      }
+    ],
+    "checks": [
+      "Un abono o pago no sustituye la aprobación técnica.",
+      "Solicitar un repuesto no confirma su consumo."
+    ],
+    "decision_refs": [
+      "D01"
+    ],
+    "status": "PROPUESTA_UX_V5_1",
+    "source": "Pantallas, reglas y acciones de V5; secuencia y conexiones de navegacion propuestas V5.1"
+  },
+  {
+    "id": "F14",
+    "title": "Pruebas QA y cierre técnico",
+    "goal": "Completar pruebas antes de declarar listo el trabajo.",
+    "steps": [
+      {
+        "screen": "TE04",
+        "via": "Inicio del recorrido",
+        "mode": "entry",
+        "action_id": "",
+        "name": "OT móvil",
+        "role": "Técnico"
+      },
+      {
+        "screen": "TE08",
+        "via": "Abrir QA",
+        "mode": "action",
+        "action_id": "TE04.A3",
+        "name": "Checklist QA móvil",
+        "role": "Técnico"
+      },
+      {
+        "screen": "TE07",
+        "via": "Rama: reportar fallo",
+        "mode": "decision",
+        "action_id": "TE08.A3",
+        "name": "Cambiar estado",
+        "role": "Técnico"
+      },
+      {
+        "screen": "TE08",
+        "via": "Repetir pruebas tras corrección",
+        "mode": "return",
+        "action_id": "",
+        "name": "Checklist QA móvil",
+        "role": "Técnico"
+      },
+      {
+        "screen": "TE04",
+        "via": "Aprobar QA",
+        "mode": "action",
+        "action_id": "TE08.A2",
+        "name": "OT móvil",
+        "role": "Técnico"
+      },
+      {
+        "screen": "AD10",
+        "via": "Otro rol: revisión QA del negocio",
+        "mode": "handoff",
+        "action_id": "",
+        "name": "QA de reparación",
+        "role": "Administrador"
+      },
+      {
+        "screen": "CL08",
+        "via": "Evento: reparación completada",
+        "mode": "event",
+        "action_id": "",
+        "name": "Seguimiento de reparación",
+        "role": "Cliente"
+      }
+    ],
+    "branches": [
+      {
+        "question": "Pruebas obligatorias aprobadas?",
+        "yes": "Cerrar técnicamente y mostrar saldo.",
+        "no": "Volver a reparación; señalar pruebas faltantes.",
+        "return_screen": "TE08"
+      },
+      {
+        "question": "Se pagó pero falló QA?",
+        "yes": "Conservar pago y seguir reparando.",
+        "no": "No entregar ni marcar pruebas como aprobadas.",
+        "return_screen": "AD10"
+      }
+    ],
+    "checks": [
+      "COMPLETED, PAID y DELIVERED son estados de dimensiones distintas.",
+      "El cierre técnico no genera por sí solo un voucher de pago."
+    ],
+    "decision_refs": [],
+    "status": "PROPUESTA_UX_V5_1",
+    "source": "Pantallas, reglas y acciones de V5; secuencia y conexiones de navegacion propuestas V5.1"
+  },
+  {
+    "id": "F15",
+    "title": "Bre-B, Nequi y transferencia",
+    "goal": "Reportar un pago y esperar su verificación real.",
+    "steps": [
+      {
+        "screen": "CL08",
+        "via": "Inicio del recorrido",
+        "mode": "entry",
+        "action_id": "",
+        "name": "Seguimiento de reparación",
+        "role": "Cliente"
+      },
+      {
+        "screen": "CL10",
+        "via": "Ver pagos / elegir medio",
+        "mode": "action",
+        "action_id": "CL08.A2",
+        "name": "Elegir medio de pago",
+        "role": "Cliente"
+      },
+      {
+        "screen": "CL25",
+        "via": "Ver instrucciones",
+        "mode": "action",
+        "action_id": "CL10.A1",
+        "name": "Instrucciones del medio elegido",
+        "role": "Cliente"
+      },
+      {
+        "screen": "CL11",
+        "via": "Ya realicé el pago",
+        "mode": "action",
+        "action_id": "CL25.A2",
+        "name": "Reportar un pago",
+        "role": "Cliente"
+      },
+      {
+        "screen": "CL18",
+        "via": "Enviar reporte",
+        "mode": "action",
+        "action_id": "CL11.A2",
+        "name": "Mis pagos y saldos",
+        "role": "Cliente"
+      },
+      {
+        "screen": "AS07",
+        "via": "Otro rol: reporte recibido",
+        "mode": "handoff",
+        "action_id": "",
+        "name": "Pagos reportados del cliente",
+        "role": "Asesor"
+      },
+      {
+        "screen": "AD31",
+        "via": "Derivar a verificación",
+        "mode": "handoff",
+        "action_id": "AS07.A2",
+        "name": "Verificación de pago",
+        "role": "Administrador"
+      },
+      {
+        "screen": "AD11",
+        "via": "Confirmar abono autorizado",
+        "mode": "action",
+        "action_id": "AD31.A1",
+        "name": "Pagos y abonos de la OT",
+        "role": "Administrador"
+      }
+    ],
+    "branches": [
+      {
+        "question": "Pago está verificado?",
+        "yes": "Aplicar importe al saldo; voucher según tipo aprobado.",
+        "no": "Mantener REPORTED; no emitir pago confirmado.",
+        "return_screen": "CL18"
+      },
+      {
+        "question": "Hay duplicado o monto superior al saldo?",
+        "yes": "Abrir original / refrescar saldo.",
+        "no": "Bloquear nuevo cargo, conservar comprobante y pedir revisión.",
+        "return_screen": "AD31"
+      }
+    ],
+    "checks": [
+      "Un QR o enlace del negocio no acredita pago automático.",
+      "El Asesor confirma solo con delegación financiera habilitada."
+    ],
+    "decision_refs": [
+      "D01",
+      "D06",
+      "D07"
+    ],
+    "status": "PROPUESTA_UX_V5_1",
+    "source": "Pantallas, reglas y acciones de V5; secuencia y conexiones de navegacion propuestas V5.1"
+  },
+  {
+    "id": "F16",
+    "title": "Efectivo, cambio y abonos",
+    "goal": "Cobrar una sola vez y dejar trazabilidad de saldo y caja.",
+    "steps": [
+      {
+        "screen": "AD11",
+        "via": "Inicio del recorrido",
+        "mode": "entry",
+        "action_id": "",
+        "name": "Pagos y abonos de la OT",
+        "role": "Administrador"
+      },
+      {
+        "screen": "AS08",
+        "via": "Registrar efectivo en componente de caja",
+        "mode": "context",
+        "action_id": "AD11.A2",
+        "name": "Registrar efectivo",
+        "role": "Asesor"
+      },
+      {
+        "screen": "AD11",
+        "via": "Confirmar efectivo autorizado",
+        "mode": "context",
+        "action_id": "AS08.A2",
+        "name": "Pagos y abonos de la OT",
+        "role": "Administrador"
+      },
+      {
+        "screen": "VR03",
+        "via": "Ver voucher de pago",
+        "mode": "document",
+        "action_id": "AD11.A4",
+        "name": "Voucher de pago confirmado",
+        "role": "Personal autorizado / Cliente en su portal"
+      },
+      {
+        "screen": "VR04",
+        "via": "Imprimir voucher",
+        "mode": "document",
+        "action_id": "VR03.A1",
+        "name": "Vista previa e impresión",
+        "role": "Todos con autorización documental"
+      },
+      {
+        "screen": "TE13",
+        "via": "Alternativa: caja móvil delegada",
+        "mode": "decision",
+        "action_id": "",
+        "name": "Efectivo autorizado",
+        "role": "Técnico"
+      },
+      {
+        "screen": "CL18",
+        "via": "Otro rol: pago visible al cliente",
+        "mode": "handoff",
+        "action_id": "",
+        "name": "Mis pagos y saldos",
+        "role": "Cliente"
+      }
+    ],
+    "branches": [
+      {
+        "question": "Caja autorizada y dinero recibido?",
+        "yes": "Confirmar monto aplicado; calcular cambio aparte.",
+        "no": "Deshabilitar confirmación y derivar a caja.",
+        "return_screen": "AS08"
+      },
+      {
+        "question": "El pago es parcial?",
+        "yes": "Actualizar saldo; comprobante parcial según D06.",
+        "no": "Voucher final solo cuando corresponda a pago confirmado.",
+        "return_screen": "AD11"
+      }
+    ],
+    "checks": [
+      "El cliente no marca su efectivo como recibido por el comercio.",
+      "El cambio entregado no se suma al abono."
+    ],
+    "decision_refs": [
+      "D01",
+      "D06"
+    ],
+    "status": "PROPUESTA_UX_V5_1",
+    "source": "Pantallas, reglas y acciones de V5; secuencia y conexiones de navegacion propuestas V5.1"
+  },
+  {
+    "id": "F17",
+    "title": "Voucher de recepción e impresión",
+    "goal": "Obtener una copia del hecho de custodia ya confirmado.",
+    "steps": [
+      {
+        "screen": "AS03",
+        "via": "Inicio del recorrido",
+        "mode": "entry",
+        "action_id": "",
+        "name": "Recepción asistida",
+        "role": "Asesor"
+      },
+      {
+        "screen": "VR01",
+        "via": "Ver voucher de recepción",
+        "mode": "document",
+        "action_id": "AS03.A4",
+        "name": "Voucher de recepción",
+        "role": "Personal autorizado"
+      },
+      {
+        "screen": "VR04",
+        "via": "Obtener / imprimir voucher",
+        "mode": "document",
+        "action_id": "VR01.A1",
+        "name": "Vista previa e impresión",
+        "role": "Todos con autorización documental"
+      },
+      {
+        "screen": "VR01",
+        "via": "Regresar al documento emisor",
+        "mode": "return",
+        "action_id": "",
+        "name": "Voucher de recepción",
+        "role": "Personal autorizado"
+      },
+      {
+        "screen": "CL12",
+        "via": "Otro rol: documentos del cliente",
+        "mode": "handoff",
+        "action_id": "",
+        "name": "Mis documentos, recibos y vouchers",
+        "role": "Cliente"
+      },
+      {
+        "screen": "VR02",
+        "via": "Ver documentos de recepción",
+        "mode": "document",
+        "action_id": "CL12.A4",
+        "name": "Documentos del cliente",
+        "role": "Cliente"
+      },
+      {
+        "screen": "VR04",
+        "via": "Obtener copia propia",
+        "mode": "document",
+        "action_id": "VR02.A1",
+        "name": "Vista previa e impresión",
+        "role": "Todos con autorización documental"
+      }
+    ],
+    "branches": [
+      {
+        "question": "Recepción física confirmada?",
+        "yes": "Preparar/consultar documento único.",
+        "no": "Mostrar recepción aún no confirmada.",
+        "return_screen": "VR01"
+      },
+      {
+        "question": "Archivo listo?",
+        "yes": "Abrir impresión o descargar.",
+        "no": "Consultar trabajo de generación; reintentar archivo, no recepción.",
+        "return_screen": "VR04"
+      }
+    ],
+    "checks": [
+      "Cerrar el diálogo no prueba que se imprimió.",
+      "Reimpresión conserva número, fecha y hecho original."
+    ],
+    "decision_refs": [
+      "D12"
+    ],
+    "status": "PROPUESTA_UX_V5_1",
+    "source": "Pantallas, reglas y acciones de V5; secuencia y conexiones de navegacion propuestas V5.1"
+  },
+  {
+    "id": "F18",
+    "title": "Voucher de pago y copia del cliente",
+    "goal": "Imprimir un pago confirmado sin volver a cobrar.",
+    "steps": [
+      {
+        "screen": "CL18",
+        "via": "Inicio del recorrido",
+        "mode": "entry",
+        "action_id": "",
+        "name": "Mis pagos y saldos",
+        "role": "Cliente"
+      },
+      {
+        "screen": "VR03",
+        "via": "Ver voucher de pago",
+        "mode": "document",
+        "action_id": "CL18.A4",
+        "name": "Voucher de pago confirmado",
+        "role": "Personal autorizado / Cliente en su portal"
+      },
+      {
+        "screen": "VR04",
+        "via": "Imprimir voucher",
+        "mode": "document",
+        "action_id": "VR03.A1",
+        "name": "Vista previa e impresión",
+        "role": "Todos con autorización documental"
+      },
+      {
+        "screen": "VR02",
+        "via": "Volver a documentos del cliente",
+        "mode": "return",
+        "action_id": "VR04.A3",
+        "name": "Documentos del cliente",
+        "role": "Cliente"
+      },
+      {
+        "screen": "CL12",
+        "via": "Abrir vista de origen de la accion",
+        "mode": "menu",
+        "action_id": "",
+        "name": "Mis documentos, recibos y vouchers",
+        "role": "Cliente"
+      },
+      {
+        "screen": "CL19",
+        "via": "Abrir visor del recibo elegido",
+        "mode": "document",
+        "action_id": "CL12.A1",
+        "name": "Visor de documento PDF",
+        "role": "Cliente"
+      },
+      {
+        "screen": "CL12",
+        "via": "Volver a documentos",
+        "mode": "action",
+        "action_id": "CL19.A3",
+        "name": "Mis documentos, recibos y vouchers",
+        "role": "Cliente"
+      }
+    ],
+    "branches": [
+      {
+        "question": "El ingreso tiene confirmación?",
+        "yes": "Mostrar referencia, valor y saldo al emitir.",
+        "no": "Pago por verificar: abrir estado, no un recibo ficticio.",
+        "return_screen": "CL18"
+      },
+      {
+        "question": "Descarga/impresión falla?",
+        "yes": "Reautorizar enlace o regenerar representación.",
+        "no": "No repetir el registro del pago.",
+        "return_screen": "VR04"
+      }
+    ],
+    "checks": [
+      "VR03 se reutiliza dentro del portal Cliente, sin abrir /app/payments.",
+      "Si existe ajuste, conservar el original y mostrar relación."
+    ],
+    "decision_refs": [
+      "D06",
+      "D12"
+    ],
+    "status": "PROPUESTA_UX_V5_1",
+    "source": "Pantallas, reglas y acciones de V5; secuencia y conexiones de navegacion propuestas V5.1"
+  },
+  {
+    "id": "F19",
+    "title": "Entrega del equipo y cierre",
+    "goal": "Confirmar custodia final, separado de la reparación y el pago.",
+    "steps": [
+      {
+        "screen": "AD04",
+        "via": "Inicio del recorrido",
+        "mode": "entry",
+        "action_id": "",
+        "name": "Detalle de OT",
+        "role": "Administrador"
+      },
+      {
+        "screen": "AD35",
+        "via": "Preparar entrega",
+        "mode": "action",
+        "action_id": "AD04.A3",
+        "name": "Entrega del equipo",
+        "role": "Administrador"
+      },
+      {
+        "screen": "AS09",
+        "via": "Alternativa: mostrador autorizado",
+        "mode": "decision",
+        "action_id": "",
+        "name": "Entrega en mostrador",
+        "role": "Asesor"
+      },
+      {
+        "screen": "AD04",
+        "via": "Confirmar entrega",
+        "mode": "context",
+        "action_id": "AS09.A2",
+        "name": "Detalle de OT",
+        "role": "Administrador"
+      },
+      {
+        "screen": "CL24",
+        "via": "Otro rol: entrega registrada",
+        "mode": "handoff",
+        "action_id": "",
+        "name": "Entrega y cierre para el cliente",
+        "role": "Cliente"
+      },
+      {
+        "screen": "CL19",
+        "via": "Ver comprobante",
+        "mode": "document",
+        "action_id": "CL24.A1",
+        "name": "Visor de documento PDF",
+        "role": "Cliente"
+      }
+    ],
+    "branches": [
+      {
+        "question": "QA, saldo y receptor permiten entregar?",
+        "yes": "Registrar entrega, identidad y evidencia requeridas.",
+        "no": "Explicar bloqueo: pago, QA o permiso.",
+        "return_screen": "AD35"
+      },
+      {
+        "question": "Solicitan entrega excepcional?",
+        "yes": "Solo con política aprobada y auditoría.",
+        "no": "No activar excepciones antes de resolver D07.",
+        "return_screen": "AS09"
+      }
+    ],
+    "checks": [
+      "El voucher de pago no reemplaza la constancia de entrega.",
+      "Encuesta es opcional; no condiciona la entrega."
+    ],
+    "decision_refs": [
+      "D01",
+      "D07",
+      "D11"
+    ],
+    "status": "PROPUESTA_UX_V5_1",
+    "source": "Pantallas, reglas y acciones de V5; secuencia y conexiones de navegacion propuestas V5.1"
+  },
+  {
+    "id": "F20",
+    "title": "No reparable, rechazo y garantía",
+    "goal": "Dar salidas de negocio sin forzar todos los casos a reparación pagada.",
+    "steps": [
+      {
+        "screen": "AD06",
+        "via": "Inicio del recorrido",
+        "mode": "entry",
+        "action_id": "",
+        "name": "Diagnóstico",
+        "role": "Administrador"
+      },
+      {
+        "screen": "AD36",
+        "via": "Marcar no reparable",
+        "mode": "action",
+        "action_id": "AD06.A3",
+        "name": "Reingreso, cancelación y garantía",
+        "role": "Administrador"
+      },
+      {
+        "screen": "AD35",
+        "via": "Preparar devolución",
+        "mode": "action",
+        "action_id": "AD36.A3",
+        "name": "Entrega del equipo",
+        "role": "Administrador"
+      },
+      {
+        "screen": "CL24",
+        "via": "Otro rol: devolución registrada",
+        "mode": "handoff",
+        "action_id": "",
+        "name": "Entrega y cierre para el cliente",
+        "role": "Cliente"
+      },
+      {
+        "screen": "CL13",
+        "via": "Solicitar revisión",
+        "mode": "action",
+        "action_id": "CL24.A2",
+        "name": "Mensajes del cliente",
+        "role": "Cliente"
+      },
+      {
+        "screen": "AD36",
+        "via": "Otro rol: evaluar reingreso",
+        "mode": "handoff",
+        "action_id": "",
+        "name": "Reingreso, cancelación y garantía",
+        "role": "Administrador"
+      },
+      {
+        "screen": "AD03",
+        "via": "Crear reingreso relacionado",
+        "mode": "action",
+        "action_id": "AD36.A1",
+        "name": "Nueva orden de trabajo",
+        "role": "Administrador"
+      }
+    ],
+    "branches": [
+      {
+        "question": "Servicio no reparable o rechazado?",
+        "yes": "Registrar resolución y condiciones aplicables de devolución.",
+        "no": "No marcar COMPLETED para ocultar cancelación.",
+        "return_screen": "AD36"
+      },
+      {
+        "question": "Reingreso autorizado?",
+        "yes": "Crear orden relacionada preservando original.",
+        "no": "Explicar resultado y permitir consulta del cliente.",
+        "return_screen": "CL13"
+      }
+    ],
+    "checks": [
+      "No inventar plazos, costos de diagnóstico ni exclusiones de garantía.",
+      "Cualquier saldo/cobro depende de acuerdo y política aprobados."
+    ],
+    "decision_refs": [
+      "D07",
+      "D11"
+    ],
+    "status": "PROPUESTA_UX_V5_1",
+    "source": "Pantallas, reglas y acciones de V5; secuencia y conexiones de navegacion propuestas V5.1"
+  },
+  {
+    "id": "F21",
+    "title": "Venta de mostrador e inventario",
+    "goal": "Cerrar una venta usando el mismo control de pagos, sin asumir checkout online.",
+    "steps": [
+      {
+        "screen": "CL21",
+        "via": "Inicio del recorrido",
+        "mode": "entry",
+        "action_id": "",
+        "name": "Productos del comercio",
+        "role": "Público"
+      },
+      {
+        "screen": "CL22",
+        "via": "Ver producto",
+        "mode": "action",
+        "action_id": "CL21.A1",
+        "name": "Detalle de producto público",
+        "role": "Público"
+      },
+      {
+        "screen": "CL23",
+        "via": "Consultar compra / disponibilidad",
+        "mode": "external",
+        "action_id": "CL22.A1",
+        "name": "Contacto y ubicación",
+        "role": "Público"
+      },
+      {
+        "screen": "AS11",
+        "via": "Otro rol: venta asistida",
+        "mode": "handoff",
+        "action_id": "",
+        "name": "Venta asistida",
+        "role": "Asesor"
+      },
+      {
+        "screen": "AS08",
+        "via": "Solicitar cobro autorizado",
+        "mode": "context",
+        "action_id": "AS11.A2",
+        "name": "Registrar efectivo",
+        "role": "Asesor"
+      },
+      {
+        "screen": "AD30",
+        "via": "Resultado: venta confirmada en mismo rol",
+        "mode": "context",
+        "action_id": "AS11.A3",
+        "name": "Detalle de venta",
+        "role": "Administrador"
+      },
+      {
+        "screen": "AD29",
+        "via": "Menú: historial de ventas",
+        "mode": "menu",
+        "action_id": "",
+        "name": "Listado de ventas",
+        "role": "Administrador"
+      }
+    ],
+    "branches": [
+      {
+        "question": "Existencia vigente y venta válida?",
+        "yes": "Confirmar venta y movimiento una sola vez.",
+        "no": "Actualizar stock; conservar carrito/borrador.",
+        "return_screen": "AS11"
+      },
+      {
+        "question": "Cliente solo consulta producto?",
+        "yes": "Abrir contacto; confirmar disponibilidad en negocio.",
+        "no": "No declarar compra ni cobro por abrir WhatsApp.",
+        "return_screen": "CL23"
+      }
+    ],
+    "checks": [
+      "AD17 ofrece el mismo flujo de caja para Administrador.",
+      "Confirmación de pago previa no se aplica una segunda vez al finalizar venta."
+    ],
+    "decision_refs": [
+      "D01",
+      "D07"
+    ],
+    "status": "PROPUESTA_UX_V5_1",
+    "source": "Pantallas, reglas y acciones de V5; secuencia y conexiones de navegacion propuestas V5.1"
+  },
+  {
+    "id": "F22",
+    "title": "Catálogo y movimientos de inventario",
+    "goal": "Distinguir producto, stock, reserva, consumo y reversa.",
+    "steps": [
+      {
+        "screen": "AD15",
+        "via": "Inicio del recorrido",
+        "mode": "entry",
+        "action_id": "",
+        "name": "Inventario",
+        "role": "Administrador"
+      },
+      {
+        "screen": "AD16",
+        "via": "Crear / abrir producto",
+        "mode": "action",
+        "action_id": "AD15.A1",
+        "name": "Detalle de producto",
+        "role": "Administrador"
+      },
+      {
+        "screen": "AD28",
+        "via": "Registrar movimiento",
+        "mode": "action",
+        "action_id": "AD16.A2",
+        "name": "Movimientos de inventario",
+        "role": "Administrador"
+      },
+      {
+        "screen": "AD16",
+        "via": "Confirmar movimiento autorizado",
+        "mode": "action",
+        "action_id": "AD28.A2",
+        "name": "Detalle de producto",
+        "role": "Administrador"
+      },
+      {
+        "screen": "AD15",
+        "via": "Menú: revisar inventario",
+        "mode": "menu",
+        "action_id": "",
+        "name": "Inventario",
+        "role": "Administrador"
+      },
+      {
+        "screen": "TE06",
+        "via": "Otro rol: solicitud/consumo de repuesto",
+        "mode": "handoff",
+        "action_id": "",
+        "name": "Repuestos y mano de obra",
+        "role": "Técnico"
+      },
+      {
+        "screen": "AD17",
+        "via": "Alternativa: venta del producto",
+        "mode": "decision",
+        "action_id": "",
+        "name": "Venta / punto de venta",
+        "role": "Administrador"
+      }
+    ],
+    "branches": [
+      {
+        "question": "Movimiento tiene motivo y cantidad válidos?",
+        "yes": "Crear movimiento trazable.",
+        "no": "Corregir campos y volver a validar existencia.",
+        "return_screen": "AD28"
+      },
+      {
+        "question": "Dos usuarios consumen la última unidad?",
+        "yes": "Solo una operación se confirma.",
+        "no": "La otra recibe conflicto; refrescar, no stock negativo.",
+        "return_screen": "AD15"
+      }
+    ],
+    "checks": [
+      "No editar saldo de stock para ocultar movimientos.",
+      "Venta y repuesto usan inventario común."
+    ],
+    "decision_refs": [
+      "D01"
+    ],
+    "status": "PROPUESTA_UX_V5_1",
+    "source": "Pantallas, reglas y acciones de V5; secuencia y conexiones de navegacion propuestas V5.1"
+  },
+  {
+    "id": "F23",
+    "title": "Clientes, contactos y equipos",
+    "goal": "Reutilizar datos sin fusionar personas o comercios por coincidencia.",
+    "steps": [
+      {
+        "screen": "AD12",
+        "via": "Inicio del recorrido",
+        "mode": "entry",
+        "action_id": "",
+        "name": "Clientes",
+        "role": "Administrador"
+      },
+      {
+        "screen": "AD13",
+        "via": "Abrir cliente",
+        "mode": "action",
+        "action_id": "AD12.A1",
+        "name": "Detalle del cliente",
+        "role": "Administrador"
+      },
+      {
+        "screen": "AD27",
+        "via": "Pestaña: equipos e historial",
+        "mode": "tab",
+        "action_id": "",
+        "name": "Equipos e historial",
+        "role": "Administrador"
+      },
+      {
+        "screen": "AD03",
+        "via": "Nueva OT del equipo",
+        "mode": "action",
+        "action_id": "AD27.A2",
+        "name": "Nueva orden de trabajo",
+        "role": "Administrador"
+      },
+      {
+        "screen": "AS02",
+        "via": "Alternativa: búsqueda rápida en mostrador",
+        "mode": "decision",
+        "action_id": "",
+        "name": "Cliente y contacto rápido",
+        "role": "Asesor"
+      },
+      {
+        "screen": "CL17",
+        "via": "Otro rol: mis equipos",
+        "mode": "handoff",
+        "action_id": "",
+        "name": "Mis equipos",
+        "role": "Cliente"
+      },
+      {
+        "screen": "CL07",
+        "via": "Ver historial de equipos",
+        "mode": "action",
+        "action_id": "CL17.A3",
+        "name": "Mis reparaciones",
+        "role": "Cliente"
+      },
+      {
+        "screen": "CL14",
+        "via": "Menú: mi perfil",
+        "mode": "menu",
+        "action_id": "",
+        "name": "Mi perfil",
+        "role": "Cliente"
+      }
+    ],
+    "branches": [
+      {
+        "question": "Hay coincidencia de contacto/equipo?",
+        "yes": "Revisar antes de usar registro existente.",
+        "no": "Crear el registro correcto según datos confirmados.",
+        "return_screen": "AS02"
+      },
+      {
+        "question": "Acceso pertenece al cliente actual?",
+        "yes": "Mostrar sus equipos e historial.",
+        "no": "Sin datos de otras personas o comercios.",
+        "return_screen": "CL17"
+      }
+    ],
+    "checks": [
+      "Desde crear OT se vuelve con el cliente seleccionado, no se pierde borrador.",
+      "El cliente no cambia un customer_id para ver otro expediente."
+    ],
+    "decision_refs": [],
+    "status": "PROPUESTA_UX_V5_1",
+    "source": "Pantallas, reglas y acciones de V5; secuencia y conexiones de navegacion propuestas V5.1"
+  },
+  {
+    "id": "F24",
+    "title": "Mensajes, WhatsApp y seguimiento",
+    "goal": "Separar canal externo, chat registrado y notas internas.",
+    "steps": [
+      {
+        "screen": "AS06",
+        "via": "Inicio del recorrido",
+        "mode": "entry",
+        "action_id": "",
+        "name": "Atención y mensajes",
+        "role": "Asesor"
+      },
+      {
+        "screen": "TE09",
+        "via": "Otro rol: consulta interna al técnico",
+        "mode": "handoff",
+        "action_id": "AS06.A2",
+        "name": "Mensajes del técnico",
+        "role": "Técnico"
+      },
+      {
+        "screen": "AD18",
+        "via": "Otro rol: mensajes del negocio",
+        "mode": "handoff",
+        "action_id": "",
+        "name": "Mensajes del negocio",
+        "role": "Administrador"
+      },
+      {
+        "screen": "CL13",
+        "via": "Otro rol: conversación del cliente",
+        "mode": "handoff",
+        "action_id": "",
+        "name": "Mensajes del cliente",
+        "role": "Cliente"
+      },
+      {
+        "screen": "AS10",
+        "via": "Menú: seguimiento y tareas",
+        "mode": "menu",
+        "action_id": "",
+        "name": "Agenda y tareas",
+        "role": "Asesor"
+      },
+      {
+        "screen": "AD21",
+        "via": "Menú: plantilla WhatsApp del negocio",
+        "mode": "menu",
+        "action_id": "",
+        "name": "WhatsApp del negocio",
+        "role": "Administrador"
+      },
+      {
+        "screen": "SU12",
+        "via": "Otro rol: plantilla global",
+        "mode": "handoff",
+        "action_id": "",
+        "name": "WhatsApp global",
+        "role": "Super Usuario"
+      }
+    ],
+    "branches": [
+      {
+        "question": "Se abre WhatsApp básico?",
+        "yes": "Registrar apertura/intención; volver al contexto.",
+        "no": "No mostrar entregado/leído sin fuente que lo confirme.",
+        "return_screen": "AS06"
+      },
+      {
+        "question": "Chat confirma el mensaje?",
+        "yes": "Mostrar enviado dentro de su audiencia.",
+        "no": "Pendiente/no enviado; reintentar con misma referencia.",
+        "return_screen": "CL13"
+      }
+    ],
+    "checks": [
+      "Una nota interna no aparece en el portal cliente.",
+      "Recordatorio no equivale a aprobación de cotización."
+    ],
+    "decision_refs": [
+      "D10"
+    ],
+    "status": "PROPUESTA_UX_V5_1",
+    "source": "Pantallas, reglas y acciones de V5; secuencia y conexiones de navegacion propuestas V5.1"
+  },
+  {
+    "id": "F25",
+    "title": "Usuarios, delegaciones y perfiles",
+    "goal": "Hacer explícito qué cambia al otorgar un permiso.",
+    "steps": [
+      {
+        "screen": "SU10",
+        "via": "Inicio del recorrido",
+        "mode": "entry",
+        "action_id": "",
+        "name": "Usuarios globales",
+        "role": "Super Usuario"
+      },
+      {
+        "screen": "AD25",
+        "via": "Otro alcance: usuarios del comercio",
+        "mode": "handoff",
+        "action_id": "",
+        "name": "Usuarios y permisos",
+        "role": "Administrador"
+      },
+      {
+        "screen": "AS12",
+        "via": "Otro rol: perfil y solicitud de permiso",
+        "mode": "handoff",
+        "action_id": "",
+        "name": "Mi perfil y acceso",
+        "role": "Asesor"
+      },
+      {
+        "screen": "AD25",
+        "via": "Receptor: revisar solicitud sin elevar al asesor",
+        "mode": "handoff",
+        "action_id": "AS12.A2",
+        "name": "Usuarios y permisos",
+        "role": "Administrador"
+      },
+      {
+        "screen": "AU02",
+        "via": "Revalidar contexto autorizado",
+        "mode": "event",
+        "action_id": "",
+        "name": "Selección de contexto",
+        "role": "Todos los roles internos"
+      },
+      {
+        "screen": "CL14",
+        "via": "Alternativa: preferencias del cliente",
+        "mode": "decision",
+        "action_id": "",
+        "name": "Mi perfil",
+        "role": "Cliente"
+      }
+    ],
+    "branches": [
+      {
+        "question": "Delegación financiera aprobada?",
+        "yes": "Habilitar solo acción, alcance y usuario autorizados.",
+        "no": "Mantener botón bloqueado con explicación.",
+        "return_screen": "AS12"
+      },
+      {
+        "question": "Se revoca sesión/membresía?",
+        "yes": "Invalidar acceso y revalidar recursos.",
+        "no": "No conservar privilegio por una pantalla abierta.",
+        "return_screen": "AU03"
+      }
+    ],
+    "checks": [
+      "Administrador no concede SUPER_USER.",
+      "Solicitar permiso no concede permiso."
+    ],
+    "decision_refs": [
+      "D01",
+      "D04"
+    ],
+    "status": "PROPUESTA_UX_V5_1",
+    "source": "Pantallas, reglas y acciones de V5; secuencia y conexiones de navegacion propuestas V5.1"
+  },
+  {
+    "id": "F26",
+    "title": "Indicadores, exportaciones y auditoría",
+    "goal": "Consultar datos con fecha visible y recuperar trabajos de exportación.",
+    "steps": [
+      {
+        "screen": "AD22",
+        "via": "Inicio del recorrido",
+        "mode": "entry",
+        "action_id": "",
+        "name": "Estadísticas del negocio",
+        "role": "Administrador"
+      },
+      {
+        "screen": "AD02",
+        "via": "Ver órdenes del indicador",
+        "mode": "action",
+        "action_id": "AD22.A2",
+        "name": "Reparaciones",
+        "role": "Administrador"
+      },
+      {
+        "screen": "AD22",
+        "via": "Exportar bandeja / trabajo",
+        "mode": "job",
+        "action_id": "AD02.A3",
+        "name": "Estadísticas del negocio",
+        "role": "Administrador"
+      },
+      {
+        "screen": "SU20",
+        "via": "Otro rol: analítica SaaS",
+        "mode": "handoff",
+        "action_id": "",
+        "name": "Analítica y exportaciones SaaS",
+        "role": "Super Usuario"
+      },
+      {
+        "screen": "SU13",
+        "via": "Menú: auditoría global",
+        "mode": "menu",
+        "action_id": "",
+        "name": "Auditoría global",
+        "role": "Super Usuario"
+      },
+      {
+        "screen": "SU20",
+        "via": "Exportar evidencia autorizada",
+        "mode": "job",
+        "action_id": "SU13.A3",
+        "name": "Analítica y exportaciones SaaS",
+        "role": "Super Usuario"
+      }
+    ],
+    "branches": [
+      {
+        "question": "Datos completos?",
+        "yes": "Mostrar resultados y fecha.",
+        "no": "Marcar indicadores parciales; no convertir error en cero.",
+        "return_screen": "AD22"
+      },
+      {
+        "question": "Exportación lista?",
+        "yes": "Descargar archivo autorizado.",
+        "no": "Consultar job_id al volver, sin lanzar otro igual.",
+        "return_screen": "SU20"
+      }
+    ],
+    "checks": [
+      "Un filtro cambia lectura, no registros.",
+      "Las cifras globales no dan acceso libre al detalle de otros comercios."
+    ],
+    "decision_refs": [],
+    "status": "PROPUESTA_UX_V5_1",
+    "source": "Pantallas, reglas y acciones de V5; secuencia y conexiones de navegacion propuestas V5.1"
+  },
+  {
+    "id": "F27",
+    "title": "Soporte, integraciones y gobierno global",
+    "goal": "Atender incidentes y configurar servicios sin exponer credenciales.",
+    "steps": [
+      {
+        "screen": "SU14",
+        "via": "Inicio del recorrido",
+        "mode": "entry",
+        "action_id": "",
+        "name": "Soporte e incidentes",
+        "role": "Super Usuario"
+      },
+      {
+        "screen": "SU11",
+        "via": "Menú: revisar integraciones",
+        "mode": "menu",
+        "action_id": "",
+        "name": "Integraciones globales",
+        "role": "Super Usuario"
+      },
+      {
+        "screen": "SU12",
+        "via": "Menú: WhatsApp global",
+        "mode": "menu",
+        "action_id": "",
+        "name": "WhatsApp global",
+        "role": "Super Usuario"
+      },
+      {
+        "screen": "SU15",
+        "via": "Menú: políticas generales",
+        "mode": "menu",
+        "action_id": "",
+        "name": "Configuración global",
+        "role": "Super Usuario"
+      },
+      {
+        "screen": "SU13",
+        "via": "Menú: comprobar auditoría",
+        "mode": "menu",
+        "action_id": "",
+        "name": "Auditoría global",
+        "role": "Super Usuario"
+      },
+      {
+        "screen": "AU06",
+        "via": "Otra experiencia: avisos y ayuda",
+        "mode": "handoff",
+        "action_id": "",
+        "name": "Centro de avisos y ayuda",
+        "role": "Todos"
+      }
+    ],
+    "branches": [
+      {
+        "question": "Prueba de conexión confirma servicio?",
+        "yes": "Actualizar estado del conector.",
+        "no": "Conservar credencial protegida; mostrar causa segura.",
+        "return_screen": "SU11"
+      },
+      {
+        "question": "Incidente resuelto?",
+        "yes": "Cerrar con evidencia/respuesta.",
+        "no": "Mantener abierto y conservar el borrador de respuesta.",
+        "return_screen": "SU14"
+      }
+    ],
+    "checks": [
+      "Las acciones globales solo existen en CRM Maestro.",
+      "Soporte del comercio reutiliza un formulario restringido; no entra al Maestro."
+    ],
+    "decision_refs": [
+      "D10",
+      "D13"
+    ],
+    "status": "PROPUESTA_UX_V5_1",
+    "source": "Pantallas, reglas y acciones de V5; secuencia y conexiones de navegacion propuestas V5.1"
+  },
+  {
+    "id": "F28",
+    "title": "Sesión, cierre y recuperación",
+    "goal": "Retomar el punto autorizado sin reenviar la última operación.",
+    "steps": [
+      {
+        "screen": "AU03",
+        "via": "Inicio del recorrido",
+        "mode": "entry",
+        "action_id": "",
+        "name": "Aviso y renovación de sesión",
+        "role": "Todos"
+      },
+      {
+        "screen": "AU01",
+        "via": "Si venció: acceso del personal",
+        "mode": "auth",
+        "action_id": "",
+        "name": "Acceso del personal",
+        "role": "Todos los roles internos"
+      },
+      {
+        "screen": "AU02",
+        "via": "Validar misma identidad/contexto",
+        "mode": "action",
+        "action_id": "AU01.A1",
+        "name": "Selección de contexto",
+        "role": "Todos los roles internos"
+      },
+      {
+        "screen": "AU05",
+        "via": "Recuperar borrador autorizado",
+        "mode": "return",
+        "action_id": "",
+        "name": "Recuperación y conflicto de borrador",
+        "role": "Todos"
+      },
+      {
+        "screen": "AU04",
+        "via": "Rama: contexto ya no permitido",
+        "mode": "decision",
+        "action_id": "",
+        "name": "Carga fallida y acceso restringido",
+        "role": "Todos"
+      },
+      {
+        "screen": "AU06",
+        "via": "Ayuda y reporte seguro",
+        "mode": "action",
+        "action_id": "AU04.A3",
+        "name": "Centro de avisos y ayuda",
+        "role": "Todos"
+      }
+    ],
+    "branches": [
+      {
+        "question": "Hay guardado confirmado o copia local autorizada?",
+        "yes": "Comparar versión y restaurar con consentimiento.",
+        "no": "Decir qué no se pudo recuperar; no afirmar guardado.",
+        "return_screen": "AU05"
+      },
+      {
+        "question": "Había un pago pendiente al expirar?",
+        "yes": "Consultar operación original con nueva sesión.",
+        "no": "No reenviar cargo ni reporte automáticamente.",
+        "return_screen": "AU03"
+      }
+    ],
+    "checks": [
+      "Cliente reingresa en CL02 y vuelve a su recurso, no al login del personal.",
+      "Duración de sesión y aviso siguen como propuesta D04."
+    ],
+    "decision_refs": [
+      "D04",
+      "D05"
+    ],
+    "status": "PROPUESTA_UX_V5_1",
+    "source": "Pantallas, reglas y acciones de V5; secuencia y conexiones de navegacion propuestas V5.1"
+  },
+  {
+    "id": "F29",
+    "title": "Sin conexión, evidencia y conflicto",
+    "goal": "Separar borrador local de hechos confirmados por el servidor.",
+    "steps": [
+      {
+        "screen": "TE10",
+        "via": "Inicio del recorrido",
+        "mode": "entry",
+        "action_id": "",
+        "name": "Offline y sincronización",
+        "role": "Técnico"
+      },
+      {
+        "screen": "AU05",
+        "via": "Resolver conflicto",
+        "mode": "action",
+        "action_id": "TE10.A2",
+        "name": "Recuperación y conflicto de borrador",
+        "role": "Todos"
+      },
+      {
+        "screen": "TE10",
+        "via": "Volver a sincronización",
+        "mode": "return",
+        "action_id": "",
+        "name": "Offline y sincronización",
+        "role": "Técnico"
+      },
+      {
+        "screen": "TE12",
+        "via": "Abrir evidencia pendiente",
+        "mode": "menu",
+        "action_id": "",
+        "name": "Fotos y evidencias",
+        "role": "Técnico"
+      },
+      {
+        "screen": "TE14",
+        "via": "Revisar historial confirmado",
+        "mode": "menu",
+        "action_id": "",
+        "name": "Historial de la OT",
+        "role": "Técnico"
+      },
+      {
+        "screen": "TE04",
+        "via": "Volver a orden vigente",
+        "mode": "return",
+        "action_id": "",
+        "name": "OT móvil",
+        "role": "Técnico"
+      },
+      {
+        "screen": "CL04",
+        "via": "Alternativa: archivo pendiente del cliente",
+        "mode": "decision",
+        "action_id": "",
+        "name": "Solicitud / falla y fotos",
+        "role": "Cliente"
+      }
+    ],
+    "branches": [
+      {
+        "question": "Permiso, contexto y versión siguen vigentes?",
+        "yes": "Sincronizar borradores admitidos.",
+        "no": "Comparar versiones / detener sincronización.",
+        "return_screen": "AU05"
+      },
+      {
+        "question": "Dinero, stock, QA o entrega?",
+        "yes": "Confirmar online con validación real.",
+        "no": "No ejecutar esos hechos como cola offline automática.",
+        "return_screen": "TE10"
+      }
+    ],
+    "checks": [
+      "La selección local de archivo puede perderse al cerrar el navegador.",
+      "Reintentos por archivo no duplican las evidencias ya confirmadas."
+    ],
+    "decision_refs": [
+      "D05",
+      "D09",
+      "D14"
+    ],
+    "status": "PROPUESTA_UX_V5_1",
+    "source": "Pantallas, reglas y acciones de V5; secuencia y conexiones de navegacion propuestas V5.1"
+  },
+  {
+    "id": "F30",
+    "title": "Sitio público y servicio no disponible",
+    "goal": "Ofrecer salidas útiles sin revelar la mora o datos privados a terceros.",
+    "steps": [
+      {
+        "screen": "CL01",
+        "via": "Inicio del recorrido",
+        "mode": "entry",
+        "action_id": "",
+        "name": "Página pública del negocio",
+        "role": "Público"
+      },
+      {
+        "screen": "CL20",
+        "via": "Ver servicios",
+        "mode": "action",
+        "action_id": "CL01.A3",
+        "name": "Servicios del comercio",
+        "role": "Público"
+      },
+      {
+        "screen": "CL21",
+        "via": "Menú: productos",
+        "mode": "menu",
+        "action_id": "",
+        "name": "Productos del comercio",
+        "role": "Público"
+      },
+      {
+        "screen": "CL22",
+        "via": "Ver producto",
+        "mode": "action",
+        "action_id": "CL21.A1",
+        "name": "Detalle de producto público",
+        "role": "Público"
+      },
+      {
+        "screen": "CL23",
+        "via": "Contacto y ubicación",
+        "mode": "menu",
+        "action_id": "",
+        "name": "Contacto y ubicación",
+        "role": "Público"
+      },
+      {
+        "screen": "CL15",
+        "via": "Rama: comercio no disponible",
+        "mode": "decision",
+        "action_id": "",
+        "name": "Negocio no disponible",
+        "role": "Público"
+      },
+      {
+        "screen": "CL12",
+        "via": "Documentos propios solo si política lo permite",
+        "mode": "decision",
+        "action_id": "CL15.A3",
+        "name": "Mis documentos, recibos y vouchers",
+        "role": "Cliente"
+      }
+    ],
+    "branches": [
+      {
+        "question": "Sitio publicado y operativo?",
+        "yes": "Mostrar servicios y acceso a solicitud.",
+        "no": "Mostrar indisponibilidad y contacto permitido.",
+        "return_screen": "CL15"
+      },
+      {
+        "question": "Cliente pide documentos emitidos durante suspensión?",
+        "yes": "Solo con lista de lectura aprobada y autenticación.",
+        "no": "Explicar restricción; soporte, sin exponer cuenta del negocio.",
+        "return_screen": "CL15"
+      }
+    ],
+    "checks": [
+      "No declarar una falla técnica como suspensión comercial ni al revés.",
+      "Lectura durante suspensión sigue pendiente D08."
+    ],
+    "decision_refs": [
+      "D08"
+    ],
+    "status": "PROPUESTA_UX_V5_1",
+    "source": "Pantallas, reglas y acciones de V5; secuencia y conexiones de navegacion propuestas V5.1"
+  },
+  {
+    "id": "F31",
+    "title": "Documentos, plantillas y avisos",
+    "goal": "Preparar representaciones de datos confirmados y notificar su disponibilidad.",
+    "steps": [
+      {
+        "screen": "AD34",
+        "via": "Inicio del recorrido",
+        "mode": "entry",
+        "action_id": "",
+        "name": "Numeración y plantillas",
+        "role": "Administrador"
+      },
+      {
+        "screen": "CL19",
+        "via": "Previsualizar plantilla en contexto del negocio",
+        "mode": "context",
+        "action_id": "AD34.A2",
+        "name": "Visor de documento PDF",
+        "role": "Cliente"
+      },
+      {
+        "screen": "AD32",
+        "via": "Volver a documentos del negocio",
+        "mode": "return",
+        "action_id": "",
+        "name": "Documentos y recibos",
+        "role": "Administrador"
+      },
+      {
+        "screen": "VR04",
+        "via": "Imprimir voucher autorizado",
+        "mode": "document",
+        "action_id": "AD32.A4",
+        "name": "Vista previa e impresión",
+        "role": "Todos con autorización documental"
+      },
+      {
+        "screen": "AU06",
+        "via": "Evento: documento preparado",
+        "mode": "event",
+        "action_id": "",
+        "name": "Centro de avisos y ayuda",
+        "role": "Todos"
+      },
+      {
+        "screen": "CL19",
+        "via": "Abrir notificación documental autorizada",
+        "mode": "document",
+        "action_id": "AU06.A1",
+        "name": "Visor de documento PDF",
+        "role": "Cliente"
+      }
+    ],
+    "branches": [
+      {
+        "question": "Se usa vista previa de plantilla?",
+        "yes": "Marcar EJEMPLO / sin hecho real.",
+        "no": "No asignar número oficial ni simular ingreso.",
+        "return_screen": "AD34"
+      },
+      {
+        "question": "Documento listo pero enlace expiró?",
+        "yes": "Revalidar permiso y emitir nuevo enlace.",
+        "no": "No generar otro hecho ni otro número por descarga fallida.",
+        "return_screen": "AD32"
+      }
+    ],
+    "checks": [
+      "Copiar enlace requiere alcance autorizado; no URL pública permanente.",
+      "VR04 vuelve al invocador: personal a AD32/VR01/VR03, cliente a VR02."
+    ],
+    "decision_refs": [
+      "D12"
+    ],
+    "status": "PROPUESTA_UX_V5_1",
+    "source": "Pantallas, reglas y acciones de V5; secuencia y conexiones de navegacion propuestas V5.1"
+  },
+  {
+    "id": "F32",
+    "title": "Revisión, anulación y ajuste de venta",
+    "goal": "Corregir una venta sin borrar ingreso, documento o inventario.",
+    "steps": [
+      {
+        "screen": "AD29",
+        "via": "Inicio del recorrido",
+        "mode": "entry",
+        "action_id": "",
+        "name": "Listado de ventas",
+        "role": "Administrador"
+      },
+      {
+        "screen": "AD30",
+        "via": "Abrir venta",
+        "mode": "action",
+        "action_id": "AD29.A1",
+        "name": "Detalle de venta",
+        "role": "Administrador"
+      },
+      {
+        "screen": "AD30",
+        "via": "Anular venta con confirmación",
+        "mode": "action",
+        "action_id": "AD30.A2",
+        "name": "Detalle de venta",
+        "role": "Administrador"
+      },
+      {
+        "screen": "AD28",
+        "via": "Evento: reversa de inventario aplicable",
+        "mode": "event",
+        "action_id": "",
+        "name": "Movimientos de inventario",
+        "role": "Administrador"
+      },
+      {
+        "screen": "AD32",
+        "via": "Consultar documentos y ajustes",
+        "mode": "menu",
+        "action_id": "",
+        "name": "Documentos y recibos",
+        "role": "Administrador"
+      },
+      {
+        "screen": "AD22",
+        "via": "Menú: revisar cifras netas",
+        "mode": "menu",
+        "action_id": "",
+        "name": "Estadísticas del negocio",
+        "role": "Administrador"
+      }
+    ],
+    "branches": [
+      {
+        "question": "Ajuste permitido y autorizado?",
+        "yes": "Crear reversas relacionadas con motivo.",
+        "no": "Bloquear hasta aprobación o resolución de política.",
+        "return_screen": "AD30"
+      },
+      {
+        "question": "Reembolso externo confirmado?",
+        "yes": "Reflejarlo con evidencia.",
+        "no": "No declararlo por editar un registro de venta.",
+        "return_screen": "AD30"
+      }
+    ],
+    "checks": [
+      "La anulación no elimina el documento original.",
+      "Timeout exige consultar el ajuste original antes de repetir."
+    ],
+    "decision_refs": [
+      "D07"
+    ],
+    "status": "PROPUESTA_UX_V5_1",
+    "source": "Pantallas, reglas y acciones de V5; secuencia y conexiones de navegacion propuestas V5.1"
+  }
+]

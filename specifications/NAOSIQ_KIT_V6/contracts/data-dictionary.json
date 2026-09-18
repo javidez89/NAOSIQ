@@ -1,0 +1,644 @@
+{
+  "version": "5.0",
+  "status": "Logical design, not migration or deployed schema",
+  "amount_convention": {
+    "field": "amount_minor",
+    "json_type": "string_integer",
+    "currency": "COP",
+    "scale": 2,
+    "example_cop_350000": "35000000"
+  },
+  "tables": [
+    {
+      "name": "organizations",
+      "minimum_fields": [
+        "id",
+        "name",
+        "status",
+        "settings_version"
+      ],
+      "rule": "Tenant root",
+      "constraints": "unique(id)"
+    },
+    {
+      "name": "users",
+      "minimum_fields": [
+        "id",
+        "auth_subject",
+        "display_name"
+      ],
+      "rule": "Identity only, not global customer list",
+      "constraints": "unique(auth_subject)"
+    },
+    {
+      "name": "organization_members",
+      "minimum_fields": [
+        "organization_id",
+        "user_id",
+        "role",
+        "status",
+        "version"
+      ],
+      "rule": "No client-controlled roles",
+      "constraints": "tenant FK; unique active membership policy"
+    },
+    {
+      "name": "permission_grants",
+      "minimum_fields": [
+        "organization_id",
+        "user_id",
+        "permission",
+        "scope",
+        "granted_by",
+        "expires_at"
+      ],
+      "rule": "Delegation auditable",
+      "constraints": "foreign key membership"
+    },
+    {
+      "name": "customers",
+      "minimum_fields": [
+        "id",
+        "organization_id",
+        "linked_user_id",
+        "name",
+        "contact"
+      ],
+      "rule": "Business-specific relationship",
+      "constraints": "unique(id,organization_id)"
+    },
+    {
+      "name": "devices",
+      "minimum_fields": [
+        "id",
+        "organization_id",
+        "customer_id",
+        "type",
+        "brand",
+        "model",
+        "identifier"
+      ],
+      "rule": "No global disclosure via serial search",
+      "constraints": "composite customer FK"
+    },
+    {
+      "name": "service_orders",
+      "minimum_fields": [
+        "id",
+        "organization_id",
+        "customer_id",
+        "device_id",
+        "number",
+        "repair_status",
+        "custody_status",
+        "version"
+      ],
+      "rule": "No boolean paid",
+      "constraints": "unique(org,number); tenant FKs"
+    },
+    {
+      "name": "intake_events",
+      "minimum_fields": [
+        "id",
+        "organization_id",
+        "order_id",
+        "received_at",
+        "actor_id",
+        "condition",
+        "accessories",
+        "operation_id"
+      ],
+      "rule": "Physical custody source",
+      "constraints": "unique(org,operation_id)"
+    },
+    {
+      "name": "order_history",
+      "minimum_fields": [
+        "id",
+        "organization_id",
+        "order_id",
+        "event_id",
+        "previous",
+        "current",
+        "actor_id"
+      ],
+      "rule": "Append-only audit of domain",
+      "constraints": "unique(event_id)"
+    },
+    {
+      "name": "assignments",
+      "minimum_fields": [
+        "id",
+        "organization_id",
+        "order_id",
+        "member_id",
+        "scope",
+        "active"
+      ],
+      "rule": "Assignment narrows visibility",
+      "constraints": "tenant member FK"
+    },
+    {
+      "name": "diagnostics",
+      "minimum_fields": [
+        "id",
+        "organization_id",
+        "order_id",
+        "findings",
+        "proposed_solution",
+        "version"
+      ],
+      "rule": "Technician evidence",
+      "constraints": "tenant order FK"
+    },
+    {
+      "name": "quotes",
+      "minimum_fields": [
+        "id",
+        "organization_id",
+        "order_id",
+        "version",
+        "status",
+        "expires_at",
+        "total_minor",
+        "currency"
+      ],
+      "rule": "Published version immutable",
+      "constraints": "unique(org,order_id,version)"
+    },
+    {
+      "name": "quote_items",
+      "minimum_fields": [
+        "id",
+        "organization_id",
+        "quote_id",
+        "description",
+        "quantity",
+        "unit_price_minor"
+      ],
+      "rule": "Amount exact",
+      "constraints": "tenant quote FK"
+    },
+    {
+      "name": "quote_responses",
+      "minimum_fields": [
+        "id",
+        "organization_id",
+        "quote_id",
+        "quote_version",
+        "response",
+        "actor_id",
+        "responded_at"
+      ],
+      "rule": "Customer action evidence",
+      "constraints": "one final response per quote version"
+    },
+    {
+      "name": "qa_runs",
+      "minimum_fields": [
+        "id",
+        "organization_id",
+        "order_id",
+        "checklist_version",
+        "result",
+        "actor_id"
+      ],
+      "rule": "Required items before pass",
+      "constraints": "tenant order FK"
+    },
+    {
+      "name": "qa_answers",
+      "minimum_fields": [
+        "id",
+        "organization_id",
+        "qa_run_id",
+        "item_id",
+        "answer",
+        "reason"
+      ],
+      "rule": "No applicable needs reason",
+      "constraints": "unique(run,item)"
+    },
+    {
+      "name": "delivery_events",
+      "minimum_fields": [
+        "id",
+        "organization_id",
+        "order_id",
+        "receiver",
+        "actor_id",
+        "delivered_at",
+        "operation_id"
+      ],
+      "rule": "Not derived from payment",
+      "constraints": "unique(org,operation_id)"
+    },
+    {
+      "name": "obligations",
+      "minimum_fields": [
+        "id",
+        "organization_id",
+        "source_type",
+        "source_id",
+        "total_minor",
+        "currency",
+        "version"
+      ],
+      "rule": "Repair or sale debt",
+      "constraints": "one obligation per source/version policy"
+    },
+    {
+      "name": "payments",
+      "minimum_fields": [
+        "id",
+        "organization_id",
+        "obligation_id",
+        "method",
+        "amount_minor",
+        "currency",
+        "state",
+        "reference",
+        "confirmed_by"
+      ],
+      "rule": "No SaaS rows",
+      "constraints": "unique(org,idempotent_source)"
+    },
+    {
+      "name": "payment_allocations",
+      "minimum_fields": [
+        "id",
+        "organization_id",
+        "payment_id",
+        "obligation_id",
+        "amount_minor"
+      ],
+      "rule": "Confirmed money allocation",
+      "constraints": "unique(payment,obligation)"
+    },
+    {
+      "name": "adjustments",
+      "minimum_fields": [
+        "id",
+        "organization_id",
+        "original_payment_id",
+        "amount_minor",
+        "kind",
+        "reason",
+        "actor_id"
+      ],
+      "rule": "No overwrite/delete historical money",
+      "constraints": "reference original confirmed payment"
+    },
+    {
+      "name": "receipts",
+      "minimum_fields": [
+        "id",
+        "organization_id",
+        "payment_id",
+        "number",
+        "snapshot"
+      ],
+      "rule": "Logical receipt reused by voucher",
+      "constraints": "unique(org,payment_id)"
+    },
+    {
+      "name": "products",
+      "minimum_fields": [
+        "id",
+        "organization_id",
+        "sku",
+        "name",
+        "price_minor",
+        "cost_minor",
+        "active"
+      ],
+      "rule": "Stock is movement projection",
+      "constraints": "unique(org,sku)"
+    },
+    {
+      "name": "stock_movements",
+      "minimum_fields": [
+        "id",
+        "organization_id",
+        "product_id",
+        "quantity_delta",
+        "source_type",
+        "source_id",
+        "operation_id"
+      ],
+      "rule": "Append-only stock effect",
+      "constraints": "unique(org,source_type,source_id,event_kind)"
+    },
+    {
+      "name": "reservations",
+      "minimum_fields": [
+        "id",
+        "organization_id",
+        "product_id",
+        "source_id",
+        "quantity",
+        "expires_at",
+        "state"
+      ],
+      "rule": "Atomic available stock",
+      "constraints": "tenant source/product FKs"
+    },
+    {
+      "name": "sales",
+      "minimum_fields": [
+        "id",
+        "organization_id",
+        "customer_id",
+        "status",
+        "total_minor",
+        "version"
+      ],
+      "rule": "Confirmation distinct from payment",
+      "constraints": "tenant customer optional"
+    },
+    {
+      "name": "sale_items",
+      "minimum_fields": [
+        "id",
+        "organization_id",
+        "sale_id",
+        "product_id",
+        "quantity",
+        "unit_price_minor"
+      ],
+      "rule": "Snapshot current price at commitment",
+      "constraints": "tenant sale/product FKs"
+    },
+    {
+      "name": "plans",
+      "minimum_fields": [
+        "id",
+        "version",
+        "name",
+        "status",
+        "price_minor",
+        "limits"
+      ],
+      "rule": "Draft/null prices until approval",
+      "constraints": "unique(id,version)"
+    },
+    {
+      "name": "subscriptions",
+      "minimum_fields": [
+        "id",
+        "organization_id",
+        "plan_id",
+        "state",
+        "period_start",
+        "period_end",
+        "grace_end",
+        "version"
+      ],
+      "rule": "Own SaaS access domain",
+      "constraints": "unique active per organization policy"
+    },
+    {
+      "name": "subscription_cycles",
+      "minimum_fields": [
+        "id",
+        "subscription_id",
+        "organization_id",
+        "starts_at",
+        "ends_at"
+      ],
+      "rule": "Calendar policy approved",
+      "constraints": "unique(subscription,starts_at)"
+    },
+    {
+      "name": "subscription_charges",
+      "minimum_fields": [
+        "id",
+        "organization_id",
+        "cycle_id",
+        "amount_minor",
+        "currency",
+        "status"
+      ],
+      "rule": "Not legal electronic invoice by default",
+      "constraints": "unique(cycle_id)"
+    },
+    {
+      "name": "subscription_payments",
+      "minimum_fields": [
+        "id",
+        "organization_id",
+        "charge_id",
+        "method",
+        "amount_minor",
+        "status"
+      ],
+      "rule": "Platform payee only",
+      "constraints": "unique(provider_or_manual_operation_ref)"
+    },
+    {
+      "name": "documents",
+      "minimum_fields": [
+        "id",
+        "organization_id",
+        "document_type",
+        "source_event_id",
+        "version",
+        "snapshot",
+        "template_version",
+        "status"
+      ],
+      "rule": "Snapshot excludes secrets",
+      "constraints": "unique(org,type,source_event_id,version)"
+    },
+    {
+      "name": "document_renders",
+      "minimum_fields": [
+        "id",
+        "organization_id",
+        "document_id",
+        "version",
+        "format",
+        "path",
+        "checksum",
+        "status"
+      ],
+      "rule": "Private representation",
+      "constraints": "unique(document_id,version,format)"
+    },
+    {
+      "name": "document_jobs",
+      "minimum_fields": [
+        "id",
+        "organization_id",
+        "render_id",
+        "status",
+        "retry_count",
+        "last_error"
+      ],
+      "rule": "No business effect on retry",
+      "constraints": "unique active render job policy"
+    },
+    {
+      "name": "operations",
+      "minimum_fields": [
+        "id",
+        "organization_id",
+        "actor_id",
+        "key",
+        "request_hash",
+        "status",
+        "resource_id",
+        "result"
+      ],
+      "rule": "Recovery of write result",
+      "constraints": "unique(org,actor_id,key)"
+    },
+    {
+      "name": "outbox",
+      "minimum_fields": [
+        "event_id",
+        "organization_id",
+        "aggregate_id",
+        "type",
+        "payload",
+        "sent_at"
+      ],
+      "rule": "Same business transaction",
+      "constraints": "unique(event_id)"
+    },
+    {
+      "name": "jobs",
+      "minimum_fields": [
+        "id",
+        "organization_id",
+        "kind",
+        "idempotency_ref",
+        "status"
+      ],
+      "rule": "Nonblocking work",
+      "constraints": "unique(kind,idempotency_ref)"
+    },
+    {
+      "name": "drafts",
+      "minimum_fields": [
+        "id",
+        "organization_id",
+        "actor_id",
+        "resource_id",
+        "base_version",
+        "body",
+        "expires_at"
+      ],
+      "rule": "ACK confirms persistence; optional local separate",
+      "constraints": "tenant and actor scope"
+    },
+    {
+      "name": "attachments",
+      "minimum_fields": [
+        "id",
+        "organization_id",
+        "owner_type",
+        "owner_id",
+        "path",
+        "mime",
+        "size",
+        "scan_state"
+      ],
+      "rule": "Private signed access",
+      "constraints": "tenant owner FK"
+    },
+    {
+      "name": "messages",
+      "minimum_fields": [
+        "id",
+        "organization_id",
+        "conversation_id",
+        "audience",
+        "client_message_id",
+        "body",
+        "sender_id"
+      ],
+      "rule": "Internal/customer audience explicit",
+      "constraints": "unique(conversation,client_message_id)"
+    },
+    {
+      "name": "notifications",
+      "minimum_fields": [
+        "id",
+        "organization_id",
+        "user_id",
+        "event_id",
+        "channel",
+        "state"
+      ],
+      "rule": "No cross-tenant recipient leak",
+      "constraints": "unique(user,event,channel)"
+    },
+    {
+      "name": "tasks",
+      "minimum_fields": [
+        "id",
+        "organization_id",
+        "assigned_to",
+        "due_at",
+        "status",
+        "subject"
+      ],
+      "rule": "Advisor scope",
+      "constraints": "tenant member FK"
+    },
+    {
+      "name": "support_cases",
+      "minimum_fields": [
+        "id",
+        "organization_id",
+        "creator_id",
+        "severity",
+        "status"
+      ],
+      "rule": "Support context restricted",
+      "constraints": "tenant or audited super scope"
+    },
+    {
+      "name": "business_domains",
+      "minimum_fields": [
+        "id",
+        "organization_id",
+        "slug",
+        "host",
+        "canonical",
+        "verified"
+      ],
+      "rule": "Central URL manager",
+      "constraints": "unique(host,slug_or_domain)"
+    },
+    {
+      "name": "organization_settings",
+      "minimum_fields": [
+        "organization_id",
+        "version",
+        "public_content",
+        "payment_instructions",
+        "print_profile"
+      ],
+      "rule": "No raw secrets in public_content",
+      "constraints": "unique(org,version)"
+    },
+    {
+      "name": "audit_logs",
+      "minimum_fields": [
+        "id",
+        "organization_id",
+        "actor_id",
+        "action",
+        "resource_id",
+        "before_redacted",
+        "after_redacted",
+        "reason",
+        "at"
+      ],
+      "rule": "Application append-only",
+      "constraints": "no client update/delete grants"
+    }
+  ]
+}
