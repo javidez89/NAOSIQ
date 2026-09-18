@@ -1,0 +1,4442 @@
+{
+  "specification": "NAOSIQ V6",
+  "sourceRoot": "D:\\NAOSIQ\\NAOSIQ_KIT_V6",
+  "updatedAt": "2026-09-17T23:57:07.397Z",
+  "scope": "Local; static evidence refreshed from current source. Presence remains unverified until visual and behavioral acceptance.",
+  "prompts": [
+    {
+      "id": "BR00",
+      "title": "BR00 - Inspeccion y plan de marca",
+      "source": "D:\\NAOSIQ\\NAOSIQ_KIT_V6\\prompts\\BR00.md",
+      "sha256": "ea133b7b41fd25b074e9737de171f4c1769988304b29bb0a416ab38faf1049ca",
+      "status": "partial",
+      "note": "Inspección inicial realizada; contraste visual de todas las vistas aún pendiente."
+    },
+    {
+      "id": "BR01",
+      "title": "BR01 - Tokens, tipografia y componentes",
+      "source": "D:\\NAOSIQ\\NAOSIQ_KIT_V6\\prompts\\BR01.md",
+      "sha256": "f5d8c786b5753b8a4965f3c04fb8da63ce913a2353cc6d2cfb3d8568171667c1",
+      "status": "verified",
+      "note": "Tokens completos, Inter local, componentes compartidos, estados, foco y tema claro contractual verificados en la aplicación real. El logo vectorial oficial no fue suministrado y por eso se conserva el nombre textual.",
+      "evidence": [
+        "reports/naosiq-brand-v6.md",
+        "reports/local/brand-e2e.log",
+        "reports/local/brand/controls-check.json",
+        "reports/local/portals/visual-check.json"
+      ]
+    },
+    {
+      "id": "BR02",
+      "title": "BR02 - Vistas, co-branding y documentos",
+      "source": "D:\\NAOSIQ\\NAOSIQ_KIT_V6\\prompts\\BR02.md",
+      "sha256": "eec3769265b7e34b9836c5f5524a377c5cf8d788ffd3bb1e1f5caf5f188a3160",
+      "status": "partial",
+      "note": "Co-branding aplicado a las superficies reales: el comercio lidera Cliente, documentos y medios de pago; NAOSIQ queda como respaldo. Dos PDF A4 y cuatro vistas autenticadas fueron comprobados. Matriz completa: 38 de 118 IDs tienen una superficie parcial y 80 aún no están implementados; las 363 acciones conservan su estado contractual.",
+      "evidence": [
+        "reports/naosiq-brand-v6.md",
+        "reports/local/br02/coverage-matrix.json",
+        "reports/local/br02/visual-check.json",
+        "output/pdf/br02-intake-sample.pdf",
+        "output/pdf/br02-payment-sample.pdf"
+      ]
+    },
+    {
+      "id": "BR03",
+      "title": "BR03 - Regresion y publicacion controlada",
+      "source": "D:\\NAOSIQ\\NAOSIQ_KIT_V6\\prompts\\BR03.md",
+      "sha256": "b055e1c8438cebe574a4dfeaa6020e4f7835e15469da55b3e36abfddfbf126e2",
+      "status": "partial",
+      "note": "Regresión local ejecutada para carga, vacío, éxito, error, sesión, permisos, reintentos y reimpresión. Timeout y offline siguen pendientes; el cierre operativo, el grafo de reparación y el co-branding integral siguen parciales. No se publicó ni migró un dominio.",
+      "evidence": [
+        "reports/local/br03/regression-matrix.json",
+        "tests/e2e/local-flow.spec.ts",
+        "docs/12-release.md"
+      ]
+    },
+    {
+      "id": "P00",
+      "title": "P00 - Auditoría y plan de arranque",
+      "source": "D:\\NAOSIQ\\NAOSIQ_KIT_V6\\prompts\\P00.md",
+      "sha256": "2fea00a3447969f4d9eea73009ec69094c3e32342d1361ae83a961e763beb982",
+      "status": "verified",
+      "note": "Auditoría de solo lectura completada sobre la estructura real, documentación, decisiones, RBAC, stack, scripts y cobertura V6. Se reportaron los faltantes sin modificar archivos durante P00."
+    },
+    {
+      "id": "P01",
+      "title": "P01 - Foundation del repositorio",
+      "source": "D:\\NAOSIQ\\NAOSIQ_KIT_V6\\prompts\\P01.md",
+      "sha256": "5fc390ef8f72b9a82d6b29ecce71c342730f6c3b1310904e3553ae6886729ca6",
+      "status": "verified",
+      "note": "Foundation local verificada: versiones y lockfile fijados, shells por rol, errores base, logging acotado, contratos de jobs/outbox y recuperación, CI fijada por SHA y entorno público sin secretos. Build, lint, tipos y 116 pruebas unitarias aprobados; workflows no ejecutados en remoto.",
+      "evidence": [
+        "reports/local/p01/foundation.json",
+        ".github/workflows/ci.yml",
+        ".github/workflows/release.yml",
+        "tools/action-pins.json"
+      ]
+    },
+    {
+      "id": "P02",
+      "title": "P02 - Modelo multiempresa y permisos",
+      "source": "D:\\NAOSIQ\\NAOSIQ_KIT_V6\\prompts\\P02.md",
+      "sha256": "90ce0f20c1722f2c50752a4c24b7f8e362e7cb71a1f893626b78bc864a83c47d",
+      "status": "verified",
+      "note": "Delegaciones no financieras, membresías administrables por tenant, aislamiento de metadatos de archivos/jobs y pruebas A/B implementados. Migración aplicada sin reset; 148 pgTAP, asesores de seguridad, lint DB, tipos y 123 unitarias aprobados.",
+      "evidence": [
+        "reports/local/p02/multi-tenant.json",
+        "supabase/migrations/20260915003053_multi_tenant_delegations.sql",
+        "supabase/tests/database/delegations.test.sql"
+      ]
+    },
+    {
+      "id": "P03",
+      "title": "P03 - Google y ciclo de sesión",
+      "source": "D:\\NAOSIQ\\NAOSIQ_KIT_V6\\prompts\\P03.md",
+      "sha256": "328c5b53ec7d9592f3a84790112d760f3c7b2138734ef665a1b8c6707bcd6797",
+      "status": "partial",
+      "note": "Invitación, aceptación, activación de rol, revocación, expiración recuperable, retorno seguro, reautenticación y fallos cerrados verificados localmente. El login Google completo requiere credenciales externas de ensayo; D04 y el worker de entrega siguen pendientes.",
+      "evidence": [
+        "reports/local/p03/identity-session.json",
+        "docs/13-identity-session.md",
+        "supabase/migrations/20260916192102_identity_invitations.sql",
+        "supabase/migrations/20260916193230_expire_stale_identity_invitations.sql",
+        "supabase/tests/database/identity_invitations.test.sql"
+      ]
+    },
+    {
+      "id": "P04",
+      "title": "P04 - CRM Maestro y control total",
+      "source": "D:\\NAOSIQ\\NAOSIQ_KIT_V6\\prompts\\P04.md",
+      "sha256": "265279ac5efb924bf567b6317cc3372b6b44ea325db2bd1b466713272ab0872f",
+      "status": "partial",
+      "note": "SU01–SU20 conservados: dashboard, comercios, ficha y control explícito verificados; alta idempotente y actor real auditado. Lecturas disponibles para planes, suscripciones, URLs, identidades y auditoría. Acciones dependientes de fases posteriores quedan deshabilitadas.",
+      "evidence": [
+        "reports/local/p04/master-control.json",
+        "docs/14-master-control.md",
+        "supabase/migrations/20260916194108_master_control_contexts.sql",
+        "supabase/migrations/20260916194325_idempotent_tenant_provisioning.sql",
+        "supabase/tests/database/master_control.test.sql"
+      ]
+    },
+    {
+      "id": "P05",
+      "title": "P05 - URL Manager central",
+      "source": "D:\\NAOSIQ\\NAOSIQ_KIT_V6\\prompts\\P05.md",
+      "sha256": "a48c799b31b972c653215bf5797c5b8777b2a5ba16064f59df8f1d561281f8cc",
+      "status": "partial",
+      "note": "Asignación central idempotente de slug, palabras reservadas, colisiones, versión, historial y redirección lógica verificados. SU09 conectado al backend. Dominio propio/DNS y redirección HTTP pública quedan pendientes.",
+      "evidence": [
+        "reports/local/p05/url-manager.json",
+        "docs/15-url-manager.md",
+        "supabase/migrations/20260916200057_tenant_url_manager.sql",
+        "supabase/migrations/20260916200241_fix_atomic_tenant_route_switch.sql",
+        "supabase/tests/database/tenant_routes.test.sql"
+      ]
+    },
+    {
+      "id": "P06",
+      "title": "P06 - Onboarding reanudable",
+      "source": "D:\\NAOSIQ\\NAOSIQ_KIT_V6\\prompts\\P06.md",
+      "sha256": "1c6b950a7f56ef24ddba80d5d879d9eb885fec49eefe56e283f8f5a45dd3339e",
+      "status": "pending",
+      "note": "Pendiente de contraste y aceptación de todos sus criterios."
+    },
+    {
+      "id": "P07",
+      "title": "P07 - Micrositio y catálogo",
+      "source": "D:\\NAOSIQ\\NAOSIQ_KIT_V6\\prompts\\P07.md",
+      "sha256": "7bba759d12b4d64042f2cd82cab10b793602aa498aee7e7e30999c37d816201b",
+      "status": "pending",
+      "note": "Pendiente de contraste y aceptación de todos sus criterios."
+    },
+    {
+      "id": "P08",
+      "title": "P08 - Clientes y equipos",
+      "source": "D:\\NAOSIQ\\NAOSIQ_KIT_V6\\prompts\\P08.md",
+      "sha256": "8f9ed647f8619a03b44bd682092d9ee56390ccb29bf10b784e29d41dbd510ada",
+      "status": "partial",
+      "note": "Pendiente de contraste y aceptación de todos sus criterios."
+    },
+    {
+      "id": "P09",
+      "title": "P09 - Órdenes y recepción",
+      "source": "D:\\NAOSIQ\\NAOSIQ_KIT_V6\\prompts\\P09.md",
+      "sha256": "9e6f48387ca14960e7a6db969f4dea240e862115c142a54a62bdebf0c628c364",
+      "status": "partial",
+      "note": "Orden y recepción separadas en esta entrega. Faltan evidencias, autoservicio del cliente, borradores y estados completos."
+    },
+    {
+      "id": "P10",
+      "title": "P10 - Diagnóstico y cotización",
+      "source": "D:\\NAOSIQ\\NAOSIQ_KIT_V6\\prompts\\P10.md",
+      "sha256": "4d242b7704163bad527b641f0c4de559d86c22a3a127c237cb6af8d16ef8210e",
+      "status": "pending",
+      "note": "Pendiente de contraste y aceptación de todos sus criterios."
+    },
+    {
+      "id": "P11",
+      "title": "P11 - Reparación y QA",
+      "source": "D:\\NAOSIQ\\NAOSIQ_KIT_V6\\prompts\\P11.md",
+      "sha256": "17468997006e286249f0df35132c80afa6f0111ab570cd4880188d5865a49fd2",
+      "status": "partial",
+      "note": "Estados básicos existentes; falta checklist QA obligatorio y flujo técnico completo."
+    },
+    {
+      "id": "P12",
+      "title": "P12 - Motor documental PDF y QR",
+      "source": "D:\\NAOSIQ\\NAOSIQ_KIT_V6\\prompts\\P12.md",
+      "sha256": "181509a443cbb18a4150ff14199f1452b45130725271736746e833c05a2023de",
+      "status": "partial",
+      "note": "Pendiente de contraste y aceptación de todos sus criterios."
+    },
+    {
+      "id": "P13",
+      "title": "P13 - Motor de pagos y abonos",
+      "source": "D:\\NAOSIQ\\NAOSIQ_KIT_V6\\prompts\\P13.md",
+      "sha256": "793fa190f6ee8afcfa516c9d15b5d70ced495f39ecfd3ada8259c914ee5f4aa7",
+      "status": "partial",
+      "note": "Solo pagos pendientes/confirmados; faltan obligaciones, asignaciones, saldo, reversas y bloqueo de sobrepago."
+    },
+    {
+      "id": "P14",
+      "title": "P14 - Reportar, verificar y cobrar",
+      "source": "D:\\NAOSIQ\\NAOSIQ_KIT_V6\\prompts\\P14.md",
+      "sha256": "1798a9142781265475c5d0c08c676a5c1bd4a1e37c5efe1f40c04a9edc527f91",
+      "status": "partial",
+      "note": "Pendiente de contraste y aceptación de todos sus criterios."
+    },
+    {
+      "id": "P15",
+      "title": "P15 - Inventario transaccional",
+      "source": "D:\\NAOSIQ\\NAOSIQ_KIT_V6\\prompts\\P15.md",
+      "sha256": "0cafb1ab711070608d0c3a5bd6171ff637d094176edd1378e0823f577ce4db8e",
+      "status": "pending",
+      "note": "Pendiente de contraste y aceptación de todos sus criterios."
+    },
+    {
+      "id": "P16",
+      "title": "P16 - Venta y devolución vinculada",
+      "source": "D:\\NAOSIQ\\NAOSIQ_KIT_V6\\prompts\\P16.md",
+      "sha256": "d601f4c5fd6cf36eb609c9d7a0f5dc081d9c4986871e41a598b5e07fe6ae04a9",
+      "status": "pending",
+      "note": "Pendiente de contraste y aceptación de todos sus criterios."
+    },
+    {
+      "id": "P17",
+      "title": "P17 - WhatsApp básico",
+      "source": "D:\\NAOSIQ\\NAOSIQ_KIT_V6\\prompts\\P17.md",
+      "sha256": "cf743842c83733bb37f0153c6ee35d2d9ba54900977d15d65e6c8b499b6f1d53",
+      "status": "pending",
+      "note": "Pendiente de contraste y aceptación de todos sus criterios."
+    },
+    {
+      "id": "P18",
+      "title": "P18 - Eventos, chat y notificaciones",
+      "source": "D:\\NAOSIQ\\NAOSIQ_KIT_V6\\prompts\\P18.md",
+      "sha256": "1187ed9466c6645f7626748c7cd077f787fb99f8b7297565d81d2da894c9328a",
+      "status": "pending",
+      "note": "Pendiente de contraste y aceptación de todos sus criterios."
+    },
+    {
+      "id": "P19",
+      "title": "P19 - Ciclos de suscripción",
+      "source": "D:\\NAOSIQ\\NAOSIQ_KIT_V6\\prompts\\P19.md",
+      "sha256": "e1614ab5e691ff7da1e348e6a415f9cc65fa93bf133786558063ddc0b12a2c1d",
+      "status": "pending",
+      "note": "Pendiente de contraste y aceptación de todos sus criterios."
+    },
+    {
+      "id": "P20",
+      "title": "P20 - Suspensión y reactivación",
+      "source": "D:\\NAOSIQ\\NAOSIQ_KIT_V6\\prompts\\P20.md",
+      "sha256": "649fc6000bad649b1c23fe2193d64ef8de4b998dc3782d6e9c7149023800d99b",
+      "status": "partial",
+      "note": "Pendiente de contraste y aceptación de todos sus criterios."
+    },
+    {
+      "id": "P21",
+      "title": "P21 - Estadísticas y exportaciones",
+      "source": "D:\\NAOSIQ\\NAOSIQ_KIT_V6\\prompts\\P21.md",
+      "sha256": "47324ff00a0171bf94a31eceb96571ca6f9e8c801affaadb3abc9f430b0426b9",
+      "status": "partial",
+      "note": "Pendiente de contraste y aceptación de todos sus criterios."
+    },
+    {
+      "id": "P22",
+      "title": "P22 - Auditoría y trazabilidad integral",
+      "source": "D:\\NAOSIQ\\NAOSIQ_KIT_V6\\prompts\\P22.md",
+      "sha256": "f65f2ddaf51fc93425f551e667b87a75d7c4dd4a0ce5d06c3519f98213d4588e",
+      "status": "partial",
+      "note": "Pendiente de contraste y aceptación de todos sus criterios."
+    },
+    {
+      "id": "P23",
+      "title": "P23 - PWA e instalación segura",
+      "source": "D:\\NAOSIQ\\NAOSIQ_KIT_V6\\prompts\\P23.md",
+      "sha256": "d0ffa952474631de1863004c6c6cdddcf1c07cdda6b9dc01503f2c8601b5288d",
+      "status": "pending",
+      "note": "Pendiente de contraste y aceptación de todos sus criterios."
+    },
+    {
+      "id": "P24",
+      "title": "P24 - Endurecimiento de seguridad",
+      "source": "D:\\NAOSIQ\\NAOSIQ_KIT_V6\\prompts\\P24.md",
+      "sha256": "97b0cc36302969966f89718d86075c6a953ec8f92f2476283f77074b400dd213",
+      "status": "partial",
+      "note": "Pendiente de contraste y aceptación de todos sus criterios."
+    },
+    {
+      "id": "P25",
+      "title": "P25 - Regresión E2E de release",
+      "source": "D:\\NAOSIQ\\NAOSIQ_KIT_V6\\prompts\\P25.md",
+      "sha256": "c7eee31f451a2348ce4213a8de07249573b0e83a26e0f3aaaf769d481342ff3a",
+      "status": "partial",
+      "note": "Pendiente de contraste y aceptación de todos sus criterios."
+    },
+    {
+      "id": "P26",
+      "title": "P26 - Workspace completo del Asesor",
+      "source": "D:\\NAOSIQ\\NAOSIQ_KIT_V6\\prompts\\P26.md",
+      "sha256": "b4449561f166705aab71a9b5ba1f04b99e1693d0cf198048dd79d5c05ea8fbb7",
+      "status": "partial",
+      "note": "Pendiente de contraste y aceptación de todos sus criterios."
+    },
+    {
+      "id": "P27",
+      "title": "P27 - Resiliencia y estados UX",
+      "source": "D:\\NAOSIQ\\NAOSIQ_KIT_V6\\prompts\\P27.md",
+      "sha256": "6ac0dc38aaa814d9cff80ca653ff76e961d60aecf37cca62f90eb771ca23efdb",
+      "status": "partial",
+      "note": "Pendiente de contraste y aceptación de todos sus criterios."
+    },
+    {
+      "id": "P28",
+      "title": "P28 - Vouchers imprimibles integrados",
+      "source": "D:\\NAOSIQ\\NAOSIQ_KIT_V6\\prompts\\P28.md",
+      "sha256": "c60523539977238960f98319544fb1e1487ae2d8ac4a3bd4564d9f28d1cea1ac",
+      "status": "partial",
+      "note": "Pendiente de contraste y aceptación de todos sus criterios."
+    },
+    {
+      "id": "P29",
+      "title": "P29 - Trazabilidad y pruebas de contratos",
+      "source": "D:\\NAOSIQ\\NAOSIQ_KIT_V6\\prompts\\P29.md",
+      "sha256": "ea8d6c4275a854672ecff761792a8e7b56e714f3144929283fcc5102a217d804",
+      "status": "partial",
+      "note": "Inventario completo conservado; cobertura por acción todavía sin verificación exhaustiva."
+    },
+    {
+      "id": "P30",
+      "title": "P30 - Integraciones avanzadas opcionales",
+      "source": "D:\\NAOSIQ\\NAOSIQ_KIT_V6\\prompts\\P30.md",
+      "sha256": "2c776000767956750676db2a1640b4ada2f75dbd584cc842c0064d5787c788e2",
+      "status": "pending",
+      "note": "Pendiente de contraste y aceptación de todos sus criterios."
+    },
+    {
+      "id": "P31",
+      "title": "P31 - Preparación del piloto",
+      "source": "D:\\NAOSIQ\\NAOSIQ_KIT_V6\\prompts\\P31.md",
+      "sha256": "81d599a73a48c5004352846b3def6cf8419056c3b419726c6898e1169acc5d59",
+      "status": "pending",
+      "note": "Pendiente de contraste y aceptación de todos sus criterios."
+    }
+  ],
+  "pdfs": [
+    {
+      "path": "D:\\NAOSIQ\\NAOSIQ_KIT_V6\\pdf\\NAOSIQ_00_FLUJO_UX_COMPLETO_IDENTIDAD_V6.pdf",
+      "sha256": "0558ab2ee7fcec59f67ded6d6d6e75b9d22381c2b3de9afd8989697f684dc773"
+    },
+    {
+      "path": "D:\\NAOSIQ\\NAOSIQ_KIT_V6\\pdf\\NAOSIQ_01_GUIA_IDENTIDAD_APLICADA_V6.pdf",
+      "sha256": "5f7e090d2d2711770f1edb01faad5faa920b3d9c5e2dfe95328db1608d0c4534"
+    },
+    {
+      "path": "D:\\NAOSIQ\\NAOSIQ_KIT_V6\\pdf\\NAOSIQ_02_RECORRIDOS_CONECTADOS_V6.pdf",
+      "sha256": "0a02fc4242c905450a377f9eee8be1bf77f1406fa367a1e7d3e1da769b1b570a"
+    },
+    {
+      "path": "D:\\NAOSIQ\\NAOSIQ_KIT_V6\\pdf\\NAOSIQ_03_PANTALLAS_Y_ACCIONES_V6.pdf",
+      "sha256": "a84c692795675a3f7c6fb8782073669f85925d37a3e5b47e16c5e03f4c9dbdb5"
+    },
+    {
+      "path": "D:\\NAOSIQ\\NAOSIQ_KIT_V6\\pdf\\NAOSIQ_MODELOS_VOUCHER_80mm_V6.pdf",
+      "sha256": "68e0b44d939de7a347821005753b33fbd4d74b4ae18191e816cbd7614d9b455b"
+    },
+    {
+      "path": "D:\\NAOSIQ\\NAOSIQ_KIT_V6\\pdf\\NAOSIQ_MODELOS_VOUCHER_A4_V6.pdf",
+      "sha256": "25c2a1d1fcf946e3a45dc9c52aab6606146e247fad17485f08737e6401cfe0e3"
+    },
+    {
+      "path": "D:\\NAOSIQ\\NAOSIQ_KIT_V6\\pdf\\NAOSIQ_MODELOS_VOUCHER_Carta_V6.pdf",
+      "sha256": "a2d8389951a96bac0197034307e8dfe414699d6afaec232a84fa4e20e3990b7a"
+    }
+  ],
+  "screens": [
+    {
+      "id": "AU01",
+      "name": "Acceso del personal",
+      "status": "surface_present_unverified",
+      "evidence": [
+        "/master/login",
+        "/comercio/login"
+      ],
+      "actions": [
+        {
+          "id": "AU01.A1",
+          "status": "pending",
+          "evidence": []
+        },
+        {
+          "id": "AU01.A2",
+          "status": "pending",
+          "evidence": []
+        },
+        {
+          "id": "AU01.A3",
+          "status": "pending",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "AU02",
+      "name": "Selección de contexto",
+      "status": "surface_present_unverified",
+      "evidence": [
+        "/master",
+        "/comercio"
+      ],
+      "actions": [
+        {
+          "id": "AU02.A1",
+          "status": "pending",
+          "evidence": []
+        },
+        {
+          "id": "AU02.A2",
+          "status": "pending",
+          "evidence": []
+        },
+        {
+          "id": "AU02.A3",
+          "status": "pending",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "AU03",
+      "name": "Aviso y renovación de sesión",
+      "status": "surface_present_unverified",
+      "evidence": [
+        "src/components/session-reauth.tsx"
+      ],
+      "actions": [
+        {
+          "id": "AU03.A1",
+          "status": "pending",
+          "evidence": []
+        },
+        {
+          "id": "AU03.A2",
+          "status": "pending",
+          "evidence": []
+        },
+        {
+          "id": "AU03.A3",
+          "status": "pending",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "AU04",
+      "name": "Carga fallida y acceso restringido",
+      "status": "surface_present_unverified",
+      "evidence": [
+        "proxy.ts",
+        "/security"
+      ],
+      "actions": [
+        {
+          "id": "AU04.A1",
+          "status": "pending",
+          "evidence": []
+        },
+        {
+          "id": "AU04.A2",
+          "status": "pending",
+          "evidence": []
+        },
+        {
+          "id": "AU04.A3",
+          "status": "pending",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "AU05",
+      "name": "Recuperación y conflicto de borrador",
+      "status": "surface_present_unverified",
+      "evidence": [
+        "src/app/offline/page.tsx"
+      ],
+      "actions": [
+        {
+          "id": "AU05.A1",
+          "status": "pending",
+          "evidence": []
+        },
+        {
+          "id": "AU05.A2",
+          "status": "pending",
+          "evidence": []
+        },
+        {
+          "id": "AU05.A3",
+          "status": "pending",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "AU06",
+      "name": "Centro de avisos y ayuda",
+      "status": "surface_present_unverified",
+      "evidence": [
+        "src/app/cliente/t/[tenantId]/account/[section]/page.tsx",
+        "src/app/comercio/t/[tenantId]/workspace/[module]/page.tsx"
+      ],
+      "actions": [
+        {
+          "id": "AU06.A1",
+          "status": "pending",
+          "evidence": []
+        },
+        {
+          "id": "AU06.A2",
+          "status": "pending",
+          "evidence": []
+        },
+        {
+          "id": "AU06.A3",
+          "status": "pending",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "SU01",
+      "name": "Dashboard Maestro",
+      "status": "surface_present_unverified",
+      "evidence": [
+        "src/app/master/page.tsx",
+        "/master"
+      ],
+      "actions": [
+        {
+          "id": "SU01.A1",
+          "status": "pending",
+          "evidence": []
+        },
+        {
+          "id": "SU01.A2",
+          "status": "pending",
+          "evidence": []
+        },
+        {
+          "id": "SU01.A3",
+          "status": "pending",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "SU02",
+      "name": "Comercios",
+      "status": "surface_present_unverified",
+      "evidence": [
+        "src/app/master/businesses/page.tsx",
+        "src/app/master/page.tsx",
+        "/master"
+      ],
+      "actions": [
+        {
+          "id": "SU02.A1",
+          "status": "pending",
+          "evidence": []
+        },
+        {
+          "id": "SU02.A2",
+          "status": "pending",
+          "evidence": []
+        },
+        {
+          "id": "SU02.A3",
+          "status": "referenced_unverified",
+          "evidence": [
+            "src/app/master/businesses/page.tsx"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "SU03",
+      "name": "Crear comercio",
+      "status": "surface_present_unverified",
+      "evidence": [
+        "src/app/master/businesses/new/page.tsx",
+        "/master"
+      ],
+      "actions": [
+        {
+          "id": "SU03.A1",
+          "status": "pending",
+          "evidence": []
+        },
+        {
+          "id": "SU03.A2",
+          "status": "pending",
+          "evidence": []
+        },
+        {
+          "id": "SU03.A3",
+          "status": "pending",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "SU04",
+      "name": "Detalle del comercio",
+      "status": "surface_present_unverified",
+      "evidence": [
+        "src/app/master/businesses/[tenantId]/page.tsx",
+        "/master/t/:tenantId"
+      ],
+      "actions": [
+        {
+          "id": "SU04.A1",
+          "status": "pending",
+          "evidence": []
+        },
+        {
+          "id": "SU04.A2",
+          "status": "pending",
+          "evidence": []
+        },
+        {
+          "id": "SU04.A3",
+          "status": "pending",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "SU05",
+      "name": "Control de un comercio",
+      "status": "surface_present_unverified",
+      "evidence": [
+        "src/app/master/businesses/[tenantId]/control/page.tsx",
+        "/master/t/:tenantId"
+      ],
+      "actions": [
+        {
+          "id": "SU05.A1",
+          "status": "pending",
+          "evidence": []
+        },
+        {
+          "id": "SU05.A2",
+          "status": "pending",
+          "evidence": []
+        },
+        {
+          "id": "SU05.A3",
+          "status": "pending",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "SU06",
+      "name": "Planes",
+      "status": "surface_present_unverified",
+      "evidence": [
+        "src/app/master/page.tsx",
+        "src/app/master/[section]/page.tsx",
+        "src/domain/master.ts"
+      ],
+      "actions": [
+        {
+          "id": "SU06.A1",
+          "status": "referenced_unverified",
+          "evidence": [
+            "src/app/master/[section]/page.tsx"
+          ]
+        },
+        {
+          "id": "SU06.A2",
+          "status": "referenced_unverified",
+          "evidence": [
+            "src/app/master/[section]/page.tsx"
+          ]
+        },
+        {
+          "id": "SU06.A3",
+          "status": "referenced_unverified",
+          "evidence": [
+            "src/app/master/[section]/page.tsx"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "SU07",
+      "name": "Suscripciones",
+      "status": "surface_present_unverified",
+      "evidence": [
+        "src/app/master/[section]/page.tsx",
+        "src/domain/master.ts"
+      ],
+      "actions": [
+        {
+          "id": "SU07.A1",
+          "status": "referenced_unverified",
+          "evidence": [
+            "src/app/master/[section]/page.tsx"
+          ]
+        },
+        {
+          "id": "SU07.A2",
+          "status": "referenced_unverified",
+          "evidence": [
+            "src/app/master/[section]/page.tsx"
+          ]
+        },
+        {
+          "id": "SU07.A3",
+          "status": "referenced_unverified",
+          "evidence": [
+            "src/app/master/[section]/page.tsx"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "SU08",
+      "name": "Facturación y pagos SaaS",
+      "status": "surface_present_unverified",
+      "evidence": [
+        "src/app/master/[section]/page.tsx",
+        "src/domain/master.ts"
+      ],
+      "actions": [
+        {
+          "id": "SU08.A1",
+          "status": "referenced_unverified",
+          "evidence": [
+            "src/app/master/[section]/page.tsx"
+          ]
+        },
+        {
+          "id": "SU08.A2",
+          "status": "referenced_unverified",
+          "evidence": [
+            "src/app/master/[section]/page.tsx"
+          ]
+        },
+        {
+          "id": "SU08.A3",
+          "status": "referenced_unverified",
+          "evidence": [
+            "src/app/master/[section]/page.tsx"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "SU09",
+      "name": "URLs y dominios",
+      "status": "surface_present_unverified",
+      "evidence": [
+        "src/app/master/[section]/page.tsx",
+        "src/domain/master.ts"
+      ],
+      "actions": [
+        {
+          "id": "SU09.A1",
+          "status": "referenced_unverified",
+          "evidence": [
+            "src/app/master/[section]/page.tsx"
+          ]
+        },
+        {
+          "id": "SU09.A2",
+          "status": "referenced_unverified",
+          "evidence": [
+            "src/app/master/[section]/page.tsx"
+          ]
+        },
+        {
+          "id": "SU09.A3",
+          "status": "referenced_unverified",
+          "evidence": [
+            "src/app/master/[section]/page.tsx"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "SU10",
+      "name": "Usuarios globales",
+      "status": "surface_present_unverified",
+      "evidence": [
+        "src/app/master/[section]/page.tsx",
+        "src/domain/master.ts"
+      ],
+      "actions": [
+        {
+          "id": "SU10.A1",
+          "status": "referenced_unverified",
+          "evidence": [
+            "src/app/master/[section]/page.tsx"
+          ]
+        },
+        {
+          "id": "SU10.A2",
+          "status": "referenced_unverified",
+          "evidence": [
+            "src/app/master/[section]/page.tsx"
+          ]
+        },
+        {
+          "id": "SU10.A3",
+          "status": "referenced_unverified",
+          "evidence": [
+            "src/app/master/[section]/page.tsx"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "SU11",
+      "name": "Integraciones globales",
+      "status": "surface_present_unverified",
+      "evidence": [
+        "src/app/master/[section]/page.tsx",
+        "src/domain/master.ts"
+      ],
+      "actions": [
+        {
+          "id": "SU11.A1",
+          "status": "referenced_unverified",
+          "evidence": [
+            "src/app/master/[section]/page.tsx"
+          ]
+        },
+        {
+          "id": "SU11.A2",
+          "status": "referenced_unverified",
+          "evidence": [
+            "src/app/master/[section]/page.tsx"
+          ]
+        },
+        {
+          "id": "SU11.A3",
+          "status": "referenced_unverified",
+          "evidence": [
+            "src/app/master/[section]/page.tsx"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "SU12",
+      "name": "WhatsApp global",
+      "status": "surface_present_unverified",
+      "evidence": [
+        "src/app/master/[section]/page.tsx",
+        "src/domain/master.ts"
+      ],
+      "actions": [
+        {
+          "id": "SU12.A1",
+          "status": "referenced_unverified",
+          "evidence": [
+            "src/app/master/[section]/page.tsx"
+          ]
+        },
+        {
+          "id": "SU12.A2",
+          "status": "referenced_unverified",
+          "evidence": [
+            "src/app/master/[section]/page.tsx"
+          ]
+        },
+        {
+          "id": "SU12.A3",
+          "status": "referenced_unverified",
+          "evidence": [
+            "src/app/master/[section]/page.tsx"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "SU13",
+      "name": "Auditoría global",
+      "status": "surface_present_unverified",
+      "evidence": [
+        "src/app/master/[section]/page.tsx",
+        "src/domain/master.ts"
+      ],
+      "actions": [
+        {
+          "id": "SU13.A1",
+          "status": "referenced_unverified",
+          "evidence": [
+            "src/app/master/[section]/page.tsx"
+          ]
+        },
+        {
+          "id": "SU13.A2",
+          "status": "referenced_unverified",
+          "evidence": [
+            "src/app/master/[section]/page.tsx"
+          ]
+        },
+        {
+          "id": "SU13.A3",
+          "status": "referenced_unverified",
+          "evidence": [
+            "src/app/master/[section]/page.tsx"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "SU14",
+      "name": "Soporte e incidentes",
+      "status": "surface_present_unverified",
+      "evidence": [
+        "src/app/master/[section]/page.tsx",
+        "src/domain/master.ts"
+      ],
+      "actions": [
+        {
+          "id": "SU14.A1",
+          "status": "referenced_unverified",
+          "evidence": [
+            "src/app/master/[section]/page.tsx"
+          ]
+        },
+        {
+          "id": "SU14.A2",
+          "status": "referenced_unverified",
+          "evidence": [
+            "src/app/master/[section]/page.tsx"
+          ]
+        },
+        {
+          "id": "SU14.A3",
+          "status": "referenced_unverified",
+          "evidence": [
+            "src/app/master/[section]/page.tsx"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "SU15",
+      "name": "Configuración global",
+      "status": "surface_present_unverified",
+      "evidence": [
+        "src/app/master/[section]/page.tsx",
+        "src/domain/master.ts"
+      ],
+      "actions": [
+        {
+          "id": "SU15.A1",
+          "status": "referenced_unverified",
+          "evidence": [
+            "src/app/master/[section]/page.tsx"
+          ]
+        },
+        {
+          "id": "SU15.A2",
+          "status": "referenced_unverified",
+          "evidence": [
+            "src/app/master/[section]/page.tsx"
+          ]
+        },
+        {
+          "id": "SU15.A3",
+          "status": "referenced_unverified",
+          "evidence": [
+            "src/app/master/[section]/page.tsx"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "SU16",
+      "name": "Editor de plan",
+      "status": "surface_present_unverified",
+      "evidence": [
+        "src/app/master/[section]/page.tsx",
+        "src/app/master/[section]/[id]/page.tsx"
+      ],
+      "actions": [
+        {
+          "id": "SU16.A1",
+          "status": "pending",
+          "evidence": []
+        },
+        {
+          "id": "SU16.A2",
+          "status": "pending",
+          "evidence": []
+        },
+        {
+          "id": "SU16.A3",
+          "status": "pending",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "SU17",
+      "name": "Detalle de cargo SaaS",
+      "status": "surface_present_unverified",
+      "evidence": [
+        "src/app/master/[section]/[id]/page.tsx"
+      ],
+      "actions": [
+        {
+          "id": "SU17.A1",
+          "status": "pending",
+          "evidence": []
+        },
+        {
+          "id": "SU17.A2",
+          "status": "pending",
+          "evidence": []
+        },
+        {
+          "id": "SU17.A3",
+          "status": "pending",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "SU18",
+      "name": "Detalle de suscripción",
+      "status": "surface_present_unverified",
+      "evidence": [
+        "src/app/master/businesses/[tenantId]/page.tsx",
+        "src/app/master/[section]/page.tsx",
+        "src/app/master/[section]/[id]/page.tsx"
+      ],
+      "actions": [
+        {
+          "id": "SU18.A1",
+          "status": "pending",
+          "evidence": []
+        },
+        {
+          "id": "SU18.A2",
+          "status": "pending",
+          "evidence": []
+        },
+        {
+          "id": "SU18.A3",
+          "status": "pending",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "SU19",
+      "name": "Editar comercio",
+      "status": "surface_present_unverified",
+      "evidence": [
+        "src/app/master/businesses/[tenantId]/edit/page.tsx",
+        "src/app/master/businesses/[tenantId]/page.tsx"
+      ],
+      "actions": [
+        {
+          "id": "SU19.A1",
+          "status": "pending",
+          "evidence": []
+        },
+        {
+          "id": "SU19.A2",
+          "status": "pending",
+          "evidence": []
+        },
+        {
+          "id": "SU19.A3",
+          "status": "pending",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "SU20",
+      "name": "Analítica y exportaciones SaaS",
+      "status": "surface_present_unverified",
+      "evidence": [
+        "src/app/master/page.tsx",
+        "src/app/master/[section]/page.tsx",
+        "src/domain/master.ts"
+      ],
+      "actions": [
+        {
+          "id": "SU20.A1",
+          "status": "referenced_unverified",
+          "evidence": [
+            "src/app/master/[section]/page.tsx"
+          ]
+        },
+        {
+          "id": "SU20.A2",
+          "status": "referenced_unverified",
+          "evidence": [
+            "src/app/master/[section]/page.tsx"
+          ]
+        },
+        {
+          "id": "SU20.A3",
+          "status": "referenced_unverified",
+          "evidence": [
+            "src/app/master/[section]/page.tsx"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "AD01",
+      "name": "Dashboard del negocio",
+      "status": "surface_present_unverified",
+      "evidence": [
+        "/comercio/t/:tenantId"
+      ],
+      "actions": [
+        {
+          "id": "AD01.A1",
+          "status": "pending",
+          "evidence": []
+        },
+        {
+          "id": "AD01.A2",
+          "status": "pending",
+          "evidence": []
+        },
+        {
+          "id": "AD01.A3",
+          "status": "pending",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "AD02",
+      "name": "Reparaciones",
+      "status": "surface_present_unverified",
+      "evidence": [
+        "/comercio/t/:tenantId#reparaciones"
+      ],
+      "actions": [
+        {
+          "id": "AD02.A1",
+          "status": "pending",
+          "evidence": []
+        },
+        {
+          "id": "AD02.A2",
+          "status": "pending",
+          "evidence": []
+        },
+        {
+          "id": "AD02.A3",
+          "status": "pending",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "AD03",
+      "name": "Nueva orden de trabajo",
+      "status": "surface_present_unverified",
+      "evidence": [
+        "/comercio/t/:tenantId#recepcion"
+      ],
+      "actions": [
+        {
+          "id": "AD03.A1",
+          "status": "pending",
+          "evidence": []
+        },
+        {
+          "id": "AD03.A2",
+          "status": "pending",
+          "evidence": []
+        },
+        {
+          "id": "AD03.A3",
+          "status": "pending",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "AD04",
+      "name": "Detalle de OT",
+      "status": "surface_present_unverified",
+      "evidence": [
+        "/comercio/t/:tenantId/repairs/:repairId"
+      ],
+      "actions": [
+        {
+          "id": "AD04.A1",
+          "status": "pending",
+          "evidence": []
+        },
+        {
+          "id": "AD04.A2",
+          "status": "pending",
+          "evidence": []
+        },
+        {
+          "id": "AD04.A3",
+          "status": "pending",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "AD05",
+      "name": "Recepción del equipo",
+      "status": "surface_present_unverified",
+      "evidence": [
+        "src/app/app/t/[tenantId]/repairs/[repairId]/page.tsx",
+        "/comercio/t/:tenantId/repairs/:repairId#custodia"
+      ],
+      "actions": [
+        {
+          "id": "AD05.A1",
+          "status": "pending",
+          "evidence": []
+        },
+        {
+          "id": "AD05.A2",
+          "status": "pending",
+          "evidence": []
+        },
+        {
+          "id": "AD05.A3",
+          "status": "referenced_unverified",
+          "evidence": [
+            "src/app/app/t/[tenantId]/repairs/[repairId]/page.tsx"
+          ]
+        },
+        {
+          "id": "AD05.A4",
+          "status": "pending",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "AD06",
+      "name": "Diagnóstico",
+      "status": "surface_present_unverified",
+      "evidence": [
+        "src/app/comercio/t/[tenantId]/repairs/[repairId]/workflow/page.tsx"
+      ],
+      "actions": [
+        {
+          "id": "AD06.A1",
+          "status": "pending",
+          "evidence": []
+        },
+        {
+          "id": "AD06.A2",
+          "status": "pending",
+          "evidence": []
+        },
+        {
+          "id": "AD06.A3",
+          "status": "pending",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "AD07",
+      "name": "Cotización",
+      "status": "surface_present_unverified",
+      "evidence": [
+        "src/app/comercio/t/[tenantId]/repairs/[repairId]/workflow/page.tsx"
+      ],
+      "actions": [
+        {
+          "id": "AD07.A1",
+          "status": "referenced_unverified",
+          "evidence": [
+            "src/app/comercio/t/[tenantId]/repairs/[repairId]/workflow/page.tsx"
+          ]
+        },
+        {
+          "id": "AD07.A2",
+          "status": "referenced_unverified",
+          "evidence": [
+            "src/app/comercio/t/[tenantId]/repairs/[repairId]/workflow/page.tsx"
+          ]
+        },
+        {
+          "id": "AD07.A3",
+          "status": "pending",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "AD08",
+      "name": "Aprobación del cliente",
+      "status": "surface_present_unverified",
+      "evidence": [
+        "src/app/comercio/t/[tenantId]/repairs/[repairId]/workflow/page.tsx"
+      ],
+      "actions": [
+        {
+          "id": "AD08.A1",
+          "status": "pending",
+          "evidence": []
+        },
+        {
+          "id": "AD08.A2",
+          "status": "pending",
+          "evidence": []
+        },
+        {
+          "id": "AD08.A3",
+          "status": "pending",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "AD09",
+      "name": "Proceso de reparación",
+      "status": "surface_present_unverified",
+      "evidence": [
+        "src/app/app/t/[tenantId]/repairs/[repairId]/page.tsx",
+        "src/app/comercio/t/[tenantId]/repairs/[repairId]/workflow/page.tsx"
+      ],
+      "actions": [
+        {
+          "id": "AD09.A1",
+          "status": "referenced_unverified",
+          "evidence": [
+            "src/app/app/t/[tenantId]/repairs/[repairId]/page.tsx"
+          ]
+        },
+        {
+          "id": "AD09.A2",
+          "status": "referenced_unverified",
+          "evidence": [
+            "src/app/app/t/[tenantId]/repairs/[repairId]/page.tsx"
+          ]
+        },
+        {
+          "id": "AD09.A3",
+          "status": "pending",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "AD10",
+      "name": "QA de reparación",
+      "status": "surface_present_unverified",
+      "evidence": [
+        "src/app/comercio/t/[tenantId]/repairs/[repairId]/workflow/page.tsx"
+      ],
+      "actions": [
+        {
+          "id": "AD10.A1",
+          "status": "pending",
+          "evidence": []
+        },
+        {
+          "id": "AD10.A2",
+          "status": "referenced_unverified",
+          "evidence": [
+            "src/app/comercio/t/[tenantId]/repairs/[repairId]/workflow/page.tsx"
+          ]
+        },
+        {
+          "id": "AD10.A3",
+          "status": "referenced_unverified",
+          "evidence": [
+            "src/app/comercio/t/[tenantId]/repairs/[repairId]/workflow/page.tsx"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "AD11",
+      "name": "Pagos y abonos de la OT",
+      "status": "surface_present_unverified",
+      "evidence": [
+        "src/app/app/t/[tenantId]/repairs/[repairId]/page.tsx",
+        "src/app/comercio/t/[tenantId]/repairs/[repairId]/workflow/page.tsx",
+        "/comercio/t/:tenantId/repairs/:repairId#payments"
+      ],
+      "actions": [
+        {
+          "id": "AD11.A1",
+          "status": "pending",
+          "evidence": []
+        },
+        {
+          "id": "AD11.A2",
+          "status": "referenced_unverified",
+          "evidence": [
+            "src/app/app/t/[tenantId]/repairs/[repairId]/page.tsx"
+          ]
+        },
+        {
+          "id": "AD11.A3",
+          "status": "pending",
+          "evidence": []
+        },
+        {
+          "id": "AD11.A4",
+          "status": "pending",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "AD12",
+      "name": "Clientes",
+      "status": "surface_present_unverified",
+      "evidence": [
+        "/comercio/t/:tenantId#nuevo-cliente"
+      ],
+      "actions": [
+        {
+          "id": "AD12.A1",
+          "status": "pending",
+          "evidence": []
+        },
+        {
+          "id": "AD12.A2",
+          "status": "pending",
+          "evidence": []
+        },
+        {
+          "id": "AD12.A3",
+          "status": "pending",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "AD13",
+      "name": "Detalle del cliente",
+      "status": "surface_present_unverified",
+      "evidence": [
+        "src/app/comercio/t/[tenantId]/workspace/[module]/page.tsx"
+      ],
+      "actions": [
+        {
+          "id": "AD13.A1",
+          "status": "pending",
+          "evidence": []
+        },
+        {
+          "id": "AD13.A2",
+          "status": "pending",
+          "evidence": []
+        },
+        {
+          "id": "AD13.A3",
+          "status": "pending",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "AD14",
+      "name": "Técnicos y asignaciones",
+      "status": "surface_present_unverified",
+      "evidence": [
+        "/comercio/t/:tenantId/repairs/:repairId"
+      ],
+      "actions": [
+        {
+          "id": "AD14.A1",
+          "status": "pending",
+          "evidence": []
+        },
+        {
+          "id": "AD14.A2",
+          "status": "pending",
+          "evidence": []
+        },
+        {
+          "id": "AD14.A3",
+          "status": "pending",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "AD15",
+      "name": "Inventario",
+      "status": "surface_present_unverified",
+      "evidence": [
+        "src/app/comercio/t/[tenantId]/repairs/[repairId]/workflow/page.tsx"
+      ],
+      "actions": [
+        {
+          "id": "AD15.A1",
+          "status": "pending",
+          "evidence": []
+        },
+        {
+          "id": "AD15.A2",
+          "status": "pending",
+          "evidence": []
+        },
+        {
+          "id": "AD15.A3",
+          "status": "pending",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "AD16",
+      "name": "Detalle de producto",
+      "status": "surface_present_unverified",
+      "evidence": [
+        "src/app/comercio/t/[tenantId]/workspace/[module]/page.tsx"
+      ],
+      "actions": [
+        {
+          "id": "AD16.A1",
+          "status": "pending",
+          "evidence": []
+        },
+        {
+          "id": "AD16.A2",
+          "status": "pending",
+          "evidence": []
+        },
+        {
+          "id": "AD16.A3",
+          "status": "pending",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "AD17",
+      "name": "Venta / punto de venta",
+      "status": "surface_present_unverified",
+      "evidence": [
+        "src/app/comercio/t/[tenantId]/workspace/[module]/page.tsx"
+      ],
+      "actions": [
+        {
+          "id": "AD17.A1",
+          "status": "pending",
+          "evidence": []
+        },
+        {
+          "id": "AD17.A2",
+          "status": "pending",
+          "evidence": []
+        },
+        {
+          "id": "AD17.A3",
+          "status": "pending",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "AD18",
+      "name": "Mensajes del negocio",
+      "status": "surface_present_unverified",
+      "evidence": [
+        "src/app/comercio/t/[tenantId]/workspace/[module]/page.tsx"
+      ],
+      "actions": [
+        {
+          "id": "AD18.A1",
+          "status": "referenced_unverified",
+          "evidence": [
+            "src/app/comercio/t/[tenantId]/workspace/[module]/page.tsx"
+          ]
+        },
+        {
+          "id": "AD18.A2",
+          "status": "pending",
+          "evidence": []
+        },
+        {
+          "id": "AD18.A3",
+          "status": "pending",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "AD19",
+      "name": "Editor de página pública",
+      "status": "surface_present_unverified",
+      "evidence": [
+        "src/app/comercio/t/[tenantId]/settings/page.tsx"
+      ],
+      "actions": [
+        {
+          "id": "AD19.A1",
+          "status": "pending",
+          "evidence": []
+        },
+        {
+          "id": "AD19.A2",
+          "status": "pending",
+          "evidence": []
+        },
+        {
+          "id": "AD19.A3",
+          "status": "pending",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "AD20",
+      "name": "Medios de pago",
+      "status": "surface_present_unverified",
+      "evidence": [
+        "src/app/comercio/t/[tenantId]/settings/page.tsx",
+        "src/app/comercio/t/[tenantId]/settings/[section]/page.tsx"
+      ],
+      "actions": [
+        {
+          "id": "AD20.A1",
+          "status": "pending",
+          "evidence": []
+        },
+        {
+          "id": "AD20.A2",
+          "status": "pending",
+          "evidence": []
+        },
+        {
+          "id": "AD20.A3",
+          "status": "pending",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "AD21",
+      "name": "WhatsApp del negocio",
+      "status": "surface_present_unverified",
+      "evidence": [
+        "src/app/comercio/t/[tenantId]/settings/page.tsx",
+        "src/app/comercio/t/[tenantId]/settings/[section]/page.tsx"
+      ],
+      "actions": [
+        {
+          "id": "AD21.A1",
+          "status": "pending",
+          "evidence": []
+        },
+        {
+          "id": "AD21.A2",
+          "status": "pending",
+          "evidence": []
+        },
+        {
+          "id": "AD21.A3",
+          "status": "pending",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "AD22",
+      "name": "Estadísticas del negocio",
+      "status": "surface_present_unverified",
+      "evidence": [
+        "src/app/comercio/t/[tenantId]/workspace/[module]/page.tsx"
+      ],
+      "actions": [
+        {
+          "id": "AD22.A1",
+          "status": "pending",
+          "evidence": []
+        },
+        {
+          "id": "AD22.A2",
+          "status": "pending",
+          "evidence": []
+        },
+        {
+          "id": "AD22.A3",
+          "status": "pending",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "AD23",
+      "name": "Mi suscripción",
+      "status": "surface_present_unverified",
+      "evidence": [
+        "src/app/comercio/t/[tenantId]/workspace/[module]/page.tsx"
+      ],
+      "actions": [
+        {
+          "id": "AD23.A1",
+          "status": "pending",
+          "evidence": []
+        },
+        {
+          "id": "AD23.A2",
+          "status": "pending",
+          "evidence": []
+        },
+        {
+          "id": "AD23.A3",
+          "status": "pending",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "AD24",
+      "name": "Configuración del negocio",
+      "status": "surface_present_unverified",
+      "evidence": [
+        "src/app/comercio/t/[tenantId]/settings/page.tsx"
+      ],
+      "actions": [
+        {
+          "id": "AD24.A1",
+          "status": "pending",
+          "evidence": []
+        },
+        {
+          "id": "AD24.A2",
+          "status": "pending",
+          "evidence": []
+        },
+        {
+          "id": "AD24.A3",
+          "status": "pending",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "AD25",
+      "name": "Usuarios y permisos",
+      "status": "surface_present_unverified",
+      "evidence": [
+        "src/app/comercio/t/[tenantId]/settings/page.tsx",
+        "src/app/comercio/t/[tenantId]/settings/[section]/page.tsx"
+      ],
+      "actions": [
+        {
+          "id": "AD25.A1",
+          "status": "pending",
+          "evidence": []
+        },
+        {
+          "id": "AD25.A2",
+          "status": "pending",
+          "evidence": []
+        },
+        {
+          "id": "AD25.A3",
+          "status": "pending",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "AD26",
+      "name": "Bandeja de cotizaciones",
+      "status": "surface_present_unverified",
+      "evidence": [
+        "src/app/comercio/t/[tenantId]/quotes/page.tsx",
+        "src/app/comercio/t/[tenantId]/repairs/[repairId]/workflow/page.tsx"
+      ],
+      "actions": [
+        {
+          "id": "AD26.A1",
+          "status": "pending",
+          "evidence": []
+        },
+        {
+          "id": "AD26.A2",
+          "status": "pending",
+          "evidence": []
+        },
+        {
+          "id": "AD26.A3",
+          "status": "referenced_unverified",
+          "evidence": [
+            "src/app/comercio/t/[tenantId]/repairs/[repairId]/workflow/page.tsx"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "AD27",
+      "name": "Equipos e historial",
+      "status": "surface_present_unverified",
+      "evidence": [
+        "src/app/comercio/t/[tenantId]/workspace/[module]/page.tsx"
+      ],
+      "actions": [
+        {
+          "id": "AD27.A1",
+          "status": "pending",
+          "evidence": []
+        },
+        {
+          "id": "AD27.A2",
+          "status": "pending",
+          "evidence": []
+        },
+        {
+          "id": "AD27.A3",
+          "status": "pending",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "AD28",
+      "name": "Movimientos de inventario",
+      "status": "surface_present_unverified",
+      "evidence": [
+        "src/app/comercio/t/[tenantId]/repairs/[repairId]/workflow/page.tsx",
+        "src/app/comercio/t/[tenantId]/workspace/[module]/page.tsx"
+      ],
+      "actions": [
+        {
+          "id": "AD28.A1",
+          "status": "pending",
+          "evidence": []
+        },
+        {
+          "id": "AD28.A2",
+          "status": "referenced_unverified",
+          "evidence": [
+            "src/app/comercio/t/[tenantId]/workspace/[module]/page.tsx"
+          ]
+        },
+        {
+          "id": "AD28.A3",
+          "status": "pending",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "AD29",
+      "name": "Listado de ventas",
+      "status": "surface_present_unverified",
+      "evidence": [
+        "src/app/comercio/t/[tenantId]/workspace/[module]/page.tsx"
+      ],
+      "actions": [
+        {
+          "id": "AD29.A1",
+          "status": "pending",
+          "evidence": []
+        },
+        {
+          "id": "AD29.A2",
+          "status": "pending",
+          "evidence": []
+        },
+        {
+          "id": "AD29.A3",
+          "status": "pending",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "AD30",
+      "name": "Detalle de venta",
+      "status": "surface_present_unverified",
+      "evidence": [
+        "src/app/comercio/t/[tenantId]/workspace/[module]/page.tsx"
+      ],
+      "actions": [
+        {
+          "id": "AD30.A1",
+          "status": "pending",
+          "evidence": []
+        },
+        {
+          "id": "AD30.A2",
+          "status": "pending",
+          "evidence": []
+        },
+        {
+          "id": "AD30.A3",
+          "status": "pending",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "AD31",
+      "name": "Verificación de pago",
+      "status": "surface_present_unverified",
+      "evidence": [
+        "src/app/app/t/[tenantId]/repairs/[repairId]/page.tsx"
+      ],
+      "actions": [
+        {
+          "id": "AD31.A1",
+          "status": "referenced_unverified",
+          "evidence": [
+            "src/app/app/t/[tenantId]/repairs/[repairId]/page.tsx"
+          ]
+        },
+        {
+          "id": "AD31.A2",
+          "status": "pending",
+          "evidence": []
+        },
+        {
+          "id": "AD31.A3",
+          "status": "pending",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "AD32",
+      "name": "Documentos y recibos",
+      "status": "surface_present_unverified",
+      "evidence": [
+        "/comercio/t/:tenantId/repairs/:repairId#vouchers"
+      ],
+      "actions": [
+        {
+          "id": "AD32.A1",
+          "status": "pending",
+          "evidence": []
+        },
+        {
+          "id": "AD32.A2",
+          "status": "pending",
+          "evidence": []
+        },
+        {
+          "id": "AD32.A3",
+          "status": "pending",
+          "evidence": []
+        },
+        {
+          "id": "AD32.A4",
+          "status": "pending",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "AD33",
+      "name": "Garantías y políticas",
+      "status": "surface_present_unverified",
+      "evidence": [
+        "src/app/comercio/t/[tenantId]/settings/page.tsx",
+        "src/app/comercio/t/[tenantId]/settings/[section]/page.tsx"
+      ],
+      "actions": [
+        {
+          "id": "AD33.A1",
+          "status": "pending",
+          "evidence": []
+        },
+        {
+          "id": "AD33.A2",
+          "status": "pending",
+          "evidence": []
+        },
+        {
+          "id": "AD33.A3",
+          "status": "pending",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "AD34",
+      "name": "Numeración y plantillas",
+      "status": "surface_present_unverified",
+      "evidence": [
+        "src/app/comercio/t/[tenantId]/settings/page.tsx",
+        "src/app/comercio/t/[tenantId]/settings/[section]/page.tsx"
+      ],
+      "actions": [
+        {
+          "id": "AD34.A1",
+          "status": "pending",
+          "evidence": []
+        },
+        {
+          "id": "AD34.A2",
+          "status": "pending",
+          "evidence": []
+        },
+        {
+          "id": "AD34.A3",
+          "status": "pending",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "AD35",
+      "name": "Entrega del equipo",
+      "status": "surface_present_unverified",
+      "evidence": [
+        "src/app/comercio/t/[tenantId]/repairs/[repairId]/workflow/page.tsx"
+      ],
+      "actions": [
+        {
+          "id": "AD35.A1",
+          "status": "pending",
+          "evidence": []
+        },
+        {
+          "id": "AD35.A2",
+          "status": "referenced_unverified",
+          "evidence": [
+            "src/app/comercio/t/[tenantId]/repairs/[repairId]/workflow/page.tsx"
+          ]
+        },
+        {
+          "id": "AD35.A3",
+          "status": "pending",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "AD36",
+      "name": "Reingreso, cancelación y garantía",
+      "status": "surface_present_unverified",
+      "evidence": [
+        "src/app/comercio/t/[tenantId]/repairs/[repairId]/workflow/page.tsx"
+      ],
+      "actions": [
+        {
+          "id": "AD36.A1",
+          "status": "pending",
+          "evidence": []
+        },
+        {
+          "id": "AD36.A2",
+          "status": "pending",
+          "evidence": []
+        },
+        {
+          "id": "AD36.A3",
+          "status": "pending",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "AS01",
+      "name": "Inicio del Asesor",
+      "status": "surface_present_unverified",
+      "evidence": [
+        "/comercio/t/:tenantId"
+      ],
+      "actions": [
+        {
+          "id": "AS01.A1",
+          "status": "pending",
+          "evidence": []
+        },
+        {
+          "id": "AS01.A2",
+          "status": "pending",
+          "evidence": []
+        },
+        {
+          "id": "AS01.A3",
+          "status": "pending",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "AS02",
+      "name": "Cliente y contacto rápido",
+      "status": "surface_present_unverified",
+      "evidence": [
+        "src/app/comercio/t/[tenantId]/repairs/[repairId]/workflow/page.tsx",
+        "/comercio/t/:tenantId#nuevo-cliente"
+      ],
+      "actions": [
+        {
+          "id": "AS02.A1",
+          "status": "pending",
+          "evidence": []
+        },
+        {
+          "id": "AS02.A2",
+          "status": "pending",
+          "evidence": []
+        },
+        {
+          "id": "AS02.A3",
+          "status": "pending",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "AS03",
+      "name": "Recepción asistida",
+      "status": "surface_present_unverified",
+      "evidence": [
+        "src/app/app/t/[tenantId]/repairs/[repairId]/page.tsx",
+        "/comercio/t/:tenantId/repairs/:repairId#custodia"
+      ],
+      "actions": [
+        {
+          "id": "AS03.A1",
+          "status": "pending",
+          "evidence": []
+        },
+        {
+          "id": "AS03.A2",
+          "status": "pending",
+          "evidence": []
+        },
+        {
+          "id": "AS03.A3",
+          "status": "referenced_unverified",
+          "evidence": [
+            "src/app/app/t/[tenantId]/repairs/[repairId]/page.tsx"
+          ]
+        },
+        {
+          "id": "AS03.A4",
+          "status": "pending",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "AS04",
+      "name": "Derivar al area técnica",
+      "status": "surface_present_unverified",
+      "evidence": [
+        "src/app/comercio/t/[tenantId]/repairs/[repairId]/workflow/page.tsx"
+      ],
+      "actions": [
+        {
+          "id": "AS04.A1",
+          "status": "pending",
+          "evidence": []
+        },
+        {
+          "id": "AS04.A2",
+          "status": "pending",
+          "evidence": []
+        },
+        {
+          "id": "AS04.A3",
+          "status": "pending",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "AS05",
+      "name": "Seguimiento de cotizaciones",
+      "status": "surface_present_unverified",
+      "evidence": [
+        "src/app/comercio/t/[tenantId]/repairs/[repairId]/workflow/page.tsx"
+      ],
+      "actions": [
+        {
+          "id": "AS05.A1",
+          "status": "pending",
+          "evidence": []
+        },
+        {
+          "id": "AS05.A2",
+          "status": "pending",
+          "evidence": []
+        },
+        {
+          "id": "AS05.A3",
+          "status": "pending",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "AS06",
+      "name": "Atención y mensajes",
+      "status": "surface_present_unverified",
+      "evidence": [
+        "src/app/comercio/t/[tenantId]/workspace/[module]/page.tsx"
+      ],
+      "actions": [
+        {
+          "id": "AS06.A1",
+          "status": "referenced_unverified",
+          "evidence": [
+            "src/app/comercio/t/[tenantId]/workspace/[module]/page.tsx"
+          ]
+        },
+        {
+          "id": "AS06.A2",
+          "status": "pending",
+          "evidence": []
+        },
+        {
+          "id": "AS06.A3",
+          "status": "pending",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "AS07",
+      "name": "Pagos reportados del cliente",
+      "status": "surface_present_unverified",
+      "evidence": [
+        "src/app/comercio/t/[tenantId]/repairs/[repairId]/workflow/page.tsx"
+      ],
+      "actions": [
+        {
+          "id": "AS07.A1",
+          "status": "pending",
+          "evidence": []
+        },
+        {
+          "id": "AS07.A2",
+          "status": "pending",
+          "evidence": []
+        },
+        {
+          "id": "AS07.A3",
+          "status": "pending",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "AS08",
+      "name": "Registrar efectivo",
+      "status": "surface_present_unverified",
+      "evidence": [
+        "src/app/app/t/[tenantId]/repairs/[repairId]/page.tsx"
+      ],
+      "actions": [
+        {
+          "id": "AS08.A1",
+          "status": "pending",
+          "evidence": []
+        },
+        {
+          "id": "AS08.A2",
+          "status": "pending",
+          "evidence": []
+        },
+        {
+          "id": "AS08.A3",
+          "status": "pending",
+          "evidence": []
+        },
+        {
+          "id": "AS08.A4",
+          "status": "pending",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "AS09",
+      "name": "Entrega en mostrador",
+      "status": "surface_present_unverified",
+      "evidence": [
+        "src/app/comercio/t/[tenantId]/repairs/[repairId]/workflow/page.tsx"
+      ],
+      "actions": [
+        {
+          "id": "AS09.A1",
+          "status": "pending",
+          "evidence": []
+        },
+        {
+          "id": "AS09.A2",
+          "status": "pending",
+          "evidence": []
+        },
+        {
+          "id": "AS09.A3",
+          "status": "pending",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "AS10",
+      "name": "Agenda y tareas",
+      "status": "surface_present_unverified",
+      "evidence": [
+        "src/app/comercio/t/[tenantId]/workspace/[module]/page.tsx"
+      ],
+      "actions": [
+        {
+          "id": "AS10.A1",
+          "status": "pending",
+          "evidence": []
+        },
+        {
+          "id": "AS10.A2",
+          "status": "pending",
+          "evidence": []
+        },
+        {
+          "id": "AS10.A3",
+          "status": "pending",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "AS11",
+      "name": "Venta asistida",
+      "status": "surface_present_unverified",
+      "evidence": [
+        "src/app/comercio/t/[tenantId]/workspace/[module]/page.tsx"
+      ],
+      "actions": [
+        {
+          "id": "AS11.A1",
+          "status": "pending",
+          "evidence": []
+        },
+        {
+          "id": "AS11.A2",
+          "status": "pending",
+          "evidence": []
+        },
+        {
+          "id": "AS11.A3",
+          "status": "pending",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "AS12",
+      "name": "Mi perfil y acceso",
+      "status": "surface_present_unverified",
+      "evidence": [
+        "src/app/comercio/t/[tenantId]/workspace/[module]/page.tsx"
+      ],
+      "actions": [
+        {
+          "id": "AS12.A1",
+          "status": "pending",
+          "evidence": []
+        },
+        {
+          "id": "AS12.A2",
+          "status": "pending",
+          "evidence": []
+        },
+        {
+          "id": "AS12.A3",
+          "status": "pending",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "TE01",
+      "name": "Inicio técnico",
+      "status": "surface_present_unverified",
+      "evidence": [
+        "/comercio/t/:tenantId"
+      ],
+      "actions": [
+        {
+          "id": "TE01.A1",
+          "status": "pending",
+          "evidence": []
+        },
+        {
+          "id": "TE01.A2",
+          "status": "pending",
+          "evidence": []
+        },
+        {
+          "id": "TE01.A3",
+          "status": "pending",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "TE02",
+      "name": "Mis trabajos",
+      "status": "surface_present_unverified",
+      "evidence": [
+        "src/app/comercio/t/[tenantId]/repairs/[repairId]/workflow/page.tsx",
+        "/comercio/t/:tenantId#reparaciones"
+      ],
+      "actions": [
+        {
+          "id": "TE02.A1",
+          "status": "pending",
+          "evidence": []
+        },
+        {
+          "id": "TE02.A2",
+          "status": "pending",
+          "evidence": []
+        },
+        {
+          "id": "TE02.A3",
+          "status": "pending",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "TE03",
+      "name": "Escanear QR",
+      "status": "surface_present_unverified",
+      "evidence": [
+        "src/app/comercio/t/[tenantId]/repairs/[repairId]/workflow/page.tsx"
+      ],
+      "actions": [
+        {
+          "id": "TE03.A1",
+          "status": "pending",
+          "evidence": []
+        },
+        {
+          "id": "TE03.A2",
+          "status": "pending",
+          "evidence": []
+        },
+        {
+          "id": "TE03.A3",
+          "status": "pending",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "TE04",
+      "name": "OT móvil",
+      "status": "surface_present_unverified",
+      "evidence": [
+        "src/app/comercio/t/[tenantId]/repairs/[repairId]/workflow/page.tsx",
+        "/comercio/t/:tenantId/repairs/:repairId"
+      ],
+      "actions": [
+        {
+          "id": "TE04.A1",
+          "status": "pending",
+          "evidence": []
+        },
+        {
+          "id": "TE04.A2",
+          "status": "pending",
+          "evidence": []
+        },
+        {
+          "id": "TE04.A3",
+          "status": "pending",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "TE05",
+      "name": "Diagnóstico móvil",
+      "status": "surface_present_unverified",
+      "evidence": [
+        "src/app/comercio/t/[tenantId]/repairs/[repairId]/workflow/page.tsx"
+      ],
+      "actions": [
+        {
+          "id": "TE05.A1",
+          "status": "pending",
+          "evidence": []
+        },
+        {
+          "id": "TE05.A2",
+          "status": "pending",
+          "evidence": []
+        },
+        {
+          "id": "TE05.A3",
+          "status": "referenced_unverified",
+          "evidence": [
+            "src/app/comercio/t/[tenantId]/repairs/[repairId]/workflow/page.tsx"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "TE06",
+      "name": "Repuestos y mano de obra",
+      "status": "surface_present_unverified",
+      "evidence": [
+        "src/app/comercio/t/[tenantId]/repairs/[repairId]/workflow/page.tsx",
+        "src/app/comercio/t/[tenantId]/workspace/[module]/page.tsx"
+      ],
+      "actions": [
+        {
+          "id": "TE06.A1",
+          "status": "pending",
+          "evidence": []
+        },
+        {
+          "id": "TE06.A2",
+          "status": "pending",
+          "evidence": []
+        },
+        {
+          "id": "TE06.A3",
+          "status": "referenced_unverified",
+          "evidence": [
+            "src/app/comercio/t/[tenantId]/workspace/[module]/page.tsx"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "TE07",
+      "name": "Cambiar estado",
+      "status": "surface_present_unverified",
+      "evidence": [
+        "src/app/comercio/t/[tenantId]/repairs/[repairId]/workflow/page.tsx",
+        "/comercio/t/:tenantId/repairs/:repairId"
+      ],
+      "actions": [
+        {
+          "id": "TE07.A1",
+          "status": "pending",
+          "evidence": []
+        },
+        {
+          "id": "TE07.A2",
+          "status": "pending",
+          "evidence": []
+        },
+        {
+          "id": "TE07.A3",
+          "status": "pending",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "TE08",
+      "name": "Checklist QA móvil",
+      "status": "surface_present_unverified",
+      "evidence": [
+        "src/app/comercio/t/[tenantId]/repairs/[repairId]/workflow/page.tsx"
+      ],
+      "actions": [
+        {
+          "id": "TE08.A1",
+          "status": "pending",
+          "evidence": []
+        },
+        {
+          "id": "TE08.A2",
+          "status": "referenced_unverified",
+          "evidence": [
+            "src/app/comercio/t/[tenantId]/repairs/[repairId]/workflow/page.tsx"
+          ]
+        },
+        {
+          "id": "TE08.A3",
+          "status": "referenced_unverified",
+          "evidence": [
+            "src/app/comercio/t/[tenantId]/repairs/[repairId]/workflow/page.tsx"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "TE09",
+      "name": "Mensajes del técnico",
+      "status": "surface_present_unverified",
+      "evidence": [
+        "src/app/comercio/t/[tenantId]/workspace/[module]/page.tsx"
+      ],
+      "actions": [
+        {
+          "id": "TE09.A1",
+          "status": "pending",
+          "evidence": []
+        },
+        {
+          "id": "TE09.A2",
+          "status": "referenced_unverified",
+          "evidence": [
+            "src/app/comercio/t/[tenantId]/workspace/[module]/page.tsx"
+          ]
+        },
+        {
+          "id": "TE09.A3",
+          "status": "pending",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "TE10",
+      "name": "Offline y sincronización",
+      "status": "surface_present_unverified",
+      "evidence": [
+        "src/app/offline/page.tsx"
+      ],
+      "actions": [
+        {
+          "id": "TE10.A1",
+          "status": "pending",
+          "evidence": []
+        },
+        {
+          "id": "TE10.A2",
+          "status": "pending",
+          "evidence": []
+        },
+        {
+          "id": "TE10.A3",
+          "status": "pending",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "TE11",
+      "name": "Recepción móvil",
+      "status": "surface_present_unverified",
+      "evidence": [
+        "src/app/comercio/t/[tenantId]/repairs/[repairId]/workflow/page.tsx"
+      ],
+      "actions": [
+        {
+          "id": "TE11.A1",
+          "status": "pending",
+          "evidence": []
+        },
+        {
+          "id": "TE11.A2",
+          "status": "pending",
+          "evidence": []
+        },
+        {
+          "id": "TE11.A3",
+          "status": "pending",
+          "evidence": []
+        },
+        {
+          "id": "TE11.A4",
+          "status": "pending",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "TE12",
+      "name": "Fotos y evidencias",
+      "status": "surface_present_unverified",
+      "evidence": [
+        "src/app/comercio/t/[tenantId]/repairs/[repairId]/workflow/page.tsx"
+      ],
+      "actions": [
+        {
+          "id": "TE12.A1",
+          "status": "pending",
+          "evidence": []
+        },
+        {
+          "id": "TE12.A2",
+          "status": "pending",
+          "evidence": []
+        },
+        {
+          "id": "TE12.A3",
+          "status": "pending",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "TE13",
+      "name": "Efectivo autorizado",
+      "status": "surface_present_unverified",
+      "evidence": [
+        "src/app/comercio/t/[tenantId]/repairs/[repairId]/workflow/page.tsx"
+      ],
+      "actions": [
+        {
+          "id": "TE13.A1",
+          "status": "pending",
+          "evidence": []
+        },
+        {
+          "id": "TE13.A2",
+          "status": "pending",
+          "evidence": []
+        },
+        {
+          "id": "TE13.A3",
+          "status": "pending",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "TE14",
+      "name": "Historial de la OT",
+      "status": "surface_present_unverified",
+      "evidence": [
+        "/comercio/t/:tenantId/repairs/:repairId#history"
+      ],
+      "actions": [
+        {
+          "id": "TE14.A1",
+          "status": "pending",
+          "evidence": []
+        },
+        {
+          "id": "TE14.A2",
+          "status": "pending",
+          "evidence": []
+        },
+        {
+          "id": "TE14.A3",
+          "status": "pending",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "CL01",
+      "name": "Página pública del negocio",
+      "status": "surface_present_unverified",
+      "evidence": [
+        "src/app/[slug]/page.tsx"
+      ],
+      "actions": [
+        {
+          "id": "CL01.A1",
+          "status": "pending",
+          "evidence": []
+        },
+        {
+          "id": "CL01.A2",
+          "status": "pending",
+          "evidence": []
+        },
+        {
+          "id": "CL01.A3",
+          "status": "pending",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "CL02",
+      "name": "Acceso del cliente con Google",
+      "status": "surface_present_unverified",
+      "evidence": [
+        "/cliente/login"
+      ],
+      "actions": [
+        {
+          "id": "CL02.A1",
+          "status": "pending",
+          "evidence": []
+        },
+        {
+          "id": "CL02.A2",
+          "status": "pending",
+          "evidence": []
+        },
+        {
+          "id": "CL02.A3",
+          "status": "pending",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "CL03",
+      "name": "Solicitud / equipo",
+      "status": "surface_present_unverified",
+      "evidence": [
+        "src/app/cliente/t/[tenantId]/requests/new/page.tsx"
+      ],
+      "actions": [
+        {
+          "id": "CL03.A1",
+          "status": "pending",
+          "evidence": []
+        },
+        {
+          "id": "CL03.A2",
+          "status": "pending",
+          "evidence": []
+        },
+        {
+          "id": "CL03.A3",
+          "status": "pending",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "CL04",
+      "name": "Solicitud / falla y fotos",
+      "status": "surface_present_unverified",
+      "evidence": [
+        "src/app/cliente/t/[tenantId]/requests/new/page.tsx"
+      ],
+      "actions": [
+        {
+          "id": "CL04.A1",
+          "status": "pending",
+          "evidence": []
+        },
+        {
+          "id": "CL04.A2",
+          "status": "pending",
+          "evidence": []
+        },
+        {
+          "id": "CL04.A3",
+          "status": "pending",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "CL05",
+      "name": "Solicitud / contacto y revisión",
+      "status": "surface_present_unverified",
+      "evidence": [
+        "src/app/cliente/t/[tenantId]/requests/new/page.tsx"
+      ],
+      "actions": [
+        {
+          "id": "CL05.A1",
+          "status": "pending",
+          "evidence": []
+        },
+        {
+          "id": "CL05.A2",
+          "status": "referenced_unverified",
+          "evidence": [
+            "src/app/cliente/t/[tenantId]/requests/new/page.tsx"
+          ]
+        },
+        {
+          "id": "CL05.A3",
+          "status": "pending",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "CL06",
+      "name": "Orden creada",
+      "status": "surface_present_unverified",
+      "evidence": [
+        "src/app/app/t/[tenantId]/repairs/[repairId]/page.tsx"
+      ],
+      "actions": [
+        {
+          "id": "CL06.A1",
+          "status": "pending",
+          "evidence": []
+        },
+        {
+          "id": "CL06.A2",
+          "status": "pending",
+          "evidence": []
+        },
+        {
+          "id": "CL06.A3",
+          "status": "pending",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "CL07",
+      "name": "Mis reparaciones",
+      "status": "surface_present_unverified",
+      "evidence": [
+        "/cliente/t/:tenantId#reparaciones"
+      ],
+      "actions": [
+        {
+          "id": "CL07.A1",
+          "status": "pending",
+          "evidence": []
+        },
+        {
+          "id": "CL07.A2",
+          "status": "pending",
+          "evidence": []
+        },
+        {
+          "id": "CL07.A3",
+          "status": "pending",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "CL08",
+      "name": "Seguimiento de reparación",
+      "status": "surface_present_unverified",
+      "evidence": [
+        "src/app/cliente/t/[tenantId]/repairs/[repairId]/quote/page.tsx",
+        "src/app/comercio/t/[tenantId]/repairs/[repairId]/workflow/page.tsx",
+        "/cliente/t/:tenantId/repairs/:repairId"
+      ],
+      "actions": [
+        {
+          "id": "CL08.A1",
+          "status": "pending",
+          "evidence": []
+        },
+        {
+          "id": "CL08.A2",
+          "status": "pending",
+          "evidence": []
+        },
+        {
+          "id": "CL08.A3",
+          "status": "pending",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "CL09",
+      "name": "Revisar cotización",
+      "status": "surface_present_unverified",
+      "evidence": [
+        "src/app/cliente/t/[tenantId]/repairs/[repairId]/quote/page.tsx"
+      ],
+      "actions": [
+        {
+          "id": "CL09.A1",
+          "status": "referenced_unverified",
+          "evidence": [
+            "src/app/cliente/t/[tenantId]/repairs/[repairId]/quote/page.tsx"
+          ]
+        },
+        {
+          "id": "CL09.A2",
+          "status": "referenced_unverified",
+          "evidence": [
+            "src/app/cliente/t/[tenantId]/repairs/[repairId]/quote/page.tsx"
+          ]
+        },
+        {
+          "id": "CL09.A3",
+          "status": "pending",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "CL10",
+      "name": "Elegir medio de pago",
+      "status": "surface_present_unverified",
+      "evidence": [
+        "src/app/app/t/[tenantId]/repairs/[repairId]/page.tsx"
+      ],
+      "actions": [
+        {
+          "id": "CL10.A1",
+          "status": "pending",
+          "evidence": []
+        },
+        {
+          "id": "CL10.A2",
+          "status": "pending",
+          "evidence": []
+        },
+        {
+          "id": "CL10.A3",
+          "status": "pending",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "CL11",
+      "name": "Reportar un pago",
+      "status": "surface_present_unverified",
+      "evidence": [
+        "src/app/app/t/[tenantId]/repairs/[repairId]/page.tsx"
+      ],
+      "actions": [
+        {
+          "id": "CL11.A1",
+          "status": "pending",
+          "evidence": []
+        },
+        {
+          "id": "CL11.A2",
+          "status": "pending",
+          "evidence": []
+        },
+        {
+          "id": "CL11.A3",
+          "status": "pending",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "CL12",
+      "name": "Mis documentos, recibos y vouchers",
+      "status": "surface_present_unverified",
+      "evidence": [
+        "src/app/comercio/t/[tenantId]/repairs/[repairId]/workflow/page.tsx",
+        "/cliente/t/:tenantId/repairs/:repairId#vouchers"
+      ],
+      "actions": [
+        {
+          "id": "CL12.A1",
+          "status": "pending",
+          "evidence": []
+        },
+        {
+          "id": "CL12.A2",
+          "status": "pending",
+          "evidence": []
+        },
+        {
+          "id": "CL12.A3",
+          "status": "pending",
+          "evidence": []
+        },
+        {
+          "id": "CL12.A4",
+          "status": "pending",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "CL13",
+      "name": "Mensajes del cliente",
+      "status": "surface_present_unverified",
+      "evidence": [
+        "src/app/cliente/t/[tenantId]/account/[section]/page.tsx"
+      ],
+      "actions": [
+        {
+          "id": "CL13.A1",
+          "status": "referenced_unverified",
+          "evidence": [
+            "src/app/cliente/t/[tenantId]/account/[section]/page.tsx"
+          ]
+        },
+        {
+          "id": "CL13.A2",
+          "status": "pending",
+          "evidence": []
+        },
+        {
+          "id": "CL13.A3",
+          "status": "pending",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "CL14",
+      "name": "Mi perfil",
+      "status": "surface_present_unverified",
+      "evidence": [
+        "src/app/cliente/t/[tenantId]/account/[section]/page.tsx"
+      ],
+      "actions": [
+        {
+          "id": "CL14.A1",
+          "status": "pending",
+          "evidence": []
+        },
+        {
+          "id": "CL14.A2",
+          "status": "pending",
+          "evidence": []
+        },
+        {
+          "id": "CL14.A3",
+          "status": "pending",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "CL15",
+      "name": "Negocio no disponible",
+      "status": "surface_present_unverified",
+      "evidence": [
+        "src/app/[slug]/unavailable/page.tsx"
+      ],
+      "actions": [
+        {
+          "id": "CL15.A1",
+          "status": "pending",
+          "evidence": []
+        },
+        {
+          "id": "CL15.A2",
+          "status": "pending",
+          "evidence": []
+        },
+        {
+          "id": "CL15.A3",
+          "status": "pending",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "CL16",
+      "name": "Inicio del cliente",
+      "status": "surface_present_unverified",
+      "evidence": [
+        "/cliente"
+      ],
+      "actions": [
+        {
+          "id": "CL16.A1",
+          "status": "pending",
+          "evidence": []
+        },
+        {
+          "id": "CL16.A2",
+          "status": "pending",
+          "evidence": []
+        },
+        {
+          "id": "CL16.A3",
+          "status": "pending",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "CL17",
+      "name": "Mis equipos",
+      "status": "surface_present_unverified",
+      "evidence": [
+        "/cliente/t/:tenantId"
+      ],
+      "actions": [
+        {
+          "id": "CL17.A1",
+          "status": "pending",
+          "evidence": []
+        },
+        {
+          "id": "CL17.A2",
+          "status": "pending",
+          "evidence": []
+        },
+        {
+          "id": "CL17.A3",
+          "status": "pending",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "CL18",
+      "name": "Mis pagos y saldos",
+      "status": "surface_present_unverified",
+      "evidence": [
+        "src/app/app/t/[tenantId]/repairs/[repairId]/page.tsx",
+        "src/app/comercio/t/[tenantId]/repairs/[repairId]/workflow/page.tsx",
+        "/cliente/t/:tenantId/repairs/:repairId#payments"
+      ],
+      "actions": [
+        {
+          "id": "CL18.A1",
+          "status": "pending",
+          "evidence": []
+        },
+        {
+          "id": "CL18.A2",
+          "status": "pending",
+          "evidence": []
+        },
+        {
+          "id": "CL18.A3",
+          "status": "pending",
+          "evidence": []
+        },
+        {
+          "id": "CL18.A4",
+          "status": "pending",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "CL19",
+      "name": "Visor de documento PDF",
+      "status": "surface_present_unverified",
+      "evidence": [
+        "src/app/comercio/t/[tenantId]/repairs/[repairId]/workflow/page.tsx",
+        "/cliente/t/:tenantId/vouchers/:voucherId"
+      ],
+      "actions": [
+        {
+          "id": "CL19.A1",
+          "status": "pending",
+          "evidence": []
+        },
+        {
+          "id": "CL19.A2",
+          "status": "pending",
+          "evidence": []
+        },
+        {
+          "id": "CL19.A3",
+          "status": "pending",
+          "evidence": []
+        },
+        {
+          "id": "CL19.A4",
+          "status": "pending",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "CL20",
+      "name": "Servicios del comercio",
+      "status": "surface_present_unverified",
+      "evidence": [
+        "src/app/[slug]/[section]/page.tsx"
+      ],
+      "actions": [
+        {
+          "id": "CL20.A1",
+          "status": "pending",
+          "evidence": []
+        },
+        {
+          "id": "CL20.A2",
+          "status": "pending",
+          "evidence": []
+        },
+        {
+          "id": "CL20.A3",
+          "status": "pending",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "CL21",
+      "name": "Productos del comercio",
+      "status": "surface_present_unverified",
+      "evidence": [
+        "src/app/[slug]/[section]/page.tsx"
+      ],
+      "actions": [
+        {
+          "id": "CL21.A1",
+          "status": "pending",
+          "evidence": []
+        },
+        {
+          "id": "CL21.A2",
+          "status": "pending",
+          "evidence": []
+        },
+        {
+          "id": "CL21.A3",
+          "status": "pending",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "CL22",
+      "name": "Detalle de producto público",
+      "status": "surface_present_unverified",
+      "evidence": [
+        "src/app/[slug]/products/[itemId]/page.tsx"
+      ],
+      "actions": [
+        {
+          "id": "CL22.A1",
+          "status": "pending",
+          "evidence": []
+        },
+        {
+          "id": "CL22.A2",
+          "status": "pending",
+          "evidence": []
+        },
+        {
+          "id": "CL22.A3",
+          "status": "pending",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "CL23",
+      "name": "Contacto y ubicación",
+      "status": "surface_present_unverified",
+      "evidence": [
+        "src/app/[slug]/[section]/page.tsx"
+      ],
+      "actions": [
+        {
+          "id": "CL23.A1",
+          "status": "pending",
+          "evidence": []
+        },
+        {
+          "id": "CL23.A2",
+          "status": "pending",
+          "evidence": []
+        },
+        {
+          "id": "CL23.A3",
+          "status": "pending",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "CL24",
+      "name": "Entrega y cierre para el cliente",
+      "status": "surface_present_unverified",
+      "evidence": [
+        "src/app/comercio/t/[tenantId]/repairs/[repairId]/workflow/page.tsx"
+      ],
+      "actions": [
+        {
+          "id": "CL24.A1",
+          "status": "pending",
+          "evidence": []
+        },
+        {
+          "id": "CL24.A2",
+          "status": "pending",
+          "evidence": []
+        },
+        {
+          "id": "CL24.A3",
+          "status": "pending",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "CL25",
+      "name": "Instrucciones del medio elegido",
+      "status": "surface_present_unverified",
+      "evidence": [
+        "src/app/comercio/t/[tenantId]/repairs/[repairId]/workflow/page.tsx"
+      ],
+      "actions": [
+        {
+          "id": "CL25.A1",
+          "status": "pending",
+          "evidence": []
+        },
+        {
+          "id": "CL25.A2",
+          "status": "pending",
+          "evidence": []
+        },
+        {
+          "id": "CL25.A3",
+          "status": "pending",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "CL26",
+      "name": "Consulta segura de orden",
+      "status": "surface_present_unverified",
+      "evidence": [
+        "src/app/[slug]/[section]/page.tsx",
+        "/cliente/t/:tenantId/repairs/:repairId"
+      ],
+      "actions": [
+        {
+          "id": "CL26.A1",
+          "status": "pending",
+          "evidence": []
+        },
+        {
+          "id": "CL26.A2",
+          "status": "pending",
+          "evidence": []
+        },
+        {
+          "id": "CL26.A3",
+          "status": "pending",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "VR01",
+      "name": "Voucher de recepción",
+      "status": "surface_present_unverified",
+      "evidence": [
+        "src/app/comercio/t/[tenantId]/repairs/[repairId]/workflow/page.tsx",
+        "src/lib/voucher-pdf.ts"
+      ],
+      "actions": [
+        {
+          "id": "VR01.A1",
+          "status": "pending",
+          "evidence": []
+        },
+        {
+          "id": "VR01.A2",
+          "status": "pending",
+          "evidence": []
+        },
+        {
+          "id": "VR01.A3",
+          "status": "pending",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "VR02",
+      "name": "Documentos del cliente",
+      "status": "surface_present_unverified",
+      "evidence": [
+        "src/app/comercio/t/[tenantId]/repairs/[repairId]/workflow/page.tsx",
+        "/cliente/t/:tenantId/repairs/:repairId#vouchers"
+      ],
+      "actions": [
+        {
+          "id": "VR02.A1",
+          "status": "pending",
+          "evidence": []
+        },
+        {
+          "id": "VR02.A2",
+          "status": "pending",
+          "evidence": []
+        },
+        {
+          "id": "VR02.A3",
+          "status": "pending",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "VR03",
+      "name": "Voucher de pago confirmado",
+      "status": "surface_present_unverified",
+      "evidence": [
+        "src/lib/voucher-pdf.ts"
+      ],
+      "actions": [
+        {
+          "id": "VR03.A1",
+          "status": "pending",
+          "evidence": []
+        },
+        {
+          "id": "VR03.A2",
+          "status": "pending",
+          "evidence": []
+        },
+        {
+          "id": "VR03.A3",
+          "status": "pending",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "VR04",
+      "name": "Vista previa e impresión",
+      "status": "surface_present_unverified",
+      "evidence": [
+        "src/app/comercio/t/[tenantId]/repairs/[repairId]/workflow/page.tsx",
+        "/cliente/t/:tenantId/vouchers/:voucherId"
+      ],
+      "actions": [
+        {
+          "id": "VR04.A1",
+          "status": "pending",
+          "evidence": []
+        },
+        {
+          "id": "VR04.A2",
+          "status": "pending",
+          "evidence": []
+        },
+        {
+          "id": "VR04.A3",
+          "status": "pending",
+          "evidence": []
+        }
+      ]
+    }
+  ],
+  "journeys": [
+    {
+      "id": "F01",
+      "name": "Entrar como personal y elegir contexto",
+      "status": "surface_chain_unverified",
+      "screens": [
+        "AU01",
+        "AU02",
+        "AD01",
+        "AS01",
+        "TE01",
+        "SU01"
+      ],
+      "presentScreens": [
+        "AU01",
+        "AU02",
+        "AD01",
+        "AS01",
+        "TE01",
+        "SU01"
+      ],
+      "decisionRefs": [
+        "D01",
+        "D04"
+      ]
+    },
+    {
+      "id": "F02",
+      "name": "Acceso del cliente y consulta segura",
+      "status": "surface_chain_unverified",
+      "screens": [
+        "CL01",
+        "CL26",
+        "CL02",
+        "CL08"
+      ],
+      "presentScreens": [
+        "CL01",
+        "CL26",
+        "CL02",
+        "CL08"
+      ],
+      "decisionRefs": []
+    },
+    {
+      "id": "F03",
+      "name": "Crear comercio y asignar URL",
+      "status": "surface_chain_unverified",
+      "screens": [
+        "SU01",
+        "SU02",
+        "SU03",
+        "SU04",
+        "SU19",
+        "SU09"
+      ],
+      "presentScreens": [
+        "SU01",
+        "SU02",
+        "SU03",
+        "SU04",
+        "SU19",
+        "SU09"
+      ],
+      "decisionRefs": [
+        "D02",
+        "D13"
+      ]
+    },
+    {
+      "id": "F04",
+      "name": "Preparar el negocio para operar",
+      "status": "surface_chain_unverified",
+      "screens": [
+        "AD24",
+        "AD25",
+        "AD20",
+        "AD21",
+        "AD33",
+        "AD34",
+        "AD19",
+        "CL01"
+      ],
+      "presentScreens": [
+        "AD24",
+        "AD25",
+        "AD20",
+        "AD21",
+        "AD33",
+        "AD34",
+        "AD19",
+        "CL01"
+      ],
+      "decisionRefs": [
+        "D01",
+        "D11",
+        "D12"
+      ]
+    },
+    {
+      "id": "F05",
+      "name": "Control total del Super Usuario",
+      "status": "surface_chain_unverified",
+      "screens": [
+        "SU02",
+        "SU04",
+        "SU05",
+        "AU03",
+        "AD01",
+        "SU13"
+      ],
+      "presentScreens": [
+        "SU02",
+        "SU04",
+        "SU05",
+        "AU03",
+        "AD01",
+        "SU13"
+      ],
+      "decisionRefs": [
+        "D04"
+      ]
+    },
+    {
+      "id": "F06",
+      "name": "Publicar planes y revisar suscripciones",
+      "status": "surface_chain_unverified",
+      "screens": [
+        "SU06",
+        "SU16",
+        "SU07",
+        "SU18",
+        "SU17",
+        "SU08"
+      ],
+      "presentScreens": [
+        "SU06",
+        "SU16",
+        "SU07",
+        "SU18",
+        "SU17",
+        "SU08"
+      ],
+      "decisionRefs": [
+        "D02",
+        "D03"
+      ]
+    },
+    {
+      "id": "F07",
+      "name": "Mensualidad, mora y reactivación",
+      "status": "surface_chain_unverified",
+      "screens": [
+        "AD23",
+        "SU17",
+        "SU18",
+        "AD01"
+      ],
+      "presentScreens": [
+        "AD23",
+        "SU17",
+        "SU18",
+        "AD01"
+      ],
+      "decisionRefs": [
+        "D03",
+        "D08"
+      ]
+    },
+    {
+      "id": "F08",
+      "name": "Cliente: solicitud de reparación",
+      "status": "surface_chain_unverified",
+      "screens": [
+        "CL16",
+        "CL03",
+        "CL17",
+        "CL04",
+        "CL05",
+        "CL06",
+        "CL08"
+      ],
+      "presentScreens": [
+        "CL16",
+        "CL03",
+        "CL17",
+        "CL04",
+        "CL05",
+        "CL06",
+        "CL08"
+      ],
+      "decisionRefs": [
+        "D09",
+        "D11"
+      ]
+    },
+    {
+      "id": "F09",
+      "name": "Asesor: recepción y derivación",
+      "status": "surface_chain_unverified",
+      "screens": [
+        "AS01",
+        "AS02",
+        "AS03",
+        "AS04",
+        "VR01",
+        "VR04",
+        "TE02"
+      ],
+      "presentScreens": [
+        "AS01",
+        "AS02",
+        "AS03",
+        "AS04",
+        "VR01",
+        "VR04",
+        "TE02"
+      ],
+      "decisionRefs": [
+        "D01",
+        "D12"
+      ]
+    },
+    {
+      "id": "F10",
+      "name": "Recepción desde Administrador o Técnico",
+      "status": "surface_chain_unverified",
+      "screens": [
+        "AD02",
+        "AD03",
+        "AD04",
+        "AD05",
+        "TE12",
+        "VR01",
+        "TE11"
+      ],
+      "presentScreens": [
+        "AD02",
+        "AD03",
+        "AD04",
+        "AD05",
+        "TE12",
+        "VR01",
+        "TE11"
+      ],
+      "decisionRefs": [
+        "D01",
+        "D09"
+      ]
+    },
+    {
+      "id": "F11",
+      "name": "Asignación, QR y diagnóstico",
+      "status": "surface_chain_unverified",
+      "screens": [
+        "AD14",
+        "AD09",
+        "TE01",
+        "TE02",
+        "TE03",
+        "TE04",
+        "TE05",
+        "AD06"
+      ],
+      "presentScreens": [
+        "AD14",
+        "AD09",
+        "TE01",
+        "TE02",
+        "TE03",
+        "TE04",
+        "TE05",
+        "AD06"
+      ],
+      "decisionRefs": []
+    },
+    {
+      "id": "F12",
+      "name": "Cotización, respuesta y seguimiento",
+      "status": "surface_chain_unverified",
+      "screens": [
+        "AD26",
+        "AD07",
+        "AD08",
+        "AS05",
+        "CL09",
+        "CL08",
+        "TE07"
+      ],
+      "presentScreens": [
+        "AD26",
+        "AD07",
+        "AD08",
+        "AS05",
+        "CL09",
+        "CL08",
+        "TE07"
+      ],
+      "decisionRefs": [
+        "D01"
+      ]
+    },
+    {
+      "id": "F13",
+      "name": "Reparación, repuestos y estados",
+      "status": "surface_chain_unverified",
+      "screens": [
+        "TE04",
+        "TE06",
+        "AD15",
+        "AD28",
+        "TE07"
+      ],
+      "presentScreens": [
+        "TE04",
+        "TE06",
+        "AD15",
+        "AD28",
+        "TE07"
+      ],
+      "decisionRefs": [
+        "D01"
+      ]
+    },
+    {
+      "id": "F14",
+      "name": "Pruebas QA y cierre técnico",
+      "status": "surface_chain_unverified",
+      "screens": [
+        "TE04",
+        "TE08",
+        "TE07",
+        "AD10",
+        "CL08"
+      ],
+      "presentScreens": [
+        "TE04",
+        "TE08",
+        "TE07",
+        "AD10",
+        "CL08"
+      ],
+      "decisionRefs": []
+    },
+    {
+      "id": "F15",
+      "name": "Bre-B, Nequi y transferencia",
+      "status": "surface_chain_unverified",
+      "screens": [
+        "CL08",
+        "CL10",
+        "CL25",
+        "CL11",
+        "CL18",
+        "AS07",
+        "AD31",
+        "AD11"
+      ],
+      "presentScreens": [
+        "CL08",
+        "CL10",
+        "CL25",
+        "CL11",
+        "CL18",
+        "AS07",
+        "AD31",
+        "AD11"
+      ],
+      "decisionRefs": [
+        "D01",
+        "D06",
+        "D07"
+      ]
+    },
+    {
+      "id": "F16",
+      "name": "Efectivo, cambio y abonos",
+      "status": "surface_chain_unverified",
+      "screens": [
+        "AD11",
+        "AS08",
+        "VR03",
+        "VR04",
+        "TE13",
+        "CL18"
+      ],
+      "presentScreens": [
+        "AD11",
+        "AS08",
+        "VR03",
+        "VR04",
+        "TE13",
+        "CL18"
+      ],
+      "decisionRefs": [
+        "D01",
+        "D06"
+      ]
+    },
+    {
+      "id": "F17",
+      "name": "Voucher de recepción e impresión",
+      "status": "surface_chain_unverified",
+      "screens": [
+        "AS03",
+        "VR01",
+        "VR04",
+        "CL12",
+        "VR02"
+      ],
+      "presentScreens": [
+        "AS03",
+        "VR01",
+        "VR04",
+        "CL12",
+        "VR02"
+      ],
+      "decisionRefs": [
+        "D12"
+      ]
+    },
+    {
+      "id": "F18",
+      "name": "Voucher de pago y copia del cliente",
+      "status": "surface_chain_unverified",
+      "screens": [
+        "CL18",
+        "VR03",
+        "VR04",
+        "VR02",
+        "CL12",
+        "CL19"
+      ],
+      "presentScreens": [
+        "CL18",
+        "VR03",
+        "VR04",
+        "VR02",
+        "CL12",
+        "CL19"
+      ],
+      "decisionRefs": [
+        "D06",
+        "D12"
+      ]
+    },
+    {
+      "id": "F19",
+      "name": "Entrega del equipo y cierre",
+      "status": "surface_chain_unverified",
+      "screens": [
+        "AD04",
+        "AD35",
+        "AS09",
+        "CL24",
+        "CL19"
+      ],
+      "presentScreens": [
+        "AD04",
+        "AD35",
+        "AS09",
+        "CL24",
+        "CL19"
+      ],
+      "decisionRefs": [
+        "D01",
+        "D07",
+        "D11"
+      ]
+    },
+    {
+      "id": "F20",
+      "name": "No reparable, rechazo y garantía",
+      "status": "surface_chain_unverified",
+      "screens": [
+        "AD06",
+        "AD36",
+        "AD35",
+        "CL24",
+        "CL13",
+        "AD03"
+      ],
+      "presentScreens": [
+        "AD06",
+        "AD36",
+        "AD35",
+        "CL24",
+        "CL13",
+        "AD03"
+      ],
+      "decisionRefs": [
+        "D07",
+        "D11"
+      ]
+    },
+    {
+      "id": "F21",
+      "name": "Venta de mostrador e inventario",
+      "status": "surface_chain_unverified",
+      "screens": [
+        "CL21",
+        "CL22",
+        "CL23",
+        "AS11",
+        "AS08",
+        "AD30",
+        "AD29"
+      ],
+      "presentScreens": [
+        "CL21",
+        "CL22",
+        "CL23",
+        "AS11",
+        "AS08",
+        "AD30",
+        "AD29"
+      ],
+      "decisionRefs": [
+        "D01",
+        "D07"
+      ]
+    },
+    {
+      "id": "F22",
+      "name": "Catálogo y movimientos de inventario",
+      "status": "surface_chain_unverified",
+      "screens": [
+        "AD15",
+        "AD16",
+        "AD28",
+        "TE06",
+        "AD17"
+      ],
+      "presentScreens": [
+        "AD15",
+        "AD16",
+        "AD28",
+        "TE06",
+        "AD17"
+      ],
+      "decisionRefs": [
+        "D01"
+      ]
+    },
+    {
+      "id": "F23",
+      "name": "Clientes, contactos y equipos",
+      "status": "surface_chain_unverified",
+      "screens": [
+        "AD12",
+        "AD13",
+        "AD27",
+        "AD03",
+        "AS02",
+        "CL17",
+        "CL07",
+        "CL14"
+      ],
+      "presentScreens": [
+        "AD12",
+        "AD13",
+        "AD27",
+        "AD03",
+        "AS02",
+        "CL17",
+        "CL07",
+        "CL14"
+      ],
+      "decisionRefs": []
+    },
+    {
+      "id": "F24",
+      "name": "Mensajes, WhatsApp y seguimiento",
+      "status": "surface_chain_unverified",
+      "screens": [
+        "AS06",
+        "TE09",
+        "AD18",
+        "CL13",
+        "AS10",
+        "AD21",
+        "SU12"
+      ],
+      "presentScreens": [
+        "AS06",
+        "TE09",
+        "AD18",
+        "CL13",
+        "AS10",
+        "AD21",
+        "SU12"
+      ],
+      "decisionRefs": [
+        "D10"
+      ]
+    },
+    {
+      "id": "F25",
+      "name": "Usuarios, delegaciones y perfiles",
+      "status": "surface_chain_unverified",
+      "screens": [
+        "SU10",
+        "AD25",
+        "AS12",
+        "AU02",
+        "CL14"
+      ],
+      "presentScreens": [
+        "SU10",
+        "AD25",
+        "AS12",
+        "AU02",
+        "CL14"
+      ],
+      "decisionRefs": [
+        "D01",
+        "D04"
+      ]
+    },
+    {
+      "id": "F26",
+      "name": "Indicadores, exportaciones y auditoría",
+      "status": "surface_chain_unverified",
+      "screens": [
+        "AD22",
+        "AD02",
+        "SU20",
+        "SU13"
+      ],
+      "presentScreens": [
+        "AD22",
+        "AD02",
+        "SU20",
+        "SU13"
+      ],
+      "decisionRefs": []
+    },
+    {
+      "id": "F27",
+      "name": "Soporte, integraciones y gobierno global",
+      "status": "surface_chain_unverified",
+      "screens": [
+        "SU14",
+        "SU11",
+        "SU12",
+        "SU15",
+        "SU13",
+        "AU06"
+      ],
+      "presentScreens": [
+        "SU14",
+        "SU11",
+        "SU12",
+        "SU15",
+        "SU13",
+        "AU06"
+      ],
+      "decisionRefs": [
+        "D10",
+        "D13"
+      ]
+    },
+    {
+      "id": "F28",
+      "name": "Sesión, cierre y recuperación",
+      "status": "surface_chain_unverified",
+      "screens": [
+        "AU03",
+        "AU01",
+        "AU02",
+        "AU05",
+        "AU04",
+        "AU06"
+      ],
+      "presentScreens": [
+        "AU03",
+        "AU01",
+        "AU02",
+        "AU05",
+        "AU04",
+        "AU06"
+      ],
+      "decisionRefs": [
+        "D04",
+        "D05"
+      ]
+    },
+    {
+      "id": "F29",
+      "name": "Sin conexión, evidencia y conflicto",
+      "status": "surface_chain_unverified",
+      "screens": [
+        "TE10",
+        "AU05",
+        "TE12",
+        "TE14",
+        "TE04",
+        "CL04"
+      ],
+      "presentScreens": [
+        "TE10",
+        "AU05",
+        "TE12",
+        "TE14",
+        "TE04",
+        "CL04"
+      ],
+      "decisionRefs": [
+        "D05",
+        "D09",
+        "D14"
+      ]
+    },
+    {
+      "id": "F30",
+      "name": "Sitio público y servicio no disponible",
+      "status": "surface_chain_unverified",
+      "screens": [
+        "CL01",
+        "CL20",
+        "CL21",
+        "CL22",
+        "CL23",
+        "CL15",
+        "CL12"
+      ],
+      "presentScreens": [
+        "CL01",
+        "CL20",
+        "CL21",
+        "CL22",
+        "CL23",
+        "CL15",
+        "CL12"
+      ],
+      "decisionRefs": [
+        "D08"
+      ]
+    },
+    {
+      "id": "F31",
+      "name": "Documentos, plantillas y avisos",
+      "status": "surface_chain_unverified",
+      "screens": [
+        "AD34",
+        "CL19",
+        "AD32",
+        "VR04",
+        "AU06"
+      ],
+      "presentScreens": [
+        "AD34",
+        "CL19",
+        "AD32",
+        "VR04",
+        "AU06"
+      ],
+      "decisionRefs": [
+        "D12"
+      ]
+    },
+    {
+      "id": "F32",
+      "name": "Revisión, anulación y ajuste de venta",
+      "status": "surface_chain_unverified",
+      "screens": [
+        "AD29",
+        "AD30",
+        "AD28",
+        "AD32",
+        "AD22"
+      ],
+      "presentScreens": [
+        "AD29",
+        "AD30",
+        "AD28",
+        "AD32",
+        "AD22"
+      ],
+      "decisionRefs": [
+        "D07"
+      ]
+    }
+  ],
+  "decisions": [
+    {
+      "id": "D01",
+      "decision": "Permisos y limites financieros del Asesor y Tecnico",
+      "owner": "Propietario + comercio piloto",
+      "provisionalHandling": "Asesor y Tecnico sin conciliacion, caja, reversas ni descuentos por defecto. Disenar escenarios delegados sin activarlos.",
+      "blocks": "P14/P26; confirmar dinero delegado",
+      "status": "PENDIENTE_APROBACION"
+    },
+    {
+      "id": "D02",
+      "decision": "Precios, cupos y numero de usuarios por plan",
+      "owner": "Propietario NAOSIQ",
+      "provisionalHandling": "Precios null, no publicar tarifas inventadas. Plan de desarrollo sin cobro real.",
+      "blocks": "P19; alta comercial productiva",
+      "status": "PENDIENTE_APROBACION"
+    },
+    {
+      "id": "D03",
+      "decision": "Dias de gracia, ancla mensual y tratamiento de pago tardio",
+      "owner": "Propietario + operacion SaaS",
+      "provisionalHandling": "Configurar reglas como propuestas; no ejecutar suspension real hasta aprobar calendario.",
+      "blocks": "P19/P20; job de cobro real",
+      "status": "PENDIENTE_APROBACION"
+    },
+    {
+      "id": "D04",
+      "decision": "Sesion, elevacion y extension accesible",
+      "owner": "Seguridad + UX",
+      "provisionalHandling": "25/30 minutos y 8 horas son hipotesis F7; elevacion 15 min. No presentar como politica aprobada.",
+      "blocks": "P03/P27; paso a produccion",
+      "status": "PENDIENTE_APROBACION"
+    },
+    {
+      "id": "D05",
+      "decision": "Borradores locales, retencion y dispositivos compartidos",
+      "owner": "Seguridad + producto",
+      "provisionalHandling": "Desactivar persistencia privada local por defecto; borrador servidor autenticado.",
+      "blocks": "P23/P27; modo offline persistente",
+      "status": "PENDIENTE_APROBACION"
+    },
+    {
+      "id": "D06",
+      "decision": "Voucher por cada abono y nomenclatura del comprobante",
+      "owner": "Propietario + operacion financiera",
+      "provisionalHandling": "Ledger admite abonos. Voucher final requerido; voucher parcial como opcion propuesta, pendiente de aprobacion. No presentarlo como factura electronica.",
+      "blocks": "P12/P13/P28; habilitar recibo parcial",
+      "status": "PENDIENTE_APROBACION"
+    },
+    {
+      "id": "D07",
+      "decision": "Sobrepagos, devoluciones, descuentos y entrega excepcional",
+      "owner": "Propietario + negocio",
+      "provisionalHandling": "Bloquear sobrepago, no descontar sin permiso, no entregar con saldo salvo excepcion aprobada y auditada.",
+      "blocks": "P13/P16; activar excepciones",
+      "status": "PENDIENTE_APROBACION"
+    },
+    {
+      "id": "D08",
+      "decision": "Lectura del cliente durante suspension del comercio",
+      "owner": "Propietario NAOSIQ",
+      "provisionalHandling": "Definir whitelist explicita. Documentos ya emitidos en solo lectura es propuesta, no hecho aprobado.",
+      "blocks": "P20; portal durante suspension",
+      "status": "PENDIENTE_APROBACION"
+    },
+    {
+      "id": "D09",
+      "decision": "Limites de archivos y conservacion de evidencias",
+      "owner": "Arquitectura + privacidad",
+      "provisionalHandling": "No aceptar tipos arbitrarios; limites de ensayo etiquetados, sin retencion automatica irreversible.",
+      "blocks": "P09/P23; captura productiva",
+      "status": "PENDIENTE_APROBACION"
+    },
+    {
+      "id": "D10",
+      "decision": "Proveedor de WhatsApp automatico y pasarela avanzada",
+      "owner": "Propietario + desarrollo",
+      "provisionalHandling": "WhatsApp por enlace para todos. Wompi/Bold como adaptadores opcionales; sin credenciales ni activacion real.",
+      "blocks": "P30; integraciones externas",
+      "status": "PENDIENTE_APROBACION"
+    },
+    {
+      "id": "D11",
+      "decision": "Garantias, consentimiento, datos y entregas",
+      "owner": "Comercio + revision especializada",
+      "provisionalHandling": "Textos de demostracion; no inventar plazos ni exclusiones legales.",
+      "blocks": "P09/P31; piloto con datos reales",
+      "status": "PENDIENTE_APROBACION"
+    },
+    {
+      "id": "D12",
+      "decision": "Plan de vouchers, formatos y hardware",
+      "owner": "Propietario + negocio piloto",
+      "provisionalHandling": "Propuesto incluido en Basico; Carta/A4/80 mm de referencia. 58 mm e impresion silenciosa fuera del arranque.",
+      "blocks": "P28/P31; activar impresora en local",
+      "status": "PENDIENTE_APROBACION"
+    },
+    {
+      "id": "D13",
+      "decision": "Stack, repositorio, entornos, region y responsable de operacion",
+      "owner": "Propietario + desarrollo",
+      "provisionalHandling": "Next.js/TypeScript/PostgreSQL; Supabase/Vercel candidatos. Inspeccionar repo antes de fijar versiones o contratar.",
+      "blocks": "P01/P31; provisionamiento",
+      "status": "PENDIENTE_APROBACION"
+    },
+    {
+      "id": "D14",
+      "decision": "PWA por plataforma o por comercio y dominio propio",
+      "owner": "Producto + UX + desarrollo",
+      "provisionalHandling": "Una PWA de plataforma y micrositios por ruta como propuesta inicial. No prometer instalacion separada por negocio.",
+      "blocks": "P23; identidad de instalacion",
+      "status": "PENDIENTE_APROBACION"
+    }
+  ],
+  "traceabilityReport": "reports/local/p29/traceability-current.json"
+}

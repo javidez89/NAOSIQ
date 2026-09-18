@@ -1,0 +1,5 @@
+{
+  "typescriptFiles": 34,
+  "syntaxAndLocalImportsFindings": [],
+  "scope": "Syntax transpilation and direct local import checks ONLY; not full framework typecheck or build."
+}

@@ -1,0 +1,10 @@
+begin;
+create extension if not exists pgtap with schema extensions;
+set search_path=public,extensions;
+select plan(4);
+select is(private.directory_display_name('{"display_name":"Técnico local"}'::jsonb),'Técnico local','Auth display_name appears in directory');
+select is(private.directory_display_name('{"full_name":"Nombre principal","display_name":"Alternativo"}'::jsonb),'Nombre principal','full_name keeps priority');
+select is(private.directory_display_name('{"display_name":{"role":"admin"}}'::jsonb),'Usuario sin nombre','object metadata is not rendered');
+select is(private.directory_display_name('{"display_name":"   "}'::jsonb),'Usuario sin nombre','empty metadata uses fallback');
+select * from finish();
+rollback;

@@ -1,0 +1,5 @@
+# Rename to CODEOWNERS and replace with EXISTING owners having repository access.
+# A placeholder team is intentionally not activated or claimed as a protection.
+# * @your-organization/maintainers
+# /supabase/ @your-organization/security @your-organization/backend
+# /.github/ @your-organization/platform

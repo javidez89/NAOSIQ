@@ -1,0 +1,1734 @@
+<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>CRM TECHI | Guía maestra 0.1.0</title><style>body{margin:0;background:#f2f5f8;color:#142a43;font:16px/1.7 system-ui,-apple-system,"Segoe UI",sans-serif}main{max-width:1060px;margin:32px auto;background:white;padding:clamp(20px,5vw,64px);border:1px solid #d5dfe7;border-radius:16px}h1,h2,h3{line-height:1.22;letter-spacing:-.025em}h1{font-size:2.15rem;margin-top:2rem}h2{font-size:1.5rem;margin-top:2.1rem}h3{font-size:1.15rem;margin-top:1.5rem}a{color:#075c63;overflow-wrap:anywhere}p,li{overflow-wrap:anywhere}table{border-collapse:collapse;width:100%;display:block;overflow:auto;font-size:.91rem}th,td{padding:10px 12px;border:1px solid #ccd8e4;text-align:left;vertical-align:top}th{background:#e6f1f1}pre{background:#132d43;color:#f6f9fb;padding:20px;border-radius:10px;overflow:auto;font-size:.82rem}code{font-size:.89em}blockquote{margin:24px 0;padding:12px 22px;background:#e8f2f2;border-left:4px solid #075c63}hr{border:0;border-top:1px solid #ccd8e4;margin:52px 0}ul,ol{padding-left:25px}strong{font-weight:700}@media print{body{background:white;font-size:10pt}main{border:0;margin:0;padding:0;max-width:none}pre{white-space:pre-wrap;background:#f1f3f5;color:#142a43}table{display:table;font-size:8pt}h1,h2,h3{break-after:avoid}tr{break-inside:avoid}a{color:inherit}}</style></head><body><main><h1>CRM TECHI - Guía maestra de construcción</h1>
+<p><strong>Versión 0.1.0 | Base de desarrollo | Corte: 8 de septiembre de 2026</strong></p>
+<h2>Lectura inicial</h2>
+<p>La entrega contiene el repositorio inicial completo de esta base, no una
+plataforma comercial terminada. Incluye código Next.js y TypeScript, esquema SQL,
+pruebas, configuración, maqueta local y gobierno de desarrollo. La verificación
+real y las limitaciones se presentan antes de la documentación de diseño.</p>
+<p>Decisión recomendada: <strong>monolito modular Next.js + PostgreSQL/Supabase</strong>, código
+en GitHub, despliegue web en Vercel, Google como proveedor de identidad y Docker
+para desarrollo local y portabilidad opcional. No añadir microservicios, Kubernetes,
+una segunda base de datos o plataformas duplicadas al inicio sin una necesidad demostrada.</p>
+<p>El nombre CRM TECHI y los colores son identificadores técnicos provisionales.
+No se recuperó el manual de marca original en esta sesión. El alcance conserva
+los requisitos visibles del proyecto y se debe reconciliar con los documentos
+originales antes de cerrar la línea base contractual.</p>
+<h2>Cómo usar la entrega</h2>
+<p>Descomprimir el ZIP, leer README.md y el informe de verificación, ejecutar el
+bootstrap en una estación con red y seguir el arranque local documentado.
+No subir secretos ni activar producción para omitir controles fallidos. La
+maqueta se abre con <code>npm run preview:offline</code> y no utiliza credenciales.</p>
+<h2>Índice</h2>
+<ul>
+<li><a href="#verificacion">VerificaciÃ³n y estado real</a></li>
+<li><a href="#00-scope">00. Alcance, procedencia y trazabilidad</a></li>
+<li><a href="#01-stack">01. Herramientas y razones</a></li>
+<li><a href="#02-architecture">02. Arquitectura de referencia</a></li>
+<li><a href="#03-database">03. Datos, acceso y arranque</a></li>
+<li><a href="#04-development">04. Desarrollo, versionamiento y mantenimiento</a></li>
+<li><a href="#05-deployment">05. Entornos, CI y despliegue</a></li>
+<li><a href="#06-quality">06. Estrategia de calidad</a></li>
+<li><a href="#07-security">07. Seguridad, privacidad y pentest</a></li>
+<li><a href="#08-operations">08. Operación, respaldos e incidentes</a></li>
+<li><a href="#09-ux">09. UX, UI e identidad</a></li>
+<li><a href="#10-product">10. Producto y gestión del proyecto</a></li>
+<li><a href="#11-decisions">11. Registro de decisiones abiertas y riesgos</a></li>
+<li><a href="#12-release">12. Puerta de producción</a></li>
+<li><a href="#13-accounts">13. Preparación de cuentas e integraciones</a></li>
+<li><a href="#14-sources">14. Referencias oficiales y decisiones de versión</a></li>
+</ul>
+<hr />
+<p><a id="verificacion"></a></p>
+<h1>Informe de verificación - CRM TECHI 0.1.0</h1>
+<p><strong>Resultado de entrega: base de código preparada; NO aprobada para producción.</strong>
+Corte documental: 8 de septiembre de 2026. No se crearon proyectos remotos,
+cuentas, dominios, cargos, despliegues ni mensajes externos.</p>
+<h2>Evidencia ejecutada</h2>
+<table>
+<thead>
+<tr>
+<th>Control</th>
+<th>Resultado</th>
+<th>Alcance exacto</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Compilación del dominio y Node Test Runner</td>
+<td>111 aprobadas, 0 fallidas, 0 omitidas</td>
+<td>Reglas puras de identidad, estados, importes, pagos, validación y suscripciones</td>
+</tr>
+<tr>
+<td>Sintaxis TypeScript y referencias de importación local</td>
+<td>34 archivos, sin hallazgos del comprobador</td>
+<td>Transpilación sintáctica; NO typecheck integral</td>
+</tr>
+<tr>
+<td>Validación JSON/YAML/JavaScript/shell</td>
+<td>22 comprobaciones aprobadas</td>
+<td>Parsers de configuración y chequeos de sintaxis</td>
+</tr>
+<tr>
+<td>Estructura de repositorio</td>
+<td>Aprobada con pendientes explícitos</td>
+<td>13 tablas declaradas y RLS presente en fuente; NO ejecución SQL</td>
+</tr>
+<tr>
+<td>Puerta de inicialización <code>check:ready</code></td>
+<td>Bloqueada, código de salida 1, como corresponde</td>
+<td>Faltan artefactos reales dependientes de red/CLI/base</td>
+</tr>
+<tr>
+<td>Maqueta HTML, escritorio 1440 y móvil 390</td>
+<td>Contenido, 5 roles sintéticos, filtros y estado vacío verificados</td>
+<td>Render DOM offline con Chromium; sin desbordamiento horizontal del documento</td>
+</tr>
+<tr>
+<td>Errores JS de la maqueta</td>
+<td>Ninguno observado en las comprobaciones</td>
+<td>No constituye prueba del frontend Next.js</td>
+</tr>
+<tr>
+<td>Servidor local exclusivo de maqueta</td>
+<td>Rutas ajenas 404; POST 405</td>
+<td>Lista permitida de archivos; no servidor productivo</td>
+</tr>
+</tbody>
+</table>
+<p>El dominio se ejecutó con <strong>Node 22.16.0 y TypeScript 5.8.3</strong>, disponibles en
+este entorno. La estación objetivo fija Node 24.21.0 y TypeScript 5.9.3: ejecutar
+nuevamente todos los controles con esas versiones tras instalar dependencias.
+Los 111 casos no representan un porcentaje medido de cobertura.</p>
+<h2>Limitaciones de ejecución</h2>
+<p>La red del contenedor no permitió resolver e instalar las dependencias del
+proyecto. No hubo daemon Docker ni motor PostgreSQL disponibles. El navegador
+bloqueó la navegación a localhost por política del entorno; no se alteró esa
+política. La verificación visual cargó el HTML, CSS y JavaScript locales en el
+DOM y ejecutó las interacciones de la maqueta, no de Next.js. La herramienta
+agent-browser no estaba instalada; se usó Playwright con Chromium del sistema.</p>
+<p><strong>No ejecutado:</strong> <code>npm ci</code>, ESLint del proyecto, typecheck completo, <code>next build</code>,
+login real, MFA integrado, OAuth Google, rutas de negocio contra Supabase,
+render/impresión PDF, migraciones, pgTAP, smoke Playwright de Next.js, Docker,
+workflows remotos, carga, accesibilidad integral, escaneo de dependencias instalado,
+análisis SAST completo, escaneo de secretos especializado, DAST o pentest.</p>
+<p>Existen <strong>40 aserciones pgTAP escritas</strong>, no ejecutadas. Existen cuatro definiciones
+de smoke test para dos proyectos Chromium, equivalentes a ocho ejecuciones
+previstas. Los E2E autenticados y las pruebas de concurrencia real están pendientes.
+No se ha realizado una auditoría independiente ni se certifica ASVS, WCAG o cumplimiento legal.</p>
+<h2>Artefactos que deben generarse realmente</h2>
+<ol>
+<li><code>package-lock.json</code>: resolver con red y revisar; no se fabricó un lockfile.</li>
+<li><code>supabase/config.toml</code> y migración: generados por la CLI fijada con <code>db:init</code>.</li>
+<li><code>.github/workflows/*.yml</code>: resolver SHA reales de Actions con el script incluido.</li>
+<li><code>src/types/database.generated.ts</code>: generar desde la base y enlazar al cliente.</li>
+<li>Evidencia de build, permisos A/B, restauración y revisión de seguridad.</li>
+</ol>
+<p>La comprobación <code>check:ready</code> solo cubre inicialización del repositorio. Aunque
+pase después, no sustituye <code>docs/12-release.md</code> ni autoriza el uso de datos reales.</p>
+<h2>Evidencia conservada</h2>
+<ul>
+<li><code>unit-tests.tap</code>: salida real del runner.</li>
+<li><code>source-syntax.json</code>: alcance y resultados sintácticos.</li>
+<li><code>static-validation.json</code>: configuraciones verificadas y tablas inspeccionadas.</li>
+<li><code>structural-check.txt</code> y <code>readiness-check.txt</code>: resultado y bloqueos.</li>
+<li><code>preview-verification.json</code>: interacciones, tamaños, limitaciones y HTTP local.</li>
+<li><code>preview-1440.png</code> y <code>preview-390.png</code>: capturas de la maqueta sintética.</li>
+</ul>
+<h2>Próximo hito verificable</h2>
+<p>En un entorno local con red y Docker: generar los artefactos anteriores; crear
+usuarios sintéticos y dos comercios; aprobar pgTAP; enlazar los tipos; ejecutar
+lint, typecheck y build; probar el flujo recepción -&gt; asignación -&gt; estado -&gt; pago
+pendiente -&gt; confirmación con MFA -&gt; comprobante, con intentos cruzados entre
+comercios. Solo después preparar una preview aislada sin datos reales.</p>
+<hr />
+<p><a id="00-scope"></a></p>
+<h1>00. Alcance, procedencia y trazabilidad</h1>
+<h2>Base de conocimiento</h2>
+<p>Se conserva el contexto disponible de CRM TECHI: plataforma multi-negocio para
+servicios técnicos, CRM maestro, cinco roles, reparaciones, ventas/inventario,
+pagos/abonos, suscripciones, WhatsApp, portal del cliente y dos comprobantes.
+La búsqueda de archivos del proyecto y de biblioteca no devolvió documentos
+indexados en esta ejecución. No se pudo contrastar el manual de marca completo ni
+una especificación exhaustiva anterior. Este repositorio no afirma contener esos
+archivos originales ni todas sus decisiones textuales.</p>
+<p>La marca visual es provisional. El lema disponible se conserva como configurable.
+El producto sigue identificado técnicamente como CRM TECHI; un cambio de marca no
+debe exigir renombrar tablas, IDs, paquetes o recursos desplegados.</p>
+<h2>Trazabilidad inicial</h2>
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Requisito</th>
+<th>Situación en 0.1.0</th>
+<th>Evidencia/continuación</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>R01</td>
+<td>CRM maestro central</td>
+<td>Alta, consulta, estados y membresías codificadas</td>
+<td>/master; RPC; ampliar configuración, planes y analítica</td>
+</tr>
+<tr>
+<td>R02</td>
+<td>Datos separados por comercio</td>
+<td>RLS, predicados de rol y FKs compuestas</td>
+<td>SQL + pgTAP pendiente de ejecución</td>
+</tr>
+<tr>
+<td>R03</td>
+<td>Cinco roles</td>
+<td>Dominio, SQL y pantallas base</td>
+<td>Matriz 03; permisos financieros Asesor bloqueados</td>
+</tr>
+<tr>
+<td>R04</td>
+<td>Recepción y seguimiento</td>
+<td>Clientes, orden, asignación, estados, historial</td>
+<td>Formularios y comandos; probar integración</td>
+</tr>
+<tr>
+<td>R05</td>
+<td>Cliente registra equipo/fotos</td>
+<td>Consulta propia inicial; autorregistro/fotos pendientes</td>
+<td>E07 de backlog</td>
+</tr>
+<tr>
+<td>R06</td>
+<td>Voucher recepción</td>
+<td>Snapshot transaccional y generador PDF</td>
+<td>Validar PDF, firma, formato comercial e impresión</td>
+</tr>
+<tr>
+<td>R07</td>
+<td>Voucher al pagar</td>
+<td>Solo al confirmar ingreso con MFA</td>
+<td>Pendiente no produce comprobante de pago</td>
+</tr>
+<tr>
+<td>R08</td>
+<td>Efectivo, Bre-B, Nequi, transferencia</td>
+<td>Registro manual pendiente y confirmación</td>
+<td>No integración bancaria, no prueba por captura</td>
+</tr>
+<tr>
+<td>R09</td>
+<td>Abonos y saldos</td>
+<td>Varios pagos por orden; estado y monto</td>
+<td>Presupuesto, deuda, saldo, devolución pendientes</td>
+</tr>
+<tr>
+<td>R10</td>
+<td>Suscripción mensual por comercio</td>
+<td>Esquema, fin de período y bloqueo de escritura</td>
+<td>Renovación/cobro automático pendientes</td>
+</tr>
+<tr>
+<td>R11</td>
+<td>WhatsApp en todos los planes</td>
+<td>Entitlement base y contrato de adaptador</td>
+<td>Proveedor, consentimiento, outbox worker pendientes</td>
+</tr>
+<tr>
+<td>R12</td>
+<td>Página y URL pública</td>
+<td>Slug reservado en esquema, publicación desactivada</td>
+<td>Página pública y dominios pendientes</td>
+</tr>
+<tr>
+<td>R13</td>
+<td>Inventario y ventas</td>
+<td>Diseño y backlog</td>
+<td>Sin tablas ni CRUD incompletos presentados como módulo</td>
+</tr>
+<tr>
+<td>R14</td>
+<td>Login Google</td>
+<td>Flujo OAuth y callback codificados</td>
+<td>Proveedor Google no configurado ni verificado</td>
+</tr>
+<tr>
+<td>R15</td>
+<td>PWA instalable</td>
+<td>Requisito conservado</td>
+<td>Manifest, service worker y pruebas pendientes</td>
+</tr>
+<tr>
+<td>R16</td>
+<td>Auditoría y estadísticas</td>
+<td>Auditoría de comandos; no de todas las lecturas</td>
+<td>Analítica y auditoría privilegiada completa pendientes</td>
+</tr>
+<tr>
+<td>R17</td>
+<td>QA, seguridad y despliegue</td>
+<td>Pruebas, guías y automatización base</td>
+<td>No hay certificación ni pentest ejecutado</td>
+</tr>
+</tbody>
+</table>
+<h2>Límites deliberados</h2>
+<p>No se decide aún el precio de los planes, proveedor definitivo de pagos, reglas
+fiscales, período de gracia, garantías, retiro de equipos, cancelación, reapertura
+ni política de reembolsos. Tampoco se concede al Asesor permiso para conciliar,
+anular pagos o administrar roles. Los seis estados técnicos se conservan como
+punto de partida; <code>backup_completed</code> normaliza la expresión ambigua sobre backup
+y necesita aprobación de producto. <code>completed</code> no significa automáticamente
+entregado, pagado, facturado ni sin garantía.</p>
+<p>Las restricciones provisionales son más conservadoras que una delegación amplia:
+las membresías se administran inicialmente desde el maestro. Una persona puede
+tener roles diferentes en comercios diferentes, pero esta versión admite un
+solo rol por persona y comercio. Acumular roles requiere una decisión explícita.</p>
+<h2>Completitud de la entrega</h2>
+<p>Completo significa que el paquete contiene sus fuentes, scripts, pruebas y
+manuales para iniciar la construcción. No significa que todos los módulos del
+producto estén desarrollados o que el paquete ya haya pasado integración.
+Las dependencias no pudieron descargarse en este entorno y no había Docker ni
+PostgreSQL. El lockfile, SHA de Actions y migración final se crean con herramientas
+reales en la estación de desarrollo, no se simulan.</p>
+<hr />
+<p><a id="01-stack"></a></p>
+<h1>01. Herramientas y razones</h1>
+<h2>Decisión recomendada: pocas piezas, responsabilidades claras</h2>
+<table>
+<thead>
+<tr>
+<th>Herramienta</th>
+<th>Papel</th>
+<th>Razón de la elección</th>
+<th>Límite / precaución</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Next.js + React + TypeScript</td>
+<td>Web responsive, servidor de aplicación, rutas y formularios</td>
+<td>Un producto web y un lenguaje principal; lógica de negocio separada</td>
+<td>No convierte el frontend en frontera de autorización</td>
+</tr>
+<tr>
+<td>Supabase PostgreSQL</td>
+<td>Datos, restricciones, RLS y transacciones</td>
+<td>Modelo relacional para reparaciones, comercios y pagos</td>
+<td>Diseñar privilegios explícitos; no confiar solo en tenant_id</td>
+</tr>
+<tr>
+<td>Supabase Auth</td>
+<td>Identidad, sesiones y MFA</td>
+<td>Evita construir autenticación casera</td>
+<td>Google login no asigna roles; revocación de sesiones debe probarse</td>
+</tr>
+<tr>
+<td>Supabase Storage</td>
+<td>Futuras fotos/documentos privados</td>
+<td>Integración con permisos y almacenamiento de objetos</td>
+<td>Todavía no habilitado; falta cuarentena y antivirus</td>
+</tr>
+<tr>
+<td>Git + GitHub</td>
+<td>Fuente, revisión, issues y evidencia</td>
+<td>Historial y control de cambios</td>
+<td>Un repo privado no es una protección de rama automática</td>
+</tr>
+<tr>
+<td>GitHub Actions</td>
+<td>CI, controles y evidencia de aprobación</td>
+<td>Mismo proceso en cada cambio</td>
+<td>Los workflows se generan con SHA reales y necesitan activación</td>
+</tr>
+<tr>
+<td>Vercel</td>
+<td>Alojamiento principal de Next.js</td>
+<td>Ruta administrada para publicar la web</td>
+<td>No aloja nuestro PostgreSQL y no ejecuta Docker Compose</td>
+</tr>
+<tr>
+<td>Google Cloud / OAuth</td>
+<td>Proveedor de acceso Google</td>
+<td>Solicitud disponible del proyecto</td>
+<td>Sin Firebase paralelo ni permisos de Drive/Gmail/Maps innecesarios</td>
+</tr>
+<tr>
+<td>Docker</td>
+<td>Supabase local y salida opcional de hosting</td>
+<td>Entornos repetibles y portabilidad de la web</td>
+<td>No necesario para desplegar la web en Vercel</td>
+</tr>
+<tr>
+<td>npm + lockfile</td>
+<td>Gestión de dependencias</td>
+<td>Menos complejidad para este tamaño inicial</td>
+<td>Resolución real y npm ci; no regenerar lockfile en cada CI</td>
+</tr>
+<tr>
+<td>Node Test Runner</td>
+<td>Pruebas unitarias del dominio</td>
+<td>Ejecutable sin un framework adicional de tests</td>
+<td>No sustituye integración o navegador</td>
+</tr>
+<tr>
+<td>pgTAP</td>
+<td>Pruebas SQL y RLS</td>
+<td>Evalúa restricciones bajo roles reales de PostgreSQL</td>
+<td>Requiere la base local funcionando</td>
+</tr>
+<tr>
+<td>Playwright</td>
+<td>Flujos de navegador</td>
+<td>Base para escritorio, móvil y regresión E2E</td>
+<td>Esta entrega solo incluye smoke tests</td>
+</tr>
+<tr>
+<td>ESLint + TypeScript</td>
+<td>Coherencia y errores estáticos</td>
+<td>Detectar fallos antes de ejecutar</td>
+<td>No son un pentest ni un SAST completo</td>
+</tr>
+<tr>
+<td>OWASP ZAP</td>
+<td>Análisis dinámico autorizado</td>
+<td>Baseline y futura exploración autenticada</td>
+<td>Baseline es pasivo y no demuestra ausencia de vulnerabilidades</td>
+</tr>
+</tbody>
+</table>
+<h2>Complementos por necesidad, no compras automáticas</h2>
+<p>Figma se propone para biblioteca visual y flujos de los cinco roles; todavía no
+se creó un archivo ni se conectó el repositorio a Figma. Un servicio de errores
+como Sentry puede incorporarse con limpieza de datos personales y muestreo; antes
+se debe definir presupuesto, retención y responsable de alertas. Un proveedor SMTP
+transaccional será necesario para invitaciones y recuperación operativa; Gmail
+personal no será el motor de envíos masivos de la plataforma.</p>
+<p>Para WhatsApp se preparará un adaptador oficial/proveedor autorizado con
+credenciales por negocio y flujo de consentimiento. Para pagos se evaluará Wompi,
+Bold u otro proveedor según el país, cuenta del comercio y alcance contratado.
+No se ha elegido una pasarela ni se ha contratado ningún servicio externo.</p>
+<p>SAST (por ejemplo CodeQL), detección de secretos y análisis de contenedores deben
+activarse antes del piloto; disponibilidad y coste dependen del plan y del
+servicio elegido. No están instalados como si ya hubieran escaneado la entrega.</p>
+<h2>Qué no incorporar ahora</h2>
+<p>No Kubernetes, microservicios, Kafka, Elasticsearch, Redis, NestJS, Firebase Auth,
+un segundo CRM, una segunda base principal ni un monorepo con herramientas
+adicionales por costumbre. Tampoco un ORM que obligue a saltarse RLS con una
+conexión privilegiada. Añadir una pieza requiere problema medido, ADR, coste,
+responsable y pruebas. Un worker duradero puede introducirse cuando se implemente
+WhatsApp; no necesita convertirse en una plataforma de microservicios.</p>
+<h2>Coste y sostenibilidad</h2>
+<p>No se fija una cotización no verificada. Calcular:</p>
+<p><code>coste = hosting + base/auth + almacenamiento + egreso + backups + mensajes + correo + observabilidad + herramientas + comisiones por pago + soporte + impuestos</code>.</p>
+<p>Medir comercios activos, usuarios, reparaciones/mes, fotos por orden, peso medio,
+retención, PDFs, mensajes y picos de concurrencia. Separar el coste de la
+suscripción SaaS de las comisiones del dinero cobrado por cada comercio.
+El plan Hobby de Vercel se documenta como uso personal no comercial: para operar
+este CRM comercial hay que escoger un plan compatible. No asumir que los niveles
+gratuitos tienen el respaldo, SLA o capacidad del producto pagado.</p>
+<h2>Alternativas y salida</h2>
+<p>Una web standalone puede moverse a otro alojamiento de contenedores, manteniendo
+PostgreSQL. Migrar también Supabase Auth, Storage y sus funciones de identidad no
+es una operación gratuita: hay que sustituir adaptadores, políticas, sesiones y
+backup de objetos. Por eso se mantienen reglas puras fuera del SDK y SQL
+versionado. No se promete ausencia total de dependencia del proveedor.</p>
+<p>Fuentes técnicas: 14-sources (<code>14-sources.md</code>).</p>
+<hr />
+<p><a id="02-architecture"></a></p>
+<h1>02. Arquitectura de referencia</h1>
+<h2>Un monolito modular, no un sistema distribuido prematuro</h2>
+<p>La unidad de despliegue inicial es una web Next.js. La unidad de autorización es
+el comercio y su membresía activa. La autoridad de integridad es PostgreSQL.</p>
+<pre><code class="language-mermaid">flowchart LR
+  Users[Super Usuario / Comercio / Cliente] --&gt; Web[Next.js: UI y comandos]
+  Google[Google OAuth] --&gt; Auth[Supabase Auth + MFA]
+  Web --&gt; Auth
+  Web --&gt; RPC[RPC: validacion y autorizacion]
+  RPC --&gt; DB[(PostgreSQL: RLS + restricciones)]
+  DB --&gt; Outbox[Outbox transaccional]
+  Outbox -. consumidor pendiente .-&gt; Integrations[WhatsApp / correo / pasarela]
+  Web -. fase posterior .-&gt; Storage[Objetos privados y cuarentena]
+  Git[GitHub + revisiones] --&gt; CI[Checks + evidencia]
+  CI --&gt; Approval[Aprobacion humana]
+  Approval --&gt; Vercel[Vercel: web]
+</code></pre>
+<p>El dibujo expresa arquitectura objetivo y dependencias; las líneas punteadas
+son componentes pendientes, no conexiones efectuadas.</p>
+<h2>Estructura del código</h2>
+<p><code>src/domain</code> contiene importes, estados, permisos y contratos sin dependencias de
+UI o red. <code>src/app</code> contiene rutas, composición y comandos de Next.js. <code>src/lib</code>
+encapsula acceso al proveedor, contexto autenticado y generación de documentos.
+<code>src/config</code> contiene identidad visual provisional. <code>supabase/schema</code> contiene
+fuentes iniciales, no migraciones aplicadas. Las pruebas SQL evalúan el
+comportamiento del esquema y no solo buscan la palabra RLS.</p>
+<p>No se crean directorios vacíos que aparenten ser módulos implementados. Al crecer,
+extraer los casos de uso a <code>src/modules/&lt;modulo&gt;/application</code>, sus interfaces a
+<code>domain</code> y adaptadores a <code>infrastructure</code>, sin obligar a desplegarlos separados.</p>
+<h2>Límites del dominio</h2>
+<table>
+<thead>
+<tr>
+<th>Módulo</th>
+<th>Propiedad de datos</th>
+<th>No debe hacer</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Identidad y acceso</td>
+<td>Usuarios externos, membresías, privilegio plataforma</td>
+<td>Determinar roles por metadata del usuario</td>
+</tr>
+<tr>
+<td>Comercios</td>
+<td>Alta, slug, estado y configuración</td>
+<td>Mezclar sesiones o credenciales entre comercios</td>
+</tr>
+<tr>
+<td>Reparaciones</td>
+<td>Recepción, asignación, estados e historia</td>
+<td>Convertir completado en pago confirmado</td>
+</tr>
+<tr>
+<td>Pagos operativos</td>
+<td>Movimientos ligados a una orden</td>
+<td>Cobrar la suscripción del software</td>
+</tr>
+<tr>
+<td>Facturación SaaS</td>
+<td>Plan, vigencia y estado por negocio</td>
+<td>Mezclar ingresos del taller con ingresos SaaS</td>
+</tr>
+<tr>
+<td>Documentos</td>
+<td>Snapshot y representación de comprobantes</td>
+<td>Inventar verificación fiscal o de fondos</td>
+</tr>
+<tr>
+<td>Integraciones</td>
+<td>Adaptadores, reintentos y entregas</td>
+<td>Confirmar pagos por retorno del navegador</td>
+</tr>
+<tr>
+<td>Auditoría</td>
+<td>Quién cambió qué y cuándo</td>
+<td>Registrar contraseñas, tokens o formularios enteros</td>
+</tr>
+</tbody>
+</table>
+<p>Inventario y ventas necesitarán movimientos, reservas, devoluciones, coste y
+relaciones con reparaciones. El inventario no será un número editable sin
+historia. Se incorporarán en una migración independiente con su propia cobertura.</p>
+<h2>Fronteras de confianza</h2>
+<p>El navegador se considera manipulable. Un tenant_id, URL, botón oculto o token
+válido no acredita autorización por sí mismo. El servidor valida forma/origen e
+identidad; SQL verifica rol actual, relación del registro, estado del negocio y
+MFA cuando corresponde. Las llamadas directas a RPC deben seguir siendo seguras
+sin pasar por nuestra UI.</p>
+<p>Los usuarios usan la clave publicable y su sesión. No se necesita service_role
+para CRUD normal. Las funciones privilegiadas residen en <code>private</code>, tienen
+search_path vacío, nombres cualificados y comprobaciones explícitas. Los wrappers
+públicos son security invoker. Los permisos EXECUTE se conceden de forma
+explícita; las tablas no permiten escrituras directas del rol authenticated.</p>
+<h2>Consistencia y concurrencia</h2>
+<p>Una orden, su primer evento, voucher y evento outbox se crean en la misma
+transacción. Una confirmación de pago y su voucher también. Los cambios técnicos
+usan versión esperada y bloqueo de fila. Confirmar varias veces el mismo pago no
+debe generar varios vouchers. La clave de idempotencia se conserva durante el
+intento de un formulario; una nueva intención con otra clave no se deduplica
+mágicamente. Conciliación y controles de duplicados siguen siendo necesarios.</p>
+<p>Outbox evita perder el evento entre el commit y un futuro envío, pero <strong>el
+consumidor no está implementado</strong>. El diseño objetivo entrega al menos una vez,
+reintenta con backoff y deduplica por evento. No se promete exactly-once entre
+proveedores independientes ni se realizan envíos dentro de una transacción SQL.</p>
+<h2>Configuración</h2>
+<p>Separar: configuración de despliegue; identidad de plataforma; ajustes por comercio;
+capacidades por plan; preferencias del usuario; secretos por integración. Una
+bandera de interfaz no concede permisos. Los cambios financieros requieren
+revisión de la matriz, migración, auditoría y pruebas. Los precios no son
+constantes del frontend y aún no están definidos.</p>
+<h2>ADR iniciales</h2>
+<p>ADR-001: monolito modular por simplicidad operacional. ADR-002: PostgreSQL
+compartido con tenant_id y RLS por coste/control, conservando opción de aislamiento
+físico futuro. ADR-003: migraciones SQL como autoridad, sin ORM privilegiado.
+ADR-004: pagos operativos y SaaS separados. ADR-005: prohibir cache compartida de
+datos autenticados. ADR-006: marca intercambiable sin renombrar infraestructura.
+ADR-007: tareas duraderas mediante outbox/worker, no promesas en memoria.
+ADR-008: el agente ayuda a revisar, pero no certifica ni aprueba su propio cambio.</p>
+<p>Cada ADR nuevo debe incluir contexto, alternativas, decisión, consecuencias,
+estado, responsable y fecha; las decisiones de producto pendientes no se
+convierten en aprobaciones por quedar escritas en código.</p>
+<hr />
+<p><a id="03-database"></a></p>
+<h1>03. Datos, acceso y arranque</h1>
+<h2>Matriz base de permisos</h2>
+<table>
+<thead>
+<tr>
+<th>Operación</th>
+<th>Super Usuario</th>
+<th>Admin</th>
+<th>Asesor</th>
+<th>Técnico</th>
+<th>Cliente</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>CRM maestro / alta / estado de negocios</td>
+<td>Sí, MFA</td>
+<td>No</td>
+<td>No</td>
+<td>No</td>
+<td>No</td>
+</tr>
+<tr>
+<td>Administrar membresías</td>
+<td>Sí, MFA</td>
+<td>Pendiente de delegación</td>
+<td>No</td>
+<td>No</td>
+<td>No</td>
+</tr>
+<tr>
+<td>Crear cliente/recibir equipo</td>
+<td>Sí, MFA</td>
+<td>Su negocio</td>
+<td>Su negocio</td>
+<td>No</td>
+<td>Autorregistro pendiente</td>
+</tr>
+<tr>
+<td>Ver reparaciones</td>
+<td>Todos, MFA</td>
+<td>Su negocio</td>
+<td>Su negocio</td>
+<td>Solo asignadas</td>
+<td>Solo propias</td>
+</tr>
+<tr>
+<td>Cambiar estado técnico</td>
+<td>Sí, MFA</td>
+<td>Su negocio</td>
+<td>No</td>
+<td>Solo asignadas</td>
+<td>No</td>
+</tr>
+<tr>
+<td>Asignar técnico</td>
+<td>Sí, MFA</td>
+<td>Su negocio</td>
+<td>No</td>
+<td>No</td>
+<td>No</td>
+</tr>
+<tr>
+<td>Registrar pago pendiente</td>
+<td>Sí, MFA</td>
+<td>Su negocio</td>
+<td>No, por aprobar</td>
+<td>No</td>
+<td>No</td>
+</tr>
+<tr>
+<td>Confirmar ingreso</td>
+<td>Sí, MFA</td>
+<td>Su negocio + MFA</td>
+<td>No, por aprobar</td>
+<td>No</td>
+<td>No</td>
+</tr>
+<tr>
+<td>Consultar pagos</td>
+<td>Todos, MFA</td>
+<td>Su negocio</td>
+<td>No</td>
+<td>No</td>
+<td>Propios</td>
+</tr>
+<tr>
+<td>Voucher recepción</td>
+<td>Sí, MFA</td>
+<td>Su negocio</td>
+<td>Su negocio</td>
+<td>No</td>
+<td>Propios</td>
+</tr>
+<tr>
+<td>Voucher pago</td>
+<td>Sí, MFA</td>
+<td>Su negocio</td>
+<td>No</td>
+<td>No</td>
+<td>Propios</td>
+</tr>
+<tr>
+<td>Auditoría de comandos</td>
+<td>Todos, MFA</td>
+<td>Su negocio</td>
+<td>No</td>
+<td>No</td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+<p>El dominio TypeScript sirve a la UI y a pruebas, pero SQL es la autoridad. Un
+mismo cambio debe actualizar ambas reglas y sus casos de contrato. No existe
+un rol Super Usuario editable desde una membresía ordinaria.</p>
+<h2>Modelo e invariantes</h2>
+<p>Los principales agregados son tenants, memberships, customers, repairs, payments,
+vouchers, subscriptions, plans, repair_events y audit_events. Platform admins y
+outbox viven en private. Fechas en timestamptz/UTC; representación al usuario con
+zona explícita. Importes COP en unidades menores enteras; no float. El límite
+inicial es 999999999999 unidades menores y debe revisarse al ampliar monedas.</p>
+<p>Las referencias críticas usan <code>(tenant_id, id)</code>: un pago no puede apuntar a una
+orden de otro negocio, ni una orden a un cliente de otro. Un cliente del portal
+necesita identidad verificada y membresía; las cuentas de cliente no se vinculan
+por una coincidencia de nombre o número telefónico. El linking inicial está
+restringido al maestro y auditado.</p>
+<p>No se guardan PAN, CVV, contraseñas de dispositivos, patrones de desbloqueo ni
+archivos personales extraídos del equipo. Diseñar un flujo separado y consentimiento
+explícito para necesidades excepcionales; no añadir un campo libre de secretos.
+La base actual no tiene libros contables completos, presupuestos, impuestos,
+notas de crédito, reembolsos ni cierre de caja. No inferir saldo a pagar sin un
+presupuesto aprobado e historial de ajustes.</p>
+<h2>Inicialización segura</h2>
+<ol>
+<li><code>npm run bootstrap</code> resuelve dependencias y SHA reales con red disponible.</li>
+<li><code>npm run db:init</code> invoca la CLI fijada, consulta ayuda, genera config.toml y usa
+<code>supabase migration new foundation</code>. Las cuatro fuentes se combinan en una
+sola transacción. No se inventa una migración aplicada.</li>
+<li>Revisar el config.toml generado: esquemas expuestos solo los necesarios,
+<code>private</code> nunca expuesto; acceso anónimo deshabilitado en Auth; URLs locales
+permitidas exactas; versión de PostgreSQL compatible con 17.</li>
+<li>Iniciar Docker y <code>npm run db:start</code>. <code>npm run db:reset:local</code> borra y recrea
+exclusivamente el entorno local. Nunca sustituir --local por --linked.</li>
+<li><code>npm run test:db</code>; <code>npm run db:types</code>. Conectar el tipo Database generado al
+cliente Supabase y tipar los despachos RPC antes de liberar producción: el
+cliente inicial aún no tiene ese contrato generado enlazado.</li>
+</ol>
+<h2>Primera cuenta Super Usuario</h2>
+<p>Desde Supabase Studio LOCAL cree un usuario sintético verificado. Copie su UUID.
+En el editor SQL administrativo local ejecute, reemplazando el valor:</p>
+<pre><code class="language-sql">-- Solo bootstrap administrativo autorizado; no es una ruta pública.
+insert into private.platform_admins(user_id)
+values ('UUID-REAL-DEL-USUARIO-VERIFICADO');
+</code></pre>
+<p>El valor mostrado es un marcador, no un UUID ejecutable ni una cuenta creada.
+Entre por <code>/login</code>, configure TOTP en <code>/app/security</code>, verifique el factor y abra
+<code>/master</code>. Cree una segunda cuenta de administrador de comercio y aprovisione el
+negocio con un período explícito. Las fechas del formulario maestro se introducen
+en UTC. Use datos sintéticos, nunca clientes reales para este ejercicio.</p>
+<p>En producción este bootstrap debe ser una operación controlada, con revisión y
+registro externo. No permitir altas libres de platform_admins. Mantener un plan
+de recuperación de acceso sin desactivar MFA para todos.</p>
+<h2>Evolución del esquema</h2>
+<p>Crear una nueva migración para cada cambio. No editar la inicial ya aplicada ni
+volver a copiar sus plantillas. Generar tipos y revisar diff. Aplicar primero a
+base vacía local y luego a una copia sintética con la versión anterior. Probar
+ambos recorridos. Los cambios productivos siguen expandir -&gt; migrar datos -&gt;
+validar -&gt; desplegar lectores/escritores compatibles -&gt; contraer en otro release.
+Un rollback de código no restaura una base ni revierte de forma segura todo DDL.</p>
+<p>Las vistas futuras deben ser security invoker o privadas; revisar permisos de
+columnas y RPCs. Revisar advisors de Supabase usando la CLI/API disponible y
+adjuntar hallazgos, no solo afirmar que RLS está encendido. No modificar esquemas
+internos de Realtime o Auth para resolver un error de nuestra aplicación.</p>
+<hr />
+<p><a id="04-development"></a></p>
+<h1>04. Desarrollo, versionamiento y mantenimiento</h1>
+<h2>Convenciones</h2>
+<p>TypeScript strict, funciones pequeñas, validación de entradas y errores
+interpretables. Dominio sin I/O; adaptadores con contratos explícitos. Nombres de
+código en inglés y experiencia de usuario en español. Mantener fechas en UTC y
+presentación localizada. No introducir secretos en mensajes de error ni logs.
+Preferir composición y casos de uso simples a jerarquías extensas.</p>
+<p>El esquema es fuente de verdad para datos. Los tipos generados se versionan y
+se validan contra la base. La entrega inicial no finge una generación que no
+pudo ejecutar: el enlace tipado completo de RPC es una tarea de bootstrap.</p>
+<h2>Ramas y pull requests</h2>
+<p>Modelo trunk-based: main estable, ramas cortas <code>feat/TECHI-123-descripcion</code>,
+<code>fix/TECHI-124-descripcion</code>, <code>chore/...</code>. Una historia o corrección coherente por
+PR. Prohibir pushes directos y force-push a main. Requerir checks y revisor; los
+permisos de aprobación se configuran en GitHub, no se activan por tener este texto.
+No usar GitFlow largo ni mantener entornos divergentes a base de cherry-picks.</p>
+<p>Mensajes sugeridos: <code>feat(repairs): add intake voucher</code>, <code>fix(auth): reject unsafe callback</code>, <code>test(rls): deny cross-tenant access</code>. En 0.x no se promete estabilidad
+pública de API. Al publicar una API externa, versionarla y documentar cambios
+incompatibles, deprecación y migración. Releases con tags vX.Y.Z, changelog, SHA,
+resultado de tests y migraciones incluidas. Una versión de aplicación no reemplaza
+el registro de migraciones.</p>
+<h2>Dependencias y cadena de suministro</h2>
+<p>Versiones exactas en package.json, lockfile generado de verdad, <code>npm ci</code> en CI.
+Resolver SHA de Actions una vez con el script y revisar el repo/tag/commit
+resultante. No descargar una versión flotante en cada build. Dependabot propone
+cambios semanales; parches críticos se atienden antes según riesgo. No autorizar
+un major automáticamente solo porque los tests unitarios pasen.</p>
+<p>Una actualización incluye changelog, compatibilidad Node/React/Next/Supabase,
+instalación limpia, build, tests de sesión/MFA, migraciones, pruebas de dos negocios,
+preview y revisión humana. No ejecutar <code>npm audit fix --force</code> como política.
+Generar SBOM y revisar licencias antes de distribuir.</p>
+<h2>Hecho significa verificable</h2>
+<p>Una historia está lista cuando el código, pruebas, documentación, permisos,
+observabilidad y reversión están revisados. Adjuntar evidencia con comandos y
+entorno. Un pantallazo no acredita que la base aisló comercios. Un pipeline verde
+con tests omitidos no habilita una funcionalidad sensible.</p>
+<h2>Manejo de deuda</h2>
+<p>Mantener issues con impacto, dueño y criterio de cierre. Revisar arquitectura al
+aparecer necesidad medible: latencia sostenida, costes, fallos de concurrencia,
+acoplamiento que bloquea equipos o requisitos de aislamiento contractual.
+No reescribir todo el sistema por cambiar una librería de componentes.</p>
+<h2>Exportabilidad</h2>
+<p>Guardar SQL, datos exportables, contratos y decisiones fuera de paneles de
+proveedor. Versionar configuración no secreta. Definir procedimientos de salida,
+exportación por negocio y desactivación de integraciones. Eliminar un comercio no
+significa borrar a ciegas pagos y auditoría sujetos a retención.</p>
+<hr />
+<p><a id="05-deployment"></a></p>
+<h1>05. Entornos, CI y despliegue</h1>
+<h2>Separación de entornos</h2>
+<table>
+<thead>
+<tr>
+<th>Entorno</th>
+<th>Datos</th>
+<th>Accesos</th>
+<th>Uso</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Local</td>
+<td>Sintéticos, Supabase CLI</td>
+<td>Desarrollador</td>
+<td>Desarrollo y reset reproducible</td>
+</tr>
+<tr>
+<td>Preview PR</td>
+<td>Sin credenciales de datos por defecto</td>
+<td>Equipo autorizado</td>
+<td>Revisión de UI/código; no producción</td>
+</tr>
+<tr>
+<td>Staging</td>
+<td>Proyecto Supabase separado, datos sintéticos</td>
+<td>QA/producto/pentest autorizado</td>
+<td>Integración, migraciones, ensayo de release</td>
+</tr>
+<tr>
+<td>Producción</td>
+<td>Datos reales autorizados</td>
+<td>Mínimos privilegios</td>
+<td>Operación aprobada y monitorizada</td>
+</tr>
+</tbody>
+</table>
+<p>No apuntar un preview a la base real. Una base de staging compartida no sirve
+para probar a la vez migraciones incompatibles de varios PR; serializar el
+candidato o usar una rama/base efímera con coste controlado. Diferenciar
+credenciales, Google OAuth, webhooks, dominios y cuentas de pago de prueba/real.</p>
+<h2>Pipeline preparado</h2>
+<p><code>tools/workflow-templates/ci.yml.in</code> define instalación limpia, puerta de bootstrap,
+lint, tipos, unitarias, build, smoke E2E, audit de dependencias y SBOM. Otro job
+inicia Supabase local, aplica migración, ejecuta pgTAP y verifica el diff del
+contrato generado. Los artefactos se conservan como evidencia, sin datos reales.</p>
+<p><code>pin-actions.mjs</code> obtiene el commit real de las etiquetas oficiales fijadas y
+genera <code>.github/workflows/ci.yml</code> y <code>release.yml</code>. Sin ese paso no hay workflows
+activos en el paquete. Las plantillas no contienen SHA inventados. Habilitar
+Actions y configurar reglas de rama sigue siendo responsabilidad del propietario.</p>
+<p>El workflow de release <strong>registra una aprobación y SHA; no despliega ni migra
+producción</strong>. Esto evita simular una conexión o publicar con secretos inexistentes.
+SAST, secret scanning, DAST autenticado y pentest se incorporan como checks reales
+antes del piloto; todavía no corren en la plantilla base.</p>
+<h2>Configuración propuesta de Vercel</h2>
+<p>Importar el repo privado como proyecto Next.js, raíz <code>/</code>, Node 24 compatible con
+el runtime disponible y build <code>npm run build</code>. El runtime administrado no siempre
+permite fijar un patch exacto; registrar la versión efectiva del proveedor.
+Usar previews inicialmente. Mantener el dominio productivo desconectado hasta
+aprobar la salida. Seleccionar una región de funciones cercana a la base luego
+de medir, no asumir que la CDN evita la latencia entre servidor y PostgreSQL.</p>
+<p>Elegir <strong>un solo mecanismo</strong> de publicación productiva: integración Git con una
+rama de release protegida o un pipeline CLI controlado. No activar ambos de
+forma que se despliegue dos veces. Para este bootstrap se propone integración
+Git para previews y promoción controlada del candidato correcto.</p>
+<p>La configuración NEXT_PUBLIC se inserta en el build. Nunca promover a producción
+un preview que fue construido con las claves/URL de staging. Un candidato a
+producción debe construirse con sus variables productivas, probarse sin escrituras
+reales no autorizadas y promoverse como ese artefacto. Rehacer un build con otras
+variables no es promover exactamente el mismo binario.</p>
+<h2>Secuencia de una liberación</h2>
+<p>Congelar SHA y changelog; confirmar checks; aprobar privacidad y riesgos;
+verificar backup y restauración; aplicar solo migraciones aditivas compatibles;
+validar esquema y permisos; construir candidato con entorno correcto; ejecutar
+smoke autorizados; obtener aprobación humana; asignar dominio; observar errores,
+latencia y movimientos financieros; registrar evidencia. Contraer el esquema
+solo en un release posterior después de retirar lectores antiguos.</p>
+<p>La CLI de Vercel, si se introduce, se fija a una versión verificada y se conserva
+en el lockfile. Revisar <code>vercel --help</code> y comandos actuales antes de automatizar.
+<code>--prebuilt</code> permite separar construcción y publicación. OIDC de runtime no
+sustituye por sí mismo el token requerido por el CLI de despliegue.</p>
+<h2>Rollback</h2>
+<p>Revertir el alias o release de la web solo si el esquema sigue siendo compatible.
+Para errores de datos, detener escrituras afectadas, preservar evidencias y
+usar recuperación o corrección transaccional revisada. No ejecutar migraciones
+DOWN destructivas automáticas. No repetir un pago externo para reparar una UI.
+Un backup sin restauración probada no acredita recuperabilidad.</p>
+<h2>Docker opcional</h2>
+<p><code>docker compose --env-file .env.local up --build</code> sirve para probar la web
+standalone contra Supabase NO productivo alojado. No levanta toda la plataforma.
+Supabase local se gestiona con la CLI, no con una copia antigua de su Compose.
+El contenedor usa usuario no root y sistema de archivos de solo lectura; validar
+caches/imagen y fijar digest antes de usar este camino productivamente.
+No se construyó la imagen en este entorno.</p>
+<hr />
+<p><a id="06-quality"></a></p>
+<h1>06. Estrategia de calidad</h1>
+<h2>Calidad basada en riesgo</h2>
+<p>Prioridad máxima: aislamiento multi-negocio, escalamiento de privilegios,
+confirmación financiera, unicidad de comprobantes y recuperación. Después:
+exactitud funcional, sesión, rendimiento, accesibilidad y experiencia visual.
+No usar un porcentaje de cobertura como sustituto de casos de negocio.</p>
+<table>
+<thead>
+<tr>
+<th>Nivel</th>
+<th>Herramienta / evidencia</th>
+<th>Estado inicial</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Dominio</td>
+<td>TypeScript + Node Test Runner</td>
+<td>Ejecutado, ver informe</td>
+</tr>
+<tr>
+<td>SQL/permiso</td>
+<td>pgTAP: roles, tenants, FKs y RPC</td>
+<td>Escrito; pendiente de ejecutar</td>
+</tr>
+<tr>
+<td>Contrato</td>
+<td>Tipos generados y diferencias SQL/dominio</td>
+<td>Enlace tipado inicial pendiente</td>
+</tr>
+<tr>
+<td>Navegador smoke</td>
+<td>Playwright desktop y mobile</td>
+<td>Escrito; no ejecutado aquí</td>
+</tr>
+<tr>
+<td>E2E de negocio</td>
+<td>Cuentas por rol y dos comercios</td>
+<td>Pendiente de desarrollar</td>
+</tr>
+<tr>
+<td>Accesibilidad</td>
+<td>Teclado, lector, contraste, ampliación + análisis automático</td>
+<td>Plan y criterios, sin certificación</td>
+</tr>
+<tr>
+<td>Rendimiento</td>
+<td>Pruebas de carga autorizadas</td>
+<td>Plan, sin resultados</td>
+</tr>
+<tr>
+<td>Seguridad</td>
+<td>SAST/SCA/secret scan/DAST/pentest</td>
+<td>SCA en plantilla; resto pendiente</td>
+</tr>
+<tr>
+<td>Recuperación</td>
+<td>Restore de base y objetos</td>
+<td>Pendiente</td>
+</tr>
+</tbody>
+</table>
+<h2>Escenarios críticos de aceptación</h2>
+<p>QA-01: Admin A intenta consultar/modificar el ID de B desde UI, RPC y API directa.
+Resultado: ningún dato B ni cambio; la evidencia no incluye datos reales.
+QA-02: usuario cambia metadata a super_user. Resultado: sin nuevos privilegios.
+QA-03: Asesor con MFA intenta confirmar o registrar pago. Resultado: denegado.
+QA-04: técnico solicita orden ajena dentro de su mismo comercio. Denegado.
+QA-05: cliente solicita voucher de otro cliente del mismo negocio. Denegado.
+QA-06: dos cambios de estado con igual versión. Solo uno puede modificarla;
+el otro debe refrescar, no sobreescribir silenciosamente.
+QA-07: doble confirmación concurrente del mismo pago. Un movimiento confirmado
+y un voucher. Probar concurrencia real, no solo dos llamadas secuenciales.
+QA-08: misma clave idempotente con otro monto/orden. Rechazada.
+QA-09: pago pendiente no aumenta ingreso confirmado ni genera voucher de pago.
+QA-10: vence la suscripción mientras la sesión continúa. Se bloquea nueva escritura.
+QA-11: se inactiva membresía. Se pierde acceso en la siguiente consulta autorizada.
+QA-12: Google callback con estado/código incorrecto, retorno externo o sesión vieja.
+Resultado: sin login falso ni redirección externa.
+QA-13: renovación de cookies bajo CDN no entrega la sesión de A a B.
+QA-14: descarga PDF propia, ajena, tras revocar rol y tras suspensión. Permisos
+consistentes, sin caché compartida. Validar textos largos y varias páginas.
+QA-15: backup restaurado conserva membresías, RLS, pagos y relaciones correctas.</p>
+<h2>Matriz de datos y dispositivos</h2>
+<p>Dos comercios como mínimo, usuarios por cada rol, identidades inactivas, cliente
+con dos órdenes, cliente sin órdenes, técnico sin asignación, importe mínimo/máximo,
+texto Unicode, datos vacíos, ID inválido, hora límite de suscripción y duplicados.
+Desktop 1366/1440, móvil 390/412 y zoom 200 %. Añadir Safari/iOS y Edge antes
+el piloto; los dos proyectos Playwright actuales usan Chromium, no WebKit.</p>
+<h2>Objetivos propuestos, no mediciones</h2>
+<p>Rutas de consulta habituales p95 &lt;= 600 ms de servidor bajo la carga acordada;
+LCP objetivo &lt;= 2.5 s, CLS &lt;= 0.1 en equipos/red representativos. Presupuesto de
+consulta: página de 50 órdenes y sin listados infinitos. Medir con volumen
+realista sintético, por ejemplo 20 comercios y 2000 órdenes por comercio; ajustar
+al alcance comercial antes de contratar infraestructura. Aún no hay un benchmark.</p>
+<p>La app limita resultados, pero no incluye paginación navegable completa: más de
+50 órdenes, 100 clientes o 100 movimientos requieren esa historia antes del uso
+habitual. No confundir un límite de seguridad/coste con un módulo de búsqueda.</p>
+<h2>Salida de QA</h2>
+<p>Todos los casos P0 de aislamiento y dinero aprobados; ningún defecto crítico o
+alto pendiente sin bloqueo; cero tests sensibles desactivados; verificación de
+migración limpia y desde versión anterior; resultado de navegadores y PDF;
+revisión de seguridad independiente y evidencia de restore. Un test fallido crea
+un defecto reproducible, no se elimina para conseguir un pipeline verde.</p>
+<hr />
+<p><a id="07-security"></a></p>
+<h1>07. Seguridad, privacidad y pentest</h1>
+<h2>Principios y estado</h2>
+<p>Se propone OWASP ASVS como catálogo de controles, con nivel 2 como objetivo del
+producto según análisis de riesgo. No se declara conformidad ASVS ni auditoría
+independiente. Las reglas SQL existentes necesitan prueba real. El paquete
+contiene controles y un plan, no un certificado de seguridad.</p>
+<h2>Modelo inicial de amenazas</h2>
+<table>
+<thead>
+<tr>
+<th>Amenaza</th>
+<th>Activo / caso</th>
+<th>Control existente o previsto</th>
+<th>Evidencia necesaria</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Suplantación</td>
+<td>Sesión, OAuth, MFA</td>
+<td>Auth proveedor, validación servidor, MFA privilegiado</td>
+<td>E2E OAuth/refresh/revocación</td>
+</tr>
+<tr>
+<td>Manipulación</td>
+<td>Monto, estado, tenant</td>
+<td>SQL con permisos, validación, FKs y versión</td>
+<td>pgTAP + concurrencia</td>
+</tr>
+<tr>
+<td>Repudio</td>
+<td>Confirmación y cambio de rol</td>
+<td>Auditoría de comandos</td>
+<td>Revisar integridad y acceso a logs</td>
+</tr>
+<tr>
+<td>Divulgación</td>
+<td>Datos de otro negocio, vouchers</td>
+<td>RLS, consulta propia, no-store</td>
+<td>Pruebas A/B y caché CDN</td>
+</tr>
+<tr>
+<td>Denegación de servicio</td>
+<td>RPC, PDFs, login</td>
+<td>Límites de forma y resultado; cuotas pendientes</td>
+<td>Rate limit efectivo también en API directa</td>
+</tr>
+<tr>
+<td>Elevación</td>
+<td>Super Usuario / roles financieros</td>
+<td>Tabla privada, MFA, sin user_metadata</td>
+<td>Pruebas de escalamiento</td>
+</tr>
+<tr>
+<td>Cadena de suministro</td>
+<td>Dependencias y CI</td>
+<td>Versiones, lock real, SHA, revisión</td>
+<td>SCA/SAST/secret scanning</td>
+</tr>
+<tr>
+<td>Archivos maliciosos</td>
+<td>Fotos/documentos futuros</td>
+<td>Upload deshabilitado por ahora</td>
+<td>Cuarentena, validación real y AV antes de habilitar</td>
+</tr>
+</tbody>
+</table>
+<h2>Controles presentes en código</h2>
+<p>RLS en las tablas de la aplicación, permisos SELECT explícitos, sin escrituras
+directas del rol authenticated, comandos con autorización, transacciones,
+idempotencia de pagos, snapshots de vouchers, MFA por JWT en operaciones
+privilegiadas, validación de origen en acciones, redirección restringida, CSP con
+nonce y cabeceras básicas. CSP conserva unsafe-inline para estilos: no presentarla
+como una política completamente estricta en todos los recursos.</p>
+<p>Ninguno de esos controles se considera probado E2E hasta ejecutar su evidencia.
+El frontend no usa claves secretas para saltar RLS. No se embebe HTML arbitrario
+en PDFs ni se descargan URLs que el cliente suministre para generarlos.</p>
+<h2>Bloqueadores de seguridad previos al piloto</h2>
+<p>Rate limiting distribuido y cuotas deben cubrir también RPC/Data API, no solo
+Next.js. Falta probar cierre de sesión y revocación estricta: JWT válido puede
+seguir vigente hasta expirar, aunque la app consulte membresías actuales. Definir
+validación de sesión viva/step-up reciente para operaciones de alto riesgo y
+probar JWT AAL2 antiguo tras retirar un factor. No afirmar revocación instantánea
+de todos los tokens por borrar o cerrar una cuenta.</p>
+<p>Falta recuperar/rotar MFA sin bypass; auditar lecturas privilegiadas, exportaciones
+masivas y soporte; escaneo de secretos completo; SAST; análisis del contenedor;
+configurar Auth contra abuso; hardening de invitaciones; alertas de anomalías;
+control de costes; revisar cabeceras y CSP con el build real.</p>
+<p>Los logs SQL de aplicación son inmutables para usuarios ordinarios porque no tienen
+permisos de escritura. <strong>No son inmutables frente al administrador de base de
+datos</strong>. Una exigencia de evidencia resistente a administradores requerirá
+almacenamiento externo, controles de acceso y retención independiente.</p>
+<h2>Plan de pentest autorizado</h2>
+<p>Antes: autorización escrita, dominios/IP de staging propios, dos tenants
+sintéticos, cuentas por rol, responsable de parada, franja operativa y límites
+de carga. Excluir pagos reales, mensajes a clientes y sistemas de terceros.
+Acordar tratamiento y eliminación de evidencias. No realizar DoS ni operaciones
+destructivas sin un alcance adicional específico.</p>
+<p>Durante: revisar autenticación, sesiones/MFA, BOLA/IDOR, cambio de tenant,
+autorización de funciones, mass assignment, SQLi, XSS, CSRF, redirecciones,
+SSRF en integraciones futuras, exposición de secretos, race conditions,
+idempotencia, fraude de conciliación, inyección en exportaciones y almacenamiento.
+Probar llamadas a Supabase directamente y las rutas Next; proteger solo la web
+no es suficiente. Las pruebas de archivos y webhooks esperan su implementación.</p>
+<p>Después: informe reproducible, alcance/exclusiones, severidad y efecto en negocio,
+propietario de cada hallazgo, corrección, retest y riesgo residual aceptado. Un
+hallazgo de acceso cruzado o confirmación no autorizada bloquea el release.</p>
+<p>El script de ZAP es baseline pasivo y conserva códigos de advertencia/error. No
+es un pentest autenticado ni una autorización para escanear cualquier dominio.
+El evaluador independiente debe conocer las reglas de negocio, no solo ejecutar
+un scanner. No se realizó ningún ataque externo al producir esta entrega.</p>
+<h2>Privacidad colombiana</h2>
+<p>Revisar la Ley 1581 de 2012 y demás normas aplicables con asesoría competente.
+Definir responsable/encargado por cada tratamiento, finalidades, autorizaciones,
+política de privacidad, atención de derechos, proveedores y transferencias,
+retención y eliminación. Un consentimiento genérico no autoriza cualquier uso.
+No se fija un plazo legal de retención sin analizar los datos y obligaciones.
+Minimizar nombres/teléfonos/fotos, ocultar identificadores sensibles y prohibir
+copias de datos reales en QA. Ver fuentes oficiales en 14-sources.</p>
+<hr />
+<p><a id="08-operations"></a></p>
+<h1>08. Operación, respaldos e incidentes</h1>
+<h2>Observabilidad propuesta</h2>
+<p>Registrar request_id, versión de despliegue, ruta, tipo de operación, duración,
+resultado y tenant cuando sea necesario. No registrar sesiones, tokens, claves,
+códigos MFA, contenido de fotos ni descripciones de fallas completas. Los errores
+actuales de UI son genéricos; falta conectar un recolector estructurado con
+correlación completa entre Next.js, RPC y proveedores. La cabecera request-id no
+acredita por sí sola trazabilidad extremo a extremo.</p>
+<p>Medir: disponibilidad de consulta/recepción, p95 por operación, fallos de login,
+denegaciones, errores de DB, pagos pendientes/confirmados, edad y tamaño de outbox,
+fallos de entrega WhatsApp, almacenamiento, egreso y gasto por comercio. Separar
+métricas operativas del taller de ingresos de suscripciones del SaaS.</p>
+<p><code>/api/health</code> es liveness sin secretos ni consulta de DB. No es readiness, una
+transacción sintética ni un informe de seguridad. Añadir un chequeo privado de
+preparación para dependencias y esquema sin divulgar configuración al público.</p>
+<h2>Objetivos de servicio a aprobar</h2>
+<p>Para el piloto se propone disponibilidad mensual de rutas principales &gt;=99.5 %,
+RPO de datos financieros &lt;=15 minutos y RTO &lt;=4 horas, <strong>solo después</strong> de
+contratar capacidades compatibles y verificar una restauración. Son objetivos,
+no prestaciones ya medidas ni promesas contractuales. La frecuencia real del
+backup y PITR determinará el RPO posible. Un backup diario no satisface por sí
+solo un RPO de 15 minutos.</p>
+<h2>Copias de seguridad</h2>
+<p>Cubrir por separado: PostgreSQL (datos, esquema, roles aplicables), objetos de
+Storage, configuración OAuth/URLs/webhooks, secretos custodiados, y código/lockfile.
+Los backups de la base Supabase no incluyen los archivos binarios de Storage;
+conservarlos por un mecanismo independiente. Backups de una tabla de objetos no
+recrean automáticamente los objetos borrados.</p>
+<p>Cifrar, restringir acceso, registrar periodicidad/retención y mantener una copia
+con independencia del fallo principal. No enviar backups a GitHub ni compartir
+SQL con datos personales. Establecer responsables y pruebas periódicas. Registrar
+último backup, edad, resultado de restauración y pérdida máxima observada.</p>
+<h2>Ejercicio de restauración</h2>
+<p>Crear un destino aislado autorizado; restaurar versión compatible; validar conteos,
+constraints, RLS, usuarios/membresías, historial y vouchers; recuperar objetos y
+validar hashes; bloquear envíos/pagos externos; ejecutar pruebas A/B; medir tiempo;
+registrar discrepancias; destruir de forma controlada el entorno del ensayo.
+Nunca probar restore escribiendo encima de producción por primera vez.</p>
+<h2>Incidentes</h2>
+<p>Sospecha de fuga entre tenants o confirmación indebida: limitar operaciones,
+preservar evidencia, revocar accesos afectados, confirmar alcance, rotar secretos
+expuestos, corregir y retestar, comunicar según obligaciones aplicables y hacer
+postmortem. El objetivo es evitar daño y restablecer integridad, no ocultar alertas.
+La persona de guardia y el canal deben existir antes del piloto; no hay una
+rotación de soporte 24/7 contratada en esta entrega.</p>
+<h2>Suscripciones y suspensión</h2>
+<p>El vencimiento se evalúa al escribir; no depende de que corra un cron a tiempo.
+El comportamiento provisional es solo lectura para usuarios previamente
+autorizados y bloqueo de nuevas operaciones, salvo maestro con MFA. Un comercio
+cerrado pierde acceso ordinario. Gracia, recuperación de cuenta, exportación,
+eliminación y continuidad del cliente requieren decisión de producto/privacidad.
+El estado de una suscripción no confirma un pago de reparación ni viceversa.</p>
+<h2>Continuidad de proveedores</h2>
+<p>Cuando una pasarela o WhatsApp falla, no bloquear la recepción de una orden ni
+confirmar resultados ficticios. Persistir el evento, mostrar estado pendiente,
+reintentar de forma controlada y escalar por edad. El worker outbox y esta UX
+operativa son entregables pendientes; la tabla por sí sola no envía mensajes.</p>
+<hr />
+<p><a id="09-ux"></a></p>
+<h1>09. UX, UI e identidad</h1>
+<h2>Principio</h2>
+<p>Diseñar por tarea, no por una lista de tablas. Una misma plataforma no obliga a
+mostrar el mismo panel a todos. Los permisos determinan acciones, y la
+experiencia reduce la carga de cada rol sin ser la frontera de seguridad.</p>
+<table>
+<thead>
+<tr>
+<th>Rol</th>
+<th>Inicio y tareas objetivo</th>
+<th>Prioridad</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Super Usuario</td>
+<td>Comercios, salud de plataforma, planes, accesos, incidencias</td>
+<td>Control global, operaciones sensibles claras</td>
+</tr>
+<tr>
+<td>Administrador</td>
+<td>Trabajo pendiente, ingresos conciliados, personal e inventario</td>
+<td>Estado de su negocio, no datos globales</td>
+</tr>
+<tr>
+<td>Asesor</td>
+<td>Recepción guiada, búsqueda de cliente, comunicación y entrega</td>
+<td>Rapidez y claridad; no permisos financieros implícitos</td>
+</tr>
+<tr>
+<td>Técnico</td>
+<td>Mis asignaciones, diagnóstico, repuestos, actualización</td>
+<td>Foco en trabajo y trazabilidad</td>
+</tr>
+<tr>
+<td>Cliente</td>
+<td>Mis equipos, progreso, aprobaciones y comprobantes</td>
+<td>Lenguaje sencillo, privacidad y confianza</td>
+</tr>
+</tbody>
+</table>
+<p>Las pantallas actuales son una base funcional a integrar: no son el diseño final
+completo de esos cinco productos. El formulario maestro usa UUIDs como bootstrap;
+un selector seguro y búsqueda de usuarios reemplazarán esa entrada antes del
+piloto. No se deberá exigir al usuario final conocer identificadores técnicos.</p>
+<h2>Flujos objetivo</h2>
+<p>Recepción: elegir comercio -&gt; identificar cliente -&gt; describir equipo/estado y
+falla -&gt; anexos consentidos -&gt; revisar -&gt; crear orden -&gt; entregar voucher.
+Técnico: ver asignación -&gt; diagnóstico -&gt; cambio permitido -&gt; evidencia -&gt;
+notificación. Pago: elegir orden -&gt; registrar importe/medio -&gt; estado pendiente -&gt;
+conciliar evidencia real -&gt; step-up MFA -&gt; confirmar -&gt; voucher y saldo correcto.
+Cliente: login -&gt; ver solo sus órdenes -&gt; historial -&gt; comprobantes ver/imprimir.</p>
+<p>Faltan las aprobaciones de presupuesto, fotos, autorizaciones de backup, entrega,
+garantía, cancelación y devolución. Se diseñan antes de extender las pantallas.</p>
+<h2>Estados de interfaz</h2>
+<p>Cubrir cargando, vacío, error, sin permisos, sesión vencida, sin conexión,
+conflicto de versión, operación en curso y suscripción suspendida. No mostrar
+éxito antes del commit. En timeout financiero, consultar el estado del intento
+antes de crear otro pago. Evitar mensajes que revelen que existe el registro
+privado de otro negocio.</p>
+<p>Ejemplos: &quot;Operación registrada correctamente&quot; después de respuesta confirmada;
+&quot;La orden cambió; actualice antes de guardar&quot; ante conflicto; &quot;No hay equipos
+asignados&quot; en una bandeja técnica vacía. No culpar al usuario ni prometer que se
+envió un WhatsApp cuando no existe una confirmación del proveedor.</p>
+<h2>Sistema visual provisional</h2>
+<p>Tokens CSS en globals.css: tinta, secundario, superficie, fondo, borde, acento,
+estado de riesgo y radio. Fuente del sistema, sin descarga de archivos de fuentes.
+Fondo claro, contraste alto, tarjetas con jerarquía, formularios etiquetados y
+controles de al menos 44 px. Esta paleta es de trabajo y no reproduce un manual
+de marca que no se pudo recuperar. No se entrega un logo supuesto como aprobado.</p>
+<p>Al integrar el manual: nombre, colores, tipografías licenciadas, logo original,
+área de respeto, iconos, piezas y PDF. Versionar tokens, no duplicar hexadecimales
+en decenas de pantallas. Figma será la referencia de componentes y flujos;
+Git contendrá su implementación y contratos.</p>
+<h2>Accesibilidad y móvil</h2>
+<p>Objetivo WCAG 2.2 AA; validar contraste, foco visible, navegación con teclado,
+labels, errores asociados al campo, lectura de estados y ampliación. No depender
+del color para diferenciar estados. Evaluar accesibilidad del QR MFA y alternativa
+manual de configuración antes del piloto. La auditoría completa no está realizada.</p>
+<p>La PWA se implementará primero como instalable con shell seguro. No cachear pagos,
+comprobantes o datos de clientes en dispositivos compartidos. Escrituras offline,
+reconciliación y conflictos requieren otro diseño; instalar una PWA no equivale a
+soportar operaciones offline correctas.</p>
+<h2>Validación de usabilidad</h2>
+<p>Probar con representantes de recepción, técnicos, administración y clientes:
+tiempo para recibir una orden, errores de entrada, comprensión de estado y
+capacidad para obtener ambos comprobantes. Documentar hallazgos, cambios y retest.
+La maqueta offline adjunta solo permite explorar composición y roles con datos
+sintéticos; no demuestra implementación de funciones de negocio.</p>
+<hr />
+<p><a id="10-product"></a></p>
+<h1>10. Producto y gestión del proyecto</h1>
+<h2>Resultado buscado</h2>
+<p>Que un comercio reciba un equipo, conozca quién lo atiende, mantenga al cliente
+informado y registre dinero de forma trazable, mientras el propietario del SaaS
+controla comercios y suscripciones. El MVP no es &quot;todas las pantallas posibles&quot;;
+es un flujo completo, seguro y medible con alcance aprobado.</p>
+<h2>Backlog priorizado</h2>
+<table>
+<thead>
+<tr>
+<th>Épica</th>
+<th>Entregable</th>
+<th>Prioridad</th>
+<th>Dependencia / criterio de aceptación</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>E00</td>
+<td>Bootstrap verificable y requisitos</td>
+<td>P0</td>
+<td>Lock, migración real, build y pruebas; decisiones abiertas visibles</td>
+</tr>
+<tr>
+<td>E01</td>
+<td>Identidad, aislamiento y MFA</td>
+<td>P0</td>
+<td>A/B, revocación, recuperación e invitaciones verificadas</td>
+</tr>
+<tr>
+<td>E02</td>
+<td>CRM maestro completo del MVP</td>
+<td>P0</td>
+<td>Alta, suspensión, plan/vigencia, auditoría; sin SQL manual diario</td>
+</tr>
+<tr>
+<td>E03</td>
+<td>Recepción y reparación</td>
+<td>P0</td>
+<td>CRUD autorizado, asignación, historial y voucher correcto</td>
+</tr>
+<tr>
+<td>E04</td>
+<td>Presupuesto, abonos y conciliación</td>
+<td>P0</td>
+<td>Saldo correcto, doble envío, moneda, caja, pruebas concurrentes</td>
+</tr>
+<tr>
+<td>E05</td>
+<td>Portal del cliente</td>
+<td>P0</td>
+<td>Alta consentida, seguimiento propio y ambos vouchers</td>
+</tr>
+<tr>
+<td>E06</td>
+<td>WhatsApp operativo</td>
+<td>P1</td>
+<td>Consentimiento, templates, eventos, worker, deduplicación y estados</td>
+</tr>
+<tr>
+<td>E07</td>
+<td>Archivos y evidencias</td>
+<td>P1</td>
+<td>Cuarentena, AV, permisos, límites, borrado y backups</td>
+</tr>
+<tr>
+<td>E08</td>
+<td>Inventario y ventas</td>
+<td>P1</td>
+<td>Movimientos, reservas y devoluciones; nunca stock negativo accidental</td>
+</tr>
+<tr>
+<td>E09</td>
+<td>Cobro SaaS y pasarela</td>
+<td>P1</td>
+<td>Cuenta por comercio, webhooks verificados y separación financiera</td>
+</tr>
+<tr>
+<td>E10</td>
+<td>Páginas, URLs y PWA</td>
+<td>P1</td>
+<td>Identidad correcta, publicación segura, instalación y revocación</td>
+</tr>
+<tr>
+<td>E11</td>
+<td>Calidad, seguridad y operación</td>
+<td>Transversal P0</td>
+<td>CI, pentest, observabilidad, backup/restore y soporte</td>
+</tr>
+</tbody>
+</table>
+<p>P0/P1 son propuestas de ejecución, no nuevas aprobaciones comerciales. Las
+capacidades comprometidas, por ejemplo WhatsApp en el plan Básico, no se eliminan
+por posponer su implementación a otra fase. El MVP comercial debe cumplir la
+promesa del plan que realmente se ofrezca.</p>
+<h2>Historias iniciales con aceptación</h2>
+<p>TECHI-001, aislamiento: dado un usuario A, al cambiar tenant/ID en una solicitud,
+no obtiene ni modifica datos B. Evidencia: API directa, SQL y UI.
+TECHI-002, recepción: dado un Asesor autorizado, al recibir el equipo se crea una
+sola orden y un voucher incluso ante reintento del mismo intento.
+TECHI-003, seguimiento: dado un técnico asignado, al actualizar un estado permitido
+con versión vigente se registra el evento; uno no asignado no puede hacerlo.
+TECHI-004, dinero: dado un administrador con MFA y transferencia conciliada, la
+confirmación produce exactamente un voucher del pago; una imagen subida sola no
+lo confirma. TECHI-005, cliente: obtiene exclusivamente sus comprobantes.
+TECHI-006, vencimiento: un comercio vencido no crea operaciones nuevas aunque
+conserve una sesión válida. El comportamiento de lectura debe estar aprobado.</p>
+<h2>Fases con puertas de salida</h2>
+<p>Fase 0: cerrar bootstrap y decisiones de producto; instalar, compilar, migrar,
+probar y corregir la base. Fase 1: cerrar flujo vertical con UX de recepción,
+técnico y cliente. Fase 2: presupuesto/pagos/abonos/conciliación y soporte.
+Fase 3: WhatsApp, archivos, inventario y requisitos comerciales restantes.
+Fase 4: hardening, integración, accesibilidad, pentest y restauración.
+Fase 5: piloto limitado, observación y despliegue gradual.</p>
+<p>No se asignan fechas ficticias ni se promete una entrega futura de trabajo
+asíncrono. Estimar esfuerzo después de medir capacidad y cerrar alcance. Separar
+tiempo de programación de aprobaciones OAuth/WhatsApp, contratos, revisión de marca
+y disponibilidad de comercios piloto.</p>
+<h2>Responsabilidades propuestas</h2>
+<p>Javier: propietario de decisiones de producto y priorización, con su experiencia
+QA como apoyo. Arquitectura/desarrollo: diseño, implementación y mantenimiento.
+QA: diseño de pruebas, evidencia y criterio de salida. UX: flujos, accesibilidad
+y usabilidad. Seguridad independiente: pentest, revisión y riesgo residual.
+Operación: cuentas, backups, secretos, alertas y respuesta.</p>
+<p>Una persona puede cubrir varias funciones en la fase inicial, pero el autor no
+se convierte en auditor independiente por cambiar de sombrero. La aceptación de
+riesgos y producción debe tener un responsable humano. El asistente produce código,
+propuestas y revisiones, no sustituye contratos ni una auditoría externa.</p>
+<h2>Definition of Ready / Done</h2>
+<p>Ready: historia, rol, datos, escenario principal, errores, permiso, requisito
+no funcional y dependencia definidos. Done: código revisado, tests ejecutados,
+contratos/migraciones actualizados, UX revisada, logs sin PII, rollback probado
+cuando aplique y evidencia asociada al SHA. &quot;Funciona en mi equipo&quot; no es Done.</p>
+<p>Controlar cambios con issue, impacto, aprobación, implementación y retest. Medir
+lead time, defectos escapados, recuperación y cumplimiento del flujo principal,
+no solo cantidad de commits o pantallas.</p>
+<hr />
+<p><a id="11-decisions"></a></p>
+<h1>11. Registro de decisiones abiertas y riesgos</h1>
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Decisión</th>
+<th>Default técnico conservador</th>
+<th>Quién aprueba</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>D01</td>
+<td>Marca/nombre/paleta/dominio final</td>
+<td>CRM TECHI provisional; no publicar marca nueva</td>
+<td>Producto + diseño</td>
+</tr>
+<tr>
+<td>D02</td>
+<td>Permisos financieros Asesor</td>
+<td>Ninguno</td>
+<td>Producto + responsable financiero</td>
+</tr>
+<tr>
+<td>D03</td>
+<td>Delegación de roles al Admin</td>
+<td>Maestro administra inicialmente</td>
+<td>Producto + seguridad</td>
+</tr>
+<tr>
+<td>D04</td>
+<td>Estados, backup, reapertura/entrega</td>
+<td>Seis estados, sin reapertura implícita</td>
+<td>Producto + comercios</td>
+</tr>
+<tr>
+<td>D05</td>
+<td>Monedas/impuestos/factura</td>
+<td>COP operativa, voucher no fiscal</td>
+<td>Producto + asesoría contable/jurídica</td>
+</tr>
+<tr>
+<td>D06</td>
+<td>Precios y límites por plan</td>
+<td>Precio no definido; WhatsApp conservado en Básico</td>
+<td>Propietario del SaaS</td>
+</tr>
+<tr>
+<td>D07</td>
+<td>Gracia y acceso al suspender</td>
+<td>Escritura bloqueada; lectura propia conservada</td>
+<td>Producto + privacidad</td>
+</tr>
+<tr>
+<td>D08</td>
+<td>Pasarela y titular de la cuenta</td>
+<td>Solo conciliación manual; sin colector global de dinero</td>
+<td>Producto + financiero</td>
+</tr>
+<tr>
+<td>D09</td>
+<td>WhatsApp: cuenta de plataforma o de cada comercio</td>
+<td>Contrato sin envío</td>
+<td>Producto + proveedor</td>
+</tr>
+<tr>
+<td>D10</td>
+<td>Consentimiento/retención/exportación</td>
+<td>No habilitar datos reales</td>
+<td>Privacidad + producto</td>
+</tr>
+<tr>
+<td>D11</td>
+<td>Región, presupuesto y volumen objetivo</td>
+<td>No contratar ni crear infraestructura automática</td>
+<td>Operación + propietario</td>
+</tr>
+<tr>
+<td>D12</td>
+<td>Un usuario con varios roles en un negocio</td>
+<td>Un solo rol por negocio</td>
+<td>Producto + seguridad</td>
+</tr>
+<tr>
+<td>D13</td>
+<td>RPO/RTO y soporte</td>
+<td>Objetivos propuestos, sin SLA contratado</td>
+<td>Operación + negocio</td>
+</tr>
+<tr>
+<td>D14</td>
+<td>Licencia y titularidad del repo</td>
+<td>Privado/UNLICENSED hasta decisión</td>
+<td>Propietario</td>
+</tr>
+</tbody>
+</table>
+<h2>Riesgos y tratamiento</h2>
+<p>Riesgo crítico: fallo de aislamiento. Mitigación: claves compuestas, RLS, RPC
+explícita, pruebas A/B, auditoría independiente. Riesgo crítico: dinero duplicado
+o no confirmado. Mitigación: intents estables, bloqueo, conciliación real, ledger y
+reembolsos bien definidos antes de ampliar el alcance financiero.</p>
+<p>Riesgo alto: considerar una plantilla como producto validado. Mitigación:
+informe de evidencia, check:ready, no datos reales, checklist de release.
+Riesgo alto: dependencia de servicios externos/coste. Mitigación: adaptadores,
+cuotas, presupuestos y plan de salida. Riesgo alto: pérdida de archivos no cubiertos
+por backup SQL. Mitigación: backup de objetos y restore conjunto.</p>
+<p>Riesgo alto: autenticación/MFA sin recuperación segura. Mitigación: protocolo
+verificado, reautenticación y pruebas de revocación. Riesgo alto: saturación de
+RPC directa sin rate limit. Mitigación: control distribuido/DB y cuotas por negocio,
+no solo middleware. Riesgo medio: interfaces bootstrap con UUIDs y paginación
+limitada. Mitigación: selectores autorizados, búsqueda y diseño por tarea.</p>
+<p>Registrar para cada riesgo: probabilidad, impacto, propietario, medida, fecha de
+revisión y evidencia. Los responsables concretos y fechas se completan al
+constituir el equipo; no se inventan personas asignadas ni aprobaciones.</p>
+<hr />
+<p><a id="12-release"></a></p>
+<h1>12. Puerta de producción</h1>
+<p><strong>Estado de esta entrega: BLOQUEADA para datos reales.</strong></p>
+<p><code>RELEASE_APPROVED=true</code> es una barrera operacional, no una certificación. Solo se
+activa después de esta lista y de la aprobación humana. La infraestructura debe
+impedir que una rama no revisada cambie esa configuración y se publique sola.</p>
+<h2>Bootstrap y construcción</h2>
+<ul>
+<li>[ ] Lockfile real revisado y commit; instalación limpia reproducible.</li>
+<li>[ ] Configuración y migración generadas por la CLI y revisadas.</li>
+<li>[ ] Contrato Database real enlazado al cliente y comandos RPC tipados.</li>
+<li>[ ] Build completo, lint y typecheck sin errores.</li>
+<li>[ ] pgTAP y E2E autenticados de los cinco roles pasan.</li>
+<li>[ ] PDF generado, renderizado, inspeccionado e impreso con textos largos.</li>
+<li>[ ] Rutas y campos incompletos no se muestran como capacidades disponibles.</li>
+</ul>
+<h2>Seguridad y privacidad</h2>
+<ul>
+<li>[ ] Proyectos y secretos separados; nada real en preview/QA.</li>
+<li>[ ] Rate limit y cuotas verificados en web y Data API/RPC.</li>
+<li>[ ] MFA, revocación de sesión y recuperación seguras.</li>
+<li>[ ] RLS A/B, escalamiento, caché y concurrencia financiera probados.</li>
+<li>[ ] SAST, SCA y secret scanning ejecutados; hallazgos tratados.</li>
+<li>[ ] Pentest autorizado independiente y retest, sin críticos/altos abiertos.</li>
+<li>[ ] Políticas, consentimientos, retención y roles de tratamiento definidos.</li>
+<li>[ ] Upload permanece apagado o tiene cuarentena, validación y AV aprobados.</li>
+<li>[ ] Cabeceras/CSP reales y configuración del proveedor revisadas.</li>
+</ul>
+<h2>Producto y operación</h2>
+<ul>
+<li>[ ] Permisos Asesor, estados, planes, suspensión y marca aprobados.</li>
+<li>[ ] Ingresos SaaS y del comercio separados en UI, datos y proveedores.</li>
+<li>[ ] Presupuestos/abonos/saldos y conciliación aprobados antes de cobrar.</li>
+<li>[ ] Backups de DB y archivos restaurados; RPO/RTO medidos.</li>
+<li>[ ] Responsable de alertas, incidentes y soporte asignado.</li>
+<li>[ ] Integraciones necesarias del plan vendido funcionan con evidencia.</li>
+<li>[ ] Paginación, selectores y accesibilidad adecuadas para uso real.</li>
+<li>[ ] Presupuesto/plan comercial de proveedores y dominio autorizados.</li>
+<li>[ ] SHA, migraciones, SBOM, changelog y plan de rollback registrados.</li>
+<li>[ ] Aprobación humana documentada y piloto acotado definido.</li>
+</ul>
+<p>La ausencia de una evidencia mantiene el control pendiente; no se marca aprobado
+por haber añadido un comentario al código o un archivo de test sin ejecutar.</p>
+<hr />
+<p><a id="13-accounts"></a></p>
+<h1>13. Preparación de cuentas e integraciones</h1>
+<h2>GitHub</h2>
+<p>Crear una organización o repositorio privado bajo una cuenta del propietario.
+Activar MFA, definir propietarios de emergencia, permisos mínimos, protección de
+main y entorno production con revisores. Sustituir CODEOWNERS.example por dueños
+reales antes de exigir su aprobación. Configurar Actions y límites de gasto.</p>
+<pre><code class="language-bash"># Después de bootstrap, migraciones y revisión de archivos
+# Ejecutar dentro del repositorio, no en una carpeta con otros proyectos.
+git init -b main
+git add .
+git diff --cached --name-only
+git status --short
+# Confirmar que no se incluyeron .env, claves, datos reales ni node_modules.
+git commit -m &quot;chore: initialize CRM TECHI foundation&quot;
+# Crear el repositorio privado en GitHub y copiar su URL real.
+git remote add origin URL_REAL_DEL_REPOSITORIO_PRIVADO
+git push -u origin main
+</code></pre>
+<p>El marcador de URL no es un repositorio existente. Esta entrega no ejecutó esos
+comandos sobre una cuenta conectada ni creó repositorios remotos.</p>
+<h2>Supabase</h2>
+<p>Primero local. Después crear proyectos separados staging/production en una
+organización controlada. Seleccionar región y plan a partir de latencia, coste,
+retención y recuperación. Revisar red, esquemas expuestos, Auth, contraseñas,
+URLs permitidas, SMTP, MFA y asesores de seguridad. La clave publicable puede
+estar en el navegador; las claves secretas no. El JWT del usuario sigue siendo
+necesario y no sustituye las reglas de autorización.</p>
+<p>No guardar credenciales de distintos comercios en un JSON público. Las
+integraciones necesitan secretos custodiados y un servicio que los use sin
+devolverlos al frontend. Rotación y revocación deben quedar documentadas.</p>
+<h2>Google</h2>
+<p>Crear proyecto OAuth del propietario, pantalla de consentimiento y cliente web.
+Configurar la URI de callback que exige el proveedor Supabase y las URLs de
+retorno de la aplicación por entorno. Solicitar solo identidad básica necesaria;
+no pedir Gmail, contactos, calendario, Drive o Maps para iniciar sesión.
+Probar primero con usuarios de prueba. El secreto OAuth reside en la
+configuración del proveedor, no en NEXT_PUBLIC. No se ha configurado una cuenta.</p>
+<h2>Vercel</h2>
+<p>Importar el repo, separar variables de Preview/Production, no incluir datos
+productivos en PRs, revisar protección de despliegues y permisos del equipo.
+APP_ORIGIN es el origen exacto del entorno, sin comodines ni ruta.
+APP_ENV identifica desarrollo/staging/production; RELEASE_APPROVED mantiene
+cerrado el uso productivo hasta completar la puerta. No olvidar los callbacks
+OAuth y el efecto build-time de NEXT_PUBLIC al promover.</p>
+<h2>WhatsApp</h2>
+<p>Decidir la titularidad de la cuenta/número de cada comercio y su onboarding.
+Implementar adaptador, opt-in, plantillas necesarias, estados del mensaje,
+webhooks verificados, idempotencia, reintentos, DLQ y panel de incidencias. La
+capacidad en el plan Básico no significa mensajería ilimitada sin coste del
+proveedor. Definir límites comerciales sin eliminar el requisito acordado.
+El adaptador deshabilitado lanza un error, nunca devuelve un envío ficticio.</p>
+<h2>Pasarelas</h2>
+<p>Evaluar proveedor y modalidad por país/comercio. No dirigir automáticamente el
+dinero de todos los talleres a una sola cuenta del SaaS. Para el webhook futuro:
+validar firma/checksum sobre el cuerpo original según proveedor, tolerancia de
+replay, identidad de la cuenta, referencia, moneda e importe; deduplicar evento;
+confirmar mediante transacción; conciliar con consulta al proveedor cuando aplique.
+Un retorno exitoso del navegador no acredita aprobación bancaria.</p>
+<h2>Secretos: inventario inicial</h2>
+<table>
+<thead>
+<tr>
+<th>Configuración</th>
+<th>Sensibilidad</th>
+<th>Dónde</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>URL y clave publicable Supabase</td>
+<td>Pública, protegida por RLS y sesión</td>
+<td>Variables NEXT_PUBLIC</td>
+</tr>
+<tr>
+<td>APP_ORIGIN / APP_ENV</td>
+<td>No secreta</td>
+<td>Variables por entorno</td>
+</tr>
+<tr>
+<td>Secreto OAuth Google</td>
+<td>Secreto</td>
+<td>Proveedor Auth / gestor autorizado</td>
+</tr>
+<tr>
+<td>Token de despliegue</td>
+<td>Secreto, si se usa CLI</td>
+<td>Secret del entorno CI, no PR</td>
+</tr>
+<tr>
+<td>Credencial/URL DB privilegiada</td>
+<td>Secreto</td>
+<td>Operación/migración autorizada</td>
+</tr>
+<tr>
+<td>Tokens WhatsApp/pasarela</td>
+<td>Secretos por integración</td>
+<td>Custodia del backend, nunca ajustes públicos</td>
+</tr>
+<tr>
+<td>Claves de backup</td>
+<td>Secretos</td>
+<td>Gestor independiente y acceso restringido</td>
+</tr>
+</tbody>
+</table>
+<p>No se adjunta ningún secreto real. El documento no implica que esas
+integraciones ya estén contratadas o disponibles en la cuenta del usuario.</p>
+<hr />
+<p><a id="14-sources"></a></p>
+<h1>14. Referencias oficiales y decisiones de versión</h1>
+<p>Consulta de documentación: 8 de septiembre de 2026. Las versiones son una base
+fijada, no una promesa de que toda dependencia permanecerá actualizada. Revalidar
+antes de la primera instalación y de cada release. La instalación completa no
+pudo ejecutarse aquí por falta de acceso a los registros desde el contenedor.</p>
+<h2>Plataformas y librerías</h2>
+<ul>
+<li>Next.js 16 / async APIs, proxy y CLI de lint:
+https://nextjs.org/docs/app/guides/upgrading/version-16</li>
+<li>Node LTS y soporte:
+https://nodejs.org/en/about/previous-releases</li>
+<li>Supabase SSR y propagación de cookies/cabeceras:
+https://supabase.com/docs/guides/auth/server-side/creating-a-client</li>
+<li>Changelog Supabase: privilegios Data API, runtimes y stack local:
+https://supabase.com/changelog</li>
+<li>Versiones SSR / cliente:
+https://github.com/supabase/ssr/releases</li>
+<li>Supabase CLI:
+https://github.com/supabase/cli/releases</li>
+<li>RLS:
+https://supabase.com/docs/guides/database/postgres/row-level-security</li>
+<li>pgTAP:
+https://supabase.com/docs/guides/database/testing</li>
+<li>Google con Supabase:
+https://supabase.com/docs/guides/auth/social-login/auth-google</li>
+<li>MFA:
+https://supabase.com/docs/guides/auth/auth-mfa/totp</li>
+<li>Backups y límites con Storage:
+https://supabase.com/docs/guides/platform/backups</li>
+<li>Vercel y condiciones Hobby:
+https://vercel.com/docs/plans/hobby</li>
+<li>Despliegues Vercel:
+https://vercel.com/docs/deployments</li>
+<li>GitHub Actions y seguridad:
+https://docs.github.com/en/actions/reference/security/secure-use</li>
+<li>Actions oficiales; el script resuelve sus SHA reales:
+https://github.com/actions/checkout
+https://github.com/actions/setup-node</li>
+<li>Playwright:
+https://github.com/microsoft/playwright/releases</li>
+<li>Docker Windows/WSL:
+https://docs.docker.com/desktop/setup/install/windows-install/</li>
+<li>Google OAuth servidor:
+https://developers.google.com/identity/protocols/oauth2/web-server</li>
+</ul>
+<h2>Seguridad, accesibilidad y privacidad</h2>
+<ul>
+<li>OWASP ASVS:
+https://owasp.org/www-project-application-security-verification-standard/</li>
+<li>ZAP baseline (pasivo):
+https://www.zaproxy.org/docs/docker/baseline-scan/</li>
+<li>WCAG 2.2:
+https://www.w3.org/TR/WCAG22/</li>
+<li>Ley 1581 de 2012, texto oficial:
+https://www.secretariasenado.gov.co/senado/basedoc/ley_1581_2012.html</li>
+<li>SIC, protección de datos:
+https://www.sic.gov.co/que-es-la-delegatura-datos-personales</li>
+<li>Wompi eventos, referencia para una futura evaluación, no integración elegida:
+https://docs.wompi.co/docs/colombia/eventos/</li>
+</ul>
+<h2>Baseline técnico</h2>
+<p>Node 24.21.0 para la estación objetivo; Next 16.3.4; React 19.2.8; SSR 0.12.7;
+supabase-js 2.114.0; CLI Supabase 2.117.0; Playwright 1.63.0. Se fijan versiones
+exactas en package.json. TypeScript 5.9.3 es una elección inicial de compatibilidad,
+no se presenta como el compilador más nuevo; su validación con el build completo
+sigue pendiente. El dominio se comprobó aquí con Node 22.16.0 y TypeScript 5.8.3.</p>
+<p>Las referencias guían decisiones; no prueban que el código implementado cumpla
+cada control. La evidencia ejecutable está separada en reports/verification.md.</p>
+</main></body></html>

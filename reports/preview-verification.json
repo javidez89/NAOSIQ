@@ -1,0 +1,108 @@
+{
+  "scope": "Synthetic HTML rendered from local source ONLY, not Next.js; browser network navigation was blocked by environment policy",
+  "checks": [
+    {
+      "viewport": {
+        "width": 1440,
+        "height": 1100
+      },
+      "meaningfulContent": true,
+      "documentOverflow": false,
+      "initialRows": 5
+    },
+    {
+      "viewport": 1440,
+      "role": "admin",
+      "syntheticRows": 5,
+      "passed": true
+    },
+    {
+      "viewport": 1440,
+      "role": "advisor",
+      "syntheticRows": 5,
+      "passed": true
+    },
+    {
+      "viewport": 1440,
+      "role": "technician",
+      "syntheticRows": 3,
+      "passed": true
+    },
+    {
+      "viewport": 1440,
+      "role": "customer",
+      "syntheticRows": 2,
+      "passed": true
+    },
+    {
+      "viewport": 1440,
+      "role": "super_user",
+      "syntheticRows": 5,
+      "passed": true
+    },
+    {
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "meaningfulContent": true,
+      "documentOverflow": false,
+      "initialRows": 5
+    },
+    {
+      "viewport": 390,
+      "role": "admin",
+      "syntheticRows": 5,
+      "passed": true
+    },
+    {
+      "viewport": 390,
+      "role": "advisor",
+      "syntheticRows": 5,
+      "passed": true
+    },
+    {
+      "viewport": 390,
+      "role": "technician",
+      "syntheticRows": 3,
+      "passed": true
+    },
+    {
+      "viewport": 390,
+      "role": "customer",
+      "syntheticRows": 2,
+      "passed": true
+    },
+    {
+      "viewport": 390,
+      "role": "super_user",
+      "syntheticRows": 5,
+      "passed": true
+    },
+    {
+      "method": "GET",
+      "path": "/.env.local",
+      "status": 404,
+      "passed": true
+    },
+    {
+      "method": "GET",
+      "path": "/../../package.json",
+      "status": 404,
+      "passed": true
+    },
+    {
+      "method": "POST",
+      "path": "/",
+      "status": 405,
+      "passed": true
+    }
+  ],
+  "consoleErrors": [],
+  "screenshots": [
+    "preview-1440.png",
+    "preview-390.png"
+  ],
+  "agentBrowserAttempt": "Unavailable in this environment; used installed Playwright + system Chromium as fallback.",
+  "result": "PASS for offline DOM rendering/interactions and HTTP allowlist checks; NOT a browser network or Next.js verification"
+}

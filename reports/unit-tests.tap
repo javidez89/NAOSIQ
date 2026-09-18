@@ -1,0 +1,678 @@
+Offline verification uses the globally available TypeScript compiler.
+Version 5.8.3
+TAP version 13
+# Subtest: tenant isolation: admin
+ok 1 - tenant isolation: admin
+  ---
+  duration_ms: 2.708414
+  type: 'test'
+  ...
+# Subtest: tenant isolation: advisor
+ok 2 - tenant isolation: advisor
+  ---
+  duration_ms: 0.244628
+  type: 'test'
+  ...
+# Subtest: tenant isolation: technician
+ok 3 - tenant isolation: technician
+  ---
+  duration_ms: 0.140085
+  type: 'test'
+  ...
+# Subtest: tenant isolation: customer
+ok 4 - tenant isolation: customer
+  ---
+  duration_ms: 0.070472
+  type: 'test'
+  ...
+# Subtest: inactive actor denied: super_user
+ok 5 - inactive actor denied: super_user
+  ---
+  duration_ms: 0.391609
+  type: 'test'
+  ...
+# Subtest: inactive actor denied: admin
+ok 6 - inactive actor denied: admin
+  ---
+  duration_ms: 0.071422
+  type: 'test'
+  ...
+# Subtest: inactive actor denied: advisor
+ok 7 - inactive actor denied: advisor
+  ---
+  duration_ms: 0.06139
+  type: 'test'
+  ...
+# Subtest: inactive actor denied: technician
+ok 8 - inactive actor denied: technician
+  ---
+  duration_ms: 0.052451
+  type: 'test'
+  ...
+# Subtest: inactive actor denied: customer
+ok 9 - inactive actor denied: customer
+  ---
+  duration_ms: 0.490217
+  type: 'test'
+  ...
+# Subtest: advisor denied payment.read
+ok 10 - advisor denied payment.read
+  ---
+  duration_ms: 0.413965
+  type: 'test'
+  ...
+# Subtest: advisor denied payment.record
+ok 11 - advisor denied payment.record
+  ---
+  duration_ms: 0.120416
+  type: 'test'
+  ...
+# Subtest: advisor denied payment.confirm
+ok 12 - advisor denied payment.confirm
+  ---
+  duration_ms: 0.050383
+  type: 'test'
+  ...
+# Subtest: advisor denied roles.manage
+ok 13 - advisor denied roles.manage
+  ---
+  duration_ms: 0.036161
+  type: 'test'
+  ...
+# Subtest: super user requires MFA
+ok 14 - super user requires MFA
+  ---
+  duration_ms: 0.069318
+  type: 'test'
+  ...
+# Subtest: super user with MFA can govern tenants
+ok 15 - super user with MFA can govern tenants
+  ---
+  duration_ms: 0.196564
+  type: 'test'
+  ...
+# Subtest: admin cannot self grant roles using helper
+ok 16 - admin cannot self grant roles using helper
+  ---
+  duration_ms: 0.049351
+  type: 'test'
+  ...
+# Subtest: technician reads assigned repair
+ok 17 - technician reads assigned repair
+  ---
+  duration_ms: 0.094538
+  type: 'test'
+  ...
+# Subtest: technician cannot read someone else assignment
+ok 18 - technician cannot read someone else assignment
+  ---
+  duration_ms: 0.046567
+  type: 'test'
+  ...
+# Subtest: customer reads own repair
+ok 19 - customer reads own repair
+  ---
+  duration_ms: 0.040606
+  type: 'test'
+  ...
+# Subtest: customer cannot read another customer
+ok 20 - customer cannot read another customer
+  ---
+  duration_ms: 0.073735
+  type: 'test'
+  ...
+# Subtest: transition created -> created
+ok 21 - transition created -> created
+  ---
+  duration_ms: 0.900439
+  type: 'test'
+  ...
+# Subtest: transition created -> in_repair
+ok 22 - transition created -> in_repair
+  ---
+  duration_ms: 0.107962
+  type: 'test'
+  ...
+# Subtest: transition created -> waiting_parts
+ok 23 - transition created -> waiting_parts
+  ---
+  duration_ms: 0.063225
+  type: 'test'
+  ...
+# Subtest: transition created -> software_installation
+ok 24 - transition created -> software_installation
+  ---
+  duration_ms: 0.034138
+  type: 'test'
+  ...
+# Subtest: transition created -> backup_completed
+ok 25 - transition created -> backup_completed
+  ---
+  duration_ms: 0.04312
+  type: 'test'
+  ...
+# Subtest: transition created -> completed
+ok 26 - transition created -> completed
+  ---
+  duration_ms: 0.130205
+  type: 'test'
+  ...
+# Subtest: transition in_repair -> created
+ok 27 - transition in_repair -> created
+  ---
+  duration_ms: 0.24336
+  type: 'test'
+  ...
+# Subtest: transition in_repair -> in_repair
+ok 28 - transition in_repair -> in_repair
+  ---
+  duration_ms: 0.186228
+  type: 'test'
+  ...
+# Subtest: transition in_repair -> waiting_parts
+ok 29 - transition in_repair -> waiting_parts
+  ---
+  duration_ms: 0.04642
+  type: 'test'
+  ...
+# Subtest: transition in_repair -> software_installation
+ok 30 - transition in_repair -> software_installation
+  ---
+  duration_ms: 0.116103
+  type: 'test'
+  ...
+# Subtest: transition in_repair -> backup_completed
+ok 31 - transition in_repair -> backup_completed
+  ---
+  duration_ms: 0.044119
+  type: 'test'
+  ...
+# Subtest: transition in_repair -> completed
+ok 32 - transition in_repair -> completed
+  ---
+  duration_ms: 0.033743
+  type: 'test'
+  ...
+# Subtest: transition waiting_parts -> created
+ok 33 - transition waiting_parts -> created
+  ---
+  duration_ms: 0.088709
+  type: 'test'
+  ...
+# Subtest: transition waiting_parts -> in_repair
+ok 34 - transition waiting_parts -> in_repair
+  ---
+  duration_ms: 0.10505
+  type: 'test'
+  ...
+# Subtest: transition waiting_parts -> waiting_parts
+ok 35 - transition waiting_parts -> waiting_parts
+  ---
+  duration_ms: 0.048356
+  type: 'test'
+  ...
+# Subtest: transition waiting_parts -> software_installation
+ok 36 - transition waiting_parts -> software_installation
+  ---
+  duration_ms: 0.084618
+  type: 'test'
+  ...
+# Subtest: transition waiting_parts -> backup_completed
+ok 37 - transition waiting_parts -> backup_completed
+  ---
+  duration_ms: 0.051581
+  type: 'test'
+  ...
+# Subtest: transition waiting_parts -> completed
+ok 38 - transition waiting_parts -> completed
+  ---
+  duration_ms: 0.04116
+  type: 'test'
+  ...
+# Subtest: transition software_installation -> created
+ok 39 - transition software_installation -> created
+  ---
+  duration_ms: 0.039686
+  type: 'test'
+  ...
+# Subtest: transition software_installation -> in_repair
+ok 40 - transition software_installation -> in_repair
+  ---
+  duration_ms: 0.13091
+  type: 'test'
+  ...
+# Subtest: transition software_installation -> waiting_parts
+ok 41 - transition software_installation -> waiting_parts
+  ---
+  duration_ms: 0.103177
+  type: 'test'
+  ...
+# Subtest: transition software_installation -> software_installation
+ok 42 - transition software_installation -> software_installation
+  ---
+  duration_ms: 0.050527
+  type: 'test'
+  ...
+# Subtest: transition software_installation -> backup_completed
+ok 43 - transition software_installation -> backup_completed
+  ---
+  duration_ms: 0.034214
+  type: 'test'
+  ...
+# Subtest: transition software_installation -> completed
+ok 44 - transition software_installation -> completed
+  ---
+  duration_ms: 0.037166
+  type: 'test'
+  ...
+# Subtest: transition backup_completed -> created
+ok 45 - transition backup_completed -> created
+  ---
+  duration_ms: 0.044101
+  type: 'test'
+  ...
+# Subtest: transition backup_completed -> in_repair
+ok 46 - transition backup_completed -> in_repair
+  ---
+  duration_ms: 0.067832
+  type: 'test'
+  ...
+# Subtest: transition backup_completed -> waiting_parts
+ok 47 - transition backup_completed -> waiting_parts
+  ---
+  duration_ms: 0.043887
+  type: 'test'
+  ...
+# Subtest: transition backup_completed -> software_installation
+ok 48 - transition backup_completed -> software_installation
+  ---
+  duration_ms: 0.039696
+  type: 'test'
+  ...
+# Subtest: transition backup_completed -> backup_completed
+ok 49 - transition backup_completed -> backup_completed
+  ---
+  duration_ms: 0.036888
+  type: 'test'
+  ...
+# Subtest: transition backup_completed -> completed
+ok 50 - transition backup_completed -> completed
+  ---
+  duration_ms: 0.028849
+  type: 'test'
+  ...
+# Subtest: transition completed -> created
+ok 51 - transition completed -> created
+  ---
+  duration_ms: 0.041779
+  type: 'test'
+  ...
+# Subtest: transition completed -> in_repair
+ok 52 - transition completed -> in_repair
+  ---
+  duration_ms: 0.038436
+  type: 'test'
+  ...
+# Subtest: transition completed -> waiting_parts
+ok 53 - transition completed -> waiting_parts
+  ---
+  duration_ms: 0.038747
+  type: 'test'
+  ...
+# Subtest: transition completed -> software_installation
+ok 54 - transition completed -> software_installation
+  ---
+  duration_ms: 0.038573
+  type: 'test'
+  ...
+# Subtest: transition completed -> backup_completed
+ok 55 - transition completed -> backup_completed
+  ---
+  duration_ms: 0.038442
+  type: 'test'
+  ...
+# Subtest: transition completed -> completed
+ok 56 - transition completed -> completed
+  ---
+  duration_ms: 0.037596
+  type: 'test'
+  ...
+# Subtest: optimistic concurrency conflict
+ok 57 - optimistic concurrency conflict
+  ---
+  duration_ms: 0.092344
+  type: 'test'
+  ...
+# Subtest: advisor cannot change technical state
+ok 58 - advisor cannot change technical state
+  ---
+  duration_ms: 0.062531
+  type: 'test'
+  ...
+# Subtest: customer cannot change technical state
+ok 59 - customer cannot change technical state
+  ---
+  duration_ms: 0.052057
+  type: 'test'
+  ...
+# Subtest: parse amount 0
+ok 60 - parse amount 0
+  ---
+  duration_ms: 0.154366
+  type: 'test'
+  ...
+# Subtest: parse amount 0.01
+ok 61 - parse amount 0.01
+  ---
+  duration_ms: 0.11272
+  type: 'test'
+  ...
+# Subtest: parse amount 150000
+ok 62 - parse amount 150000
+  ---
+  duration_ms: 0.036513
+  type: 'test'
+  ...
+# Subtest: parse amount 23.5
+ok 63 - parse amount 23.5
+  ---
+  duration_ms: 0.050434
+  type: 'test'
+  ...
+# Subtest: parse amount 9999999999.99
+ok 64 - parse amount 9999999999.99
+  ---
+  duration_ms: 0.035144
+  type: 'test'
+  ...
+# Subtest: reject amount -1
+ok 65 - reject amount -1
+  ---
+  duration_ms: 0.077469
+  type: 'test'
+  ...
+# Subtest: reject amount NaN
+ok 66 - reject amount NaN
+  ---
+  duration_ms: 0.043805
+  type: 'test'
+  ...
+# Subtest: reject amount Infinity
+ok 67 - reject amount Infinity
+  ---
+  duration_ms: 0.045266
+  type: 'test'
+  ...
+# Subtest: reject amount 1e3
+ok 68 - reject amount 1e3
+  ---
+  duration_ms: 0.155985
+  type: 'test'
+  ...
+# Subtest: reject amount 1,000
+ok 69 - reject amount 1,000
+  ---
+  duration_ms: 0.050791
+  type: 'test'
+  ...
+# Subtest: reject amount 01
+ok 70 - reject amount 01
+  ---
+  duration_ms: 0.05449
+  type: 'test'
+  ...
+# Subtest: reject amount 1.001
+ok 71 - reject amount 1.001
+  ---
+  duration_ms: 0.072247
+  type: 'test'
+  ...
+# Subtest: reject amount 10000000000
+ok 72 - reject amount 10000000000
+  ---
+  duration_ms: 0.043448
+  type: 'test'
+  ...
+# Subtest: reject amount  10
+ok 73 - reject amount  10
+  ---
+  duration_ms: 0.046005
+  type: 'test'
+  ...
+# Subtest: reject amount 
+ok 74 - reject amount 
+  ---
+  duration_ms: 0.048548
+  type: 'test'
+  ...
+# Subtest: overflow is rejected
+ok 75 - overflow is rejected
+  ---
+  duration_ms: 0.158086
+  type: 'test'
+  ...
+# Subtest: sum cents exact
+ok 76 - sum cents exact
+  ---
+  duration_ms: 0.055716
+  type: 'test'
+  ...
+# Subtest: pending transfer not counted
+ok 77 - pending transfer not counted
+  ---
+  duration_ms: 0.143044
+  type: 'test'
+  ...
+# Subtest: confirmed payment counted
+ok 78 - confirmed payment counted
+  ---
+  duration_ms: 0.189772
+  type: 'test'
+  ...
+# Subtest: payment confirmation idempotent
+ok 79 - payment confirmation idempotent
+  ---
+  duration_ms: 0.062789
+  type: 'test'
+  ...
+# Subtest: financial action requires MFA
+ok 80 - financial action requires MFA
+  ---
+  duration_ms: 0.08622
+  type: 'test'
+  ...
+# Subtest: advisor cannot confirm payment
+ok 81 - advisor cannot confirm payment
+  ---
+  duration_ms: 0.066482
+  type: 'test'
+  ...
+# Subtest: reversed payment cannot reconfirm
+ok 82 - reversed payment cannot reconfirm
+  ---
+  duration_ms: 0.251928
+  type: 'test'
+  ...
+# Subtest: idempotency different amount is different intent
+ok 83 - idempotency different amount is different intent
+  ---
+  duration_ms: 0.091427
+  type: 'test'
+  ...
+# Subtest: unsafe redirect "https://evil.test"
+ok 84 - unsafe redirect "https://evil.test"
+  ---
+  duration_ms: 0.08945
+  type: 'test'
+  ...
+# Subtest: unsafe redirect "//evil.test"
+ok 85 - unsafe redirect "//evil.test"
+  ---
+  duration_ms: 0.172576
+  type: 'test'
+  ...
+# Subtest: unsafe redirect "/\\\\evil.test"
+ok 86 - unsafe redirect "/\\\\evil.test"
+  ---
+  duration_ms: 0.053264
+  type: 'test'
+  ...
+# Subtest: unsafe redirect "/admin"
+ok 87 - unsafe redirect "/admin"
+  ---
+  duration_ms: 0.038235
+  type: 'test'
+  ...
+# Subtest: unsafe redirect "/app\\\\evil"
+ok 88 - unsafe redirect "/app\\\\evil"
+  ---
+  duration_ms: 0.086225
+  type: 'test'
+  ...
+# Subtest: unsafe redirect "/app\\r\\nx"
+ok 89 - unsafe redirect "/app\\r\\nx"
+  ---
+  duration_ms: 0.037364
+  type: 'test'
+  ...
+# Subtest: safe redirect preserved
+ok 90 - safe redirect preserved
+  ---
+  duration_ms: 0.135317
+  type: 'test'
+  ...
+# Subtest: origin check exact
+ok 91 - origin check exact
+  ---
+  duration_ms: 0.111436
+  type: 'test'
+  ...
+# Subtest: reject slug admin
+ok 92 - reject slug admin
+  ---
+  duration_ms: 0.180311
+  type: 'test'
+  ...
+# Subtest: reject slug ../x
+ok 93 - reject slug ../x
+  ---
+  duration_ms: 0.121033
+  type: 'test'
+  ...
+# Subtest: reject slug Uppercase
+ok 94 - reject slug Uppercase
+  ---
+  duration_ms: 0.048997
+  type: 'test'
+  ...
+# Subtest: reject slug a--b
+ok 95 - reject slug a--b
+  ---
+  duration_ms: 0.045595
+  type: 'test'
+  ...
+# Subtest: reject slug ab
+ok 96 - reject slug ab
+  ---
+  duration_ms: 0.042111
+  type: 'test'
+  ...
+# Subtest: reject slug -bad
+ok 97 - reject slug -bad
+  ---
+  duration_ms: 0.044526
+  type: 'test'
+  ...
+# Subtest: valid tenant slug
+ok 98 - valid tenant slug
+  ---
+  duration_ms: 0.052795
+  type: 'test'
+  ...
+# Subtest: active subscription operates
+ok 99 - active subscription operates
+  ---
+  duration_ms: 0.0838
+  type: 'test'
+  ...
+# Subtest: expiry exact boundary denied
+ok 100 - expiry exact boundary denied
+  ---
+  duration_ms: 1.147935
+  type: 'test'
+  ...
+# Subtest: subscription past_due blocked
+ok 101 - subscription past_due blocked
+  ---
+  duration_ms: 0.099242
+  type: 'test'
+  ...
+# Subtest: subscription suspended blocked
+ok 102 - subscription suspended blocked
+  ---
+  duration_ms: 0.205713
+  type: 'test'
+  ...
+# Subtest: subscription cancelled blocked
+ok 103 - subscription cancelled blocked
+  ---
+  duration_ms: 0.047157
+  type: 'test'
+  ...
+# Subtest: bad expiry fails closed
+ok 104 - bad expiry fails closed
+  ---
+  duration_ms: 0.068474
+  type: 'test'
+  ...
+# Subtest: basic always has WhatsApp
+ok 105 - basic always has WhatsApp
+  ---
+  duration_ms: 0.044784
+  type: 'test'
+  ...
+# Subtest: private object path is tenant scoped
+ok 106 - private object path is tenant scoped
+  ---
+  duration_ms: 0.22632
+  type: 'test'
+  ...
+# Subtest: path traversal blocked
+ok 107 - path traversal blocked
+  ---
+  duration_ms: 0.087038
+  type: 'test'
+  ...
+# Subtest: SVG not accepted
+ok 108 - SVG not accepted
+  ---
+  duration_ms: 0.154595
+  type: 'test'
+  ...
+# Subtest: oversize attachment blocked
+ok 109 - oversize attachment blocked
+  ---
+  duration_ms: 0.047822
+  type: 'test'
+  ...
+# Subtest: valid photo accepted
+ok 110 - valid photo accepted
+  ---
+  duration_ms: 0.04169
+  type: 'test'
+  ...
+# Subtest: repair input rejects missing customer
+ok 111 - repair input rejects missing customer
+  ---
+  duration_ms: 0.091875
+  type: 'test'
+  ...
+1..111
+# tests 111
+# suites 0
+# pass 111
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 160.544106

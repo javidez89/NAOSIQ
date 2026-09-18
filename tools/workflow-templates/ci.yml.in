@@ -1,0 +1,61 @@
+name: Quality
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_call:
+permissions:
+  contents: read
+concurrency:
+  group: quality-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  application:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@__CHECKOUT_SHA__
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@__SETUP_NODE_SHA__
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+      - run: npm ci
+      - run: npm run check:ready
+      - run: npm run check
+      - run: node scripts/check-env.mjs
+      - run: npm run build
+      - run: npx --no-install playwright install --with-deps chromium
+      - run: npm run test:e2e
+      - run: npm audit --audit-level=high
+      - run: mkdir -p reports/local && npm sbom --sbom-format cyclonedx > reports/local/sbom.json
+      - uses: actions/upload-artifact@__UPLOAD_SHA__
+        if: always()
+        with:
+          name: application-evidence
+          path: |
+            reports/local/
+            playwright-report/
+            test-results/
+          retention-days: 14
+  database:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@__CHECKOUT_SHA__
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@__SETUP_NODE_SHA__
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+      - run: npm ci
+      - run: npm run db:start
+      - run: npm run db:reset:local
+      - run: npm run test:db
+      - run: npm run db:types
+      - name: Prevent generated schema drift
+        run: git diff --exit-code -- src/types/database.generated.ts
+      - run: npm run db:stop
+        if: always()

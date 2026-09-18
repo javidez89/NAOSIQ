@@ -1,0 +1,3 @@
+import { readFile } from 'node:fs/promises';import { NextResponse } from 'next/server';import { v6Asset } from '@/lib/v6-contract';
+export const runtime='nodejs';export const dynamic='force-dynamic';
+export async function GET(_request:Request,{params}:{params:Promise<{screenId:string}>}){const{id}= {id:(await params).screenId.toUpperCase()};if(process.env.APP_ENV!=='local'||!/^(?:AD|AS|AU|CL|SU|TE|VR)\d{2}$/.test(id))return NextResponse.json({error:'No disponible'},{status:404});try{const svg=await readFile(v6Asset(`design/screens/${id}.svg`),'utf8');return new Response(svg,{headers:{'Content-Type':'image/svg+xml','Cache-Control':'private, no-store','X-Content-Type-Options':'nosniff'}})}catch{return NextResponse.json({error:'No disponible'},{status:404})}}

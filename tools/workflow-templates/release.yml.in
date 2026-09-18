@@ -1,0 +1,23 @@
+name: Release approval evidence
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  quality:
+    uses: ./.github/workflows/ci.yml
+  approval:
+    needs: quality
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    environment: production
+    steps:
+      - uses: actions/checkout@__CHECKOUT_SHA__
+        with:
+          persist-credentials: false
+      - name: Record approved commit; deployment remains explicit
+        env:
+          COMMIT_SHA: ${{ github.sha }}
+        run: |
+          printf 'Approved commit: %s\n' "$COMMIT_SHA"
+          printf 'Follow docs/05-deployment.md. No deployment or remote migration occurs in this job.\n'

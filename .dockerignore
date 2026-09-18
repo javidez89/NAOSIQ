@@ -1,0 +1,10 @@
+node_modules
+.next
+.git
+.env*
+!.env.example
+.vercel
+reports
+.build-domain
+playwright-report
+test-results

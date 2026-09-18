@@ -1,0 +1,20 @@
+{
+  "CHECKOUT_SHA": {
+    "repo": "actions/checkout",
+    "tag": "v7",
+    "sha": "3d3c42e5aac5ba805825da76410c181273ba90b1",
+    "resolvedAt": "2026-09-15T00:19:45.632Z"
+  },
+  "SETUP_NODE_SHA": {
+    "repo": "actions/setup-node",
+    "tag": "v6",
+    "sha": "249970729cb0ef3589644e2896645e5dc5ba9c38",
+    "resolvedAt": "2026-09-15T00:19:46.397Z"
+  },
+  "UPLOAD_SHA": {
+    "repo": "actions/upload-artifact",
+    "tag": "v4",
+    "sha": "ea165f8d65b6e75b540449e92b4886f43607fa02",
+    "resolvedAt": "2026-09-15T00:19:47.074Z"
+  }
+}

@@ -1,0 +1,95 @@
+{
+  "name": "NAOSIQ",
+  "version": "6.0",
+  "source": "NAOSIQ Manual v1.0 pp.18-19,22-24,28",
+  "status": "Brand values authoritative; UI derivatives proposed",
+  "brand": {
+    "name": "NAOSIQ",
+    "tagline": "CONECTA · OPTIMIZA · CRECE",
+    "endorsement": "Gestionado con NAOSIQ",
+    "night": "#0B0F1A",
+    "primary": "#7C3AED",
+    "cyan": "#06B6D4",
+    "ice": "#E5E7EB",
+    "white": "#FFFFFF"
+  },
+  "semantic": {
+    "success": "#16A34A",
+    "warning": "#D97706",
+    "error": "#DC2626"
+  },
+  "ui_proposal": {
+    "background": "#F7F8FC",
+    "surface": "#FFFFFF",
+    "text": "#0B0F1A",
+    "muted": "#526071",
+    "controlBorder": "#7A8495",
+    "border": "#E5E7EB",
+    "primaryHover": "#6D28D9",
+    "primaryOn": "#FFFFFF",
+    "focus": "#0E7490",
+    "purpleTint": "#F2ECFD",
+    "cyanText": "#0E7490",
+    "cyanTint": "#E9FAFD",
+    "successText": "#166534",
+    "successTint": "#F0FDF4",
+    "warningText": "#92400E",
+    "warningTint": "#FFFBEB",
+    "errorText": "#991B1B",
+    "errorTint": "#FEF2F2"
+  },
+  "typography": {
+    "brand": {
+      "family": "Montserrat",
+      "fallback": "Inter, Arial, sans-serif",
+      "source_page": 19
+    },
+    "ui": {
+      "family": "Inter",
+      "fallback": "Arial, sans-serif"
+    },
+    "rendered_family": "Inter",
+    "fonts_distributed": false,
+    "size": {
+      "hero": 48,
+      "h1": 32,
+      "h2": 24,
+      "h3": 20,
+      "body": 16,
+      "label": 14,
+      "meta": 12
+    },
+    "lineHeight": {
+      "body": 1.5,
+      "heading": 1.25
+    }
+  },
+  "spacing": [
+    4,
+    8,
+    12,
+    16,
+    24,
+    32,
+    48
+  ],
+  "radius": {
+    "input": 8,
+    "button": 10,
+    "card": 12,
+    "large": 20,
+    "badge": 999
+  },
+  "control": {
+    "minTouchHeight": 48,
+    "focusWidth": 3,
+    "focusOffset": 3
+  },
+  "logo": {
+    "reference": "design/assets/NAOSIQ_lockup_REFERENCIA.jpg",
+    "provisional": true,
+    "master_vector_provided": false,
+    "source_pdf_page": 15
+  },
+  "displayName_not_migration": true
+}

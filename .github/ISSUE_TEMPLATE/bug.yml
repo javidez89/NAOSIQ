@@ -1,0 +1,29 @@
+name: Defecto
+description: Reportar un problema sin datos sensibles.
+title: "[BUG] "
+labels: [bug]
+body:
+  - type: textarea
+    id: steps
+    attributes:
+      label: Pasos, rol, entorno y resultado observado
+      description: No incluya credenciales, datos de clientes ni tokens.
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Resultado esperado y evidencia
+    validations:
+      required: true
+  - type: dropdown
+    id: severity
+    attributes:
+      label: Impacto
+      options:
+        - Critico - aislamiento, acceso o integridad
+        - Alto - flujo principal bloqueado
+        - Medio - alternativa disponible
+        - Bajo - visual o texto
+    validations:
+      required: true

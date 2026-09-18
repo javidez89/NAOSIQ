@@ -1,0 +1,27 @@
+begin;
+create extension if not exists pgtap with schema extensions;
+set local search_path = public,extensions;
+select plan(8);
+insert into auth.users(id,instance_id,aud,role,email,email_confirmed_at,created_at,updated_at)
+values ('81000000-0000-4000-8000-000000000001','00000000-0000-0000-0000-000000000000','authenticated','authenticated','portal-master@example.invalid',now(),now(),now());
+insert into private.platform_admins(user_id,active) values ('81000000-0000-4000-8000-000000000001',true);
+set local role anon;
+select throws_ok($$select public.has_platform_access()$$,'42501',null,'Anonymous cannot call entry predicate');
+reset role;
+select set_config('request.jwt.claims','{"sub":"81000000-0000-4000-8000-000000000001","role":"authenticated","aal":"aal1"}',true);
+set local role authenticated;
+select is(public.has_platform_access(),true,'Active master can enter MFA screen at AAL1');
+select is(public.is_platform_admin(),false,'Entry does not grant operational master access');
+select throws_ok($$select * from private.platform_admins$$,'42501',null,'Entry does not expose master directory');
+select set_config('request.jwt.claims','{"sub":"81000000-0000-4000-8000-000000000002","role":"authenticated","aal":"aal2","user_metadata":{"role":"super_user"}}',true);
+select is(public.has_platform_access(),false,'Other identity and editable metadata cannot grant access');
+select set_config('request.jwt.claims','{"role":"authenticated","aal":"aal2"}',true);
+select is(public.has_platform_access(),false,'Missing identity rejected');
+reset role;
+update private.platform_admins set active=false where user_id='81000000-0000-4000-8000-000000000001';
+select set_config('request.jwt.claims','{"sub":"81000000-0000-4000-8000-000000000001","role":"authenticated","aal":"aal2"}',true);
+set local role authenticated;
+select is(public.has_platform_access(),false,'Revoked master loses entry immediately');
+select is(public.is_platform_admin(),false,'Revoked master loses operational access');
+select * from finish();
+rollback;

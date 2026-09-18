@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "module": "CommonJS",
+    "moduleResolution": "Node10",
+    "strict": true,
+    "noUncheckedIndexedAccess": true,
+    "skipLibCheck": true,
+    "types": [],
+    "outDir": ".build-domain",
+    "rootDir": "src",
+    "declaration": true
+  },
+  "include": [
+    "src/domain/**/*.ts"
+  ]
+}

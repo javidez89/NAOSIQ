@@ -1,0 +1,22 @@
+# Optional portability path, NOT the standard Vercel deployment.
+# Use a hosted NON-PRODUCTION Supabase URL from this container. For local Supabase,
+# run Next.js on the host and let Supabase CLI manage its Docker network.
+services:
+  web:
+    build:
+      context: .
+      args:
+        NEXT_PUBLIC_SUPABASE_URL: ${NEXT_PUBLIC_SUPABASE_URL:?Set public Supabase URL}
+        NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY: ${NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY:?Set publishable key}
+    ports:
+      - "127.0.0.1:3000:3000"
+    env_file:
+      - .env.local
+    read_only: true
+    tmpfs:
+      - /tmp
+    cap_drop:
+      - ALL
+    security_opt:
+      - no-new-privileges:true
+    restart: unless-stopped

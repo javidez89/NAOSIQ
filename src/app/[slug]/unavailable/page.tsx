@@ -1,0 +1,3 @@
+import Link from 'next/link';import {serverClient} from '@/lib/supabase/server';
+export const dynamic='force-dynamic';
+export default async function Unavailable({params}:{params:Promise<{slug:string}>}){const{slug}=await params;const db=await serverClient();const{data:resolved}=await db.rpc('resolve_tenant_slug',{p_slug:slug});const route=resolved?.[0];return <section className="panel" data-screen-id="CL15"><p className="eyebrow">CL15 · Servicio no disponible</p><h1>Este comercio no está disponible</h1><p>No se pueden crear solicitudes ni registrar operaciones desde esta dirección.</p>{route?.status==='redirect'&&<Link className="button" href={`/${route.target_slug}`}>Abrir dirección vigente</Link>}<p><Link href="/">Volver a NAOSIQ</Link></p></section>}

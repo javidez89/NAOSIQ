@@ -1,0 +1,6 @@
+PENDING: Real package-lock.json: run npm run bootstrap online.
+PENDING: CLI-generated configuration/migration: run npm run db:init.
+PENDING: Pinned CI workflow: run node scripts/pin-actions.mjs online.
+PENDING: Generated DB types: run npm run db:types with the local database running.
+
+Exit code: 1
