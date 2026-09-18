@@ -2385,6 +2385,16 @@ export type Database = {
         }
         Returns: string
       }
+      create_customer_repair_request_v2: {
+        Args: {
+          p_device: string
+          p_equipment: string | null
+          p_issue: string
+          p_request_id: string
+          p_tenant: string
+        }
+        Returns: string
+      }
       create_equipment: {
         Args: {
           p_brand: string
@@ -2796,4 +2806,3 @@ export const Constants = {
     Enums: {},
   },
 } as const
-

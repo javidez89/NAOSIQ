@@ -105,7 +105,7 @@ export default async function Tenant({ params, searchParams }: {
       <div><p className="eyebrow">{roleLabels[role]} · Tu comercio</p><h1>{tenant.name}</h1>
         {role === 'customer' && <p className="endorsement">{brand.endorsement}</p>}
         <p className="lead">{role === 'technician' ? 'Tu trabajo asignado y el avance de cada reparación.' : role === 'customer' ? 'Sigue el progreso de tus equipos y consulta tus comprobantes.' : 'Organiza la recepción, el seguimiento y la atención de tus equipos.'}</p></div>
-      {role === 'customer' ? <Link className="button" href={`${base}/t/${tenantId}/requests/new`}>Nueva solicitud</Link> : intake && <div className="actions"><Link className="button secondary" href={`${base}/t/${tenantId}/operations`}>Centro operativo</Link>{role === 'admin' || role === 'super_user' ? <Link className="button secondary" href={`${base}/t/${tenantId}/settings`}>Configuración</Link> : null}{operational && <a className="button" href="#recepcion">+ Crear orden</a>}</div>}
+      {role === 'customer' ? <Link className="button" data-action-id="CL16.A2" href={`${base}/t/${tenantId}/requests/new`}>Nueva solicitud</Link> : intake && <div className="actions"><Link className="button secondary" href={`${base}/t/${tenantId}/operations`}>Centro operativo</Link>{role === 'admin' || role === 'super_user' ? <Link className="button secondary" href={`${base}/t/${tenantId}/settings`}>Configuración</Link> : null}{operational && <a className="button" href="#recepcion">+ Crear orden</a>}</div>}
     </div>
     {operationalResult.error
       ? <p role="alert" className="notice error">No se pudo comprobar la disponibilidad del comercio. Actualiza la página antes de registrar cambios.</p>

@@ -1,7 +1,7 @@
 {
   "specification": "NAOSIQ V6",
   "sourceRoot": "D:\\NAOSIQ\\NAOSIQ_KIT_V6",
-  "updatedAt": "2026-09-17T23:57:07.397Z",
+  "updatedAt": "2026-09-18T02:27:29.445Z",
   "scope": "Local; static evidence refreshed from current source. Presence remains unverified until visual and behavioral acceptance.",
   "prompts": [
     {
@@ -2811,18 +2811,23 @@
       "name": "Solicitud / equipo",
       "status": "surface_present_unverified",
       "evidence": [
-        "src/app/cliente/t/[tenantId]/requests/new/page.tsx"
+        "src/app/cliente/t/[tenantId]/requests/new/page.tsx",
+        "src/components/customer-request-wizard.tsx"
       ],
       "actions": [
         {
           "id": "CL03.A1",
-          "status": "pending",
-          "evidence": []
+          "status": "referenced_unverified",
+          "evidence": [
+            "src/components/customer-request-wizard.tsx"
+          ]
         },
         {
           "id": "CL03.A2",
-          "status": "pending",
-          "evidence": []
+          "status": "referenced_unverified",
+          "evidence": [
+            "src/components/customer-request-wizard.tsx"
+          ]
         },
         {
           "id": "CL03.A3",
@@ -2836,7 +2841,7 @@
       "name": "Solicitud / falla y fotos",
       "status": "surface_present_unverified",
       "evidence": [
-        "src/app/cliente/t/[tenantId]/requests/new/page.tsx"
+        "src/components/customer-request-wizard.tsx"
       ],
       "actions": [
         {
@@ -2846,13 +2851,17 @@
         },
         {
           "id": "CL04.A2",
-          "status": "pending",
-          "evidence": []
+          "status": "referenced_unverified",
+          "evidence": [
+            "src/components/customer-request-wizard.tsx"
+          ]
         },
         {
           "id": "CL04.A3",
-          "status": "pending",
-          "evidence": []
+          "status": "referenced_unverified",
+          "evidence": [
+            "src/components/customer-request-wizard.tsx"
+          ]
         }
       ]
     },
@@ -2861,19 +2870,22 @@
       "name": "Solicitud / contacto y revisión",
       "status": "surface_present_unverified",
       "evidence": [
-        "src/app/cliente/t/[tenantId]/requests/new/page.tsx"
+        "src/app/cliente/t/[tenantId]/requests/new/page.tsx",
+        "src/components/customer-request-wizard.tsx"
       ],
       "actions": [
         {
           "id": "CL05.A1",
-          "status": "pending",
-          "evidence": []
+          "status": "referenced_unverified",
+          "evidence": [
+            "src/components/customer-request-wizard.tsx"
+          ]
         },
         {
           "id": "CL05.A2",
           "status": "referenced_unverified",
           "evidence": [
-            "src/app/cliente/t/[tenantId]/requests/new/page.tsx"
+            "src/components/customer-request-wizard.tsx"
           ]
         },
         {
@@ -2893,8 +2905,10 @@
       "actions": [
         {
           "id": "CL06.A1",
-          "status": "pending",
-          "evidence": []
+          "status": "referenced_unverified",
+          "evidence": [
+            "src/app/app/t/[tenantId]/repairs/[repairId]/page.tsx"
+          ]
         },
         {
           "id": "CL06.A2",
@@ -3152,6 +3166,7 @@
       "name": "Inicio del cliente",
       "status": "surface_present_unverified",
       "evidence": [
+        "src/app/app/t/[tenantId]/page.tsx",
         "/cliente"
       ],
       "actions": [
@@ -3162,8 +3177,10 @@
         },
         {
           "id": "CL16.A2",
-          "status": "pending",
-          "evidence": []
+          "status": "referenced_unverified",
+          "evidence": [
+            "src/app/app/t/[tenantId]/page.tsx"
+          ]
         },
         {
           "id": "CL16.A3",

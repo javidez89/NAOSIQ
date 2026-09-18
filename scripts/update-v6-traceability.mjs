@@ -2,7 +2,7 @@ import { readFileSync, readdirSync, writeFileSync, mkdirSync } from 'node:fs';
 import { join, relative, resolve } from 'node:path';
 
 const appRoot=resolve('.');
-const kitRoot=resolve('..','NAOSIQ_KIT_V6');
+const kitRoot=resolve(appRoot,'specifications','NAOSIQ_KIT_V6');
 const contract=JSON.parse(readFileSync(join(kitRoot,'contracts','screens-actions.json'),'utf8'));
 const journeys=JSON.parse(readFileSync(join(kitRoot,'contracts','journeys.json'),'utf8'));
 const decisions=JSON.parse(readFileSync(join(kitRoot,'contracts','decisions.json'),'utf8'));
