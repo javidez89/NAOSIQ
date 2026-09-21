@@ -2388,7 +2388,7 @@ export type Database = {
       create_customer_repair_request_v2: {
         Args: {
           p_device: string
-          p_equipment: string | null
+          p_equipment: string
           p_issue: string
           p_request_id: string
           p_tenant: string
@@ -2640,6 +2640,7 @@ export type Database = {
         Args: { p_reason: string; p_request_id: string; p_tenant: string }
         Returns: string
       }
+      system_readiness: { Args: never; Returns: string }
       tenant_operational: { Args: { p_tenant: string }; Returns: boolean }
       tenant_slug_available: { Args: { p_slug: string }; Returns: boolean }
       transition_repair: {

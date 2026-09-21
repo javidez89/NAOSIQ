@@ -108,6 +108,7 @@ Documentos de referencia conservados:
 [alcance](docs/00-scope.md), [arquitectura](docs/02-architecture.md),
 [datos y permisos](docs/03-database.md), [UX](docs/09-ux.md),
 [backlog](docs/10-product.md), [producción](docs/12-release.md),
+[preparación para publicación](docs/19-online-architecture-readiness.md),
 [informe original 0.1.0](reports/verification.md) y
 [especificación NAOSIQ V6](specifications/NAOSIQ_KIT_V6/SPEC_INDEX.md).
 

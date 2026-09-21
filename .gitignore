@@ -6,6 +6,7 @@ node_modules/
 !.env.example
 !.env.test.example
 !.env.staging.example
+!.env.production.example
 .vercel/
 coverage/
 playwright-report/
